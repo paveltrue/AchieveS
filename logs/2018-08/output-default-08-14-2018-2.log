@@ -1,0 +1,41 @@
+[17:24:55] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:24:55] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:24:55] INFO  (BasicTestCase.java:62) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:24:55] INFO  (BasicTestCase.java:65) - browser type set from properties file: chrome
+[17:24:55] INFO  (BasicTestCase.java:71) - grid mode set from properties file:false
+[17:24:55] INFO  (BasicTestCase.java:72) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:24:55] INFO  (BasicTestCase.java:75) - Headless Mode set to false
+[17:24:55] DEBUG (BasicTestCase.java:105) - Finished before suite
+[17:24:56] TRACE (BasicTestCase.java:42) - Starting test testAdmin
+[17:24:56] INFO  (BasicTestCase.java:112) - Setting the browser up
+[17:24:56] INFO  (BasicTestCase.java:127) -  Executing on CHROME
+[17:24:56] INFO  (BasicTestCase.java:122) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:25:09] DEBUG (BasicTestCase.java:48) - Browser's set up. Starting test.
+[17:25:09] INFO  (A3k_Admin.java:352) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:25:09] INFO  (LoginPage.java:251) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:25:09] INFO  (LoginPage.java:97) - Type in username: kidbizteach.one
+[17:25:10] INFO  (LoginPage.java:104) - Type in password: kidbizteach.one
+[17:25:11] DEBUG (LoginPage.java:230) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:25:11] INFO  (Page.java:45) - Try to execute Close Walkme
+[17:25:11] DEBUG (Page.java:161) - Try to FIND element  By.id: active_class
+[17:25:41] INFO  (LoginPage.java:316) -  Stop login 
+[17:25:41] INFO  (Page.java:601) - Opening Admin Page
+[17:25:42] INFO  (Page.java:183) - Click on element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:25:42] DEBUG (Page.java:161) - Trying to click on locator via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:25:42] DEBUG (Page.java:161) - Element was clicked via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:25:42] INFO  (Page.java:183) - Click on element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:25:42] DEBUG (Page.java:161) - Trying to click on locator via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:25:46] DEBUG (Page.java:161) - Element was clicked via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:25:46] INFO  (A3k_Admin.java:340) - Open Create new class Wizard
+[17:25:46] INFO  (AdminPage.java:97) - Opening 'Create New Class' wizard
+[17:25:47] INFO  (Page.java:588) - Switch to Next window
+[17:25:47] DEBUG (Page.java:589) - Switching from handle CDwindow-8FF091946BD545375E68349517DD29EA
+[17:25:47] DEBUG (Page.java:590) - Handles before [CDwindow-8FF091946BD545375E68349517DD29EA, CDwindow-F351B598800BD823F781AC45C6F917A5]
+[17:25:47] DEBUG (Page.java:594) - Handles after[CDwindow-8FF091946BD545375E68349517DD29EA, CDwindow-F351B598800BD823F781AC45C6F917A5]
+[17:25:47] DEBUG (Page.java:595) - Switched to handle CDwindow-F351B598800BD823F781AC45C6F917A5
+[17:25:47] INFO  (A3k_Admin.java:344) - 'Create new class' wizard opened
+[17:25:47] INFO  (SetupWizardPage.java:21) - Wait until page is loaded
+[17:26:02] DEBUG (Page.java:525) - Closing window handle CDwindow-F351B598800BD823F781AC45C6F917A5
+[17:26:02] DEBUG (Page.java:529) - Currently on window handle CDwindow-8FF091946BD545375E68349517DD29EA
+[17:26:02] INFO  (A3k_Admin.java:148) - Verify Class editor
+[17:26:02] INFO  (A3k_Admin.java:150) - Open 'Class Information' editor

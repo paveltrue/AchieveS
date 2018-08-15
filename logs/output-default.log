@@ -1,0 +1,50 @@
+[16:48:35] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[16:48:35] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[16:48:35] INFO  (BasicTestCase.java:62) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[16:48:35] INFO  (BasicTestCase.java:65) - browser type set from properties file: chrome
+[16:48:35] INFO  (BasicTestCase.java:71) - grid mode set from properties file:false
+[16:48:35] INFO  (BasicTestCase.java:72) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[16:48:35] INFO  (BasicTestCase.java:75) - Headless Mode set to false
+[16:48:35] DEBUG (BasicTestCase.java:105) - Finished before suite
+[16:48:35] TRACE (BasicTestCase.java:42) - Starting test testAdmin
+[16:48:35] INFO  (BasicTestCase.java:112) - Setting the browser up
+[16:48:35] INFO  (BasicTestCase.java:127) -  Executing on CHROME
+[16:48:35] INFO  (BasicTestCase.java:122) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[16:48:43] DEBUG (BasicTestCase.java:48) - Browser's set up. Starting test.
+[16:48:43] INFO  (A3k_Admin.java:355) - Login with credentials kidbizteach.one\kidbizteach.one
+[16:48:43] INFO  (LoginPage.java:251) - Login with credentials kidbizteach.one\kidbizteach.one
+[16:48:43] INFO  (LoginPage.java:97) - Type in username: kidbizteach.one
+[16:48:44] INFO  (LoginPage.java:104) - Type in password: kidbizteach.one
+[16:48:45] DEBUG (LoginPage.java:230) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[16:48:45] INFO  (Page.java:45) - Try to execute Close Walkme
+[16:48:45] DEBUG (Page.java:162) - Try to FIND element  By.id: active_class
+[16:48:49] INFO  (LoginPage.java:316) -  Stop login 
+[16:48:49] INFO  (Page.java:604) - Opening Admin Page
+[16:48:50] INFO  (Page.java:184) - Click on element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown']
+[16:48:50] INFO  (Page.java:614) - Wait until element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown'] clickable
+[16:48:50] DEBUG (Page.java:162) - Trying to click on locator via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[16:48:50] DEBUG (Page.java:162) - Element was clicked via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[16:48:50] INFO  (Page.java:184) - Click on element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[16:48:50] INFO  (Page.java:614) - Wait until element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')] clickable
+[16:48:50] DEBUG (Page.java:162) - Trying to click on locator via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[16:48:52] DEBUG (Page.java:162) - Element was clicked via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[16:48:53] INFO  (A3k_Admin.java:342) - Open Create new class Wizard
+[16:48:53] INFO  (AdminPage.java:115) - Opening 'Create New Class' wizard
+[16:48:53] INFO  (Page.java:45) - Try to execute Close Walkme
+[16:48:55] INFO  (Page.java:591) - Switch to Next window
+[16:48:55] DEBUG (Page.java:592) - Switching from handle CDwindow-368E5375DD85C527429924DD8EEFCA4F
+[16:48:55] DEBUG (Page.java:593) - Handles before [CDwindow-368E5375DD85C527429924DD8EEFCA4F, CDwindow-1032885EA4D9DD6339E0FE4937D58801]
+[16:48:55] DEBUG (Page.java:597) - Handles after[CDwindow-368E5375DD85C527429924DD8EEFCA4F, CDwindow-1032885EA4D9DD6339E0FE4937D58801]
+[16:48:55] DEBUG (Page.java:598) - Switched to handle CDwindow-1032885EA4D9DD6339E0FE4937D58801
+[16:48:55] INFO  (A3k_Admin.java:346) - 'Create new class' wizard opened
+[16:48:55] INFO  (SetupWizardPage.java:21) - Wait until page is loaded
+[16:48:58] DEBUG (Page.java:528) - Closing window handle CDwindow-1032885EA4D9DD6339E0FE4937D58801
+[16:48:58] DEBUG (Page.java:532) - Currently on window handle CDwindow-368E5375DD85C527429924DD8EEFCA4F
+[16:48:58] INFO  (A3k_Admin.java:148) - Verify Class editor
+[16:48:58] INFO  (A3k_Admin.java:150) - Open 'Class Information' editor
+[16:49:01] INFO  (A3k_Admin.java:154) - Verify district name is not empty
+[16:49:01] INFO  (A3k_Admin.java:158) - Verify school name is not empty
+[16:49:03] INFO  (A3k_Admin.java:166) - Verify amount of users in class is more than 1
+[17:08:45] DEBUG (BasicTestCase.java:224) - Finishing test
+[17:08:45] TRACE (BasicTestCase.java:225) - Getting selenium logs
+[17:08:45] DEBUG (BasicTestCase.java:226) - Finished test

@@ -1,0 +1,114 @@
+<html class="no-js" lang="en"><!--<![endif]--><head>
+  <meta http-equiv="Content-Type" content="text/html charset=utf-8;">
+
+  <title>Achieve3000: Change Password</title>
+  <meta name="author" content="Achieve3000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/reset_style.css?v=2">
+  <link rel="stylesheet" href="/assets/css/monarch-jqueryui/jquery-ui.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="/assets/css/monarch/main.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/assets/css/monarch/main_d2.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="/assets/css/settings.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/assets/css/settings_g6-8_d2,18.css" type="text/css" media="screen" charset="utf-8">
+  
+  <script type="text/javascript" src="/assets/js/libs/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/libs/jquery-ui-1.8.12.custom.min.js"></script>
+  <script type="text/javascript" src="/assets/js/libs/swfobject.js"></script>
+
+  <script type="">!window.jQuery && document.write(unescape('%3Cscript src="/assets/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+
+    <!-- scripts concatenated and minified via ant build script-->
+    <script type="text/javascript" src="/assets/js/plugins.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script type="text/javascript" src="/assets/js/common/alert.js"></script>
+	<script type="text/javascript" src="/assets/js/monarch/motivation.js" data-from="a3k"></script>
+	<script type="text/javascript" src="/assets/js/libs/preload-images.js"></script>
+  <script type="text/javascript" src="/assets/js/application.js"></script>
+  <script type="text/javascript" src="/assets/js/session_timer3.js" is-student="1" website-title="TeenBiz3000" charset="utf-8" lang="en"></script>
+
+  <script type="text/javascript" src="/assets/js/controllers/reset_pwd.js" charset="utf-8" data-from="a3k"></script>
+<script type="text/javascript" src="/assets/js/libs/jquery.isloading.js" charset="utf-8" data-from="a3k"></script>
+<script type="text/javascript" src="/assets/js/libs/jquery.validate.min.js" charset="utf-8" data-from="a3k"></script>
+<script type="text/javascript" src="/assets/js/common/alert.js" charset="utf-8" data-from="a3k"></script>
+    <style>
+.clearfix:before, .clearfix:after {  content: "\0020"; display: block; height: 0; visibility: hidden;  }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+</style>
+</head>
+<body class="">
+	<!--<div class="close_noOverlap" onclick="self.close();" title="close window"></div>-->
+  
+ 	    
+ 	<div class="passwordContainer">
+	<div class="header">
+		<div class="title">Change Password			<div class="subtitle">Teenbizstud One</div>
+		</div>
+	</div>
+  <div class="passwordTitle"></div>
+	<div id="changePasswordForm">
+  <form id="change_password_form" action="" method="get">
+    <table class="options_table">
+      <tbody><tr>
+        <td><label for="current_password" class="options_label">What's your password now?</label></td>
+        <td class="options_value"><input name="current_password" id="current_password" style="" type="password"></td>
+      </tr>
+      <tr>
+        <td><label for="new_password" class="options_label">What do you want your password to be?</label></td>
+        <td class="options_value"><input name="new_password" id="new_password" style="" type="password"></td>
+      </tr>
+      <tr>
+        <td><label for="new_password_confirm" class="options_label">Type your new password again.</label></td>
+        <td class="options_value"><input name="new_password_confirm" id="new_password_confirm" style="" type="password"></td>
+      </tr>
+    </tbody></table>
+    <br>
+    <div class="buttonContainer">
+      <input id="reset_pwd_submit" data-text="CHANGE" data-rollover="CHANGE" value="CHANGE" class="submit-button rolloverButton" style="width: 93px;" type="button">
+      <input data-text="CANCEL" data-rollover="CANCEL" value="CANCEL" class="submit-button rolloverButton" style="width: 93px;" onclick="window.opener.focus();window.close();" type="button">
+    </div>
+	</form>
+	</div>
+	<div id="changePasswordResponse" style="display:none">
+		<div id="changePasswordMsg"></div>
+		<br>
+		<div class="buttonContainer">
+			<input id="responseButton" data-text="CLOSE" data-rollover="CLOSE" value="CLOSE" class="submit-button rolloverButton" style="width: 93px;" type="button">
+		</div>
+	</div>
+</div>
+<script type="text/javascript" language="javascript">
+	
+	var _RESET_PWD_SETTINGS = {
+		I18N: {"missing_required":"You did not fill out all the fields.","short_password":"New password is too short. Passwords must be at least 4 characters long.","password_mismatch":"Your confirm password does not match your new password."},
+		PSWD_LENGTH: 4	};
+
+	$(document).ready(function() {
+		var resetPwdCtrl = a3k.kidbiz.ResetPwdCtrl;
+		resetPwdCtrl.init(_RESET_PWD_SETTINGS, false);
+
+		$('#reset_pwd_submit').on('click', function( event ) {
+			resetPwdCtrl.validateStudentForm();
+		});
+
+		$('#responseButton').on('click', function (e) {
+			self.close();
+		})
+	});
+
+</script>
+  <!--[if lt IE 7 ]>
+    <script src="/assets/js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); </script>
+  <![endif]-->
+  <div id="earconContainer"></div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+			});
+</script>
+</body></html>

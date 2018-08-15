@@ -1,0 +1,44 @@
+[17:30:44] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:30:44] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:30:44] INFO  (BasicTestCase.java:62) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:30:44] INFO  (BasicTestCase.java:65) - browser type set from properties file: chrome
+[17:30:44] INFO  (BasicTestCase.java:71) - grid mode set from properties file:false
+[17:30:44] INFO  (BasicTestCase.java:72) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:30:44] INFO  (BasicTestCase.java:75) - Headless Mode set to false
+[17:30:44] DEBUG (BasicTestCase.java:105) - Finished before suite
+[17:30:44] TRACE (BasicTestCase.java:42) - Starting test testAdmin
+[17:30:44] INFO  (BasicTestCase.java:112) - Setting the browser up
+[17:30:44] INFO  (BasicTestCase.java:127) -  Executing on CHROME
+[17:30:44] INFO  (BasicTestCase.java:122) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:30:59] DEBUG (BasicTestCase.java:48) - Browser's set up. Starting test.
+[17:31:00] INFO  (A3k_Admin.java:352) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:31:00] INFO  (LoginPage.java:251) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:31:00] INFO  (LoginPage.java:97) - Type in username: kidbizteach.one
+[17:31:01] INFO  (LoginPage.java:104) - Type in password: kidbizteach.one
+[17:31:01] DEBUG (LoginPage.java:230) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:31:02] INFO  (Page.java:45) - Try to execute Close Walkme
+[17:31:02] DEBUG (Page.java:161) - Try to FIND element  By.id: active_class
+[17:31:18] INFO  (LoginPage.java:316) -  Stop login 
+[17:31:18] INFO  (Page.java:601) - Opening Admin Page
+[17:31:18] INFO  (Page.java:183) - Click on element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:31:18] DEBUG (Page.java:161) - Trying to click on locator via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:31:18] DEBUG (Page.java:161) - Element was clicked via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:31:18] INFO  (Page.java:183) - Click on element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:31:18] DEBUG (Page.java:161) - Trying to click on locator via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:31:34] DEBUG (Page.java:161) - Element was clicked via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:31:34] INFO  (A3k_Admin.java:340) - Open Create new class Wizard
+[17:31:34] INFO  (AdminPage.java:98) - Opening 'Create New Class' wizard
+[17:31:34] INFO  (Page.java:588) - Switch to Next window
+[17:31:34] DEBUG (Page.java:589) - Switching from handle CDwindow-DF644D8B05C2294AE7B0F9EC0EB82026
+[17:31:34] DEBUG (Page.java:590) - Handles before [CDwindow-DF644D8B05C2294AE7B0F9EC0EB82026, CDwindow-B95DF0D4BC4DE805C3865552915E57C7]
+[17:31:34] DEBUG (Page.java:594) - Handles after[CDwindow-DF644D8B05C2294AE7B0F9EC0EB82026, CDwindow-B95DF0D4BC4DE805C3865552915E57C7]
+[17:31:34] DEBUG (Page.java:595) - Switched to handle CDwindow-B95DF0D4BC4DE805C3865552915E57C7
+[17:31:34] INFO  (A3k_Admin.java:344) - 'Create new class' wizard opened
+[17:31:34] INFO  (SetupWizardPage.java:21) - Wait until page is loaded
+[17:31:51] DEBUG (Page.java:525) - Closing window handle CDwindow-B95DF0D4BC4DE805C3865552915E57C7
+[17:31:51] DEBUG (Page.java:529) - Currently on window handle CDwindow-DF644D8B05C2294AE7B0F9EC0EB82026
+[17:31:51] INFO  (A3k_Admin.java:148) - Verify Class editor
+[17:31:51] INFO  (A3k_Admin.java:150) - Open 'Class Information' editor
+[17:31:51] DEBUG (BasicTestCase.java:224) - Finishing test
+[17:31:51] TRACE (BasicTestCase.java:225) - Getting selenium logs
+[17:31:51] DEBUG (BasicTestCase.java:226) - Finished test
