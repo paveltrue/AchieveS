@@ -32,7 +32,12 @@ public class Lesson  extends Page{
     private By radioBy = By.xpath("//li[contains(@class,'wordwrap')]");
     WebElement radioWeb = $(By.xpath("//li[contains(@class,'wordwrap')]"));
     private By submitButtonLiteracyBy = By.xpath("//*[@ng-click='submitHandler()']");
-
+    private By answersNewBy = By.xpath("//div[@class='activity-option ng-scope']");
+    private By answersBy = By.xpath(".//div[@class='activity-option ng-scope']");
+    private By pointsBy = By.id("topPointsContainer");
+    private By currentAndTotalQuestionBy = By.xpath("//*[@class='footer progressBarFooter']/span");
+    private By allAnswersBy = By.xpath("//*[contains(@class,'activity-option ng-scope') and not(contains(@class,'incorrect'))] | //div[@class='question mc-question active']//li[not(contains(@class,'choice_disabled'))]");
+    private By selectedAnswerBy = By.xpath("//*[contains(@class,'selected')]");
 
 
 
@@ -210,7 +215,7 @@ public class Lesson  extends Page{
     }
 
     public void waitSubmitButon() {
-        waitElementBy(submitButtonLiteracyBy, 5);
+        waitElementBy(submitButtonLiteracyBy);
     }
 
     public int getPresenceFourAnswerOptions() {
@@ -218,6 +223,44 @@ public class Lesson  extends Page{
             return findEls(answersNewBy).size();
         } else {
             return findEls(answersBy).size();
+        }
+    }
+
+    public int currentPoints() {
+        return Integer.parseInt(findEl(pointsBy).getText());
+    }
+
+    public String currentQuestion() {
+        return findEl(currentAndTotalQuestionBy).getAttribute("data-current-question");
+    }
+
+    public boolean selectFirstAnswer() {
+        try {
+            waitUntilCollectionAppears(findEls(allAnswersBy));
+            WebElement answer = findEls(allAnswersBy).get(0);
+            $(answer).click();
+            if (!isAnyAnswerSelected()) {
+                answer = findEls(allAnswersBy).get(0);
+                $(answer).click();
+            }
+            String highlight = getAttribute(answer, "class");
+            return highlight.contains("selected");
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        }
+        return false;
+    }
+
+    public boolean isAnyAnswerSelected() {
+        waitUntilAppearsBy(selectedAnswerBy);
+        return isElementPresentBy(selectedAnswerBy);
+    }
+
+    public void clickActivitySubmitButton() {
+        try {
+            click(submitBtnOnActivityTabBy);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
         }
     }
 
