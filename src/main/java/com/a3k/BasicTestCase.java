@@ -8,6 +8,7 @@ import com.a3k.utils.properties.FilepathProperties;
 import com.codeborne.selenide.Configuration;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 
@@ -21,6 +22,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BasicTestCase {
 
+    protected RemoteWebDriver driver;
     protected ExtendedSoftAssert softAssert;
     public static String browserType;
     public static String browserUrl;
@@ -42,6 +44,8 @@ public class BasicTestCase {
         logger.trace("Starting test " + m.getName());
 
         startBrowser(browserType);
+
+        softAssert = new ExtendedSoftAssert(driver);
 
         navigateToUrl(browserUrl);
 

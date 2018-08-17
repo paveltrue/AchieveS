@@ -1,12 +1,11 @@
 package com.a3k.pages;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class AllReportsPage extends Page {
 
@@ -24,10 +23,25 @@ public class AllReportsPage extends Page {
     private WebElement emailAndStep1 = $(By.xpath(".//*[@href='/options/reports/?report_id=1&section=2']"));
     private WebElement pointsAndAchivements = $(By.xpath(".//*[@href='/options/reports/?report_id=15&section=2']"));
     private WebElement myLessonsTitle = $(By.xpath("(.//*[@id='submenu_2']//div[@class='report_link'])[1]"));
+    private WebElement whichOfMyStudentsLexilesAdjusted = $(By.xpath(".//*[@href='/options/reports/?section=6&report_id=38']"));
+    private WebElement studentsWithDecreasingLexile = $(By.xpath(".//*[@href='util/decreasing_lexiles.php']"));
+    private WebElement howLikelyMyStudents = $(By.xpath(".//*[@href='/options/reports/?report_id=31&section=4']"));
+    private WebElement howHasLexile = $(By.xpath(".//*[@href='/options/reports/?report_id=37&section=4']"));
+    private WebElement howAreMyStudentsPerformingOnActivities = $(By.xpath(".//*[@href='/options/reports/?report_id=18&section=4']"));
+    private WebElement howAreMyStudentsPerformingOnStandards = $(By.xpath(".//*[@href='/options/reports/?report_id=34&section=4']"));
+    private WebElement usageReport = $(By.id("menu_link_3"));
+    private WebElement whichOfMyStudentUsingTheProgram = $(By.xpath(".//*[@href='/options/reports/?report_id=3&section=3']"));
+    private WebElement howAreMyStudentProgressing = $(By.xpath(".//*[@href='/options/reports/?report_id=17&section=3']"));
+    private WebElement whichMyStudentsAreUsingTheProgramAfter = $(By.xpath(".//*[@href='/options/reports/?report_id=6&section=3']"));
+
+
+
+
 
 
     public AllReportsPage(WebDriver driver) {
-        PageFactory.initElements(getWebDriver(), this);
+        this.driver = driver;
+        //PageFactory.initElements(driver, this);
     }
 
     public void openAssessmentTools() {
@@ -83,7 +97,10 @@ public class AllReportsPage extends Page {
     }
 
     public boolean isAuthentisAssesmentPortfolionShown() {
-        return $(authenticAssesmentPortfolio).isDisplayed();
+        boolean bool = false;
+        $(authenticAssesmentPortfolio).shouldBe(Condition.visible);
+        bool = $(authenticAssesmentPortfolio).isDisplayed();
+        return bool;
     }
 
     public boolean isEmailAndStep1Shown() {
@@ -91,11 +108,54 @@ public class AllReportsPage extends Page {
     }
 
     public boolean isPointsAndAchivementsShown() {
-        return isDisplayed(pointsAndAchivements);
+        return $(pointsAndAchivements).isDisplayed();
     }
 
     public String getMyLessonsTitleText() {
-        return myLessonsTitle.getText();
+        return $(myLessonsTitle).getText();
+    }
+
+    public String getWhichOfMyStudentsLexilesAdjustedText() {
+        return $(whichOfMyStudentsLexilesAdjusted).getText();
+    }
+
+    public String getStudentsWithDecreasingLexileText() {
+        return $(studentsWithDecreasingLexile).getText();
+    }
+
+    public String getHowLikelyMyStudentsText() {
+        return $(howLikelyMyStudents).getText();
+    }
+
+    public String getHowHasLexileText() {
+        return $(howHasLexile).getText();
+    }
+
+    public String getHowAreMyStudentsPerformingOnActivitiesText() {
+        return $(howAreMyStudentsPerformingOnActivities).getText();
+    }
+
+    public String getHowAreMyStudentsPerformingOnStandardsText() {
+        return $(howAreMyStudentsPerformingOnStandards).getText();
+    }
+
+    public void expandUsageReports() {
+        logger.info("Opening Usage Reports");
+        if (!$(usageReport).getAttribute("class").contains("selected")) {
+            $(usageReport).click();
+        }
+    }
+
+    public String getWhichOfMyStudentUsingTheProgramText() {
+        return $(whichOfMyStudentUsingTheProgram).getText();
+    }
+
+    public String getHowAreMyStudentProgressingText() {
+        return $(howAreMyStudentProgressing).getText();
+    }
+
+    public String getWhichMyStudentsAreUsingTheProgramAfterText() {
+        return $(whichMyStudentsAreUsingTheProgramAfter).getText();
     }
 
 }

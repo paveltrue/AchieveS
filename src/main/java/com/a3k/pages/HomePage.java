@@ -5,7 +5,6 @@ import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -33,7 +32,8 @@ public class HomePage extends Page {
     WebElement arrowNearAvatar2 = $(By.xpath("//*[@class='selectName']"));
 
     public HomePage(WebDriver driver) {
-        PageFactory.initElements(getWebDriver(), this);
+        this.driver = driver;
+        //PageFactory.initElements(driver, this);
     }
 
     public boolean isTeachermaterialsButtonsExist() {
@@ -110,7 +110,7 @@ public class HomePage extends Page {
     public void changePassword(String oldPassword, String newPassword) {
         logger.info("Change password from " + oldPassword + " to " + newPassword);
         clickOnChangePasswordLink();
-        OldChangePasswordPage oldChangePasswordPage = new OldChangePasswordPage();
+        OldChangePasswordPage oldChangePasswordPage = new OldChangePasswordPage(driver);
         oldChangePasswordPage.changePassword(oldPassword, newPassword);
 
         String confirmError = "Your confirm password does not match your new password.";

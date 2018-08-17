@@ -3,7 +3,6 @@ package com.a3k.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -15,7 +14,8 @@ public class MyLessons extends Page {
 
 
     public MyLessons(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+        this.driver = driver;
+        //PageFactory.initElements(driver, this);
     }
 
     public boolean verifyCompletedLesson(String lessonId) {

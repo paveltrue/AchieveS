@@ -1,50 +1,84 @@
-[16:48:35] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[16:48:35] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[16:48:35] INFO  (BasicTestCase.java:62) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[16:48:35] INFO  (BasicTestCase.java:65) - browser type set from properties file: chrome
-[16:48:35] INFO  (BasicTestCase.java:71) - grid mode set from properties file:false
-[16:48:35] INFO  (BasicTestCase.java:72) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[16:48:35] INFO  (BasicTestCase.java:75) - Headless Mode set to false
-[16:48:35] DEBUG (BasicTestCase.java:105) - Finished before suite
-[16:48:35] TRACE (BasicTestCase.java:42) - Starting test testAdmin
-[16:48:35] INFO  (BasicTestCase.java:112) - Setting the browser up
-[16:48:35] INFO  (BasicTestCase.java:127) -  Executing on CHROME
-[16:48:35] INFO  (BasicTestCase.java:122) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[16:48:43] DEBUG (BasicTestCase.java:48) - Browser's set up. Starting test.
-[16:48:43] INFO  (A3k_Admin.java:355) - Login with credentials kidbizteach.one\kidbizteach.one
-[16:48:43] INFO  (LoginPage.java:251) - Login with credentials kidbizteach.one\kidbizteach.one
-[16:48:43] INFO  (LoginPage.java:97) - Type in username: kidbizteach.one
-[16:48:44] INFO  (LoginPage.java:104) - Type in password: kidbizteach.one
-[16:48:45] DEBUG (LoginPage.java:230) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[16:48:45] INFO  (Page.java:45) - Try to execute Close Walkme
-[16:48:45] DEBUG (Page.java:162) - Try to FIND element  By.id: active_class
-[16:48:49] INFO  (LoginPage.java:316) -  Stop login 
-[16:48:49] INFO  (Page.java:604) - Opening Admin Page
-[16:48:50] INFO  (Page.java:184) - Click on element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown']
-[16:48:50] INFO  (Page.java:614) - Wait until element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown'] clickable
-[16:48:50] DEBUG (Page.java:162) - Trying to click on locator via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
-[16:48:50] DEBUG (Page.java:162) - Element was clicked via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
-[16:48:50] INFO  (Page.java:184) - Click on element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
-[16:48:50] INFO  (Page.java:614) - Wait until element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')] clickable
-[16:48:50] DEBUG (Page.java:162) - Trying to click on locator via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
-[16:48:52] DEBUG (Page.java:162) - Element was clicked via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
-[16:48:53] INFO  (A3k_Admin.java:342) - Open Create new class Wizard
-[16:48:53] INFO  (AdminPage.java:115) - Opening 'Create New Class' wizard
-[16:48:53] INFO  (Page.java:45) - Try to execute Close Walkme
-[16:48:55] INFO  (Page.java:591) - Switch to Next window
-[16:48:55] DEBUG (Page.java:592) - Switching from handle CDwindow-368E5375DD85C527429924DD8EEFCA4F
-[16:48:55] DEBUG (Page.java:593) - Handles before [CDwindow-368E5375DD85C527429924DD8EEFCA4F, CDwindow-1032885EA4D9DD6339E0FE4937D58801]
-[16:48:55] DEBUG (Page.java:597) - Handles after[CDwindow-368E5375DD85C527429924DD8EEFCA4F, CDwindow-1032885EA4D9DD6339E0FE4937D58801]
-[16:48:55] DEBUG (Page.java:598) - Switched to handle CDwindow-1032885EA4D9DD6339E0FE4937D58801
-[16:48:55] INFO  (A3k_Admin.java:346) - 'Create new class' wizard opened
-[16:48:55] INFO  (SetupWizardPage.java:21) - Wait until page is loaded
-[16:48:58] DEBUG (Page.java:528) - Closing window handle CDwindow-1032885EA4D9DD6339E0FE4937D58801
-[16:48:58] DEBUG (Page.java:532) - Currently on window handle CDwindow-368E5375DD85C527429924DD8EEFCA4F
-[16:48:58] INFO  (A3k_Admin.java:148) - Verify Class editor
-[16:48:58] INFO  (A3k_Admin.java:150) - Open 'Class Information' editor
-[16:49:01] INFO  (A3k_Admin.java:154) - Verify district name is not empty
-[16:49:01] INFO  (A3k_Admin.java:158) - Verify school name is not empty
-[16:49:03] INFO  (A3k_Admin.java:166) - Verify amount of users in class is more than 1
-[17:08:45] DEBUG (BasicTestCase.java:224) - Finishing test
-[17:08:45] TRACE (BasicTestCase.java:225) - Getting selenium logs
-[17:08:45] DEBUG (BasicTestCase.java:226) - Finished test
+[14:19:23] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[14:19:23] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[14:19:23] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[14:19:23] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[14:19:23] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[14:19:23] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[14:19:23] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[14:19:23] DEBUG (BasicTestCase.java:109) - Finished before suite
+[14:19:23] TRACE (FiveStep_student_kidbiz.java:359) - Getting users
+[14:19:23] TRACE (BasicTestCase.java:44) - Starting test verifyLesson_KidBizStudent
+[14:19:23] INFO  (BasicTestCase.java:116) - Setting the browser up
+[14:19:23] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[14:19:23] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[14:19:40] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[14:19:40] INFO  (FiveStep_student_kidbiz.java:337) - Language is set to English
+[14:19:40] INFO  (FiveStep_student_kidbiz.java:351) - Login with credentials kidbizstud.fivestep\kidbizstud.fivestep
+[14:19:40] INFO  (LoginPage.java:249) - Login with credentials kidbizstud.fivestep\kidbizstud.fivestep
+[14:19:40] INFO  (LoginPage.java:95) - Type in username: kidbizstud.fivestep
+[14:19:41] INFO  (LoginPage.java:102) - Type in password: kidbizstud.fivestep
+[14:19:41] DEBUG (LoginPage.java:228) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[14:19:42] INFO  (Page.java:47) - Try to execute Close Walkme
+[14:19:42] DEBUG (Page.java:164) - Try to FIND element  By.id: active_class
+[14:19:55] INFO  (LoginPage.java:314) -  Stop login 
+[14:19:55] INFO  (Page.java:326) - Opening My Lessons page
+[14:19:55] INFO  (Page.java:267) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
+[14:20:02] INFO  (FiveStep_student_kidbiz.java:313) - Opening any not started lesson
+[14:20:02] INFO  (Page.java:267) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons?sort=step1&sort=focus&sort_dir=desc&page_index=1
+[14:20:32] INFO  (Page.java:203) - Click on element <a class="title" href="/kb/lesson/?lid=15308&c=62&asn=1">Small Animals, Big News</a>
+[14:20:32] DEBUG (Page.java:170) - Trying to click on locator via JS <a class="title" href="/kb/lesson/?lid=15308&c=62&asn=1">Small Animals, Big News</a>
+[14:20:54] DEBUG (Page.java:170) - Element was clicked via JS java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+[14:20:54] INFO  (MyLessons.java:72) - Open lesson with id = 15308
+[14:20:54] INFO  (FiveStep_student_kidbiz.java:299) - Complete 'Before Reading' form
+[14:20:54] DEBUG (Page.java:164) - Try to FIND element  By.id: textarea-step10page1response1_ifr
+[14:20:55] DEBUG (Page.java:164) - Try to FIND element   .//*[(@name='response') or (@id='tinymce') or (@id='textarea-step10page1response1')]
+[14:20:55] DEBUG (Page.java:164) - Try to FIND element   //li[contains(@onclick,'a3k.poll.select_poll_choice')]
+[14:20:55] INFO  (Page.java:186) - Click on element By.id: pollSubmit-step10page1
+[14:20:55] INFO  (Page.java:629) - Wait until element By.id: pollSubmit-step10page1 clickable
+[14:20:55] DEBUG (Page.java:164) - Trying to click on locator via JS By.id: pollSubmit-step10page1
+[14:20:55] DEBUG (Page.java:164) - Element was clicked via JS By.id: pollSubmit-step10page1
+[14:20:56] INFO  (Page.java:186) - Click on element By.xpath: //div[contains(@class,'next_tab')]/a
+[14:20:56] INFO  (Page.java:47) - Try to execute Close Walkme
+[14:20:56] INFO  (Page.java:629) - Wait until element By.xpath: //div[contains(@class,'next_tab')]/a clickable
+[14:20:56] DEBUG (Page.java:164) - Trying to click on locator via JS  //div[contains(@class,'next_tab')]/a
+[14:21:00] DEBUG (Page.java:164) - Element was clicked via JS  //div[contains(@class,'next_tab')]/a
+[14:21:00] INFO  (FiveStep_student_kidbiz.java:308) - Before Reading form has been submitted
+[14:21:00] INFO  (FiveStep_student_kidbiz.java:286) - Verify vocabulary
+[14:21:00] INFO  (FiveStep_student_kidbiz.java:293) - Verify Reading Connections section
+[14:21:01] DEBUG (Lesson.java:910) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[14:21:01] DEBUG (Lesson.java:911) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[14:21:01] INFO  (Lesson.java:916) - Type text 'Test Reading Connections' to input
+[14:21:02] INFO  (Lesson.java:921) - Saving...
+[14:21:02] DEBUG (Lesson.java:910) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[14:21:02] DEBUG (Lesson.java:911) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[14:21:03] INFO  (Lesson.java:916) - Type text 'Test Reading Connections' to input
+[14:21:03] INFO  (Lesson.java:921) - Saving...
+[14:21:04] DEBUG (Lesson.java:910) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[14:21:04] DEBUG (Lesson.java:911) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[14:21:04] INFO  (Lesson.java:916) - Type text 'Test Reading Connections' to input
+[14:21:05] INFO  (Lesson.java:921) - Saving...
+[14:21:05] DEBUG (FiveStep_student_kidbiz.java:96) - Started verifying article tab
+[14:21:06] DEBUG (FiveStep_student_kidbiz.java:109) - Finished verifying article page
+[14:21:06] INFO  (Page.java:186) - Click on element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div
+[14:21:06] INFO  (Page.java:629) - Wait until element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div clickable
+[14:21:06] DEBUG (Page.java:164) - Trying to click on locator via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[14:21:15] DEBUG (Page.java:164) - Element was clicked via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[14:21:15] INFO  (FiveStep_student_kidbiz.java:130) - Verifying Activity Page
+[14:21:15] ERROR (Lesson.java:409) - com.sun.proxy.$Proxy42 cannot be cast to org.openqa.selenium.By
+[14:21:15] ERROR (ExtendedSoftAssert.java:38) - The selected answer is not highlighted
+[14:21:18] ERROR (Lesson.java:409) - com.sun.proxy.$Proxy42 cannot be cast to org.openqa.selenium.By
+[14:21:19] INFO  (Lesson.java:523) - Click on answer 0
+[14:21:19] INFO  (Page.java:129) - Wait For JS and JQuery load.
+[14:21:19] INFO  (Page.java:186) - Click on element By.xpath: //*[@ng-click='submitHandler()']
+[14:21:19] INFO  (Page.java:629) - Wait until element By.xpath: //*[@ng-click='submitHandler()'] clickable
+[14:21:19] DEBUG (Page.java:164) - Trying to click on locator via JS  //*[@ng-click='submitHandler()']
+[14:21:19] DEBUG (Page.java:164) - Element was clicked via JS  //*[@ng-click='submitHandler()']
+[14:21:20] INFO  (Lesson.java:523) - Click on answer 0
+[14:21:20] INFO  (Page.java:129) - Wait For JS and JQuery load.
+[14:21:21] INFO  (Lesson.java:523) - Click on answer 0
+[14:21:21] INFO  (Page.java:129) - Wait For JS and JQuery load.
+[14:21:21] INFO  (Page.java:186) - Click on element By.xpath: //*[@ng-click='submitHandler()']
+[14:21:21] INFO  (Page.java:629) - Wait until element By.xpath: //*[@ng-click='submitHandler()'] clickable
+[14:21:21] DEBUG (Page.java:164) - Trying to click on locator via JS  //*[@ng-click='submitHandler()']
+[14:21:21] DEBUG (Page.java:164) - Element was clicked via JS  //*[@ng-click='submitHandler()']
+[14:21:21] INFO  (Lesson.java:523) - Click on answer 0

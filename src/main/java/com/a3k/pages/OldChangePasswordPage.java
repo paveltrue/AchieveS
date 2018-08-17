@@ -1,6 +1,7 @@
 package com.a3k.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -13,6 +14,12 @@ public class OldChangePasswordPage extends Page {
     WebElement submitButton = $(By.xpath("//*[@type='submit' or @id='reset_pwd_submit']"));
     WebElement wrongPasswordPopupOkButton = $(By.xpath("//div[@class='ui-dialog-buttonset']/button"));
     private WebElement closeButton = $(By.id("responseButton"));
+
+
+    public OldChangePasswordPage(WebDriver driver){
+        this.driver = driver;
+        //PageFactory.initElements(driver, this);
+    }
 
     public void changePassword(String oldPassword, String newPassword){
 

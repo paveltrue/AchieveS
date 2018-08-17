@@ -349,7 +349,7 @@ public class FiveStep_student_kidbiz extends BasicTestCase {
             "and class {classToSelect}")
     protected void login(String login, String password, String program, String classToSelect) {
         logger.info(String.format("Login with credentials %s\\%s", login, password));
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
     }
 

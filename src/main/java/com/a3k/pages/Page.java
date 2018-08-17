@@ -14,10 +14,12 @@ import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.*;
+import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
 
 public abstract class Page {
 
+    protected WebDriver driver;
     protected By nextButtonLevelSetBy = By.xpath(".//*[@class = 'button_ls']/a[@id = 'btn_next']");
     protected By homeButtonBy = By.xpath("//*[@href='/home' or contains(@class,'logo-') or @href='/n/']");
     protected By teachersNameBy = By.xpath(".//*[@data-dropdown='#teacher-settings-dropdown']");
@@ -245,8 +247,13 @@ public abstract class Page {
     }
 
     public void acceptAlert() {
+        try {
+            Wait().until(alertIsPresent());
             confirm();
             switchTo().defaultContent();
+        } catch (TimeoutException e) {
+           logger.trace("Alert not found");
+        }
     }
 
     public void clickOnLogo() {
@@ -310,13 +317,13 @@ public abstract class Page {
     }
 
     public boolean isElementPresent(WebElement element) {
-        if ($(element).shouldBe(visible).isDisplayed())
+        if ($(element).isDisplayed())
             return true;
         return false;
     }
 
     public MyLessons goToMyLessonsByLink() {
-        logger.info("Opening My Lessons page");
+        logger.info("Opening My Lesson page");
         goToNewUrl("/my_lessons");
         if (getWebDriver().getWindowHandles().size() > 1) {
             switchToNextWindowWhenExistOnly2();
@@ -362,13 +369,8 @@ public abstract class Page {
 
     public boolean waitUntilCollectionAppears(ElementsCollection list) {
         int i = 0;
-        while ((list.size() == 0)) {
+        while (($$(list).size() == 0)) {
             i++;
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
         if (list.size() > 0) {
             return true;
@@ -390,6 +392,13 @@ public abstract class Page {
     }
 
     public void waitElement(By element) {
+        try {
+            $(element).shouldBe(visible).isDisplayed();
+        } catch (TimeoutException e) {
+            logger.error(e.getMessage());
+        }
+    }
+    public void waitElementWebEl(WebElement element) {
         try {
             $(element).shouldBe(visible).isDisplayed();
         } catch (TimeoutException e) {
@@ -511,6 +520,7 @@ public abstract class Page {
     private String pageName;
 
     public Page(String pageName, By element, WebDriver driver) {
+        this.driver = driver;
         this.pageName = pageName;
         try {
             $(element).shouldBe(visible);
@@ -623,19 +633,45 @@ public abstract class Page {
     }
 
     public boolean isBecomeClickableBy(By by) {
-        try {
-            $(by).shouldBe(visible);
-            return true;
-        }catch (TimeoutException e) {
+
+            if ($(by).isDisplayed()) {
+                return true;
+            }
             return false;
-        }
+
     }
     public void closeWalkmeNew(){
         if($(walkmePopupBy).isDisplayed())
             $(walkmePopupBy).click();
     }
 
+    public MailboxPage goToMailboxPage() {
+        logger.info("Opening Mailbox Page");
+        goToNewUrl("/mail");
+        return new MailboxPage(driver);
+    }
 
+    public void scrollUp() {
+        executeJavaScript("window.scrollTo(0, 0);");
+    }
+
+    public void loggerMessageWithXpath(WebElement element, String message) {
+        message = message + " " + element;
+        message = message.replaceFirst("\\[(.*?)\\]", "");
+        if (!message.isEmpty() && message.contains("]")) {
+            message = message.substring(0, message.lastIndexOf("]"));
+        }
+        logger.debug(message);
+    }
+
+    public void waitElementBy(By by) {
+        loggerMessageWithXpathBy(by, "Wait visibility of element ");
+        try {
+            $(by).shouldBe(visible);
+        } catch (Exception e) {
+            loggerMessageWithXpathBy(by, "The element hasn't found ");
+        }
+    }
 
 
 

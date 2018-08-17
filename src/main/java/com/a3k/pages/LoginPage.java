@@ -11,6 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.testng.Assert.assertTrue;
 
@@ -39,11 +40,8 @@ public class LoginPage extends Page {
 
 
 
-    public LoginPage(){
-       //PageFactory.initElements(driver, this);
-    }
-
     public LoginPage(WebDriver driver){
+        this.driver = driver;
         PageFactory.initElements(driver, this);}
 
     public void login(String login, String password, String... parametrs) {
@@ -340,6 +338,24 @@ public class LoginPage extends Page {
         Pattern p = Pattern.compile("[a-z]*[0-9]");
         Matcher m = p.matcher(login);
         return m.matches();
+    }
+
+    public void loginIntoWithClass(String login, String password, String classToSelect) {
+        logger.info(String.format("Login with credentials %s\\%s to class %s", login, password, classToSelect));
+        setUser(login);
+        setPassword(password, login);
+        clickLoginButton();
+        if (!classToSelect.isEmpty()) {
+            Select select = new Select(chooseClassCombo);
+            select.selectByVisibleText(classToSelect);
+            clickLoginButton();
+        }
+        closeTeachersSurv();
+        if (getWebDriver().getWindowHandles().size() > 1) {
+            switchToNextWindowWhenExistOnly2();
+            getWebDriver().close();
+            switchBackAfterClose();
+        }
     }
 
 }

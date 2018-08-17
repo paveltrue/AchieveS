@@ -2,7 +2,6 @@ package com.a3k.testCases.smoke;
 
 import com.a3k.BasicTestCase;
 import com.a3k.pages.*;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -11,10 +10,10 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Selenide.$;
 
-public class A3k_Admin extends BasicTestCase {
+public class A3k_SparkAdmin extends BasicTestCase {
+
 
     static String findUser;
     static String createNewClass;
@@ -94,24 +93,30 @@ public class A3k_Admin extends BasicTestCase {
     static EditPage editPage;
     static AllReportsPage allReportsPage;
 
-    @Parameters({"loginTeacher", "passwordTeacher", "program", "classToSelectTeacher", "language", "testName"})
-    @Test(groups = {"Smoke", "All", "Admin"})
-    public void testAdmin(@Optional("kidbizteach.one") String login,
-                          @Optional("kidbizteach.one") String password,
-                          @Optional("") String program,
-                          @Optional("Boost Class 3g") String classToSelect,
-                          @Optional("english") String language,
-                          @Optional("spanish") String testName) {
 
+    @Parameters({"loginTeacher", "passwordTeacher", "classToSelectTeacher", "language", "testName"})
+    @Test(groups = {"Smoke", "Admin", "All"})
+    public void testAdmin_spark(
+                                //@Optional("sparkteacher.one.1") String login,
+                                @Optional("sparkteacher.one") String login,
+                                @Optional("sparkteacher.one") String password,
+                                @Optional("First Spark Class") String classToSelect,
+                                @Optional("english") String language,
+                                @Optional("spark") String testName) {
+        testName = "spark";
         setUpLanguage(language, testName);
+        classToSelect = "Spark Second Class";
 
-        login(login, password, program, classToSelect);
+        login(login, password, classToSelect);
+
         adminPage = goToAdminPage();
 
         setupWizardPage = openCreateNewClassWizard();
+
         setupWizardPage.waitUntilPageIsLoaded();
 
         setupWizardPage.switchBack();
+
         verifyClassEditor();
 
         logger.info("Return back to menu");
@@ -119,49 +124,39 @@ public class A3k_Admin extends BasicTestCase {
 
         editStudentAndTeacher(classToSelect);
 
-        ElementsCollection we = adminPage.getListOfUserRows().get(0).$$(By.xpath(".//td"));
+        ElementsCollection we = $(adminPage.getListOfUserRows().get(0)).findAll(By.xpath(".//td"));
 
         verifyUserInfo(we);
 
-        if (!testName.equals("spark")) {
-            String walkMeTmp = "//*[@class='walkme-question-mark walkme-override " +
-                    "walkme-css-reset']";
-            if (adminPage.isElementPresentBy(By.xpath(walkMeTmp))) {
-                adminPage.removeUIElementFromPageWithJS($(By.xpath(walkMeTmp)));
-            }
-
-            removeUserFromClass();
-        }
+        removeUserFromClass();
 
         editPage = openEditPage(we);
-        verifyEditPage(classToSelect, testName);
+        verifyEditPage(classToSelect);
 
         allReportsPage = openReportsPage();
-        verifyReports(testName);
+
+        verifyReports();
 
         softAssert.assertAll();
+
+
     }
 
     @Step
     public void verifyClassEditor() {
         logger.info("Verify Class editor");
-
-        logger.info("Open 'Class Information' editor");
         adminPage.clickOnEditClassInformation();
-        //adminPage.waitUntilSaveChangesEditInforButtonAppears();
+        adminPage.waitUntilSaveChangesEditInforButtonAppears();
 
-        logger.info("Verify district name is not empty");
-        //softAssert.assertFalse(adminPage.getDisctrictName().isEmpty(), "district name is empty");
-        $(adminPage.getDisctrictName()).shouldNotBe(empty);
 
-        logger.info("Verify school name is not empty");
+        logger.info("Verify district name");
+        softAssert.assertFalse(adminPage.getDisctrictName().isEmpty(), "district name is empty");
+        logger.info("Verify school name ");
+        softAssert.assertFalse(adminPage.getSchoolName().isEmpty(), "school name is empty");
 
         adminPage.getListOfEditUserLink().get(0).click();
 
-        //adminPage.waitPageLoad();
-        logger.info("Verify amount of users in class is more than 1");
         softAssert.assertTrue(adminPage.getListOfUserRows().size() > 1, "there is no users in a class");
-       // adminPage.getListOfUserRows().shouldHaveSize(4);
 
         logger.info("Class Editor verified successfully");
 
@@ -170,16 +165,10 @@ public class A3k_Admin extends BasicTestCase {
     @Step
     private void editStudentAndTeacher(String classToSelect) {
         logger.info("Trying to edit student and teacher");
-
-        adminPage.waitPageLoad();
-
-        logger.info("Open Student and Teacher editor");
         adminPage.openEditStudentAndTeacher();
 
         logger.info("Change class to " + classToSelect);
         adminPage.selectClass(classToSelect);
-
-        logger.info("Submit");
         adminPage.clickSubmitButton();
 
         logger.info("Student's class changed successfully");
@@ -188,23 +177,24 @@ public class A3k_Admin extends BasicTestCase {
     @Step
     private void verifyUserInfo(ElementsCollection webElements) {
         logger.info("Verify main user fields");
+        softAssert.assertTrue(adminPage.getListOfNumbersBeforeUsers().size() > 0, "numbers before users are not shown");
 
-        logger.info("Verify start time is present");
-        softAssert.assertFalse(webElements.get(4).$(By.id("levelset_start[0]")).getAttribute("value").isEmpty(), "start time is not shown");
+        logger.info("Verify username");
+        softAssert.assertFalse($(webElements.get(2)).getText().isEmpty(), "user name is not shown");
 
-        logger.info("Verify end time is present");
-        softAssert.assertFalse(webElements.get(6).$(By.id("levelset_end[0]")).getAttribute("value").isEmpty(), "end time is not shown");
+        logger.info("Verify user"); // ?!
+        softAssert.assertFalse($(webElements.get(3)).getText().isEmpty(), "user is not shown");
 
-        logger.info("Verify p2p email is present");
-        softAssert.assertTrue(webElements.get(8).getText().contains(noImages), "peer to peer email is not shown");
+
+        logger.info("Verify p2p email");
+        softAssert.assertTrue($(webElements.get(8)).getText().contains(noImages), "peer to peer email is not shown");
     }
 
     @Step
     private void removeUserFromClass() {
-        WebElement user = adminPage.getListOfUserRows().get(1).$$(By.xpath(".//td")).get(1);
-        logger.info("Remove user " + user + " from class");
-        adminPage.clickJSWebEl(user);
-
+        WebElement user = $(adminPage.getListOfUserRows().get(1)).findAll(By.xpath(".//td")).get(1);
+        logger.info("Remove user " + user);
+        $(user).click();
         adminPage.clickOnRemoveFromClassButton();
         adminPage.waitAndCancelAlert();
 
@@ -216,120 +206,142 @@ public class A3k_Admin extends BasicTestCase {
 
         logger.info("Opening Edit page");
         ElementsCollection buffer = adminPage.getListOfUserRows();
-        we = buffer.get(buffer.size() - 1).$$(By.xpath(".//td"));
-        $(we.get(2).$(By.xpath(".//a"))).click();
+        we = $(buffer.get(buffer.size() - 1)).findAll(By.xpath(".//td"));
+        $(we.get(2)).click();
 
-        //adminPage.waitUntilUserProfileShown();
+        adminPage.waitUntilUserProfileShown();
+
         return new EditPage(driver);
     }
 
     @Step
-    private void verifyEditPage(String classToSelect, String testName) {
+    private void verifyEditPage(String classToSelect) {
+
         verifyStudentInfo(classToSelect);
+
     }
 
-    @Step
+    @Step("Verify Student's info from {classToSelect} class")
     private void verifyStudentInfo(String classToSelect) {
         logger.info("Verify student info");
-
-        logger.info("Verify school name is present");
         softAssert.assertFalse(editPage.getSchoolName().isEmpty(),
-                "school name is empty");
-
-        logger.info("Verify expected class (" + classToSelect + ") is present");
+                "schoolname is empty");
         softAssert.assertTrue(editPage.getClassNames().contains(classToSelect),
                 "class doesn't contain expected class");
 
-        logger.info("Verify login is present");
-        softAssert.assertFalse(editPage.getLoginName().isEmpty(),
-                "login name is empty");
     }
 
     @Step
-    private void verifyReports(String testName) {
-        verifyStudentWork(testName);
-        verifyPerformanceReport(testName);
-        verifyAssessment(testName);
+    private void verifyReports() {
+        verifyStudentWork();
+        verifyUsageReports();
+        verifyPerformanceReport();
+        verifyAssessment();
     }
 
     @Step
-    private void verifyAssessment(String testName) {
+    private void verifyAssessment() {
         logger.info("Verify assessment");
         allReportsPage.openAssessmentTools();
 
-        if (!testName.equals("spark")) {
-            allReportsPage.openHomeCommunication();
-            softAssert.assertEquals(allReportsPage.getWelcomeLetterText(), welcomeLetter,
-                    "Actual 'welcome letter' text does not equal to expected."
-                            + "Expected: " + welcomeLetter +
-                            " . Actual: " + allReportsPage.getWelcomeLetterText());
+        softAssert.assertEquals(allReportsPage.getWhichOfMyStudentsLexilesAdjustedText(),
+                WhichOfMyStudentsLexilesAdjusted,
+                "Actual 'which of my students lexile adjusted' text does not equal to expected." +
+                        "Expected: " + WhichOfMyStudentsLexilesAdjusted +
+                        " . Actual: " + allReportsPage.getWhichOfMyStudentsLexilesAdjustedText());
 
-            softAssert.assertEquals(allReportsPage.getHomeEditionSetupInstructionText(),
-                    homeEditionSetupInstruction,
-                    "Actual 'home edition setup instruction' text does not equal to expected."
-                            + "Expected: " + homeEditionSetupInstruction +
-                            " . Actual: " + allReportsPage.getHomeEditionSetupInstructionText());
+        softAssert.assertEquals(allReportsPage.getStudentsWithDecreasingLexileText(),
+                StudentsWithDecreasingLexile,
+                "Actual 'students with decreasing lexile' text does not equal to expected." +
+                        "Expected: " + StudentsWithDecreasingLexile +
+                        " . Actual: " + allReportsPage.getStudentsWithDecreasingLexileText());
 
-            softAssert.assertEquals(allReportsPage.getHomeLexileLetterText(), homeLexileLetter,
-                    "Actual 'home lexile letter' text does not equal to expected."
-                            + "Expected: " + homeLexileLetter +
-                            " . Actual: " + allReportsPage.getHomeLexileLetterText());
-        }
     }
 
     @Step
-    private void verifyPerformanceReport(String testName) {
+    private void verifyPerformanceReport() {
         allReportsPage.openPerformanseReports();
 
-        if (!testName.equals("spanish")) {
-            softAssert.assertEquals(allReportsPage.getHowAreMyStudentsMasteringText(),
-                    HowAreMyStudentsMastering,
-                    "Actual 'how are my students mastering' text does not equal to expected."
-                            + "Expected: " + HowAreMyStudentsMastering +
-                            " . Actual: " + allReportsPage.getHowAreMyStudentsMasteringText());
-            softAssert.assertEquals(allReportsPage.getHowAreMyStudentsPerforminNCLBText(), HowAreMyStudentsPerforminNCLB,
-                    "Actual 'how are my students performing NCLB' text does not equal to expected."
-                            + "Expected: " + HowAreMyStudentsPerforminNCLB +
-                            " . Actual: " + allReportsPage
-                            .getHowAreMyStudentsPerforminNCLBText());
+        softAssert.assertEquals(allReportsPage.getHowLikelyMyStudentsText(), HowLikelyMyStudents,
+                "Actual 'how likely my students' text does not equal to expected." +
+                        "Expected: " + HowLikelyMyStudents +
+                        " . Actual: " + allReportsPage.getHowLikelyMyStudentsText());
 
-            if (!testName.equals("spark") && !testName.equals("uk")) {
-                softAssert.assertEquals(allReportsPage.getHowCanIDifferentiateText(), HowCanIDifferentiate,
-                        "Actual 'how can I differentiate' text does not equal to expected."
-                                + "Expected: " + HowCanIDifferentiate
-                                + " . Actual: " + allReportsPage.getHowCanIDifferentiateText());
-            }
-        }
+        softAssert.assertEquals(allReportsPage.getHowHasLexileText(), HowHasLexile,
+                "Actual 'how has lexile' text does not equal to expected." +
+                        "Expected: " + HowHasLexile +
+                        " . Actual: " + allReportsPage.getHowHasLexileText());
+
+        softAssert.assertEquals(allReportsPage.getHowAreMyStudentsPerformingOnActivitiesText(),
+                HowAreMyStudentsPerformingOnActivities,
+                "Actual 'how are my students performing on activities' text does not equal to expected." +
+                        "Expected: " + HowAreMyStudentsPerformingOnActivities +
+                        " . Actual: " + allReportsPage.getHowAreMyStudentsPerformingOnActivitiesText());
+
+        softAssert.assertEquals(allReportsPage.getHowAreMyStudentsPerformingOnStandardsText(),
+                HowAreMyStudentsPerformingOnStandards,
+                "Actual 'how are my students performing on standards' text does not equal to expected." +
+                        "Expected: " + HowAreMyStudentsPerformingOnStandards +
+                        " . Actual: " + allReportsPage.getHowAreMyStudentsPerformingOnStandardsText());
+
+        softAssert.assertEquals(allReportsPage.getHowAreMyStudentsMasteringText(),
+                HowAreMyStudentsMastering,
+                "Actual 'how are my students mastering' text does not equal to expected." +
+                        "Expected: " + HowAreMyStudentsMastering +
+                        " . Actual: " + allReportsPage.getHowAreMyStudentsMasteringText());
+        softAssert.assertEquals(allReportsPage.getHowAreMyStudentsPerforminNCLBText(),
+                HowAreMyStudentsPerforminNCLB,
+                "Actual 'how are my students performing NCLB' text does not equal to expected." +
+                        "Expected: " + HowAreMyStudentsPerforminNCLB +
+                        " . Actual: " + allReportsPage.getHowAreMyStudentsPerforminNCLBText());
+
     }
 
     @Step
-    private void verifyStudentWork(String testName) {
+    private void verifyUsageReports() {
+        logger.info("Verify Usage reports");
+        allReportsPage.expandUsageReports();
+        softAssert.assertEquals(allReportsPage.getWhichOfMyStudentUsingTheProgramText(),
+                whichOfMyStudentUsingTheProgram,
+                "Actual The program student does not equal to expected." +
+                        "Expected: " + whichOfMyStudentUsingTheProgram +
+                        " . Actual: " + allReportsPage.getWhichOfMyStudentUsingTheProgramText());
+
+        softAssert.assertEquals(allReportsPage.getHowAreMyStudentProgressingText(),
+                howAreMyStudentProgressing,
+                "Actual student progress does not equal to expected." +
+                        "Expected: " + howAreMyStudentProgressing +
+                        " . Actual: " + allReportsPage.getHowAreMyStudentProgressingText());
+
+        softAssert.assertEquals(allReportsPage.getWhichMyStudentsAreUsingTheProgramAfterText(),
+                whichMyStudentsAreUsingTheProgramAfter,
+                "Actual 'student using the program after school' report does not equal to expected." +
+                        "Expected: " + whichMyStudentsAreUsingTheProgramAfter +
+                        " . Actual: " + allReportsPage.getWhichMyStudentsAreUsingTheProgramAfterText());
+
+    }
+
+    @Step
+    private void verifyStudentWork() {
         logger.info("Verify student work");
         allReportsPage.openStudentWork();
 
-       // $(allReportsPage.isAuthentisAssesmentPortfolionShown()).shouldBe(visible);
-        softAssert.assertTrue(allReportsPage.isAuthentisAssesmentPortfolionShown(), "Authentic assessment link is not shown");
-        softAssert.assertTrue(allReportsPage.isEmailAndStep1Shown(), "email and step 1 link is not shown");
+        softAssert.assertTrue(allReportsPage.isAuthentisAssesmentPortfolionShown(),
+                "Authentic assessment link is not shown");
+        softAssert.assertTrue(allReportsPage.isEmailAndStep1Shown(),
+                "email and step 1 link is not shown");
 
-        if (!testName.equals("spark"))
-            softAssert.assertTrue(allReportsPage.isPointsAndAchivementsShown(),
-                    "points and achievements link is not shown");
-
-        logger.info("Verify Titles");
-        softAssert.assertEquals(allReportsPage.getMyLessonsTitleText(), myLessonsTitle,
-                "My Lesson title is invalid."
-                        + "Expected: " + myLessonsTitle
-                        + ", Actual: " + allReportsPage.getMyLessonsTitleText());
-        softAssert.assertTrue(allReportsPage.isTextOnPagePresent(unitsTitle),
-                "Units title is not present");
-        softAssert.assertTrue(allReportsPage.isTextOnPagePresent(writingTitle),
-                "Writing title is not present");
     }
 
     @Step
     private AllReportsPage openReportsPage() {
+        logger.info("Go to Home Page");
         editPage.goToHomePage();
+
+        logger.info("Go to All Reports Page");
+
         editPage.goToReportsPage();
+
         return new AllReportsPage(driver);
     }
 
@@ -339,33 +351,28 @@ public class A3k_Admin extends BasicTestCase {
         adminPage.clickOnCreateNewClass();
 
         adminPage.waitAndSwitchToFrame();
-        logger.info("'Create new class'" +
-                " wizard opened");
+        logger.info("'Create new class' wizard opened");
         return new SetupWizardPage(driver);
     }
 
-    @Step("Login with username {login}, password {password}, program " +
-            "{program} " +
+    @Step("Login with username {login}, password {password}, " +
             "and class {classToSelect}")
-    protected void login(String login, String password, String program, String classToSelect) {
-        logger.info(String.format("Login with credentials %s\\%s", login, password));
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+    private void login(String username, String password, String classToSelect) {
+        new LoginPage(driver).loginIntoWithClass(username, password, classToSelect);
+
     }
 
     @Step
     private AdminPage goToAdminPage() {
-        Configuration.pageLoadStrategy = "normal";
         new HomePage(driver).goToAdminPage();
 
-        Configuration.pageLoadStrategy = "eager";
         return new AdminPage(driver);
     }
 
     @Step
     private static void setUpLanguage(String language, String testName) {
-
         if (language.equals("english")) {
+
 
             findUser = "Find a User";
             createNewClass = "Create a new class";
@@ -417,6 +424,7 @@ public class A3k_Admin extends BasicTestCase {
             writingTitle = "Writing";
             biologyTitle = "Biology";
 
+
             whichParentsUsingTheProgram = "Which parents/guardians are using the program?";
 
             howHasUsageChanged = "How has usage changed over time?";
@@ -434,25 +442,7 @@ public class A3k_Admin extends BasicTestCase {
                 howAreMyStudentsSpendingTimeAfterSchool = "How are my students spending their time after school?";
                 whichMyStudentsAreUsingTheProgramAfter = "Which of my students are using the program after school?";
 
-                HowLikelyMyStudents = "How likely are my students to be on track for College and Career when the high stakes test is administered?";// How
-                // likely
-                // are
-                // my
-                // students
-                // to
-                // be
-                // on
-                // track
-                // for
-                // College
-                // and
-                // Career
-                // when
-                // LevelSet
-                // Post
-                // Test
-                // is
-                // administered?
+                HowLikelyMyStudents = "How likely are my students to be on track for College and Career when CC-ELA is administered?";//How likely are my students to be on track for College and Career when LevelSet Post Test is administered?
                 HowHasLexile = "How has Lexile performance changed over time?";
                 HowAreMyStudentsPerformingOnActivities = "How are my students performing on activities?";
                 HowAreMyStudentsPerformingOnStandards = "How are my students performing on standards?";
@@ -546,7 +536,7 @@ public class A3k_Admin extends BasicTestCase {
             myLessonsTitle = "Mis lecciones";
             unitsTitle = "Unidades";
             writingTitle = "Escritura";
-            biologyTitle = "Biologí";
+            biologyTitle = "Biologí­a";
 
             whichOfMyStudentUsingBiologyModule = "¿Cuáles de mis estudiantes están usando el módulo de biología?";
             whichOfMyStudentUsingTheProgram = "¿Cuáles de mis estudiantes están usando el programa?";
@@ -554,10 +544,10 @@ public class A3k_Admin extends BasicTestCase {
             howAreMyStudentProgressing = "¿Cómo están avanzando mis estudiantes hacia el objetivo de completar 40 actividades de Achieve3000?";
             howAreMyStudentsSpending = "¿Cómo están usando su tiempo mis estudiantes?";
             howAreMyStudentsSpendingTimeAfterSchool = "¿Cómo utilizan mis estudiantes su tiempo después del horario de la escuela?";
-
+            //TODO: fix translate spanish
+            //whichMyStudentsAreUsingTheProgramAfter = "¿Cuáles de mis estudiantes usan el programa después de las horas de clase?";
             whichMyStudentsAreUsingTheProgramAfter = "¿Cuáles de mis estudiantes usan el programa fuera de las horas de clase?";
             howHasUsageChanged = "¿Cómo ha cambiado el uso con el tiempo?";
-
             HowLikelyMyStudents = "¿Cuál es la posibilidad de que mis estudiantes estén bien encaminados para la universidad y la vida profesional en el momento en que se administre CC-ELA/Regents?";
             HowHasLexile = "¿Cómo ha cambiado el desempeño en el nivel de lectura Lexile con el tiempo?";
             HowAreMyStudentsPerformingOnActivities = "¿Cómo se están desempeñando mis estudiantes en las actividades?";
@@ -567,7 +557,7 @@ public class A3k_Admin extends BasicTestCase {
             HowCanIDifferentiate = "How can I differentiate my instruction based on NWEA MAP assessment results?";
 
             WhichOfMyStudentsHaveNotTakeLevelSet = "¿Cuáles de mis estudiantes no han tomado LevelSet?";
-
+            //PossibleInvalidLevelSet = "Administraciones de LevelSet posiblemente incorrectas";
             PossibleInvalidLevelSet = "Administraciones de LevelSet que podrían no ser válidas";
             WhichOfMyStudentsAreDevelopingReaders = "¿Cuáles de mis estudiantes son lectores en desarrollo?";
             WhichOfMyStudentsLexilesAdjusted = "¿A cuáles de mis estudiantes se les ajustó el Lexile?";
@@ -579,8 +569,5 @@ public class A3k_Admin extends BasicTestCase {
 
         }
     }
-
-
-
 
 }

@@ -5,13 +5,11 @@ import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class AdminPage extends Page {
 
@@ -33,12 +31,15 @@ public class AdminPage extends Page {
     private By removeFromClassBy = By.xpath(".//*[@onclick='javascript:doSubmit(2);']");
     private WebElement userProfile = $(By.id("user_profile"));
     private By createNewClassBy = By.xpath(".//a[contains(@href, 'task=1')]");
+    private ElementsCollection listOfNumbersBeforeUsers = $$(By.xpath(".//*[@id='edit_users']//tr[ ./td[@class='row1' or @class='row2']]//b[text()]"));
+
 
 
 
 
     public AdminPage(WebDriver driver) {
-        PageFactory.initElements(getWebDriver(), this);
+        this.driver = driver;
+        //PageFactory.initElements(driver, this);
     }
 
     public void clickBackToMenu() {
@@ -59,6 +60,8 @@ public class AdminPage extends Page {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        closeWalkmeNew();
+        closeWalkmeNew();
         $(byText("Edit class information")).click();
     }
 
@@ -117,6 +120,10 @@ public class AdminPage extends Page {
         closeWalkmeNew();
         closeWalkmeNew();
         $(createNewClassBy).click();
+    }
+
+    public ElementsCollection getListOfNumbersBeforeUsers() {
+        return listOfNumbersBeforeUsers;
     }
 
 }

@@ -34,7 +34,7 @@ public class A3k_Home extends BasicTestCase {
         String newPassword = "test1";
         setUpLanguage(language);
 
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWithTwoPasswordsWithDefaultClass(login, password, newPassword);
 
         HomePage homePage = new HomePage(getWebDriver());
@@ -72,7 +72,7 @@ public class A3k_Home extends BasicTestCase {
             @Optional("smoke") String testName) {
 
         setUpLanguage(language);
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.login(login, password, classToSelect);
 
         HomePage homePage = new HomePage(getWebDriver());
@@ -91,7 +91,7 @@ public class A3k_Home extends BasicTestCase {
         }
 
         softAssert.assertTrue(homePage.isLessonChangeCorrect(),
-                "Lessons was not changed correctly");
+                "Lesson was not changed correctly");
 
         if (!testName.equals("spark")) {
             logger.info("Verify that Class ddl not contains 'All Class' " + "option");
