@@ -317,7 +317,7 @@ public class A3k_Admin extends BasicTestCase {
 
         logger.info("Verify Titles");
         softAssert.assertEquals(allReportsPage.getMyLessonsTitleText(), myLessonsTitle,
-                "My Lesson title is invalid."
+                "My Lesson title is invalid. "
                         + "Expected: " + myLessonsTitle
                         + ", Actual: " + allReportsPage.getMyLessonsTitleText());
         softAssert.assertTrue(allReportsPage.isTextOnPagePresent(unitsTitle),
@@ -412,7 +412,7 @@ public class A3k_Admin extends BasicTestCase {
             unitsOptions = "EmailMessagesActivitiesWrittenResponses";
             writingOptions = "WrittenResponsesActivitiesWritingProcessAssignmentTimedWriting";
 
-            myLessonsTitle = "My Lesson";
+            myLessonsTitle = "My Lessons";
             unitsTitle = "Units";
             writingTitle = "Writing";
             biologyTitle = "Biology";

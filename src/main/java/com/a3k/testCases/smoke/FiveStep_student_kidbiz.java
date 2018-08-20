@@ -315,7 +315,7 @@ public class FiveStep_student_kidbiz extends BasicTestCase {
 
         lessonID = myLessonsPage.openAnyNotStartedLesson();
         if (!lessonID.isEmpty()) {
-            my_lesson = new Lesson(getWebDriver());
+            my_lesson = new Lesson(driver);
           //  my_lesson.waitUntilLessonOpen();
             return true;
         } else {

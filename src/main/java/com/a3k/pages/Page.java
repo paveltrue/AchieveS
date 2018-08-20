@@ -3,6 +3,7 @@ package com.a3k.pages;
 
 import com.a3k.utils.UserPasswordsChanger;
 import com.a3k.utils.logger.BasicLogger;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +33,7 @@ public abstract class Page {
     protected WebElement walkmePopup = $(By.xpath(".//*[contains(@class, 'wm-close-button') or contains(@class, 'walkme-x-button') or contains(@class, 'walkme-action-close')]"));
     private By popupContentBy = By.xpath("//div[(@role='dialog') and (contains(@style,'display: block;'))]/div[contains(@class,'alert_dialog')]");
     protected By adminButtonBy = By.xpath(".//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]");
-
+    protected By searchButtonBy = By.xpath("//*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']");
 
 
 
@@ -101,6 +102,16 @@ public abstract class Page {
         try {
             if ($(by).exists()) {
                 $(by).click();
+            }
+        } catch (Exception e) {
+            logger.trace("An error occurred: " + e.getLocalizedMessage());
+        }
+    }
+
+    public void waitAndCLickIfExist(WebElement element) {
+        try {
+            if ($(element).exists()) {
+                $(element).click();
             }
         } catch (Exception e) {
             logger.trace("An error occurred: " + e.getLocalizedMessage());
@@ -393,14 +404,15 @@ public abstract class Page {
 
     public void waitElement(By element) {
         try {
-            $(element).shouldBe(visible).isDisplayed();
+            $(element).isDisplayed();
         } catch (TimeoutException e) {
             logger.error(e.getMessage());
         }
     }
+
     public void waitElementWebEl(WebElement element) {
         try {
-            $(element).shouldBe(visible).isDisplayed();
+            $(element).isDisplayed();
         } catch (TimeoutException e) {
             logger.error(e.getMessage());
         }
@@ -512,6 +524,14 @@ public abstract class Page {
     public boolean isElementsExist(By by) {
         boolean isExists = false;
         if ($$(by).size() > 0) {
+            isExists = true;
+        }
+        return isExists;
+    }
+
+    public boolean isElementsExist(ElementsCollection collection) {
+        boolean isExists = false;
+        if ($$(collection).size() > 0) {
             isExists = true;
         }
         return isExists;
@@ -671,6 +691,37 @@ public abstract class Page {
         } catch (Exception e) {
             loggerMessageWithXpathBy(by, "The element hasn't found ");
         }
+    }
+
+    public void waitUntilElementClickableBy(By by) {
+        loggerMessageWithXpathBy(by, "Wait until element will be clickable.");
+        $(by).shouldBe(Condition.visible);
+    }
+
+    public void acceptTwoAlerts() {
+        if (isAlertPresent()) {
+            //alert.accept();
+            confirm();
+            if (isAlertPresent()) {
+//                Alert nextAlert = switchTo().alert();
+//                nextAlert.accept();
+                confirm();
+            }
+            switchTo().defaultContent();
+        }
+    }
+
+    public boolean isAlertPresent() {
+        try {
+            switchTo().alert();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void goToGradingPage() {
+        goToNewUrl("/teacher_grading");
     }
 
 

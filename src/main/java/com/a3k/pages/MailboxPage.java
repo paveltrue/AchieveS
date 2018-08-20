@@ -44,6 +44,11 @@ public class MailboxPage extends Page {
     private WebElement checkAllLink = $(By.xpath("//*[@onclick='javascript:checkBoxes(1)']"));
     private ElementsCollection systemLetters = $$(By.xpath("//tr[@class='broadcast_message']"));
     private WebElement noEmailsMessage = $(By.xpath("//*[@class='read_message_text']"));
+    private WebElement deleteMailFolderButton = $(By.xpath("//a[(@class='mail_text') and contains (@href,'javascript:doSubmit')]"));
+    private WebElement emptyTrashButton = $(By.xpath("//a[(@class='button') and contains (@href,'javascript:doSubmit(2)')]"));
+    private WebElement deleteSentEmailsButton = $(By.xpath("//a[(@class='button') and contains (@href,'javascript:doSubmit(3)')]"));
+    private WebElement checkAllSentEmailsButton = $(By.xpath("//a[(@class='mail_text') and contains (@onclick,'javascript:checkBoxes(1)')]"));
+
 
 
 
@@ -120,10 +125,10 @@ public class MailboxPage extends Page {
         $(emailSection).click();
     }
 
-    public boolean checkPresenceOfMessageThatDisplayedAfterNotSavingSending() throws InterruptedException {
+    public boolean checkPresenceOfMessageThatDisplayedAfterNotSavingSending(){
         boolean isPresent = false;
 
-        waitThreadSleep(1500);
+       // waitThreadSleep(1500);
 
         switchToNextWindow();
 
@@ -160,6 +165,7 @@ public class MailboxPage extends Page {
 
     public void openTrashFolder() {
         logger.info("Open 'Trash' folder");
+        closeWalkmeNew();
         $(trashFolder).click();
     }
 
@@ -228,6 +234,7 @@ public class MailboxPage extends Page {
 
     public void clickOnManageFoldersLink() {
         logger.info("Open 'Manage Folders");
+        closeWalkmeNew();
         waitElementWebEl(manageFoldersLink);
         $(manageFoldersLink).click();
         waitElementWebEl(manageFoldersLink);
@@ -249,6 +256,28 @@ public class MailboxPage extends Page {
 
     public boolean isMailboxEmpty() {
         return isElementPresent(noEmailsMessage);
+    }
+
+    public void deleteAllUsersMailFolders() {
+        while ($(deleteMailFolderButton).exists()) {
+            $(deleteMailFolderButton).click();
+            acceptAlert();
+        }
+    }
+
+    public void emptyTrashFolder() {
+        while ($(emptyTrashButton).exists()) {
+            $(emptyTrashButton).click();
+            acceptTwoAlerts();
+        }
+    }
+
+    public void emptySentEmailFolder() {
+
+        while ($(deleteSentEmailsButton).exists()) {
+            $(checkAllSentEmailsButton).click();
+            $(deleteSentEmailsButton).click();
+        }
     }
 
 

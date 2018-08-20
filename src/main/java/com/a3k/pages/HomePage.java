@@ -222,4 +222,8 @@ public class HomePage extends Page {
         return activeLexile.equals(selectLexile) && (size == 4 || (size == 3 && getLogoType().equals("spark")));
     }
 
+    public boolean isSearchButtonExist() {
+        return isElementPresentBy(searchButtonBy);
+    }
+
 }

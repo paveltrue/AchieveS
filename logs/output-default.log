@@ -1,84 +1,76 @@
-[14:19:23] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[14:19:23] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[14:19:23] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[14:19:23] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
-[14:19:23] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
-[14:19:23] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[14:19:23] INFO  (BasicTestCase.java:79) - Headless Mode set to false
-[14:19:23] DEBUG (BasicTestCase.java:109) - Finished before suite
-[14:19:23] TRACE (FiveStep_student_kidbiz.java:359) - Getting users
-[14:19:23] TRACE (BasicTestCase.java:44) - Starting test verifyLesson_KidBizStudent
-[14:19:23] INFO  (BasicTestCase.java:116) - Setting the browser up
-[14:19:23] INFO  (BasicTestCase.java:131) -  Executing on CHROME
-[14:19:23] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[14:19:40] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
-[14:19:40] INFO  (FiveStep_student_kidbiz.java:337) - Language is set to English
-[14:19:40] INFO  (FiveStep_student_kidbiz.java:351) - Login with credentials kidbizstud.fivestep\kidbizstud.fivestep
-[14:19:40] INFO  (LoginPage.java:249) - Login with credentials kidbizstud.fivestep\kidbizstud.fivestep
-[14:19:40] INFO  (LoginPage.java:95) - Type in username: kidbizstud.fivestep
-[14:19:41] INFO  (LoginPage.java:102) - Type in password: kidbizstud.fivestep
-[14:19:41] DEBUG (LoginPage.java:228) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[14:19:42] INFO  (Page.java:47) - Try to execute Close Walkme
-[14:19:42] DEBUG (Page.java:164) - Try to FIND element  By.id: active_class
-[14:19:55] INFO  (LoginPage.java:314) -  Stop login 
-[14:19:55] INFO  (Page.java:326) - Opening My Lessons page
-[14:19:55] INFO  (Page.java:267) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[14:20:02] INFO  (FiveStep_student_kidbiz.java:313) - Opening any not started lesson
-[14:20:02] INFO  (Page.java:267) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons?sort=step1&sort=focus&sort_dir=desc&page_index=1
-[14:20:32] INFO  (Page.java:203) - Click on element <a class="title" href="/kb/lesson/?lid=15308&c=62&asn=1">Small Animals, Big News</a>
-[14:20:32] DEBUG (Page.java:170) - Trying to click on locator via JS <a class="title" href="/kb/lesson/?lid=15308&c=62&asn=1">Small Animals, Big News</a>
-[14:20:54] DEBUG (Page.java:170) - Element was clicked via JS java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-[14:20:54] INFO  (MyLessons.java:72) - Open lesson with id = 15308
-[14:20:54] INFO  (FiveStep_student_kidbiz.java:299) - Complete 'Before Reading' form
-[14:20:54] DEBUG (Page.java:164) - Try to FIND element  By.id: textarea-step10page1response1_ifr
-[14:20:55] DEBUG (Page.java:164) - Try to FIND element   .//*[(@name='response') or (@id='tinymce') or (@id='textarea-step10page1response1')]
-[14:20:55] DEBUG (Page.java:164) - Try to FIND element   //li[contains(@onclick,'a3k.poll.select_poll_choice')]
-[14:20:55] INFO  (Page.java:186) - Click on element By.id: pollSubmit-step10page1
-[14:20:55] INFO  (Page.java:629) - Wait until element By.id: pollSubmit-step10page1 clickable
-[14:20:55] DEBUG (Page.java:164) - Trying to click on locator via JS By.id: pollSubmit-step10page1
-[14:20:55] DEBUG (Page.java:164) - Element was clicked via JS By.id: pollSubmit-step10page1
-[14:20:56] INFO  (Page.java:186) - Click on element By.xpath: //div[contains(@class,'next_tab')]/a
-[14:20:56] INFO  (Page.java:47) - Try to execute Close Walkme
-[14:20:56] INFO  (Page.java:629) - Wait until element By.xpath: //div[contains(@class,'next_tab')]/a clickable
-[14:20:56] DEBUG (Page.java:164) - Trying to click on locator via JS  //div[contains(@class,'next_tab')]/a
-[14:21:00] DEBUG (Page.java:164) - Element was clicked via JS  //div[contains(@class,'next_tab')]/a
-[14:21:00] INFO  (FiveStep_student_kidbiz.java:308) - Before Reading form has been submitted
-[14:21:00] INFO  (FiveStep_student_kidbiz.java:286) - Verify vocabulary
-[14:21:00] INFO  (FiveStep_student_kidbiz.java:293) - Verify Reading Connections section
-[14:21:01] DEBUG (Lesson.java:910) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
-[14:21:01] DEBUG (Lesson.java:911) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
-[14:21:01] INFO  (Lesson.java:916) - Type text 'Test Reading Connections' to input
-[14:21:02] INFO  (Lesson.java:921) - Saving...
-[14:21:02] DEBUG (Lesson.java:910) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
-[14:21:02] DEBUG (Lesson.java:911) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
-[14:21:03] INFO  (Lesson.java:916) - Type text 'Test Reading Connections' to input
-[14:21:03] INFO  (Lesson.java:921) - Saving...
-[14:21:04] DEBUG (Lesson.java:910) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
-[14:21:04] DEBUG (Lesson.java:911) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
-[14:21:04] INFO  (Lesson.java:916) - Type text 'Test Reading Connections' to input
-[14:21:05] INFO  (Lesson.java:921) - Saving...
-[14:21:05] DEBUG (FiveStep_student_kidbiz.java:96) - Started verifying article tab
-[14:21:06] DEBUG (FiveStep_student_kidbiz.java:109) - Finished verifying article page
-[14:21:06] INFO  (Page.java:186) - Click on element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div
-[14:21:06] INFO  (Page.java:629) - Wait until element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div clickable
-[14:21:06] DEBUG (Page.java:164) - Trying to click on locator via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
-[14:21:15] DEBUG (Page.java:164) - Element was clicked via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
-[14:21:15] INFO  (FiveStep_student_kidbiz.java:130) - Verifying Activity Page
-[14:21:15] ERROR (Lesson.java:409) - com.sun.proxy.$Proxy42 cannot be cast to org.openqa.selenium.By
-[14:21:15] ERROR (ExtendedSoftAssert.java:38) - The selected answer is not highlighted
-[14:21:18] ERROR (Lesson.java:409) - com.sun.proxy.$Proxy42 cannot be cast to org.openqa.selenium.By
-[14:21:19] INFO  (Lesson.java:523) - Click on answer 0
-[14:21:19] INFO  (Page.java:129) - Wait For JS and JQuery load.
-[14:21:19] INFO  (Page.java:186) - Click on element By.xpath: //*[@ng-click='submitHandler()']
-[14:21:19] INFO  (Page.java:629) - Wait until element By.xpath: //*[@ng-click='submitHandler()'] clickable
-[14:21:19] DEBUG (Page.java:164) - Trying to click on locator via JS  //*[@ng-click='submitHandler()']
-[14:21:19] DEBUG (Page.java:164) - Element was clicked via JS  //*[@ng-click='submitHandler()']
-[14:21:20] INFO  (Lesson.java:523) - Click on answer 0
-[14:21:20] INFO  (Page.java:129) - Wait For JS and JQuery load.
-[14:21:21] INFO  (Lesson.java:523) - Click on answer 0
-[14:21:21] INFO  (Page.java:129) - Wait For JS and JQuery load.
-[14:21:21] INFO  (Page.java:186) - Click on element By.xpath: //*[@ng-click='submitHandler()']
-[14:21:21] INFO  (Page.java:629) - Wait until element By.xpath: //*[@ng-click='submitHandler()'] clickable
-[14:21:21] DEBUG (Page.java:164) - Trying to click on locator via JS  //*[@ng-click='submitHandler()']
-[14:21:21] DEBUG (Page.java:164) - Element was clicked via JS  //*[@ng-click='submitHandler()']
-[14:21:21] INFO  (Lesson.java:523) - Click on answer 0
+[15:54:40] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[15:54:40] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[15:54:40] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[15:54:40] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[15:54:40] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[15:54:40] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[15:54:40] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[15:54:40] DEBUG (BasicTestCase.java:109) - Finished before suite
+[15:54:40] TRACE (BasicTestCase.java:44) - Starting test checkCoursesAndCollectionsContent
+[15:54:40] INFO  (BasicTestCase.java:116) - Setting the browser up
+[15:54:40] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[15:54:40] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[15:54:48] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[15:54:49] INFO  (LoginPage.java:96) - Type in username: uskba.alex
+[15:54:49] INFO  (LoginPage.java:103) - Type in password: job
+[15:54:50] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[15:54:50] INFO  (Page.java:48) - Try to execute Close Walkme
+[15:54:54] INFO  (LoginPage.java:233) - Stop login
+[15:54:54] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/collections
+[15:54:56] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons/day
+[15:54:58] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons/week
+[15:55:00] DEBUG (BasicTestCase.java:228) - Finishing test
+[15:55:00] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[15:55:00] DEBUG (BasicTestCase.java:230) - Finished test
+[15:55:00] TRACE (BasicTestCase.java:44) - Starting test checkGrading
+[15:55:00] INFO  (BasicTestCase.java:116) - Setting the browser up
+[15:55:00] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[15:55:00] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[15:55:01] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[15:55:01] INFO  (TestContentPresent.java:139) - Login with credentials superteacher.multi\superteacher.multi
+[15:55:01] INFO  (LoginPage.java:257) - Login with credentials superteacher.multi\superteacher.multi
+[15:55:01] INFO  (LoginPage.java:96) - Type in username: superteacher.multi
+[15:55:02] INFO  (LoginPage.java:103) - Type in password: superteacher.multi
+[15:55:02] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[15:55:02] INFO  (Page.java:48) - Try to execute Close Walkme
+[15:55:03] DEBUG (Page.java:175) - Try to FIND element  By.id: active_pgm
+[15:55:03] DEBUG (Page.java:175) - Try to FIND element  By.id: active_class
+[15:55:06] INFO  (LoginPage.java:322) -  Stop login 
+[15:55:06] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/teacher_grading
+[15:55:10] DEBUG (BasicTestCase.java:228) - Finishing test
+[15:55:10] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[15:55:10] DEBUG (BasicTestCase.java:230) - Finished test
+[15:55:11] TRACE (BasicTestCase.java:44) - Starting test checkNotificationsCenterContent
+[15:55:11] INFO  (BasicTestCase.java:116) - Setting the browser up
+[15:55:11] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[15:55:11] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[15:55:12] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[15:55:12] INFO  (TestContentPresent.java:139) - Login with credentials teenbizstud.one\teenbizstud.one
+[15:55:12] INFO  (LoginPage.java:257) - Login with credentials teenbizstud.one\teenbizstud.one
+[15:55:12] INFO  (LoginPage.java:96) - Type in username: teenbizstud.one
+[15:55:12] INFO  (LoginPage.java:103) - Type in password: teenbizstud.one
+[15:55:13] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[15:55:13] INFO  (Page.java:48) - Try to execute Close Walkme
+[15:55:17] INFO  (LoginPage.java:322) -  Stop login 
+[15:55:17] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/student_notifications
+[15:55:18] INFO  (NotificationPage.java:41) - Actual date: Sunday Jul 9 2017
+[15:55:18] DEBUG (BasicTestCase.java:228) - Finishing test
+[15:55:18] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[15:55:18] DEBUG (BasicTestCase.java:230) - Finished test
+[15:55:18] TRACE (BasicTestCase.java:44) - Starting test checkNotificationsCenterContent
+[15:55:18] INFO  (BasicTestCase.java:116) - Setting the browser up
+[15:55:18] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[15:55:18] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[15:55:19] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[15:55:19] INFO  (TestContentPresent.java:139) - Login with credentials empowerstud.one\empowerstud.one
+[15:55:19] INFO  (LoginPage.java:257) - Login with credentials empowerstud.one\empowerstud.one
+[15:55:19] INFO  (LoginPage.java:96) - Type in username: empowerstud.one
+[15:55:20] INFO  (LoginPage.java:103) - Type in password: empowerstud.one
+[15:55:20] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[15:55:20] INFO  (Page.java:48) - Try to execute Close Walkme
+[15:55:22] INFO  (Page.java:48) - Try to execute Close Walkme
+[15:55:22] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/student_notifications
+[15:55:23] INFO  (NotificationPage.java:41) - Actual date: Sunday Jul 9 2017
+[15:55:23] DEBUG (BasicTestCase.java:228) - Finishing test
+[15:55:23] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[15:55:23] DEBUG (BasicTestCase.java:230) - Finished test

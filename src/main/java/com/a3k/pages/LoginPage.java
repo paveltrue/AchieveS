@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -121,6 +122,9 @@ public class LoginPage extends Page {
 
     public void submitEmail() {
         String email = "test@test.com";
+        if (!$(emailNoticeContainer).isDisplayed()){
+            return;
+        }
         switchTo().frame(emailNoticeContainer);
 
         $(emailInputBy).clear();
@@ -198,6 +202,7 @@ public class LoginPage extends Page {
                     clickLoginButton();
                 }
             }
+
             logger.info("Close teacher surv");
 
             if (url().contains("home")) {
@@ -205,6 +210,9 @@ public class LoginPage extends Page {
             }
             closeTeachersSurv();
             //waitForPageToLoad();
+            if ($(loginButtonBy).isDisplayed()){
+                clickLoginButton();
+            }
             waitForJSandJQueryToLoad();
         }
     }
@@ -298,10 +306,10 @@ public class LoginPage extends Page {
 
         waitAndCLickIfExist(popupViewBy);
 
-        if (!$(emailNoticeContainerBy, 1).isDisplayed()){
+        if ($(emailNoticeContainerBy).isDisplayed()){
             submitEmail();
         }
-        if (!$(levelSetApproachingNoteCloseButtonBy).isDisplayed()) {
+        if ($(levelSetApproachingNoteCloseButtonBy).isDisplayed()) {
             $(levelSetApproachingNoteCloseButtonBy).click();
         }
     }
@@ -355,6 +363,81 @@ public class LoginPage extends Page {
             switchToNextWindowWhenExistOnly2();
             getWebDriver().close();
             switchBackAfterClose();
+        }
+    }
+
+    public void loginWithRandomClassAndProgramIfNeeded(String login, String password){
+        setUser(login);
+        setPassword(password, login);
+        clickLoginButtonNew();
+
+        if ($(chooseProgramComboBy).exists()) {
+            waitUntilAppearsBy(chooseProgramComboBy);
+            Select selectProgram = new Select(findEl(chooseProgramComboBy));
+            selectProgram.selectByIndex(1);
+
+            if ($(chooseClassComboBy).exists()) {
+                waitUntilAppearsBy(chooseClassComboBy);
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByIndex(0);
+                clickLoginButtonNew();
+            } else {
+                clickLoginButtonNew();
+            }
+        } else {
+            if ($(chooseClassCombo).exists()) {
+                waitUntilAppearsBy(chooseClassComboBy);
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByIndex(0);
+            } else {
+                clickLoginButtonNew();
+            }
+        }
+    }
+
+    public void clickLoginButtonNew() {
+        waitUntilElementClickableBy(loginButtonBy);
+        $(loginButtonBy).click();
+
+        waitForPageToLoad();
+        if(url().contains("home")  || url().contains("levelset/welcome")) {
+            logger.info(" Stop login ");
+            return;
+        }
+        if (isIncorrectMessagePresent()) {
+            Assert.assertTrue(false,"The user/or password is incorrect.");
+        }
+
+        if (!isElementAbsentBy(nextButtonOfSurveyBy)) {
+
+            $(nextButtonOfSurveyBy).click();
+
+            while (!isElementAbsentBy(nextButtonOfSurveyBy)) {
+                $(findEls(checkboxesOfSurveyBy).get(0)).click();
+                $(nextButtonOfSurveyBy).click();
+            }
+            $(continueButtonBy).click();
+        }
+
+        if (isElementAbsentBy(loginButtonBy)) {
+
+            if (!url().contains("home")|| url().contains("levelset/welcome")) {
+                closeAllPopUpAfterLogin();
+            }
+        }
+    }
+
+    public void loginWithProgram(String login, String password, String program) {
+        setUser(login);
+        setPassword(password, login);
+        clickLoginButton();
+
+        if (!program.isEmpty()) {
+            //$(chooseProgramCombo).shouldBe(Condition.visible);
+            $(By.xpath("//*[@id=\"active_pgm\"]")).selectOptionContainingText(program);
+           // Select select = new Select(chooseProgramCombo);
+          //  select.selectByVisibleText(program);
+            clickLoginButton();
         }
     }
 
