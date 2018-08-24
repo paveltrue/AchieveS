@@ -8,11 +8,14 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
@@ -34,8 +37,18 @@ public abstract class Page {
     private By popupContentBy = By.xpath("//div[(@role='dialog') and (contains(@style,'display: block;'))]/div[contains(@class,'alert_dialog')]");
     protected By adminButtonBy = By.xpath(".//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]");
     protected By searchButtonBy = By.xpath("//*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']");
-
-
+    private By actualYearOnCalendarBy = By.xpath(".//*[@id='ui-datepicker-div']//span[contains(@class, 'year')]");
+    private By actualMonthOnCalendarBy = By.xpath(".//*[@id='ui-datepicker-div']//span[contains(@class, 'month')] | .//*[@id ='startCal']//*[@class = 'ui-datepicker-month']");
+    private By closeButtonOnPopupImportantInformationBy = By.xpath(".//a[@role='button']");
+    private ElementsCollection listOfDaysOfCalendar = $$(By.xpath(".//*[@id='ui-datepicker-div']//tbody//a"));
+    private By nextButtonOnCalendarBy = By.xpath(".//*[@id='ui-datepicker-div']//a[@title = 'Next' or contains(@title, 'Sig')]");
+    private By previousButtonOnCalendarBy = By.xpath(".//*[@id='ui-datepicker-div']//a[@title = 'Prev' or contains(@title, 'Ant')]");
+    private By teacherLangSelectorBy = By.xpath(".//*[@data-dropdown='#teacher-languages-dropdown']");
+    private WebElement teacherLangSelector = $(By.xpath(".//*[@data-dropdown='#teacher-languages-dropdown']"));
+    protected By selectedAnswerBy = By.xpath("//*[contains(@class,'selected')]");
+    protected WebElement nextQuestionButton = $(By.xpath("//*[@id=\"step20activity\"]/div/lesson-activity/form/div/div[2]/div/button"));
+    protected WebElement selectAnswerChoiceButton = $(By.xpath("/html/body/div[28]/div[3]/div/button"));
+    protected WebElement selectAnswerChoiceButtonCopy = $(By.xpath("/html/body/div[29]/div[1]/button/span[1]"));
 
     protected static Logger logger = BasicLogger.getInstance();
 
@@ -78,6 +91,11 @@ public abstract class Page {
 
     public ElementsCollection findEls(By by) {
         ElementsCollection res = $$(by);
+        return res;
+    }
+
+    public ElementsCollection findEls(ElementsCollection element) {
+        ElementsCollection res = $$(element);
         return res;
     }
 
@@ -283,6 +301,16 @@ public abstract class Page {
         }
         waitForPageToLoad();
     }
+    public void goToNewUrlWitoutLoadPage(String addEnding) {
+        String url = url();
+        url = url.split("\\.com")[0] + ".com" + addEnding;
+        logger.info("Opening new page: " + url);
+        try {
+            open(url);
+        } catch (org.openqa.selenium.TimeoutException e) {
+            logger.trace("Failed to open new url due to timeout exception");
+        }
+    }
 
     public void waitForPageToLoad() {
         executeJavaScript("return document.readyState");
@@ -343,6 +371,32 @@ public abstract class Page {
             switchBackAfterClose();
             closeWebDriver();
         }
+        return new MyLessons(driver);
+    }
+    public MyLessons goToMyLessonsByLinkWithoutLoadPage() {
+        logger.info("Opening My Lesson page");
+        goToNewUrlWitoutLoadPage("/my_lessons");
+        if (getWebDriver().getWindowHandles().size() > 1) {
+            switchToNextWindowWhenExistOnly2();
+            //closeWindow();
+            getWebDriver().close();
+            switchBackAfterClose();
+            closeWebDriver();
+        }
+        return new MyLessons(getWebDriver());
+    }
+
+    public MyLessons goToMyLessonsByLinkNew() {
+        logger.info("Opening My Lesson page");
+        goToNewUrl("/my_lessons");
+        closeWalkmeNew();
+        if (getWebDriver().getWindowHandles().size() > 1) {
+            switchToNextWindowWhenExistOnly2();
+            //closeWindow();
+            getWebDriver().close();
+            switchBackAfterClose();
+            //closeWebDriver();
+        }
         return new MyLessons(getWebDriver());
     }
 
@@ -362,11 +416,11 @@ public abstract class Page {
     public void waitUntilSecondWindowAppears() {
             if (getWebDriver().getWindowHandles().size() < 1) {
                waitUntilSecondWindowAppears();
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(100);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
             }
     }
 
@@ -592,8 +646,9 @@ public abstract class Page {
 
     public void waitAndCancelAlert() {
         try {
-            Alert alert = switchTo().alert();
-            alert.dismiss();
+//            Alert alert = switchTo().alert();
+//            alert.dismiss();
+            confirm();
             switchTo().defaultContent();
         } catch (Exception e) {
             logger.trace(e.getMessage());
@@ -643,8 +698,9 @@ public abstract class Page {
         boolean isClickable = false;
         logger.info("Wait until element " + by + " clickable");
         try {
-            $(by).shouldBe(visible);
-            isClickable = true;
+            if($(by).isDisplayed()) {
+                isClickable = true;
+            }
 
         } catch (Exception e) {
             logger.info("Element " + by + " not clickable ");
@@ -723,6 +779,351 @@ public abstract class Page {
     public void goToGradingPage() {
         goToNewUrl("/teacher_grading");
     }
+
+    public void waitUntilElementsAppearsLocatedBy(By by) {
+            $(by).shouldBe(visible);
+    }
+
+    public void waitUntilAppearsWebEl(WebElement element) {
+       $(element).shouldBe(visible);
+    }
+
+    public void refreshPage() {
+        logger.info("Refreshing page");
+        refresh();
+        waitForPageToLoad();
+        waitForJSandJQueryToLoad();
+    }
+
+    public void clickScroll(WebElement element) {
+        loggerMessageWithXpath(element, "Trying to scroll to element and click on element");
+        executeJavaScript("arguments[0].scrollIntoView(false);", element);
+        $(element).click();
+    }
+
+    public void selectFromDDL(WebElement selectDDL, String value) {
+        Select select = new Select(selectDDL);
+        select.selectByVisibleText(value);
+    }
+
+    public String getTextOfActiveItemFromSelectBy(By by) {
+        String result = "";
+//        new WebDriverWait(driver, timeOutGlobal)
+//                .ignoring(InterruptedException.class)
+//                .withMessage("Element with locator [ " + by  + " ] can't be clicked ")
+//                .until(driver -> isElementExist(by));
+        Select select = new Select($(by));
+        result = select.getFirstSelectedOption().getText();
+        logger.info("Getting text from locator " + by + " text = [ " + result + " ]");
+        return result;
+    }
+
+    public WebElement getSelectedOptionFromSelectAsWebElement(WebElement select) {
+        Select sel = new Select(select);
+        return sel.getFirstSelectedOption();
+    }
+
+    public ElementsCollection getOptionsFromSelect(WebElement select) {
+
+        //Select sel = new Select(select);
+        //return sel.getOptions();
+        return $(select).getSelectedOptions();
+    }
+
+    public void selectFromDDLbyValue(WebElement selectDDL, String value) {
+        Select select = new Select(selectDDL);
+        select.selectByValue(value);
+    }
+
+    public void selectFromDDLByIndex(WebElement selectDDL, int index) {
+        Select select = new Select(selectDDL);
+        select.selectByIndex(index);
+    }
+
+    public String getDefaultValueFromDDL(WebElement el) {
+        Select sel = new Select(el);
+        return sel.getFirstSelectedOption().getText();
+    }
+
+    public String getDefaultValueFromDDLBy(By by) {
+        Select sel = new Select(findEl(by));
+        return sel.getFirstSelectedOption().getText();
+    }
+
+    public void scrollDown() {
+        //JavascriptExecutor js = ((JavascriptExecutor) driver);
+        //js.executeScript("window.scrollTo(0, 750)");
+        executeJavaScript("window.scrollTo(0, 750)");
+    }
+
+    public void waitUntilJQueryToLoad() {
+        logger.info("Wait For JQuery load.");
+
+        executeJavaScript("return jQuery.active");
+    }
+
+    public void waitUntilJSandToLoad() {
+        logger.info("Wait For JS load.");
+
+        executeJavaScript("return document.readyState");
+    }
+
+    public void enterTextInInput(WebElement el, String str) {
+        $(el).setValue(str);
+    }
+
+    public void enterTextInInput(By by, String str) {
+        $(by).setValue(str);
+    }
+
+    public boolean isWebElementContainsVulueOfAttributte(WebElement element, String attributte, String value) {
+        if (getAttribute(element, attributte).contains(value)) {
+            return true;
+        }
+        return false;
+    }
+
+    public void setDateOnCalendar(String year, String month, String day) {
+
+        String actualYearInCalendar = getActualYearFromCalendar();
+        String actualMonthInCalendar = getActualMonthFromCalendar();
+
+        HashMap<String, Integer> calendar = new HashMap<>();
+        HashMap<String, String> calendarTranslator = new HashMap<>();
+
+        if (isAdminLanguageSelectorPresent()) {
+            if (!getLanguage().equals("Español")) {
+                calendar.put("January", 1);
+                calendar.put("February", 2);
+                calendar.put("March", 3);
+                calendar.put("April", 4);
+                calendar.put("May", 5);
+                calendar.put("June", 6);
+                calendar.put("July", 7);
+                calendar.put("August", 8);
+                calendar.put("September", 9);
+                calendar.put("October", 10);
+                calendar.put("November", 11);
+                calendar.put("December", 12);
+            } else {
+                calendar.put("enero", 1);
+                calendar.put("febrero", 2);
+                calendar.put("marzo", 3);
+                calendar.put("abril", 4);
+                calendar.put("mayo", 5);
+                calendar.put("junio", 6);
+                calendar.put("julio", 7);
+                calendar.put("agosto", 8);
+                calendar.put("septiembre", 9);
+                calendar.put("octubre", 10);
+                calendar.put("noviembre", 11);
+                calendar.put("diciembre", 12);
+
+                calendarTranslator.put("January", "enero");
+                calendarTranslator.put("February", "febrero");
+                calendarTranslator.put("March", "marzo");
+                calendarTranslator.put("April", "abril");
+                calendarTranslator.put("May", "mayo");
+                calendarTranslator.put("June", "junio");
+                calendarTranslator.put("July", "julio");
+                calendarTranslator.put("August", "agosto");
+                calendarTranslator.put("September", "septiembre");
+                calendarTranslator.put("October", "octubre");
+                calendarTranslator.put("November", "noviembre");
+                calendarTranslator.put("December", "diciembre");
+
+                month = calendarTranslator.get(month);
+            }
+        } else {
+            calendar.put("January", 1);
+            calendar.put("February", 2);
+            calendar.put("March", 3);
+            calendar.put("April", 4);
+            calendar.put("May", 5);
+            calendar.put("June", 6);
+            calendar.put("July", 7);
+            calendar.put("August", 8);
+            calendar.put("September", 9);
+            calendar.put("October", 10);
+            calendar.put("November", 11);
+            calendar.put("December", 12);
+        }
+
+        if (Integer.parseInt(actualYearInCalendar) < Integer.parseInt(year)) {
+            int i = 0;
+            while (!year.equals(actualYearInCalendar) | !month.equals(actualMonthInCalendar)) {
+                i = i + 1;
+                clickOnNextButtonOnCalendar();
+                actualYearInCalendar = getActualYearFromCalendar();
+                actualMonthInCalendar = getActualMonthFromCalendar();
+                if (i == 10) {
+                    break;
+                }
+            }
+        } else if (Integer.parseInt(actualYearInCalendar) > Integer.parseInt(year)) {
+            int i = 0;
+            while (!year.equals(actualYearInCalendar) | !month.equals(actualMonthInCalendar)) {
+                i = i + 1;
+                clickOnPreviousButtonOnCalendar();
+                actualYearInCalendar = getActualYearFromCalendar();
+                actualMonthInCalendar = getActualMonthFromCalendar();
+                if (i == 10) {
+                    break;
+                }
+            }
+        }
+
+        if (Integer.parseInt(actualYearInCalendar) == Integer.parseInt(year)) {
+
+            int actualMonthNumber = calendar.get(actualMonthInCalendar);
+            int neededMonthNumber = calendar.get(month);
+
+            if (actualMonthNumber > neededMonthNumber) {
+                int i = 0;
+                while (!month.equals(actualMonthInCalendar)) {
+                    i = i + 1;
+                    clickOnPreviousButtonOnCalendar();
+                    actualMonthInCalendar = getActualMonthFromCalendar();
+                    if (i == 10) {
+                        break;
+                    }
+                }
+            }
+
+            if (actualMonthNumber < neededMonthNumber) {
+                int i = 0;
+                while (!month.equals(actualMonthInCalendar)) {
+                    i = i + 1;
+                    clickOnNextButtonOnCalendar();
+                    actualMonthInCalendar = getActualMonthFromCalendar();
+                    if (i == 10) {
+                        break;
+                    }
+                }
+            }
+
+            if (actualMonthNumber == neededMonthNumber || actualMonthInCalendar.equals(month)) {
+                clickOnTheDayOfCalendar(day);
+            }
+        }
+
+        if (!isElementAbsentBy(closeButtonOnPopupImportantInformationBy)) {
+            $(findEl(closeButtonOnPopupImportantInformationBy)).click();
+        }
+//        Actions actions = new Actions(driver);
+        actions().click().release().build().perform();
+    }
+
+    public String getActualYearFromCalendar() {
+        waitUntilAttributeToBeNotEmptyBy(actualYearOnCalendarBy, "textContent");
+        String result = getTextBy(actualYearOnCalendarBy);
+        if(result.equals("")) {
+            result = getTextBy(actualYearOnCalendarBy);
+        }
+        return result;
+    }
+
+    public String getActualMonthFromCalendar() {
+        waitUntilAttributeToBeNotEmptyBy(actualMonthOnCalendarBy, "textContent");
+        String result = getTextBy(actualMonthOnCalendarBy);
+        if(result.equals("")) {
+            result = getTextBy(actualMonthOnCalendarBy);
+        }
+        return result;
+    }
+
+    public void clickOnTheDayOfCalendar(String day) {
+        for (WebElement el : listOfDaysOfCalendar) {
+            if (el.getText().equals(day)) {
+                clickJSWebEl(el);
+                break;
+            }
+        }
+    }
+
+    public void clickOnNextButtonOnCalendar() {
+        clickJS(nextButtonOnCalendarBy);
+    }
+
+    public void clickOnPreviousButtonOnCalendar() {
+        $(previousButtonOnCalendarBy).click();
+    }
+
+    public boolean isAdminLanguageSelectorPresent() {
+        return $(teacherLangSelectorBy).exists();
+    }
+
+    public String getLanguage() {
+        return $(teacherLangSelector).getText().trim();
+    }
+
+    public void enterTextWithJS(By by, String str) {
+        executeJavaScript("arguments[0].setAttribute('value', '" + str + "')", findEl(by));
+    }
+
+    public void clickOnSomeElementsInListStartFromBy(By by, int start, int count) {
+        ElementsCollection temp = findEls(by);
+        for (int i = start; i <= count; i++) {
+            clickJSWebEl($$(temp).get(i));
+        }
+    }
+
+    public void waitUntilJSandJQLoaded(){
+        logger.info("Waiting until JS and JQuery loaded");
+        waitUntilJSandToLoad();
+        waitUntilJQueryToLoad();
+    }
+
+    public void clickAfterClosePopup(WebElement element){
+        closeWalkmeNew();
+        closeWalkmeNew();
+        closeWalkmeNew();
+        if ($(byText("OK")).isDisplayed()) {
+            $(byText("OK")).click();
+        }
+        $(element).click();
+    }
+
+    public void clickAfterClosePopupForChoose(WebElement element){
+        closeWalkmeNew();
+        closeWalkmeNew();
+        closeWalkmeNew();
+        if ($(element).isDisplayed()){
+            pressSelectAnswerChoiceButt();
+            $(element).click();
+        }
+        pressSelectAnswerChoiceButt();
+
+//        for ( int i = 0; i < 10; i ++) {
+//            if ($(By.xpath("/html/body/div[29]/div[3]/div/button")).isDisplayed()) {
+//                $(By.xpath("/html/body/div[29]/div[3]/div/button")).click();
+//            }
+//        }
+        if ($(byText("Next Question")).isDisplayed()){
+            $(byText("Next Question")).click();
+        }
+        if ($(nextQuestionButton).isDisplayed()){
+            $(nextQuestionButton).click();
+        }
+        if (!$(selectedAnswerBy).isDisplayed()) {
+            clickAfterClosePopupForChoose(element);
+        }
+
+    }
+
+    public void pressSelectAnswerChoiceButt(){
+        for(int i = 0; i < 2; i++) {
+            if ($(selectAnswerChoiceButton).isDisplayed()) {
+                $(selectAnswerChoiceButton).click();
+            } else if ($(selectAnswerChoiceButtonCopy).isDisplayed()) {
+                $(selectAnswerChoiceButtonCopy).click();
+            } else if ($(byText("OK")).isDisplayed()){
+                $(byText("OK")).click();
+            }
+        }
+
+    }
+
 
 
 

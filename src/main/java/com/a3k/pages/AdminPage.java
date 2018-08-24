@@ -126,4 +126,10 @@ public class AdminPage extends Page {
         return listOfNumbersBeforeUsers;
     }
 
+    public void clickCreateNewClass() {
+        logger.info("Click on 'Create New Class'");
+        waitUntilElementClickableBy(createNewClassBy);
+        clickJS(createNewClassBy);
+    }
+
 }

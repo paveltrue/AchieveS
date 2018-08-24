@@ -1,5 +1,6 @@
 package com.a3k.pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,8 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Lesson  extends Page{
@@ -40,7 +40,6 @@ public class Lesson  extends Page{
     private By pointsBy = By.id("topPointsContainer");
     private By currentAndTotalQuestionBy = By.xpath("//*[@class='footer progressBarFooter']/span");
     private By allAnswersBy = By.xpath("//*[contains(@class,'activity-option ng-scope') and not(contains(@class,'incorrect'))] | //div[@class='question mc-question active']//li[not(contains(@class,'choice_disabled'))]");
-    private By selectedAnswerBy = By.xpath("//*[contains(@class,'selected')]");
     private By submitBtnOnActivityTabBy = By.xpath("//*[contains(@class,'submit-button submit')]");
     private By messageAfterSubmitAnswerBy = By.xpath("//div[@class='cheer'] | //span[contains(@id,'feedback')]");
     private By nextQuestionButtonInActivityTabBy = By.xpath("//*[contains(@class,'next-question')] | //input[contains(@id,'next_question')]");
@@ -99,6 +98,13 @@ public class Lesson  extends Page{
     private WebElement lessonTitle = $(By.xpath("//*[@class='lessonHeader']/*[@class='title']/div[@class='titleText']"));
     private WebElement lessonTitleOfWritingLesson = $(By.className("article_title"));
     private WebElement addSubmitButton = $(By.xpath("//*[@id='step14activity']/div/lesson-activity/form/div/div[2]/div/button"));
+    private By beforeReadingPollPageBy = By.id("step10");
+    private By totalQuestionsMathBy = By.id("total_questions-step18page1");
+    private WebElement activityLinkMath = $(By.id("link-step18page1"));
+    private WebElement resultsLinkMath = $(By.id("link-step18page2"));
+    WebElement submitButtonNew1 = $(By.xpath("//*[@id=\"step20activity\"]/div/lesson-activity/form/div/div[2]/div/button"));
+    WebElement submitButtonNew2 = $(By.xpath("//*[@id=\"step14activity\"]/div/lesson-activity/form/div/div[2]/div/button"));
+    WebElement submitButtonNew3 = $(By.xpath("/html/body/div[28]/div[3]/div/button"));
 
 
 
@@ -264,13 +270,24 @@ public class Lesson  extends Page{
     }
 
     public void clickNextTabButton() {
+        if ($(submitButtonNew3).isDisplayed()){
+            $(submitButtonNew3).click();
+        }
         if (isPopupVisible()) {
             closePopup();
         }
         if (isDisplayedBy(viewResultsButtonBy)) {
             $(viewResultsButtonBy).click();
         }
+        closeWalkmeNew();
+
+        for (int i = 0; i < 10; i++) {
+            if ($(submitButtonNew3).isDisplayed()) {
+                $(submitButtonNew3).click();
+            }
+        }
         $(nextButtonBy).click();
+
         if (isPopupVisible()) {
             closePopup();
         }
@@ -279,9 +296,17 @@ public class Lesson  extends Page{
     public void clickSubmitButtonARP() {
         clickJS(submitButtonARTBy);
         waitAndCLickIfExist(OKButtonBy);
+        for(int i = 0; i < 5; i++){
+        if ($(submitButtonNew3).isDisplayed()) {
+            $(submitButtonNew3).click();
+        }
+        }
     }
 
     public void createNewDraft() {
+        if ($(byText("OK")).isDisplayed()){
+            $(byText("OK")).click();
+        }
         $(newDraftButtonBy).click();
     }
 
@@ -388,7 +413,7 @@ public class Lesson  extends Page{
     }
 
     public boolean isAnyAnswerSelected() {
-        waitUntilAppearsBy(selectedAnswerBy);
+       // waitUntilAppearsBy(selectedAnswerBy);
         return isElementPresentBy(selectedAnswerBy);
     }
 
@@ -406,7 +431,7 @@ public class Lesson  extends Page{
 
     public boolean isAnswerWasInccorect() {
         //TODO fix answerWasIncorect\
-        boolean result = $$(findEls(answersBy)).size() == 3;
+        boolean result = findEls(answersBy).size() == 3;
         return result;
     }
 
@@ -415,9 +440,13 @@ public class Lesson  extends Page{
     }
 
     public void clickNextQuestionButton() {
+        Configuration.pageLoadStrategy = "normal";
         if($(nextQuestionButtonInActivityTabBy).isDisplayed()) {
             $(nextQuestionButtonInActivityTabBy).click();
         } else if ($(addSubmitButton).isDisplayed()){
+            if ($(byText("OK")).isDisplayed()) {
+                $(byText("OK")).click();
+            }
             $(addSubmitButton).click();
         }
     }
@@ -429,6 +458,9 @@ public class Lesson  extends Page{
     public void completeTeiActivity() throws InterruptedException {
         completePart1OfTeiActivity("normal");
 
+        if ($(submitButtonNew3).isDisplayed()){
+            $(submitButtonNew3).click();
+        }
         if (isViewResultsButtonVisible()) {
             return;
         }
@@ -461,8 +493,13 @@ public class Lesson  extends Page{
         clickOnSubmitButton();
 
         if (isTryAgainMessageDisplayed()) {
-            clickOnAnswer(i);
-            clickOnSubmitButton();
+            if (!$(byText("Next Question")).isDisplayed()) {
+               // clickOnAnswer(i);
+                //clickOnSubmitButton();
+            } else {
+                $(byText("Next Question")).click();
+            }
+
         }
         if (isPopupVisible()) {
             closePopup();
@@ -494,10 +531,20 @@ public class Lesson  extends Page{
     }
 
     public void clickOnSubmitButton() {
-        waitForActivityAnswers();
-        waitUntilElementClickableBy(submitButtonLiteracyBy);
+//        waitForActivityAnswers();
+//       waitUntilElementClickableBy(submitButtonLiteracyBy);
         waitForJSandJQueryToLoad();
-        clickJS(submitButtonLiteracyBy);
+       //clickJS(submitButtonLiteracyBy);
+        if ($(byText("View Results")).isDisplayed()){
+
+        } else if ($(byText("Next Question")).isDisplayed()) {
+            $(byText("Next Question")).click();
+        } else if ($(submitButtonNew2).isDisplayed()) {
+            $(submitButtonNew2).click();
+        } else if ($(submitButtonNew1).isDisplayed()) {
+            $(submitButtonNew1).click();
+        }
+
     }
 
     public void waitForActivityAnswers() {
@@ -506,7 +553,7 @@ public class Lesson  extends Page{
 
     public void clickOnAnswer(int number) {
         ElementsCollection elements = null;
-        waitUntilCollectionAppears(findEls(notSelectedAnswersBy));
+//        waitUntilCollectionAppears(findEls(notSelectedAnswersBy));
         int countOfAnswer = $$(findEls(notSelectedAnswersBy)).size();
         if (countOfAnswer <= 0) {
             return;
@@ -517,18 +564,39 @@ public class Lesson  extends Page{
         if (number >= 0) {
             logger.info("Click on answer " + number);
             elements = findEls(notSelectedAnswersBy);
-            for (int tries = 4; tries >= 0; tries--) { //????
-                while ($$(elements).size() == 0) {
-                    elements = findEls(notSelectedAnswersBy);
+            for (int i = 0; i < 10; i++) {
+                if ($(byText("Next Question")).isDisplayed()) {
+                    $(byText("Next Question")).click();
                 }
             }
-            $(elements.get(number)).click();
+            for (int tries = 4; tries >= 0; tries--) { //????
+                for (int i = 0; i < 10; i++) {
+                    if ($(byText("Next Question")).isDisplayed()) {
+                        $(byText("Next Question")).click();
+                    }
+                }
+                while ($$(elements).size() == 0) {
+                    elements = findEls(notSelectedAnswersBy);
+                    if ($(submitButtonNew2).isDisplayed()){
+                        $(submitButtonNew2).click();
+                    }
+                }
+            }
+//            if ($$(elements).size() == 0){
+//                if ($(By.xpath("//*[@id=\"step14activity\"]/div/lesson-activity/form/div/div[2]/div/button")).isDisplayed()){
+//                    $(By.xpath("//*[@id=\"step14activity\"]/div/lesson-activity/form/div/div[2]/div/button")).click();
+//                }
+//                return;
+//            }
+            clickAfterClosePopupForChoose($(elements.get(number)));
+            //$(elements.get(number)).click();
             waitSelectedAnswer();
         }
      //   waitSubmitButon();
     }
 
     public boolean isTryAgainMessageDisplayed() {
+        Configuration.pageLoadStrategy = "normal";
         return isDisplayedBy(tryAgainMessageBy);
     }
 
@@ -859,8 +927,10 @@ public class Lesson  extends Page{
     public String checkFinishLaterButton(String text) {
 
 //        String mainWin = driver.getWindowHandle();
+
+
         switchTo().frame(findEl(draft1FrameBy));
-        $(findEl(textFieldBy)).sendKeys(text);
+        $(findEl(textFieldBy)).setValue(text);
 
         switchTo().defaultContent();
         $(finishLaterButtonBy).click();
@@ -956,6 +1026,28 @@ public class Lesson  extends Page{
             return $(lessonTitle).getText();
         else
             return $(lessonTitleOfWritingLesson).getText();
+    }
+
+    public void waitUntilLessonOpen() {
+        waitUntilAppearsBy(beforeReadingPollPageBy);
+    }
+
+    public boolean verifyPresenceReadingConnectionsMarks() {
+        return isElementsExist(readingConnectionsBy);
+    }
+
+    public int totalQuestionsMath() {
+        return Integer.parseInt(getTextBy(totalQuestionsMathBy));
+    }
+
+    public boolean verifyHighlightActivityWordMath() {
+        String value = getAttribute(activityLinkMath, "class");
+        return value.equals("rolloverAnchor pick");
+    }
+
+    public boolean verifyDisableResultsWordMath() {
+        String value = getAttribute(resultsLinkMath, "class");
+        return value.equals("disabled rolloverAnchor");
     }
 
 

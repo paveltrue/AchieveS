@@ -1,76 +1,680 @@
-[15:54:40] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[15:54:40] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[15:54:40] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[15:54:40] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
-[15:54:40] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
-[15:54:40] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[15:54:40] INFO  (BasicTestCase.java:79) - Headless Mode set to false
-[15:54:40] DEBUG (BasicTestCase.java:109) - Finished before suite
-[15:54:40] TRACE (BasicTestCase.java:44) - Starting test checkCoursesAndCollectionsContent
-[15:54:40] INFO  (BasicTestCase.java:116) - Setting the browser up
-[15:54:40] INFO  (BasicTestCase.java:131) -  Executing on CHROME
-[15:54:40] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[15:54:48] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
-[15:54:49] INFO  (LoginPage.java:96) - Type in username: uskba.alex
-[15:54:49] INFO  (LoginPage.java:103) - Type in password: job
-[15:54:50] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[15:54:50] INFO  (Page.java:48) - Try to execute Close Walkme
-[15:54:54] INFO  (LoginPage.java:233) - Stop login
-[15:54:54] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/collections
-[15:54:56] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons/day
-[15:54:58] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons/week
-[15:55:00] DEBUG (BasicTestCase.java:228) - Finishing test
-[15:55:00] TRACE (BasicTestCase.java:229) - Getting selenium logs
-[15:55:00] DEBUG (BasicTestCase.java:230) - Finished test
-[15:55:00] TRACE (BasicTestCase.java:44) - Starting test checkGrading
-[15:55:00] INFO  (BasicTestCase.java:116) - Setting the browser up
-[15:55:00] INFO  (BasicTestCase.java:131) -  Executing on CHROME
-[15:55:00] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[15:55:01] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
-[15:55:01] INFO  (TestContentPresent.java:139) - Login with credentials superteacher.multi\superteacher.multi
-[15:55:01] INFO  (LoginPage.java:257) - Login with credentials superteacher.multi\superteacher.multi
-[15:55:01] INFO  (LoginPage.java:96) - Type in username: superteacher.multi
-[15:55:02] INFO  (LoginPage.java:103) - Type in password: superteacher.multi
-[15:55:02] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[15:55:02] INFO  (Page.java:48) - Try to execute Close Walkme
-[15:55:03] DEBUG (Page.java:175) - Try to FIND element  By.id: active_pgm
-[15:55:03] DEBUG (Page.java:175) - Try to FIND element  By.id: active_class
-[15:55:06] INFO  (LoginPage.java:322) -  Stop login 
-[15:55:06] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/teacher_grading
-[15:55:10] DEBUG (BasicTestCase.java:228) - Finishing test
-[15:55:10] TRACE (BasicTestCase.java:229) - Getting selenium logs
-[15:55:10] DEBUG (BasicTestCase.java:230) - Finished test
-[15:55:11] TRACE (BasicTestCase.java:44) - Starting test checkNotificationsCenterContent
-[15:55:11] INFO  (BasicTestCase.java:116) - Setting the browser up
-[15:55:11] INFO  (BasicTestCase.java:131) -  Executing on CHROME
-[15:55:11] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[15:55:12] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
-[15:55:12] INFO  (TestContentPresent.java:139) - Login with credentials teenbizstud.one\teenbizstud.one
-[15:55:12] INFO  (LoginPage.java:257) - Login with credentials teenbizstud.one\teenbizstud.one
-[15:55:12] INFO  (LoginPage.java:96) - Type in username: teenbizstud.one
-[15:55:12] INFO  (LoginPage.java:103) - Type in password: teenbizstud.one
-[15:55:13] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[15:55:13] INFO  (Page.java:48) - Try to execute Close Walkme
-[15:55:17] INFO  (LoginPage.java:322) -  Stop login 
-[15:55:17] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/student_notifications
-[15:55:18] INFO  (NotificationPage.java:41) - Actual date: Sunday Jul 9 2017
-[15:55:18] DEBUG (BasicTestCase.java:228) - Finishing test
-[15:55:18] TRACE (BasicTestCase.java:229) - Getting selenium logs
-[15:55:18] DEBUG (BasicTestCase.java:230) - Finished test
-[15:55:18] TRACE (BasicTestCase.java:44) - Starting test checkNotificationsCenterContent
-[15:55:18] INFO  (BasicTestCase.java:116) - Setting the browser up
-[15:55:18] INFO  (BasicTestCase.java:131) -  Executing on CHROME
-[15:55:18] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[15:55:19] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
-[15:55:19] INFO  (TestContentPresent.java:139) - Login with credentials empowerstud.one\empowerstud.one
-[15:55:19] INFO  (LoginPage.java:257) - Login with credentials empowerstud.one\empowerstud.one
-[15:55:19] INFO  (LoginPage.java:96) - Type in username: empowerstud.one
-[15:55:20] INFO  (LoginPage.java:103) - Type in password: empowerstud.one
-[15:55:20] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[15:55:20] INFO  (Page.java:48) - Try to execute Close Walkme
-[15:55:22] INFO  (Page.java:48) - Try to execute Close Walkme
-[15:55:22] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/student_notifications
-[15:55:23] INFO  (NotificationPage.java:41) - Actual date: Sunday Jul 9 2017
-[15:55:23] DEBUG (BasicTestCase.java:228) - Finishing test
-[15:55:23] TRACE (BasicTestCase.java:229) - Getting selenium logs
-[15:55:23] DEBUG (BasicTestCase.java:230) - Finished test
+[17:19:01] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:19:01] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:19:01] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:19:01] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:19:01] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:19:01] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:19:01] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:19:01] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:19:01] TRACE (BasicTestCase.java:44) - Starting test verify5StepLessons
+[17:19:01] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:19:01] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:19:01] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:19:13] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:19:13] INFO  (FiveStep_teacher.java:101) - Language is set to English
+[17:19:13] INFO  (FiveStep_teacher.java:114) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:19:14] INFO  (LoginPage.java:257) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:19:14] INFO  (LoginPage.java:96) - Type in username: kidbizteach.one
+[17:19:15] INFO  (LoginPage.java:103) - Type in password: kidbizteach.one
+[17:19:16] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:19:16] INFO  (Page.java:61) - Try to execute Close Walkme
+[17:19:23] INFO  (Page.java:61) - Try to execute Close Walkme
+[17:19:23] INFO  (Page.java:390) - Opening My Lesson page
+[17:19:23] INFO  (Page.java:296) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
+[17:19:31] INFO  (Page.java:404) - Switch to Next window
+[17:19:31] DEBUG (Page.java:405) - Switching from window Achieve3000: My Lessons
+[17:19:33] DEBUG (Page.java:411) - Switched to window Achieve3000: Course Details
+[17:19:33] INFO  (Page.java:573) - Switch Back after close
+[17:19:43] INFO  (FiveStep_teacher.java:128) - Opening any not started lesson
+[17:19:44] INFO  (Page.java:296) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons?sort=step1&sort=focus&sort_dir=desc&page_index=1
+[17:19:53] INFO  (Page.java:232) - Click on element <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:19:53] DEBUG (Page.java:199) - Trying to click on locator via JS <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:21:07] DEBUG (Page.java:199) - Element was clicked via JS java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+[17:21:07] INFO  (MyLessons.java:120) - Open lesson with id = 15235
+[17:21:09] INFO  (FiveStep_teacher.java:141) - Complete 'Before Reading' form
+[17:21:09] DEBUG (Page.java:193) - Try to FIND element  By.id: textarea-step10page1response1_ifr
+[17:21:10] DEBUG (Page.java:193) - Try to FIND element   .//*[(@name='response') or (@id='tinymce') or (@id='textarea-step10page1response1')]
+[17:21:11] DEBUG (Page.java:193) - Try to FIND element   //li[contains(@onclick,'a3k.poll.select_poll_choice')]
+[17:21:11] INFO  (Page.java:215) - Click on element By.id: pollSubmit-step10page1
+[17:21:11] INFO  (Page.java:699) - Wait until element By.id: pollSubmit-step10page1 clickable
+[17:21:11] DEBUG (Page.java:193) - Trying to click on locator via JS By.id: pollSubmit-step10page1
+[17:21:11] DEBUG (Page.java:193) - Element was clicked via JS By.id: pollSubmit-step10page1
+[17:21:11] INFO  (Page.java:215) - Click on element By.xpath: //div[contains(@class,'next_tab')]/a
+[17:21:11] INFO  (Page.java:61) - Try to execute Close Walkme
+[17:21:11] INFO  (Page.java:699) - Wait until element By.xpath: //div[contains(@class,'next_tab')]/a clickable
+[17:21:11] DEBUG (Page.java:193) - Trying to click on locator via JS  //div[contains(@class,'next_tab')]/a
+[17:21:17] DEBUG (Page.java:193) - Element was clicked via JS  //div[contains(@class,'next_tab')]/a
+[17:21:17] INFO  (FiveStep_teacher.java:150) - Before Reading form has been submitted
+[17:21:17] INFO  (FiveStep_teacher.java:155) - Verify vocabulary
+[17:21:17] INFO  (FiveStep_teacher.java:161) - Verify Reading Connections section
+[17:21:18] DEBUG (Lesson.java:883) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:21:18] DEBUG (Lesson.java:884) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:21:18] INFO  (Lesson.java:891) - Type text 'Test Reading Connections' to input
+[17:21:19] INFO  (Lesson.java:896) - Saving...
+[17:21:20] DEBUG (Lesson.java:883) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:21:20] DEBUG (Lesson.java:884) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:21:20] INFO  (Lesson.java:891) - Type text 'Test Reading Connections' to input
+[17:21:21] INFO  (Lesson.java:896) - Saving...
+[17:21:22] DEBUG (Lesson.java:883) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:21:22] DEBUG (Lesson.java:884) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:21:23] INFO  (Lesson.java:891) - Type text 'Test Reading Connections' to input
+[17:21:23] INFO  (Lesson.java:896) - Saving...
+[17:21:24] DEBUG (FiveStep_teacher.java:219) - Started verifying article tab
+[17:21:24] DEBUG (FiveStep_teacher.java:231) - Finished verifying article page
+[17:21:25] INFO  (Page.java:215) - Click on element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:21:25] INFO  (Page.java:699) - Wait until element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div clickable
+[17:21:25] DEBUG (Page.java:193) - Trying to click on locator via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:21:40] DEBUG (Page.java:193) - Element was clicked via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:21:41] INFO  (FiveStep_teacher.java:167) - Verifying Activity Page
+[17:21:41] DEBUG (Page.java:193) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:21:42] DEBUG (Page.java:193) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:21:44] INFO  (Lesson.java:565) - Click on answer 0
+[17:21:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:21:51] INFO  (Lesson.java:565) - Click on answer 0
+[17:21:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:21:59] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:04] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:06] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:13] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:20] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:27] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:35] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:42] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:49] INFO  (Lesson.java:565) - Click on answer 0
+[17:22:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:22:56] INFO  (Lesson.java:565) - Click on answer 0
+[17:23:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:23:02] INFO  (Lesson.java:565) - Click on answer 0
+[17:23:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:23:09] INFO  (Lesson.java:565) - Click on answer 0
+[17:23:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:23:16] INFO  (Page.java:215) - Click on element By.xpath: //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:23:16] INFO  (Page.java:699) - Wait until element By.xpath: //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')] clickable
+[17:23:16] DEBUG (Page.java:193) - Trying to click on locator via JS  //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:23:33] DEBUG (Page.java:193) - Element was clicked via JS  //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:23:33] INFO  (FiveStep_teacher.java:60) - Go to next tab
+[17:23:39] INFO  (FiveStep_teacher.java:236) - Verifying After Reading Poll tab
+[17:23:41] INFO  (FiveStep_teacher.java:63) - Submit After Reading poll
+[17:23:41] INFO  (Page.java:215) - Click on element By.id: pollSubmit-step15page1
+[17:23:42] INFO  (Page.java:699) - Wait until element By.id: pollSubmit-step15page1 clickable
+[17:23:42] DEBUG (Page.java:193) - Trying to click on locator via JS By.id: pollSubmit-step15page1
+[17:23:42] DEBUG (Page.java:193) - Element was clicked via JS By.id: pollSubmit-step15page1
+[17:23:42] INFO  (FiveStep_teacher.java:67) - Go to next tab
+[17:24:08] INFO  (FiveStep_teacher.java:253) - Verifying 'Finish later'
+[17:24:08] DEBUG (Page.java:193) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:24:08] DEBUG (Page.java:193) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:24:16] INFO  (FiveStep_teacher.java:263) - Verifying 'Submit Button'
+[17:24:16] DEBUG (Page.java:193) - Try to FIND element   //div[@class='responseContainer' or @class='responseContainer ']//iframe
+[17:24:16] DEBUG (Page.java:193) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:24:24] INFO  (FiveStep_teacher.java:73) - Create new draft
+[17:24:24] INFO  (FiveStep_teacher.java:263) - Verifying 'Submit Button'
+[17:24:24] DEBUG (Page.java:193) - Try to FIND element   //div[@class='responseContainer' or @class='responseContainer ']//iframe
+[17:24:25] DEBUG (Page.java:193) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:24:46] INFO  (FiveStep_teacher.java:273) - Verifying Math Tab
+[17:24:48] INFO  (FiveStep_teacher.java:300) - Submit Math lesson
+[17:24:49] INFO  (FiveStep_teacher.java:326) - Finally answered correctly
+[17:24:49] INFO  (FiveStep_teacher.java:305) - Click on 'View Results' button on Math Page
+[17:24:56] INFO  (FiveStep_teacher.java:308) - Math lesson verified
+[17:24:56] INFO  (FiveStep_teacher.java:331) - Verify Stretch Tab
+[17:25:00] INFO  (FiveStep_teacher.java:167) - Verifying Activity Page
+[17:25:00] DEBUG (Page.java:193) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:25:00] DEBUG (Page.java:193) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:25:03] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:09] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:16] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:22] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:29] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:35] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:42] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:49] INFO  (Lesson.java:565) - Click on answer 0
+[17:25:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:25:56] INFO  (Lesson.java:565) - Click on answer 0
+[17:26:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:02] INFO  (Lesson.java:565) - Click on answer 0
+[17:26:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:08] INFO  (Lesson.java:565) - Click on answer 0
+[17:26:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:15] INFO  (Lesson.java:565) - Click on answer 0
+[17:26:20] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:21] INFO  (Lesson.java:565) - Click on answer 0
+[17:26:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:42] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:48] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:26:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:04] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:09] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:12] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:17] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:20] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:23] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:24] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:29] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:30] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:37] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:44] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:48] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:51] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:27:58] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:04] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:05] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:12] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:15] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:17] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:22] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:24] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:29] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:42] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:28:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:04] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:17] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:20] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:23] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:24] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:30] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:37] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:42] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:44] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:48] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:51] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:58] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:29:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:05] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:09] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:12] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:15] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:22] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:24] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:29] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:42] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:30:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:04] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:09] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:12] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:14] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:17] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:20] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:22] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:23] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:24] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:29] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:30] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:37] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:44] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:48] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:51] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:31:58] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:04] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:07] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:15] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:20] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:23] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:24] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:30] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:37] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:42] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:44] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:48] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:51] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:58] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:32:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:05] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:15] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:20] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:23] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:30] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:55] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:58] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:33:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:01] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:05] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:08] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:09] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:11] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:12] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:15] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:16] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:21] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:22] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:23] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:29] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:36] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:42] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:45] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:48] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:34:56] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:34:56] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:34:56] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:34:56] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:34:56] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:34:56] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:34:56] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:34:56] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:34:56] TRACE (BasicTestCase.java:44) - Starting test verify5StepLessons
+[17:34:56] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:34:56] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:34:56] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:35:11] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:35:11] INFO  (FiveStep_teacher.java:101) - Language is set to English
+[17:35:11] INFO  (FiveStep_teacher.java:114) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:35:13] INFO  (LoginPage.java:257) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:35:13] INFO  (LoginPage.java:96) - Type in username: kidbizteach.one
+[17:35:14] INFO  (LoginPage.java:103) - Type in password: kidbizteach.one
+[17:35:15] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:35:15] INFO  (Page.java:61) - Try to execute Close Walkme
+[17:35:19] DEBUG (BasicTestCase.java:228) - Finishing test
+[17:35:19] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[17:35:19] DEBUG (BasicTestCase.java:230) - Finished test
+[17:35:33] INFO  (Page.java:61) - Try to execute Close Walkme
+[17:35:33] INFO  (Page.java:390) - Opening My Lesson page
+[17:36:14] INFO  (Page.java:296) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
+[17:36:22] INFO  (Page.java:404) - Switch to Next window
+[17:36:23] DEBUG (Page.java:405) - Switching from window Achieve3000: My Lessons
+[17:36:26] DEBUG (Page.java:411) - Switched to window Achieve3000: Course Details
+[17:36:26] INFO  (Page.java:573) - Switch Back after close
+[17:36:31] INFO  (FiveStep_teacher.java:128) - Opening any not started lesson
+[17:36:31] INFO  (Page.java:296) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons?sort=step1&sort=focus&sort_dir=desc&page_index=1
+[17:36:37] INFO  (Page.java:232) - Click on element <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:36:37] DEBUG (Page.java:199) - Trying to click on locator via JS <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:36:51] DEBUG (Page.java:199) - Element was clicked via JS java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+[17:36:51] INFO  (MyLessons.java:120) - Open lesson with id = 15235
+[17:36:53] INFO  (FiveStep_teacher.java:141) - Complete 'Before Reading' form
+[17:36:53] DEBUG (Page.java:193) - Try to FIND element  By.id: textarea-step10page1response1_ifr
+[17:36:53] DEBUG (Page.java:193) - Try to FIND element   .//*[(@name='response') or (@id='tinymce') or (@id='textarea-step10page1response1')]
+[17:36:54] DEBUG (Page.java:193) - Try to FIND element   //li[contains(@onclick,'a3k.poll.select_poll_choice')]
+[17:36:54] INFO  (Page.java:215) - Click on element By.id: pollSubmit-step10page1
+[17:36:54] INFO  (Page.java:699) - Wait until element By.id: pollSubmit-step10page1 clickable
+[17:36:54] DEBUG (Page.java:193) - Trying to click on locator via JS By.id: pollSubmit-step10page1
+[17:36:54] DEBUG (Page.java:193) - Element was clicked via JS By.id: pollSubmit-step10page1
+[17:36:54] INFO  (Page.java:215) - Click on element By.xpath: //div[contains(@class,'next_tab')]/a
+[17:36:55] INFO  (Page.java:61) - Try to execute Close Walkme
+[17:36:55] INFO  (Page.java:699) - Wait until element By.xpath: //div[contains(@class,'next_tab')]/a clickable
+[17:36:55] DEBUG (Page.java:193) - Trying to click on locator via JS  //div[contains(@class,'next_tab')]/a
+[17:37:02] DEBUG (Page.java:193) - Element was clicked via JS  //div[contains(@class,'next_tab')]/a
+[17:37:02] INFO  (FiveStep_teacher.java:150) - Before Reading form has been submitted
+[17:37:02] INFO  (FiveStep_teacher.java:155) - Verify vocabulary
+[17:37:03] INFO  (FiveStep_teacher.java:161) - Verify Reading Connections section
+[17:37:04] DEBUG (Lesson.java:883) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:37:05] DEBUG (Lesson.java:884) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:37:05] INFO  (Lesson.java:891) - Type text 'Test Reading Connections' to input
+[17:37:06] INFO  (Lesson.java:896) - Saving...
+[17:37:06] DEBUG (Lesson.java:883) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:37:06] DEBUG (Lesson.java:884) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:37:07] INFO  (Lesson.java:891) - Type text 'Test Reading Connections' to input
+[17:37:08] INFO  (Lesson.java:896) - Saving...
+[17:37:08] DEBUG (Lesson.java:883) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:37:09] DEBUG (Lesson.java:884) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:37:09] INFO  (Lesson.java:891) - Type text 'Test Reading Connections' to input
+[17:37:10] INFO  (Lesson.java:896) - Saving...
+[17:37:11] DEBUG (FiveStep_teacher.java:219) - Started verifying article tab
+[17:37:11] DEBUG (FiveStep_teacher.java:231) - Finished verifying article page
+[17:37:11] INFO  (Page.java:215) - Click on element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:37:12] INFO  (Page.java:699) - Wait until element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div clickable
+[17:37:12] DEBUG (Page.java:193) - Trying to click on locator via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:37:16] DEBUG (Page.java:193) - Element was clicked via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:37:17] INFO  (FiveStep_teacher.java:167) - Verifying Activity Page
+[17:37:17] DEBUG (Page.java:193) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:37:18] DEBUG (Page.java:193) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:37:21] INFO  (Lesson.java:565) - Click on answer 0
+[17:37:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:37:27] INFO  (Lesson.java:565) - Click on answer 0
+[17:37:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:37:34] INFO  (Lesson.java:565) - Click on answer 0
+[17:37:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:37:41] INFO  (Lesson.java:565) - Click on answer 0
+[17:37:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:37:47] INFO  (Lesson.java:565) - Click on answer 0
+[17:37:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:37:55] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:02] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:06] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:08] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:13] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:15] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:19] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:21] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:26] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:29] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:36] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:42] INFO  (Lesson.java:565) - Click on answer 0
+[17:38:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:38:49] INFO  (Page.java:215) - Click on element By.xpath: //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:38:49] INFO  (Page.java:699) - Wait until element By.xpath: //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')] clickable
+[17:38:49] DEBUG (Page.java:193) - Trying to click on locator via JS  //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:38:52] DEBUG (Page.java:193) - Element was clicked via JS  //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:38:52] INFO  (FiveStep_teacher.java:60) - Go to next tab
+[17:38:57] INFO  (FiveStep_teacher.java:236) - Verifying After Reading Poll tab
+[17:38:59] INFO  (FiveStep_teacher.java:63) - Submit After Reading poll
+[17:38:59] INFO  (Page.java:215) - Click on element By.id: pollSubmit-step15page1
+[17:38:59] INFO  (Page.java:699) - Wait until element By.id: pollSubmit-step15page1 clickable
+[17:38:59] DEBUG (Page.java:193) - Trying to click on locator via JS By.id: pollSubmit-step15page1
+[17:38:59] DEBUG (Page.java:193) - Element was clicked via JS By.id: pollSubmit-step15page1
+[17:38:59] INFO  (FiveStep_teacher.java:67) - Go to next tab
+[17:39:04] INFO  (FiveStep_teacher.java:253) - Verifying 'Finish later'
+[17:39:04] DEBUG (Page.java:193) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:39:05] DEBUG (Page.java:193) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:39:10] INFO  (FiveStep_teacher.java:263) - Verifying 'Submit Button'
+[17:39:10] DEBUG (Page.java:193) - Try to FIND element   //div[@class='responseContainer' or @class='responseContainer ']//iframe
+[17:39:11] DEBUG (Page.java:193) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:39:16] INFO  (FiveStep_teacher.java:73) - Create new draft
+[17:39:16] INFO  (FiveStep_teacher.java:263) - Verifying 'Submit Button'
+[17:39:16] DEBUG (Page.java:193) - Try to FIND element   //div[@class='responseContainer' or @class='responseContainer ']//iframe
+[17:39:16] DEBUG (Page.java:193) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:39:28] INFO  (FiveStep_teacher.java:273) - Verifying Math Tab
+[17:39:33] INFO  (FiveStep_teacher.java:300) - Submit Math lesson
+[17:39:33] INFO  (FiveStep_teacher.java:326) - Finally answered correctly
+[17:39:33] INFO  (FiveStep_teacher.java:305) - Click on 'View Results' button on Math Page
+[17:39:35] INFO  (FiveStep_teacher.java:308) - Math lesson verified
+[17:39:35] INFO  (FiveStep_teacher.java:331) - Verify Stretch Tab
+[17:39:39] INFO  (FiveStep_teacher.java:167) - Verifying Activity Page
+[17:39:39] DEBUG (Page.java:193) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:39:40] DEBUG (Page.java:193) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:39:47] INFO  (Lesson.java:565) - Click on answer 0
+[17:39:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:39:54] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:05] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:06] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:12] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:13] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:18] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:20] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:25] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:27] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:32] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:34] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:39] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:40] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:51] INFO  (Lesson.java:565) - Click on answer 0
+[17:40:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:40:58] INFO  (Lesson.java:565) - Click on answer 0
+[17:41:03] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:04] INFO  (Lesson.java:565) - Click on answer 0
+[17:41:10] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:11] INFO  (Lesson.java:565) - Click on answer 0
+[17:41:17] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:17] INFO  (Lesson.java:565) - Click on answer 0
+[17:41:22] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:27] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:28] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:30] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:31] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:33] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:34] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:35] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:37] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:38] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:40] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:41] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:43] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:44] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:46] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:47] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:49] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:50] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:52] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:53] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:54] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:56] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:57] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:41:59] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:42:00] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:42:02] INFO  (Page.java:158) - Wait For JS and JQuery load.
+[17:42:03] INFO  (Page.java:158) - Wait For JS and JQuery load.

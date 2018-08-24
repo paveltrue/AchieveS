@@ -1,11 +1,16 @@
 package com.a3k.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class AllReportsPage extends Page {
 
@@ -33,6 +38,13 @@ public class AllReportsPage extends Page {
     private WebElement whichOfMyStudentUsingTheProgram = $(By.xpath(".//*[@href='/options/reports/?report_id=3&section=3']"));
     private WebElement howAreMyStudentProgressing = $(By.xpath(".//*[@href='/options/reports/?report_id=17&section=3']"));
     private WebElement whichMyStudentsAreUsingTheProgramAfter = $(By.xpath(".//*[@href='/options/reports/?report_id=6&section=3']"));
+    private ElementsCollection reportLinksInStudentWorkSection = $$(By.xpath("//table[@id='submenu_2']//a"));
+    private ElementsCollection reportDDLsInStudentWorkSection = $$(By.xpath("//table[@id='submenu_2']//select"));
+    private By usageReportsMenuItemBy = By.id("menu_link_3");
+    private ElementsCollection reportLinksInUsageReportsSection = $$(By.xpath("//table[@id='submenu_3']//a"));
+    private ElementsCollection reportLinksInPerformanceReportsSection = $$(By.xpath("//table[@id='submenu_4']//a"));
+    private ElementsCollection reportLinksInAssessmentToolsSection = $$(By.xpath("//table[@id='submenu_6']//a"));
+
 
 
 
@@ -156,6 +168,99 @@ public class AllReportsPage extends Page {
 
     public String getWhichMyStudentsAreUsingTheProgramAfterText() {
         return $(whichMyStudentsAreUsingTheProgramAfter).getText();
+    }
+
+    public List<String> getReportLinksInStudentWorkSection() {
+
+        List<String> reportsLinks = new ArrayList<String>();
+
+        for (WebElement reportLink : reportLinksInStudentWorkSection)
+            reportsLinks.add($(reportLink).getText());
+
+        return reportsLinks;
+    }
+
+    public void openReportByName(String name) {
+
+        if (name.equals("How are my students progressing towards Achieve3000's 40-activity usage goal?"))
+            name = "How are my students progressing towards Achieve3000";
+        else if (name.equals("Which of my students' Lexiles have been adjusted?"))
+            name = "Lexiles have been adjusted?";
+
+        WebElement report = $(By.xpath("//*[contains(text(),'" + name + "')]"));
+
+        $(report).click();
+    }
+
+    public ElementsCollection getReportDDLsInStudentWorkSection() {
+        return reportDDLsInStudentWorkSection;
+    }
+
+    public List<String> getReportNamesFromReportDDL(WebElement reportDDL) {
+
+        List<String> listOfReports = new ArrayList<String>();
+
+        ElementsCollection options = getOptionsFromSelect(reportDDL);
+
+        for (WebElement report : options) {
+
+            if (!report.getAttribute("value").equals(""))
+                listOfReports.add(report.getText());
+        }
+
+        return listOfReports;
+    }
+
+    public ElementsCollection getOptionsFromSelect(WebElement select) {
+        //Select sel = new Select(select);
+        //return sel.getOptions();
+        return $(select).getSelectedOptions();
+    }
+
+    public void openUsageReports() {
+        if (!getAttributeBy(usageReportsMenuItemBy, "class").contains("_selected")) {
+            $(usageReportsMenuItemBy).click();
+        }
+    }
+
+    public List<String> getReportLinksInUsageReportsSection() {
+
+        List<String> reportsLinks = new ArrayList<String>();
+
+        for (WebElement reportLink : reportLinksInUsageReportsSection)
+            reportsLinks.add($(reportLink).getText());
+
+        return reportsLinks;
+    }
+
+    public List<String> getReportHrefsInPerformanceReportsSection() {
+
+        List<String> reportsLinks = new ArrayList<String>();
+
+        for (WebElement reportLink : reportLinksInPerformanceReportsSection)
+            reportsLinks.add($(reportLink).getAttribute("href").split("/reports/")[1]);
+
+        return reportsLinks;
+    }
+
+    public void openReportByHref(String href) {
+
+        WebElement report = $(By.xpath("//a[contains(@href,'" + href + "')]"));
+        $(report).click();
+    }
+
+    public List<String> getReportLinksInAssessmentToolsSection() {
+
+        List<String> reportsLinks = new ArrayList<String>();
+
+        for (WebElement reportLink : reportLinksInAssessmentToolsSection)
+            reportsLinks.add($(reportLink).getText());
+
+        return reportsLinks;
+    }
+
+    public void openWelcomeLetter() {
+        $(welcomeLetter).click();
     }
 
 }

@@ -259,6 +259,9 @@ public class LoginPage extends Page {
         setPassword(password);
         clickLoginButton();
         waitForPageToLoad();
+        if ($(By.xpath("//*[@id=\"button\"]")).isDisplayed()){
+            $(By.xpath("//*[@id=\"button\"]")).click();
+        }
         if (url().contains("home") || url().contains("levelset/welcome")) {
             closeAllPopUpAfterLogin();
             return;
