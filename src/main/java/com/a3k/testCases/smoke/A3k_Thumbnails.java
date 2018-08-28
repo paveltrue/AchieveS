@@ -17,7 +17,7 @@ public class A3k_Thumbnails extends BasicTestCase {
 
     @Parameters({"login", "password", "program", "classToSelect", "language"})
     @Test(dataProvider = "getUsers", groups = {"Smoke", "MyLessons",
-            "Thumbnails", "Student", "All"})
+            "Thumbnails", "Student", "All"}, invocationCount = 1)
     public void testStudentThumbnails(
             @Optional("kidbizstud.one") String login,
             @Optional("kidbizstud.one") String password,

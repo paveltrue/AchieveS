@@ -11,6 +11,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 public class FiveStep_teacher extends BasicTestCase {
 
     protected static String finishLaterPopupContent;
@@ -22,7 +23,7 @@ public class FiveStep_teacher extends BasicTestCase {
 
 
     @Parameters({"loginTeacher", "passwordTeacher", "program", "classToSelectTeacher", "language", "testName"})
-    @Test(groups = {"Smoke", "FiveStep", "Teacher", "All"})
+    @Test(groups = {"Smoke", "FiveStep", "Teacher", "All"}, invocationCount = 1)
     public void verify5StepLessons(
             @Optional("kidbizteach.one") String login,
             @Optional("kidbizteach.one") String password,
@@ -37,7 +38,9 @@ public class FiveStep_teacher extends BasicTestCase {
         login(login, password, program, classToSelect);
         myLessonsPage = openMyLessonsPage();
 
+        Configuration.pageLoadStrategy = "normal";
         myLessonsPage.goToYearView();
+        Configuration.pageLoadStrategy = "eager";
 
         my_lesson = openAnyNotStartedLesson();
 
@@ -50,9 +53,7 @@ public class FiveStep_teacher extends BasicTestCase {
         my_lesson.goToActivityTab();
 
         try {
-            Configuration.pageLoadStrategy = "normal";
             verifyActivityPage(my_lesson, testName);
-            Configuration.pageLoadStrategy = "eager";
         } catch (InterruptedException e) {
             logger.trace("An error occurred: " + e.getMessage());
         }

@@ -17,7 +17,7 @@ public class ClassAndUserSetupWizard extends BasicTestCase {
 
 
     @Parameters({"loginTeacherCSW", "passwordTeacherCSW", "program", "classToSelectTeacherCSW", "language", "testName"})
-    @Test(groups = {"Search", "Smoke", "All"})
+    @Test(groups = {"Search", "Smoke", "All"}, invocationCount = 1)
     public void teacherSearch(
             @Optional("cswkidbizen.three") String login,
             @Optional("cswkidbizen.three") String password,

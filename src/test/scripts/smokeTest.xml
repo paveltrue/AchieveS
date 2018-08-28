@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- changed number of threads for grid -->
+<suite name="SmokeTest" verbose="1" parallel="tests" thread-count="3">
+
+    <listeners>
+       <listener class-name="com.a3k.utils.selenium.TestListener"/>
+       <listener class-name="com.a3k.utils.selenium.RetryListener"/>
+    </listeners>
+
+    <parameter name="browser" value="firefox"/>
+    <parameter name="language" value="english"/>
+    <parameter name="testName" value="smoke"/>
+
+    <test name="Smoke Tests" parallel="classes">
+        <classes>
+            <class name="com.a3k.testCases.smoke.DE22913"/>
+            <class name="com.a3k.testCases.smoke.DeleteMailFolders"/>
+            <class name="com.a3k.testCases.smoke.FiveStep_student_empower"/>
+            <class name="com.a3k.testCases.smoke.FiveStep_student_teenbiz"/>
+            <class name="com.a3k.testCases.smoke.FiveStep_student_kidbiz"/>
+            <class name="com.a3k.testCases.smoke.A3k_MyLessons_kidbiz"/>
+            <class name="com.a3k.testCases.smoke.A3k_MyLessons_empower"/>
+            <class name="com.a3k.testCases.smoke.A3k_MyLessons_teenbiz"/>
+            <class name="com.a3k.testCases.smoke.MyLessonsTeacher"/>
+            <class name="com.a3k.testCases.smoke.A3k_Mail"/>
+            <class name="com.a3k.testCases.smoke.Reports"/>
+            <class name="com.a3k.testCases.smoke.TestDUAProgramSync"/>
+            <class name="com.a3k.testCases.smoke.A3k_Thumbnails"/>
+            <class name="com.a3k.testCases.smoke.ClassAndUserSetupWizard"/>
+            <class name="com.a3k.testCases.smoke.Thumbnails_teacher"/>
+            <class name="com.a3k.testCases.smoke.TestContentPresent"/>
+            <class name="com.a3k.testCases.smoke.FiveStep_teacher"/>
+            <class name="com.a3k.testCases.smoke.LDAP"/>
+            <class name="com.a3k.testCases.smoke.A3k_Admin"/>
+        </classes>
+    </test>
+</suite>

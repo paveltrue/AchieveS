@@ -1,12 +1,13 @@
 package com.a3k;
 
-import com.a3k.utils.Selenium.ExtendedSoftAssert;
+import com.a3k.utils.selenium.ExtendedSoftAssert;
 import com.a3k.utils.Utils;
 import com.a3k.utils.logger.BasicLogger;
 import com.a3k.utils.properties.AchieveProperties;
 import com.a3k.utils.properties.FilepathProperties;
 import com.codeborne.selenide.Configuration;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
@@ -146,6 +147,10 @@ public class BasicTestCase {
 
     private void startChromeDriverLocally() {
         setChromeOptions();
+    }
+
+    public WebDriver getDriverSelenium() {
+        return this.driver;
     }
 
     private void startTestsInFirefox() {

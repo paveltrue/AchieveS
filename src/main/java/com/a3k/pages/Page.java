@@ -32,7 +32,7 @@ public abstract class Page {
     protected WebElement logo = $(By.xpath("//*[contains(@class , 'logo ')]"));
     private By standardDDL = By.xpath(".//a[@data-dropdown='#teacher-editions-dropdown']");                  //JS
     private By languageInStandardDDL = By.xpath(".//*[@id='teacher-editions-dropdown']//a[@data-value='1']");//JS
-    private By popupBy = By.xpath("//div[not(contains(@class,'supportsDialog ')) and not(contains(@class,'videoDialog')) and @role='dialog' and contains(@style,'block')]");
+    protected By popupBy = By.xpath("//div[not(contains(@class,'supportsDialog ')) and not(contains(@class,'videoDialog')) and @role='dialog' and contains(@style,'block')]");
     protected WebElement walkmePopup = $(By.xpath(".//*[contains(@class, 'wm-close-button') or contains(@class, 'walkme-x-button') or contains(@class, 'walkme-action-close')]"));
     private By popupContentBy = By.xpath("//div[(@role='dialog') and (contains(@style,'display: block;'))]/div[contains(@class,'alert_dialog')]");
     protected By adminButtonBy = By.xpath(".//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]");
@@ -49,6 +49,18 @@ public abstract class Page {
     protected WebElement nextQuestionButton = $(By.xpath("//*[@id=\"step20activity\"]/div/lesson-activity/form/div/div[2]/div/button"));
     protected WebElement selectAnswerChoiceButton = $(By.xpath("/html/body/div[28]/div[3]/div/button"));
     protected WebElement selectAnswerChoiceButtonCopy = $(By.xpath("/html/body/div[29]/div[1]/button/span[1]"));
+    protected WebElement OKButton = $(byText("OK"));
+    protected WebElement ARPonActivityPage = $(By.xpath("//*[@id=\"step14page2\"]/div[2]/div/a"));
+    protected By viewResultsButtonLiteracyBy = By.xpath("//button[@ng-click='showActivityResult()']");
+    protected WebElement submitButtonNew1 = $(By.xpath("//*[@id=\"step20activity\"]/div/lesson-activity/form/div/div[2]/div/button"));
+    protected WebElement submitButtonNew2 = $(By.xpath("//*[@id=\"step14activity\"]/div/lesson-activity/form/div/div[2]/div/button"));
+    protected WebElement submitButtonNew3 = $(By.xpath("/html/body/div[28]/div[3]/div/button"));
+    protected WebElement nextQBByText = $(byText("Next Question"));
+    private By topNavToolbarBy = By.xpath("//nav[contains(@class, 'navbar-anchor')]");
+    private By nextQuestionButtonLiteracyBy = By.xpath("//*[@ng-click='nextQuestionHandler()']");
+    private By loginButtonBy = By.xpath(".//*[@id = 'button' and @type = 'submit']");
+
+
 
     protected static Logger logger = BasicLogger.getInstance();
 
@@ -128,7 +140,7 @@ public abstract class Page {
 
     public void waitAndCLickIfExist(WebElement element) {
         try {
-            if ($(element).exists()) {
+            if ($(element).isDisplayed()) {
                 $(element).click();
             }
         } catch (Exception e) {
@@ -254,6 +266,7 @@ public abstract class Page {
 
     public void clickJSChange(By by) {
         loggerMessageWithXpathBy(by, "Trying to click on locator via JS");
+        clickIfDisplayedSubmitButton();
         try {
             WebElement element = $(by);
             //((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
@@ -342,6 +355,7 @@ public abstract class Page {
     }
 
     public void closePopup() {
+        if ($(popupBy).isDisplayed())
         $(popupBy).$(By.xpath("div//button[1]")).click();
     }
 
@@ -686,6 +700,7 @@ public abstract class Page {
     }
 
     public void goToAdminPage() {
+        clickIfDisplayedSubmitButton();
         logger.info("Opening Admin Page");
         if (!isDisplayedBy(adminButtonBy)) {
             clickJS(teachersNameBy);
@@ -1085,34 +1100,27 @@ public abstract class Page {
     }
 
     public void clickAfterClosePopupForChoose(WebElement element){
+        Configuration.pageLoadStrategy = "normal";
         closeWalkmeNew();
-        closeWalkmeNew();
-        closeWalkmeNew();
-        if ($(element).isDisplayed()){
-            pressSelectAnswerChoiceButt();
-            $(element).click();
-        }
-        pressSelectAnswerChoiceButt();
 
-//        for ( int i = 0; i < 10; i ++) {
-//            if ($(By.xpath("/html/body/div[29]/div[3]/div/button")).isDisplayed()) {
-//                $(By.xpath("/html/body/div[29]/div[3]/div/button")).click();
-//            }
-//        }
-        if ($(byText("Next Question")).isDisplayed()){
-            $(byText("Next Question")).click();
+        if (isViewResultsButtonVisible()){
+            return;
         }
-        if ($(nextQuestionButton).isDisplayed()){
-            $(nextQuestionButton).click();
+
+        if ($(nextQBByText).isDisplayed()) {
+            return;
         }
-        if (!$(selectedAnswerBy).isDisplayed()) {
-            clickAfterClosePopupForChoose(element);
+
+        if ($(element).isDisplayed() && !$(nextQBByText).isDisplayed() && !isViewResultsButtonVisible()){
+            if ($(OKButton).isDisplayed()){
+                $(OKButton).click();
+            }
+            $(element).click();
         }
 
     }
 
     public void pressSelectAnswerChoiceButt(){
-        for(int i = 0; i < 2; i++) {
             if ($(selectAnswerChoiceButton).isDisplayed()) {
                 $(selectAnswerChoiceButton).click();
             } else if ($(selectAnswerChoiceButtonCopy).isDisplayed()) {
@@ -1120,9 +1128,75 @@ public abstract class Page {
             } else if ($(byText("OK")).isDisplayed()){
                 $(byText("OK")).click();
             }
+    }
+
+    public boolean isElementExist(WebElement web) {
+        return $(web).exists();
+    }
+
+    public void pressOKbutton(){
+        if ($(OKButton).isDisplayed()){
+            $(OKButton).click();
+        }
+    }
+
+    public void clickOnSubmitPY(){
+        Configuration.pageLoadStrategy = "normal";
+        if ($(OKButton).isDisplayed()){
+            $(OKButton).click();
+        }
+        if ($(nextQBByText).isDisplayed()){
+            $(nextQBByText).click();
+        } else if ($(byText("Submit")).isDisplayed()){
+            $(byText("Submit")).click();
         }
 
+        clickOnNextQuestionButton();
+        if (isViewResultsButtonVisible()){
+            return;
+        }
     }
+
+    public boolean isViewResultsButtonVisible() {
+        return isDisplayedBy(viewResultsButtonLiteracyBy);
+    }
+
+    public void clickPY(WebElement element) {
+        logger.info("Click on element ");
+        if(!$(element).isDisplayed()) {
+            closeWalkme();
+        }
+        try {
+            clickChange(element);
+        } catch (Exception e) {
+            closeWalkme();
+            $(element).isDisplayed();
+            clickChange(element);
+        }
+    }
+
+    public void clickChange(WebElement element) {
+        loggerMessageWithXpath(element, "Trying to click on element ");
+
+        if (!isElementAbsentBy(topNavToolbarBy)) {
+            executeJavaScript("arguments[0].scrollIntoView(false);", element);
+        }
+            $(element).click();
+    }
+
+    public void clickOnNextQuestionButton() {
+        if (isElementPresentBy(nextQuestionButtonLiteracyBy))
+            $(nextQuestionButtonLiteracyBy).click();
+    }
+
+    public void clickIfDisplayedSubmitButton(){
+        Configuration.pageLoadStrategy = "normal";
+        while ($(loginButtonBy).isDisplayed() || $(byText("LOG IN")).isDisplayed()){
+            $(loginButtonBy).click();
+        }
+        Configuration.pageLoadStrategy = "eager";
+    }
+
 
 
 

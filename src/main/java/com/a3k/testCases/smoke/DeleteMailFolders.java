@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class DeleteMailFolders extends BasicTestCase {
 
     @Parameters({"login", "password", "classToSelect", "language"})
-    @Test(dataProvider = "getUsers", groups = {"literacyteam"})
+    @Test(dataProvider = "getUsers", groups = {"literacyteam"}, invocationCount = 1)
 
     public void checkPart2OfBonusLesson(@Optional("teenbizstud.one") String login,
                                         @Optional("teenbizstud.one") String password,

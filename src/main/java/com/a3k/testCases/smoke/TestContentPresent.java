@@ -16,7 +16,7 @@ public class TestContentPresent extends BasicTestCase {
     private static MyLessons myLessons;
 
     @Parameters({"login", "password", "className", "program"})
-    @Test(dataProvider = "getStudents", groups = {"Smoke", "All"})
+    @Test(dataProvider = "getStudents", groups = {"Smoke", "All"}, invocationCount = 1)
     public void checkNotificationsCenterContent(
             String login,
             String password,
@@ -33,8 +33,7 @@ public class TestContentPresent extends BasicTestCase {
 
     @Test(groups = {"Smoke", "All",
             "Content", "Collections"})
-    public void checkCoursesAndCollectionsContent(
-    ) {
+    public void checkCoursesAndCollectionsContent() {
         new LoginPage(driver).loginWithProgram(
                 "uskba.alex", "uskba.alex", "KidBiz3000");
         myLessons = new MyLessons(driver);
@@ -52,13 +51,9 @@ public class TestContentPresent extends BasicTestCase {
         softAssert.assertAll();
     }
 
-    @Test(groups = {"Smoke", "All", "Grading",
-            "Content"})
-    public void checkGrading()
-
-    {
-        login("superteacher.multi", "superteacher.multi",
-                "KidBiz3000",
+    @Test(groups = {"Smoke", "All", "Grading", "Content"})
+    public void checkGrading() {
+        login("superteacher.multi", "superteacher.multi", "KidBiz3000",
                 "Access Class 3g");
         openGrading();
         verifyGradingLink();

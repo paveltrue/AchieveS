@@ -1,5 +1,6 @@
 package com.a3k.pages;
 
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -255,14 +256,12 @@ public class LoginPage extends Page {
 
     public void loginWithClassAndProgramIfNeeded(String login, String password, String program, String classToSelect){
         logger.info(String.format("Login with credentials %s\\%s", login, password));
+        Configuration.pageLoadStrategy = "normal";
         setUser(login);
         setPassword(password);
         clickLoginButton();
         waitForPageToLoad();
-        if ($(By.xpath("//*[@id=\"button\"]")).isDisplayed()){
-            $(By.xpath("//*[@id=\"button\"]")).click();
-        }
-        if (url().contains("home") || url().contains("levelset/welcome")) {
+        if ((url().contains("home") || url().contains("levelset/welcome")) && !$(loginButtonBy).isDisplayed()) {
             closeAllPopUpAfterLogin();
             return;
         }
@@ -301,6 +300,11 @@ public class LoginPage extends Page {
         } else {
             closeAllPopUpAfterLogin();
         }
+
+        while ($(loginButtonBy).isDisplayed()){
+            $(loginButtonBy).click();
+        }
+        Configuration.pageLoadStrategy = "eager";
     }
 
     public void closeAllPopUpAfterLogin(){
@@ -442,6 +446,14 @@ public class LoginPage extends Page {
           //  select.selectByVisibleText(program);
             clickLoginButton();
         }
+    }
+
+    public void clickIfDisplayedSubmitButton(){
+        Configuration.pageLoadStrategy = "normal";
+        while ($(loginButtonBy).isDisplayed()){
+            $(loginButtonBy).click();
+        }
+        Configuration.pageLoadStrategy = "eager";
     }
 
 }

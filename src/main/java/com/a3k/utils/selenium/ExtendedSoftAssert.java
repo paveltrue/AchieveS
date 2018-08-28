@@ -1,4 +1,4 @@
-package com.a3k.utils.Selenium;
+package com.a3k.utils.selenium;
 
 import com.a3k.utils.logger.BasicLogger;
 import io.qameta.allure.Attachment;

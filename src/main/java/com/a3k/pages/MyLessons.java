@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.refresh;
 
 public class MyLessons extends Page {
 
@@ -60,6 +61,28 @@ public class MyLessons extends Page {
     private By saveCollectionButtonBy = By.xpath("//*[@id='saveButton' and @type='submit']");
     private By changesSavedPopUpButtonBy = By.xpath(".//*[@class = 'ui-dialog-buttonset']//button");
     private By yearViewButtonBy = By.xpath(".//*[contains(@href,'/my_lessons/year')]");
+    protected WebElement selectedElementInPortfolioDDL = $(By.xpath(".//*[@class = 'mdropdown']"));
+    protected ElementsCollection headerOf5Steps = $$(By.xpath("//*[contains(@class , 'headerColumn5steps headerColumn ')]"));
+    protected ElementsCollection elementsOfPortfolioDDL = $$(By.xpath("//*[@id='my-lessons-portfolio-dropdown']//a"));
+    protected By selectedElementInPortfolioDDLBy = By.xpath(".//*[@class = 'mdropdown']");
+    protected By elementsOfPortfolioDDLBy = By.xpath("//*[@id='my-lessons-portfolio-dropdown']//a");
+    protected By lessonsTrBy = By.xpath("//*[contains(@id,'lesson-')]");
+    private WebElement okButtonOnCalendar = $(By.xpath(".//*[@data-text = 'OK']"));
+    private By searchForMoreLessonsBy = By.xpath(".//*[@href='#lessons_side_panel']");
+    private WebElement dateOfLesson = $(By.id("datecontent1"));
+    private ElementsCollection calendars = $$(By.className("ui-datepicker-calendar"));
+    private WebElement startOnCalendar = $(By.xpath(".//*[@id='startCal']/div[1]"));
+    private WebElement endOnCalendar = $(By.xpath(".//*[@id='endCal']/div[1]"));
+    private WebElement removeButton = $(By.xpath(".//*[@class='remove-button submit-button rolloverButton']"));
+    private WebElement dateColumn = $(By.xpath(".//a[contains(@href,'start_date')]"));
+    private WebElement lessonColumn = $(By.xpath(".//a[contains(@href,'sort=lesson')]"));
+    private WebElement topicColumn = $(By.xpath(".//a[contains(@href,'sort=topic')]"));
+    private WebElement strategyColumn = $(By.xpath(".//a[contains(@href,'sort=focus')]"));
+    private ElementsCollection descriptionOfTheLesson = $$(By.xpath(".//div[@class = 'summary']/div"));
+    protected ElementsCollection titlesOflessonsOnWeekView = $$(By.xpath(".//*[contains(@id, 'calendar')]//span[contains(@class, 'event-title')]"));
+    private ElementsCollection titlesOfLesson = $$(By.xpath(".//a[@class = 'title']"));
+    private WebElement dayButton = $(By.xpath(".//*[contains(@href,'/my_lessons/day')]"));
+
 
 
 
@@ -582,6 +605,328 @@ public class MyLessons extends Page {
         //$(yearViewButtonBy).click();
         closeWalkmeNew();
         clickAfterClosePopup(yearViewButtonBy);
+    }
+
+    public boolean checkPortfolio(String language) {
+        logger.info("Checking portfolio");
+        waitForPageToLoad();
+        String defaultElement;
+        String[] options;
+        boolean result = true;
+
+        if (language.equalsIgnoreCase("english")) {
+            defaultElement = "Lesson Progress";
+            options = new String[]{"Lesson Progress", "Activities", "Math", "Thought Questions & Writing"};
+        } else {
+            defaultElement = "Mi progreso";
+            options = new String[]{"Mi progreso", "Actividades", "Matemáticas", "Pregunta y Escritura"};
+        }
+        boolean isDefaultSelected = $(selectedElementInPortfolioDDL).getText().equals(defaultElement);
+        if (!isDefaultSelected) {
+            logger.error("problem with default option, it should be " + defaultElement + ", but on page "
+                    + $(selectedElementInPortfolioDDL).getText());
+            result = false;
+        }
+        if (isDefaultSelected) {
+            if ($$(headerOf5Steps).size() != 5) {
+                logger.error("5 tabs doesn't displayed by default");
+                result = false;
+            }
+        }
+        selectedElementInPortfolioDDL.click();
+        if ($$(elementsOfPortfolioDDL).size() == 4) {
+            int i = 0;
+            for (WebElement option : elementsOfPortfolioDDL) {
+                String text = $(option).getText();
+                if (!text.equals(options[i])) {
+                    logger.error("problem with option " + (i + 1) + ", it should be " + options[i] + ", but on page "
+                            + $(option).getText());
+                    result = false;
+                }
+                ++i;
+            }
+        }
+        $(selectedElementInPortfolioDDL).click();
+
+        return result;
+    }
+
+    public boolean checkLessonsOnLessonProgressPage(String language) {
+        boolean result = true;
+        if (!isTextOnPagePresent("There are no activities available.")) {
+            List<ElementsCollection> allTdOfAllLessons = new ArrayList<>();
+            for (WebElement el : lessonsTr)
+                allTdOfAllLessons.add($(el).findAll(By.xpath(".//td")));
+            boolean isFutureLesson = false;
+            int i = 0;
+            for (ElementsCollection cells : allTdOfAllLessons) {
+                String lessonName = $($$(cells).get(1)).find(lessonTitle).getText();
+
+                logger.info("Verifying Lesson '" + lessonName + "'");
+                if (!isFutureLesson)
+                    isFutureLesson = $($$(cells).get(1)).getAttribute("class").contains("Disabled");
+
+                boolean isAssingnedForStudent = $($$(cells).get(1)).findAll(avatarImage).size() > 0;
+
+                logger.info("\tChecking date cell");
+                checkDatesCellOnLessonProgressPage($$(cells).get(0), language, isAssingnedForStudent);
+                logger.info("\tChecking Lesson cell");
+                checkLessonCell($$(cells).get(1), isFutureLesson);
+                logger.info("\tChecking Topic cell");
+                checkTopicCell($$(cells).get(2));
+                logger.info("\tChecking 5Step Column");
+                result = check5StepColumnsLessonProgress($$(cells), isFutureLesson, language);
+
+                i++;
+                if (i == 1) {
+                    return result;
+                }
+            }
+
+        } else {
+            logger.error("There is no lesson displayed on Lesson Progress page");
+            result = false;
+        }
+        return result;
+    }
+
+    public void clickOnOptionInPortfolioDDLAndWait(int index) {
+        $(selectedElementInPortfolioDDLBy).click();
+        findEls(elementsOfPortfolioDDLBy).get(index - 1).click();
+        isElementPresentBy(selectedElementInPortfolioDDLBy);
+    }
+
+    public boolean checkLessonsOnActivitiesPage(String language) {
+        boolean result = true;
+        waitUntilElementsAppearsLocatedBy(lessonsTrBy);
+        ElementsCollection elements = findEls(lessonsTrBy);
+
+        if (!isTextOnPagePresent("There are no activities available.")) {
+            List<ElementsCollection> allTdOfAllLessons = new ArrayList<>();
+            for (WebElement el : elements) {
+                allTdOfAllLessons.add($(el).findAll(By.xpath(".//td")));
+            }
+
+            int i = 0;
+            for (ElementsCollection cells : allTdOfAllLessons) {
+                String lessonName = $$(cells).get(1).find(lessonTitle).getText();
+
+                logger.info("Verifying Lesson '" + lessonName + "'");
+
+                logger.info("\tChecking Dates cells");
+                checkDatesCell($$(cells).get(0), language);
+                logger.info("\tChecking Lesson cell");
+                checkLessonCell($$(cells).get(1), false);
+                logger.info("\tChecking Topic cell");
+                checkTopicCell($$(cells).get(2));
+                logger.info("\tChecking Parts cells");
+                checkPartCellsOnActivities($$(cells), language);
+                logger.info("\tChecking Class cells");
+                result = checkClassCell($$(cells).get(6));
+                i++;
+                if (i == 1) {
+                    return result;
+                }
+            }
+        } else {
+            logger.error("There is no lesson displayed on Activities view on Lessons Page");
+            result = false;
+        }
+        return result;
+    }
+
+    private boolean checkDatesCell(WebElement cell, String language) {
+        String text = $(cell).getText();
+        boolean result = true;
+        if (language.equalsIgnoreCase("english")) {
+            if (!datePattern.matcher(text).matches() && !datePattern2.matcher(text).matches()) {
+                logger.error("Patterns does not match date.");
+                result = false;
+            }
+        } else {
+            if (!datePatternSp.matcher(text).matches()) {
+                logger.error("Patterns does not match date.");
+                result = false;
+            }
+        }
+        return result;
+    }
+
+    private boolean checkPartCellsOnActivities(ElementsCollection cells, String language) {
+        String partOneTry1 = $$(cells).get(3).getText();
+        String partOneTry2 = $$(cells).get(4).getText();
+        boolean result = true;
+        if (!(partOneTry1.isEmpty() || partOneTry2.isEmpty())
+                ) {
+            result = false;
+            return result;
+        }
+        if (language.equalsIgnoreCase("english")) {
+            if (partOneTry1.contains("Try"))
+                partOneTry1 = partOneTry1.split("Try")[1].trim();
+
+            if (partOneTry2.contains("Try"))
+                partOneTry2 = partOneTry2.split("Try")[1].trim();
+        } else {
+
+            if (partOneTry1.contains("intento"))
+                partOneTry1 = partOneTry1.split("intento")[1].trim();
+
+            if (partOneTry2.contains("intento"))
+                partOneTry2 = partOneTry2.split("intento")[1].trim();
+        }
+
+        if (!percents.matcher(partOneTry1).matches()) {
+            logger.error("Percents " + percents + " don't match " + partOneTry1);
+            result = false;
+        } else if ((!percents.matcher(partOneTry2).matches())) {
+            logger.error("Percents " + percents + " don't match " + partOneTry2);
+            result = false;
+        }
+        return result;
+    }
+
+    private boolean checkClassCell(WebElement cell) {
+
+        boolean summary = !$(cell).getText().isEmpty();
+
+        if (!summary) {
+            logger.error("Summary text is empty");
+        }
+        return summary;
+    }
+
+    public boolean checkLessonsOnMathPage(String language) {
+
+        boolean result = true;
+        if (!isTextOnPagePresent("There are no activities available.")) {
+            List<ElementsCollection> allTdOfAllLessons = new ArrayList<>();
+            for (WebElement el : lessonsTr)
+                allTdOfAllLessons.add($(el).findAll(By.xpath(".//td")));
+            int i = 0;
+            for (ElementsCollection cells : allTdOfAllLessons) {
+
+                String lessonName = $$(cells).get(1).findElement(lessonTitle).getText();
+
+                logger.info("Verifying Lesson '" + lessonName + "'");
+
+                logger.info("\tChecking Dates cells");
+                checkDatesCell($$(cells).get(0), language);
+                logger.info("\tChecking Lesson cell");
+                checkLessonCell($$(cells).get(1), false);
+                logger.info("\tChecking Topic cell");
+                checkTopicCell($$(cells).get(2));
+                logger.info("\tChecking Parts cells");
+                checkPartCellsOnActivities($$(cells), language);
+                logger.info("\tChecking Class cells");
+                result = checkClassCell($$(cells).get(5));
+                i++;
+                if (i == 1) {
+                    return result;
+                }
+            }
+
+        } else {
+            logger.error("There is no lesson displayed on Maths Page");
+            result = false;
+        }
+        return result;
+    }
+
+    public boolean checkLessonsOnThougtQuestionsAndWritingPage(String language) {
+
+        boolean result = true;
+        if (!isTextOnPagePresent("There are no activities available.")) {
+            List<ElementsCollection> allTdOfAllLessons = new ArrayList<>();
+            for (WebElement el : lessonsTr)
+                allTdOfAllLessons.add($(el).findAll(By.xpath(".//td")));
+            int i = 0;
+            for (ElementsCollection cells : allTdOfAllLessons) {
+
+                String lessonName = $$(cells).get(1).find(lessonTitle).getText();
+
+                logger.info("Verifying Lesson '" + lessonName + "'");
+
+                logger.info("\tChecking Dates cells");
+                checkDatesCell($$(cells).get(0), language);
+                logger.info("\tChecking Lesson cell");
+                checkLessonCell($$(cells).get(1), false);
+                logger.info("\tChecking Topic cell");
+                checkTopicCell($$(cells).get(2));
+                logger.info("\tChecking Score cells");
+                checkScoreCell($$(cells).size());
+                logger.info("\tChecking Class cells");
+                result = checkClassCell($$(cells).get(4));
+                i++;
+                if (i == 1) {
+                    return result;
+                }
+            }
+
+        } else {
+            logger.error("There is no lesson displayed on Thought Question & Writing Page");
+            result = false;
+        }
+        return result;
+    }
+
+    private boolean checkScoreCell(int size) {
+        return size == 5;
+    }
+
+    public void clickOnOkButtonOnCalendar() {
+        $(okButtonOnCalendar).click();
+    }
+
+    public void clickSearchForMoreLessons() {
+        logger.info("Search for More Lessons");
+        $(searchForMoreLessonsBy).click();
+    }
+
+    public void clickStartDate() {
+        $(dateOfLesson).click();
+    }
+
+    public boolean isCalendarPresent() {
+        return isElementsExist(calendars);
+    }
+
+    public boolean isStartOnCalendarPresent() {
+        return $(startOnCalendar).exists();
+    }
+
+    public boolean isEndOnCalendarPresent() {
+        return $(endOnCalendar).exists();
+    }
+
+    public boolean isRemoveButtonOnCalendarPresent() {
+        return $(removeButton).exists();
+    }
+
+    public boolean isDateColumnPresent() {
+        return this.isElementExist(dateColumn);
+    }
+
+    public boolean isLessonColumnPresent() {
+        return this.isElementExist(lessonColumn);
+    }
+
+    public boolean isTopicColumnPresent() {
+        return this.isElementExist(topicColumn);
+    }
+
+    public boolean isStrategyColumnPresent() {
+        return this.isElementExist(strategyColumn);
+    }
+
+    public boolean isLessonNameAndSummaryPresent() {
+        return this.isElementsExist(descriptionOfTheLesson) && this.isElementsExist(titlesOfLesson);
+    }
+
+    public DayViewPage clickOnDayButton() {
+        refresh();
+        $(dayButton).click();
+        return new DayViewPage(driver);
     }
 
 
