@@ -82,7 +82,7 @@ public class MyLessons extends Page {
     protected ElementsCollection titlesOflessonsOnWeekView = $$(By.xpath(".//*[contains(@id, 'calendar')]//span[contains(@class, 'event-title')]"));
     private ElementsCollection titlesOfLesson = $$(By.xpath(".//a[@class = 'title']"));
     private WebElement dayButton = $(By.xpath(".//*[contains(@href,'/my_lessons/day')]"));
-
+    private WebElement nextArrowCalendar = $(By.xpath(".//*[contains(@class, 'datepicker-next')]"));
 
 
 
@@ -467,8 +467,11 @@ public class MyLessons extends Page {
 
     public void waitUntilElementStale(WebElement element) {
        // waitUntilElementStale(element);
-        for(int i = 0; i < 10; i ++) {
+        while (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
             closeWalkmeNew();
+        }
+        if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+            waitUntilElementStale(element);
         }
         $(deleteCollectionPopUpButtonYesBy).click();
     }
@@ -927,6 +930,27 @@ public class MyLessons extends Page {
         refresh();
         $(dayButton).click();
         return new DayViewPage(driver);
+    }
+
+    public void setDateAheadOnCalendar(int daysAhead) {
+        ElementsCollection dateList = getAvailableCalendarDays();
+        int daysAvailable = $$(dateList).size();
+        if (daysAvailable <= daysAhead) {
+            clickNextMonth();
+            dateList = getAvailableCalendarDays();
+            dateList.get(daysAhead - daysAvailable).click();
+        } else {
+            dateList.get(daysAhead).click();
+        }
+        logger.debug("Setting date " + daysAhead + " ahead");
+    }
+
+    public ElementsCollection getAvailableCalendarDays() {
+        return findEls(By.xpath(".//*[@id='ui-datepicker-div']//*[@href='#']"));
+    }
+
+    public void clickNextMonth() {
+        $(nextArrowCalendar).click();
     }
 
 

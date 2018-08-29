@@ -24,7 +24,7 @@ public class FiveStep_student_teenbiz extends BasicTestCase {
 
 	@Parameters({ "loginStudent", "passwordStudent", "program", "classToSelectStudent", "language", "testName" })
 	@Test(dataProvider = "getUsers",
-			groups = { "MyLessons", "FiveStep", "Smoke", "Student", "All" })
+			groups = { "MyLessons", "FiveStep", "Smoke", "Student", "All" }, invocationCount = 1)
 	public void verifyLesson_TeenBizStudent(
 			@Optional("teenbizstud.one") String login,
 			@Optional("teenbizstud.one") String password,

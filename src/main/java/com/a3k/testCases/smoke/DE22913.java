@@ -22,7 +22,7 @@ public class DE22913 extends BasicTestCase {
     private SearchWidgetPage searchWidgetPage;
 
     @Parameters({"loginTeacherEmpower", "passwordTeacherEmpower", "program", "classToSelectTeacherEmpower"})
-    @Test(groups = {"Smoke", "Usage Reports", "Teacher", "All"})
+    @Test(groups = {"Smoke", "Usage Reports", "Teacher", "All"}, invocationCount = 1)
     public void checkCollectionCreated(
             @Optional("uskba.alex") String login,
             @Optional("uskba.alex") String password,

@@ -97,8 +97,10 @@ public class AllReportsPage extends Page {
 
     public void openStudentWork() {
         waitUntilAppearsBy(studentWorkMenuItemBy);
+        closeWalkmeNew();
         logger.info("Open Student Work");
         if (!isStudentWorkSectionIsOpened()) {
+            closeWalkmeNew();
             $(studentWorkMenuItemBy).click();
         }
     }
@@ -245,6 +247,7 @@ public class AllReportsPage extends Page {
 
     public void openReportByHref(String href) {
 
+        closeWalkmeNew();
         WebElement report = $(By.xpath("//a[contains(@href,'" + href + "')]"));
         $(report).click();
     }

@@ -194,13 +194,39 @@ public abstract class Page {
         }
     }
 
+    public void clickActions(WebElement element) {
+        logger.info("Click on element " + element);
+        if(!$(element).isDisplayed()) {
+            closeWalkme();
+        }
+        try {
+            clickActionsChange(element);
+        } catch (ElementNotInteractableException e) {
+            closeWalkme();
+            clickActionsChange(element);
+        } catch (TimeoutException e) {
+            logger.trace("Element " + element + " not found");
+        }
+    }
+
     public void clickActionsChange(By by) {
         loggerMessageWithXpathBy(by, "Trying to click on locator via (former)Actions(changed method)");
         $(by).click();
     }
 
+    public void clickActionsChange(WebElement element) {
+        loggerMessageWithXpathBy(element, "Trying to click on locator via (former)Actions(changed method)");
+        $(element).click();
+    }
+
     public void loggerMessageWithXpathBy(By by, String message) {
         message = message + " " + by;
+        message = message.replaceFirst("By.xpath:", "");
+        logger.debug(message);
+    }
+
+    public void loggerMessageWithXpathBy(WebElement element, String message) {
+        message = message + " " + element;
         message = message.replaceFirst("By.xpath:", "");
         logger.debug(message);
     }
@@ -266,10 +292,12 @@ public abstract class Page {
 
     public void clickJSChange(By by) {
         loggerMessageWithXpathBy(by, "Trying to click on locator via JS");
+        Configuration.pageLoadStrategy = "normal";
         clickIfDisplayedSubmitButton();
         try {
             WebElement element = $(by);
             //((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+            clickIfDisplayedSubmitButton();
             executeJavaScript("arguments[0].click();", element);
             loggerMessageWithXpathBy(by, "Element was clicked via JS");
         } catch (NoSuchElementException | TimeoutException e) {
@@ -1112,10 +1140,13 @@ public abstract class Page {
         }
 
         if ($(element).isDisplayed() && !$(nextQBByText).isDisplayed() && !isViewResultsButtonVisible()){
+            Configuration.pageLoadStrategy = "normal";
             if ($(OKButton).isDisplayed()){
                 $(OKButton).click();
             }
-            $(element).click();
+            if (!$(nextQBByText).isDisplayed() && !isViewResultsButtonVisible()) {
+                $(element).click();
+            }
         }
 
     }

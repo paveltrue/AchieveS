@@ -102,13 +102,7 @@ public class Lesson  extends Page{
     private By totalQuestionsMathBy = By.id("total_questions-step18page1");
     private WebElement activityLinkMath = $(By.id("link-step18page1"));
     private WebElement resultsLinkMath = $(By.id("link-step18page2"));
-
-
-
-
-
-
-
+    private WebElement throughtQuestionButton = $(By.xpath("//*[@id=\"appContentStart\"]/div[2]/div[1]/ul/li[5]/div"));
 
 
     public List<String> invalidAlertsPopupText;
@@ -269,15 +263,16 @@ public class Lesson  extends Page{
     }
 
     public void clickNextTabButton() {
-        Configuration.pageLoadStrategy = "normal";
         if (isPopupVisible()) {
             closePopup();
         }
         closeWalkmeNew();
+        Configuration.pageLoadStrategy = "normal";
         if ($(nextButtonBy).isDisplayed()){
             pressOKbutton();
+            Configuration.pageLoadStrategy = "normal";
             $(nextButtonBy).click();
-        }else if (!$(nextButtonBy).isDisplayed()) {
+        }else if (!$(nextButtonBy).isDisplayed() && !$(draft1FrameBy).isDisplayed()) {
             clickNextTabButton();
         }
     }
@@ -471,11 +466,13 @@ public class Lesson  extends Page{
 
     private void choseAnswer(int i){
         Configuration.pageLoadStrategy = "normal";
+        pressOKbutton();
         clickOnAnswer(i);
         clickOnSubmitPY();
         //clickOnSubmitButton();
 
-        if (isTryAgainMessageDisplayed()) {
+        if ((isTryAgainMessageDisplayed() || !$(nextQBByText).isDisplayed()) && !isViewResultsButtonVisible()) {
+            if (!$(nextQBByText).isDisplayed())
             clickOnAnswer(i);
             clickOnSubmitPY();
             //clickOnSubmitButton();
@@ -887,7 +884,10 @@ public class Lesson  extends Page{
     }
 
     public String checkFinishLaterButton(String text) {
-
+        if (!$(draft1FrameBy).isDisplayed()){
+            pressOKbutton();
+            $(throughtQuestionButton).click();
+        }
         closePopup();
         switchTo().frame(findEl(draft1FrameBy));
         $(findEl(textFieldBy)).setValue(text);

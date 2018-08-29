@@ -226,4 +226,9 @@ public class HomePage extends Page {
         return isElementPresentBy(searchButtonBy);
     }
 
+    public CurriculumScheduler goToCurriculumScheduler() {
+        goToNewUrl("/n/scheduler/");
+        return new CurriculumScheduler(driver);
+    }
+
 }

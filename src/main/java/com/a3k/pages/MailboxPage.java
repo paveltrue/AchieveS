@@ -165,7 +165,9 @@ public class MailboxPage extends Page {
 
     public void openTrashFolder() {
         logger.info("Open 'Trash' folder");
-        closeWalkmeNew();
+        while (!$(trashFolder).isDisplayed()){
+            closeWalkmeNew();
+        }
         $(trashFolder).click();
     }
 

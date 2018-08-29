@@ -1,5 +1,6 @@
 package com.a3k.pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -35,6 +36,7 @@ public class SearchWidgetPage extends Page {
     }
 
     public void selectInCourseDDL(String course) {
+        Configuration.pageLoadStrategy = "normal";
         logger.info("Set course " + course);
         Select select = new Select(courseDDL);
         closeWalkmeNew();

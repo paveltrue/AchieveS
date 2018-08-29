@@ -28,7 +28,7 @@ public class Reports extends BasicTestCase {
 
     @Step
     @Parameters({"login", "password", "classToSelect"})
-    @Test(dataProvider = "", groups = {"Refactoring", "Reports", "All"})
+    @Test(dataProvider = "", groups = {"Refactoring", "Reports", "All"}, invocationCount = 3)
     public void studentWork(
             @Optional("accessboost.teach") String login,
             @Optional("accessboost.teach") String password,
@@ -158,7 +158,6 @@ public class Reports extends BasicTestCase {
                 allReportsPage.openReportByHref(reportLink);
                 verifyReport();
             }
-
 
             bannedRepo.clear();
             specRepo.clear();

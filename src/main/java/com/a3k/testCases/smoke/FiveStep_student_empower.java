@@ -24,7 +24,7 @@ public class FiveStep_student_empower extends BasicTestCase {
 
     @Parameters({"loginStudent", "passwordStudent", "program", "classToSelectStudent", "language", "testName"})
     @Test(dataProvider = "getUsers", groups = {"MyLessons", "FiveStep",
-            "Smoke", "Student", "All"})
+            "Smoke", "Student", "All"}, invocationCount = 1)
     public void verifyLesson_EmpowerStudent(
             @Optional("teenbizstud.one") String login,
             @Optional("teenbizstud.one") String password,

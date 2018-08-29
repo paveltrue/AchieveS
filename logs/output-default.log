@@ -1,221 +1,36 @@
-[17:44:40] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[17:44:40] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[17:44:40] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[17:44:40] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
-[17:44:40] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
-[17:44:40] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[17:44:40] INFO  (BasicTestCase.java:80) - Headless Mode set to false
-[17:44:40] DEBUG (BasicTestCase.java:110) - Finished before suite
-[17:44:40] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:44:40] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:44:40] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:44:40] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:44:49] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:44:49] INFO  (A3k_Thumbnails.java:49) - Login with credentials empowerstud.one/empowerstud.one to class Empower Class 10g
-[17:44:49] INFO  (LoginPage.java:258) - Login with credentials empowerstud.one\empowerstud.one
-[17:44:49] INFO  (LoginPage.java:97) - Type in username: empowerstud.one
-[17:44:50] INFO  (LoginPage.java:104) - Type in password: empowerstud.one
-[17:44:51] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:44:51] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:44:55] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:44:55] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:44:55] INFO  (Page.java:379) - Opening My Lesson page
-[17:44:55] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:45:00] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:45:00] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:45:01] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:45:01] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:45:01] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:45:03] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:45:03] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:45:03] DEBUG (BasicTestCase.java:235) - Finished test
-[17:45:03] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:45:03] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:45:03] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:45:03] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:45:04] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:45:04] INFO  (A3k_Thumbnails.java:49) - Login with credentials teenbizstud.one/teenbizstud.one to class Pro Class 6g
-[17:45:04] INFO  (LoginPage.java:258) - Login with credentials teenbizstud.one\teenbizstud.one
-[17:45:04] INFO  (LoginPage.java:97) - Type in username: teenbizstud.one
-[17:45:05] INFO  (LoginPage.java:104) - Type in password: teenbizstud.one
-[17:45:05] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:45:06] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:45:06] DEBUG (Page.java:205) - Try to FIND element  By.id: active_class
-[17:45:09] INFO  (LoginPage.java:329) -  Stop login 
-[17:45:09] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:45:09] INFO  (Page.java:379) - Opening My Lesson page
-[17:45:09] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:45:13] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:45:13] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:45:14] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:45:14] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:45:14] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:45:16] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:45:16] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:45:16] DEBUG (BasicTestCase.java:235) - Finished test
-[17:45:16] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:45:16] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:45:16] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:45:16] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:45:17] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:45:17] INFO  (A3k_Thumbnails.java:49) - Login with credentials kidbizstud.one/kidbizstud.one to class Access Class 3g
-[17:45:17] INFO  (LoginPage.java:258) - Login with credentials kidbizstud.one\kidbizstud.one
-[17:45:17] INFO  (LoginPage.java:97) - Type in username: kidbizstud.one
-[17:45:17] INFO  (LoginPage.java:104) - Type in password: kidbizstud.one
-[17:45:18] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:45:18] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:45:18] DEBUG (Page.java:205) - Try to FIND element  By.id: active_class
-[17:45:21] INFO  (LoginPage.java:329) -  Stop login 
-[17:45:21] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:45:21] INFO  (Page.java:379) - Opening My Lesson page
-[17:45:21] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:45:25] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:45:25] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:45:25] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:45:25] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:45:25] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:45:27] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:45:27] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:45:27] DEBUG (BasicTestCase.java:235) - Finished test
-[17:45:27] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:45:27] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:45:27] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:45:27] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:45:28] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:45:28] INFO  (A3k_Thumbnails.java:49) - Login with credentials empowerstud.one/empowerstud.one to class Empower Class 10g
-[17:45:28] INFO  (LoginPage.java:258) - Login with credentials empowerstud.one\empowerstud.one
-[17:45:28] INFO  (LoginPage.java:97) - Type in username: empowerstud.one
-[17:45:28] INFO  (LoginPage.java:104) - Type in password: empowerstud.one
-[17:45:29] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:45:29] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:45:31] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:45:31] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:45:31] INFO  (Page.java:379) - Opening My Lesson page
-[17:45:31] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:45:34] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:45:35] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:45:35] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:45:35] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:45:35] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:45:37] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:45:37] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:45:37] DEBUG (BasicTestCase.java:235) - Finished test
-[17:45:37] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:45:37] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:45:37] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:45:37] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:45:38] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:45:38] INFO  (A3k_Thumbnails.java:49) - Login with credentials teenbizstud.one/teenbizstud.one to class Pro Class 6g
-[17:45:38] INFO  (LoginPage.java:258) - Login with credentials teenbizstud.one\teenbizstud.one
-[17:45:38] INFO  (LoginPage.java:97) - Type in username: teenbizstud.one
-[17:45:38] INFO  (LoginPage.java:104) - Type in password: teenbizstud.one
-[17:45:39] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:45:39] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:45:40] DEBUG (Page.java:205) - Try to FIND element  By.id: active_class
-[17:45:42] INFO  (LoginPage.java:329) -  Stop login 
-[17:45:42] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:45:42] INFO  (Page.java:379) - Opening My Lesson page
-[17:45:42] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:45:45] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:45:45] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:45:46] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:45:46] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:45:46] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:45:48] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:45:48] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:45:48] DEBUG (BasicTestCase.java:235) - Finished test
-[17:45:48] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:45:48] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:45:48] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:45:48] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:45:49] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:45:49] INFO  (A3k_Thumbnails.java:49) - Login with credentials kidbizstud.one/kidbizstud.one to class Access Class 3g
-[17:45:49] INFO  (LoginPage.java:258) - Login with credentials kidbizstud.one\kidbizstud.one
-[17:45:49] INFO  (LoginPage.java:97) - Type in username: kidbizstud.one
-[17:45:49] INFO  (LoginPage.java:104) - Type in password: kidbizstud.one
-[17:45:50] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:45:50] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:45:50] DEBUG (Page.java:205) - Try to FIND element  By.id: active_class
-[17:45:52] INFO  (LoginPage.java:329) -  Stop login 
-[17:45:52] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:45:52] INFO  (Page.java:379) - Opening My Lesson page
-[17:45:52] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:45:55] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:45:55] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:45:55] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:45:55] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:45:56] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:45:58] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:45:58] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:45:58] DEBUG (BasicTestCase.java:235) - Finished test
-[17:45:58] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:45:58] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:45:58] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:45:58] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:45:59] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:45:59] INFO  (A3k_Thumbnails.java:49) - Login with credentials empowerstud.one/empowerstud.one to class Empower Class 10g
-[17:45:59] INFO  (LoginPage.java:258) - Login with credentials empowerstud.one\empowerstud.one
-[17:45:59] INFO  (LoginPage.java:97) - Type in username: empowerstud.one
-[17:46:00] INFO  (LoginPage.java:104) - Type in password: empowerstud.one
-[17:46:00] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:46:01] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:46:03] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:46:03] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:46:03] INFO  (Page.java:379) - Opening My Lesson page
-[17:46:03] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:46:07] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:46:07] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:46:07] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:46:08] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:46:08] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:46:10] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:46:10] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:46:10] DEBUG (BasicTestCase.java:235) - Finished test
-[17:46:10] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:46:10] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:46:10] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:46:10] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:46:10] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:46:10] INFO  (A3k_Thumbnails.java:49) - Login with credentials teenbizstud.one/teenbizstud.one to class Pro Class 6g
-[17:46:10] INFO  (LoginPage.java:258) - Login with credentials teenbizstud.one\teenbizstud.one
-[17:46:10] INFO  (LoginPage.java:97) - Type in username: teenbizstud.one
-[17:46:11] INFO  (LoginPage.java:104) - Type in password: teenbizstud.one
-[17:46:12] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:46:12] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:46:12] DEBUG (Page.java:205) - Try to FIND element  By.id: active_class
-[17:46:14] INFO  (LoginPage.java:329) -  Stop login 
-[17:46:14] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:46:14] INFO  (Page.java:379) - Opening My Lesson page
-[17:46:14] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:46:18] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:46:18] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:46:18] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:46:19] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:46:19] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:46:21] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:46:21] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:46:21] DEBUG (BasicTestCase.java:235) - Finished test
-[17:46:21] TRACE (BasicTestCase.java:45) - Starting test testStudentThumbnails
-[17:46:21] INFO  (BasicTestCase.java:117) - Setting the browser up
-[17:46:21] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[17:46:21] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[17:46:21] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[17:46:21] INFO  (A3k_Thumbnails.java:49) - Login with credentials kidbizstud.one/kidbizstud.one to class Access Class 3g
-[17:46:21] INFO  (LoginPage.java:258) - Login with credentials kidbizstud.one\kidbizstud.one
-[17:46:21] INFO  (LoginPage.java:97) - Type in username: kidbizstud.one
-[17:46:22] INFO  (LoginPage.java:104) - Type in password: kidbizstud.one
-[17:46:23] DEBUG (LoginPage.java:237) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[17:46:23] INFO  (Page.java:73) - Try to execute Close Walkme
-[17:46:24] DEBUG (Page.java:205) - Try to FIND element  By.id: active_class
-[17:46:27] INFO  (LoginPage.java:329) -  Stop login 
-[17:46:27] INFO  (A3k_Thumbnails.java:55) - Open My Lessons Page
-[17:46:27] INFO  (Page.java:379) - Opening My Lesson page
-[17:46:27] INFO  (Page.java:309) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
-[17:46:32] INFO  (MyLessons.java:236) - Verifying Lesson 'Hidden Army'
-[17:46:32] INFO  (MyLessons.java:242) - 	Checking date cell
-[17:46:33] INFO  (MyLessons.java:244) - 	Checking Lesson cell
-[17:46:34] INFO  (MyLessons.java:246) - 	Checking Topic cell
-[17:46:35] INFO  (MyLessons.java:248) - 	Checking 5Step Column
-[17:46:40] DEBUG (BasicTestCase.java:233) - Finishing test
-[17:46:40] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[17:46:40] DEBUG (BasicTestCase.java:235) - Finished test
+[15:17:33] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[15:17:33] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[15:17:33] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[15:17:33] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
+[15:17:33] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
+[15:17:33] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[15:17:33] INFO  (BasicTestCase.java:80) - Headless Mode set to false
+[15:17:33] DEBUG (BasicTestCase.java:110) - Finished before suite
+[15:17:33] TRACE (BasicTestCase.java:45) - Starting test verifyDatesFormatOnScheduler
+[15:17:33] INFO  (BasicTestCase.java:117) - Setting the browser up
+[15:17:33] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[15:17:33] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[15:17:41] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[15:17:42] INFO  (US24608_InternationalTeacher.java:71) - Login with credentials stu.esclen.1\song99082
+[15:17:42] INFO  (LoginPage.java:98) - Type in username: stu.esclen.1
+[15:17:42] INFO  (LoginPage.java:105) - Type in password: song99082
+[15:17:43] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[15:17:43] INFO  (Page.java:73) - Try to execute Close Walkme
+[15:17:45] INFO  (Page.java:337) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/n/scheduler/
+[15:17:48] INFO  (Page.java:253) - Click on element By.cssSelector: div#setDate
+[15:17:48] INFO  (Page.java:742) - Wait until element By.cssSelector: div#setDate clickable
+[15:17:48] DEBUG (Page.java:225) - Trying to click on locator via JS By.cssSelector: div#setDate
+[15:17:48] DEBUG (Page.java:225) - Element was clicked via JS By.cssSelector: div#setDate
+[15:17:48] DEBUG (Page.java:225) - Try to FIND element  By.cssSelector: input#startDate
+[15:17:48] DEBUG (Page.java:225) - Try to FIND element  By.cssSelector: input#endDate
+[15:17:48] INFO  (Page.java:253) - Click on element By.cssSelector: div#scheduler
+[15:17:48] INFO  (Page.java:742) - Wait until element By.cssSelector: div#scheduler clickable
+[15:17:48] DEBUG (Page.java:225) - Trying to click on locator via JS By.cssSelector: div#scheduler
+[15:17:49] DEBUG (Page.java:225) - Element was clicked via JS By.cssSelector: div#scheduler
+[15:17:49] INFO  (Page.java:253) - Click on element By.id: expandAll
+[15:17:49] INFO  (Page.java:742) - Wait until element By.id: expandAll clickable
+[15:17:49] DEBUG (Page.java:225) - Trying to click on locator via JS By.id: expandAll
+[15:17:50] DEBUG (Page.java:225) - Element was clicked via JS By.id: expandAll
+[15:17:50] DEBUG (BasicTestCase.java:233) - Finishing test
+[15:17:50] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[15:17:50] DEBUG (BasicTestCase.java:235) - Finished test

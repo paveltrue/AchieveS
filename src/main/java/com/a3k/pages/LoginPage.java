@@ -27,6 +27,7 @@ public class LoginPage extends Page {
     private By emailNoticeContainerBy = By.xpath("//div[@id='emailNoticeDiv']/iframe");
     private WebElement emailNoticeContainer = $(By.xpath("//div[@id='emailNoticeDiv']/iframe"));
     private WebElement chooseClassCombo = $(By.id("active_class"));
+    private WebElement chooseClassComboPY = $(By.xpath("//*[@id=\"active_class\"]"));
     private WebElement chooseClassOrProgramm =$(By.xpath("//label[contains(@for,'active_')]"));
     private WebElement chooseProgramCombo = $(By.id("active_pgm"));
     private By emailInputBy = By.xpath("//table[@class='emailAlert']//input[@name='email']");
@@ -275,7 +276,7 @@ public class LoginPage extends Page {
                 assertTrue(false, "The user = " + login + "/or password = " + password + " is incorrect.");
             }
         }
-
+        Configuration.pageLoadStrategy = "normal";
         if (isDisplayedBy(chooseProgramComboBy)) {
             Select selectProgram = new Select(findEl(chooseProgramComboBy));
             selectProgram.selectByVisibleText(program);
@@ -361,8 +362,10 @@ public class LoginPage extends Page {
         setPassword(password, login);
         clickLoginButton();
         if (!classToSelect.isEmpty()) {
-            Select select = new Select(chooseClassCombo);
-            select.selectByVisibleText(classToSelect);
+            Configuration.pageLoadStrategy = "normal";
+            Select select = new Select($(By.xpath("//*[@id=\"active_class\"]")));
+           select.selectByVisibleText(classToSelect);
+//            $(chooseClassCombo).selectOptionByValue(classToSelect);
             clickLoginButton();
         }
         closeTeachersSurv();
