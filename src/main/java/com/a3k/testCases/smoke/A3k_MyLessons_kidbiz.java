@@ -19,7 +19,7 @@ public class A3k_MyLessons_kidbiz extends BasicTestCase {
     @Attachment(value = "{0}", type = "text/plain")
     @Parameters({"login", "password", "program", "classToSelect", "language"})
     @Test(dataProvider = "getUsers", groups = {"MyLessons", "Smoke",
-            "All"})
+            "All"}, invocationCount = 1)
     public void myLessonsStudent(@Optional("kidbizstud.one") String login, @Optional("kidbizstud.one") String password, @Optional("kidbizstud.one") String program,
                                  @Optional("Access Class 3g") String classToSelect, @Optional("english") String language) {
 

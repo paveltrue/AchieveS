@@ -14,7 +14,7 @@ public class MyLessonsTeacher extends BasicTestCase {
 
 	@Flaky
 	@Parameters({ "loginTeacher", "passwordTeacher", "program", "classToSelectTeacher" })
-	@Test(groups = { "MyLessons", "Teacher", "Smoke", "All" })
+	@Test(groups = { "MyLessons", "Teacher", "Smoke", "All" }, invocationCount = 1)
 	public void doTeacher(
 			@Optional("autospanish.teach") String login,
 			@Optional("autospanish.teach") String password,

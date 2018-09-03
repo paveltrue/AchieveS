@@ -1,36 +1,18 @@
-[15:17:33] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[15:17:33] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[15:17:33] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[15:17:33] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
-[15:17:33] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
-[15:17:33] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[15:17:33] INFO  (BasicTestCase.java:80) - Headless Mode set to false
-[15:17:33] DEBUG (BasicTestCase.java:110) - Finished before suite
-[15:17:33] TRACE (BasicTestCase.java:45) - Starting test verifyDatesFormatOnScheduler
-[15:17:33] INFO  (BasicTestCase.java:117) - Setting the browser up
-[15:17:33] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[15:17:33] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[15:17:41] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
-[15:17:42] INFO  (US24608_InternationalTeacher.java:71) - Login with credentials stu.esclen.1\song99082
-[15:17:42] INFO  (LoginPage.java:98) - Type in username: stu.esclen.1
-[15:17:42] INFO  (LoginPage.java:105) - Type in password: song99082
-[15:17:43] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[15:17:43] INFO  (Page.java:73) - Try to execute Close Walkme
-[15:17:45] INFO  (Page.java:337) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/n/scheduler/
-[15:17:48] INFO  (Page.java:253) - Click on element By.cssSelector: div#setDate
-[15:17:48] INFO  (Page.java:742) - Wait until element By.cssSelector: div#setDate clickable
-[15:17:48] DEBUG (Page.java:225) - Trying to click on locator via JS By.cssSelector: div#setDate
-[15:17:48] DEBUG (Page.java:225) - Element was clicked via JS By.cssSelector: div#setDate
-[15:17:48] DEBUG (Page.java:225) - Try to FIND element  By.cssSelector: input#startDate
-[15:17:48] DEBUG (Page.java:225) - Try to FIND element  By.cssSelector: input#endDate
-[15:17:48] INFO  (Page.java:253) - Click on element By.cssSelector: div#scheduler
-[15:17:48] INFO  (Page.java:742) - Wait until element By.cssSelector: div#scheduler clickable
-[15:17:48] DEBUG (Page.java:225) - Trying to click on locator via JS By.cssSelector: div#scheduler
-[15:17:49] DEBUG (Page.java:225) - Element was clicked via JS By.cssSelector: div#scheduler
-[15:17:49] INFO  (Page.java:253) - Click on element By.id: expandAll
-[15:17:49] INFO  (Page.java:742) - Wait until element By.id: expandAll clickable
-[15:17:49] DEBUG (Page.java:225) - Trying to click on locator via JS By.id: expandAll
-[15:17:50] DEBUG (Page.java:225) - Element was clicked via JS By.id: expandAll
-[15:17:50] DEBUG (BasicTestCase.java:233) - Finishing test
-[15:17:50] TRACE (BasicTestCase.java:234) - Getting selenium logs
-[15:17:50] DEBUG (BasicTestCase.java:235) - Finished test
+[09:55:18] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[09:55:18] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[09:55:18] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[09:55:18] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
+[09:55:18] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
+[09:55:18] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[09:55:18] INFO  (BasicTestCase.java:80) - Headless Mode set to false
+[09:55:18] DEBUG (BasicTestCase.java:110) - Finished before suite
+[09:55:18] TRACE (BasicTestCase.java:45) - Starting test verifySharingNew_US14593
+[09:55:18] INFO  (BasicTestCase.java:117) - Setting the browser up
+[09:55:18] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[09:55:18] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[09:55:29] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[09:55:29] INFO  (LoginPage.java:259) - Login with credentials usda14593.pooh\usda14593.pooh
+[09:56:23] INFO  (LoginPage.java:98) - Type in username: usda14593.pooh
+[09:56:27] INFO  (LoginPage.java:105) - Type in password: usda14593.pooh
+[09:56:33] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[09:56:33] INFO  (Page.java:83) - Try to execute Close Walkme

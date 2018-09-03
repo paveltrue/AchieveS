@@ -68,9 +68,7 @@ public class US24608_NationalTeacher extends BasicTestCase {
 
         DateHelper.isValidFormat("mm/d/yyyy", date);
 
-
         scheduler.changeLessonDate(7);
-
 
     }
 

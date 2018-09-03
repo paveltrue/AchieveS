@@ -17,10 +17,13 @@ public class SearchWidgetPage extends Page {
     private WebElement advancedOptionBar = $(By.className("advancedOptionsBar"));
     private WebElement courseDDL = $(By.id("course_id"));
     private By firstLessonOnSearchTabBy = By.xpath(".//div[contains(@class, 'ml_tab moreLessonsSearch')]//*[contains(@class , 'lessonSmall')][1]");
+    private WebElement placeToDropLessonsWeb = $(By.xpath("//*[contains(@class, 'mylessonsContentContainer')]"));
     private By placeToDropLessonsBy = By.xpath("//*[contains(@class, 'mylessonsContentContainer')]");
     private By allLessonsOnSearchTabBy = By.xpath(".//div[contains(@class, 'ml_tab moreLessonsSearch')]//*[contains(@class , 'lessonSmall')]//div[@class = 'lessonTitle']/..");
     private WebElement searchBar = $(By.id("searchBar"));
     private WebElement searchButton = $(By.xpath(".//*[@id='ml_search_form']/*[@class='searchButton']"));
+    private By searchBarBy = By.id("searchBar");
+    private By notAddedLessonBy = By.xpath("//div[@class='ml_tab moreLessonsSearch']//*[contains(@id,'lessonSearch')]//div[contains(@class,'classColor noColor')]/..");
 
 
 
@@ -105,6 +108,19 @@ public class SearchWidgetPage extends Page {
 
     public boolean isAdvancedOptionsSectionPresent() {
        return isElementExist(advancedOptionBar);
+    }
+
+    public void enterTextInSearchBar(String text) {
+        waitUntilElementClickableBy(searchBarBy);
+        findEl(searchBarBy).clear();
+        logger.info("Enter text " + text + " in search bar.");
+        enterTextInInput(searchBarBy, text);
+    }
+
+    public void dragAndDropFirstNotAddedLessonBy() {
+        waitUntilElementsAppearsLocatedBy(notAddedLessonBy);
+        ElementsCollection elements = findEls(notAddedLessonBy);
+        dragAndDrop(elements.get(0), placeToDropLessonsWeb);
     }
 
 }

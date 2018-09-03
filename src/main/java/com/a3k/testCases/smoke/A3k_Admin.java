@@ -95,7 +95,7 @@ public class A3k_Admin extends BasicTestCase {
     static AllReportsPage allReportsPage;
 
     @Parameters({"loginTeacher", "passwordTeacher", "program", "classToSelectTeacher", "language", "testName"})
-    @Test(groups = {"Smoke", "All", "Admin"})
+    @Test(groups = {"Smoke", "All", "Admin"}, invocationCount = 1)
     public void testAdmin(@Optional("kidbizteach.one") String login,
                           @Optional("kidbizteach.one") String password,
                           @Optional("") String program,

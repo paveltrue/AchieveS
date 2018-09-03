@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MyLessons extends Page {
 
@@ -83,6 +81,55 @@ public class MyLessons extends Page {
     private ElementsCollection titlesOfLesson = $$(By.xpath(".//a[@class = 'title']"));
     private WebElement dayButton = $(By.xpath(".//*[contains(@href,'/my_lessons/day')]"));
     private WebElement nextArrowCalendar = $(By.xpath(".//*[contains(@class, 'datepicker-next')]"));
+    private WebElement changeDistrictLink = $(By.xpath(".//a[contains(@class, 'changeDistrict')]"));
+    private By showClassesButtonListBy = By.xpath(".//*[@type='button' and contains(@class, 'showClasses')]");
+    private WebElement courseClassesSaveButton = $(By.xpath(".//*[contains(@class, 'schoolLevelSave')]"));
+    private By selectAllCheckboxCourseClassesBy = By.xpath("//*[@class='selectAllOption']");
+    private WebElement selectAllCheckboxCourseClasses = $(By.xpath("//*[@class='selectAllOption']"));
+    private By activeSchoolShowClassesBy = By.xpath(".//*[not(contains(@class, 'disabledSchool'))]/*[@class='schoolLabel']");
+    private WebElement courseClassesChangeWarning = $(By.xpath("//*[contains(@class, 'changeWarning')]"));
+    private WebElement courseClassesChangeWarningYesButton = $(By.xpath("//*[contains(@class, 'changeWarning')]//*[@id='course-all-classes-warning-yes-btn']"));
+    private By courseClassesCancelLinkBy = By.xpath(".//*[@id='cancel-link']/a");
+    private ElementsCollection showClassesCheckboxListKba = $$(By.xpath(".//*[@id='showClasses-dialog']//*[contains(@class, 'schoolChoice expanded')]/following-sibling::*//*[@type='checkbox']"));
+    private ElementsCollection showClassesCheckboxListCheckedKba = $$(By.xpath(".//*[@id='showClasses-dialog']//*[contains(@class, 'schoolChoice expanded')]/following-sibling::*//*[@type='checkbox' and @checked='checked']"));
+    private ElementsCollection showClassesCheckboxList = $$(By.xpath(".//*[@id='showClasses-dialog']//*[@type='checkbox']"));
+    private ElementsCollection showClassesCheckboxListChecked = $$(By.xpath(".//*[@id='showClasses-dialog']//*[@type='checkbox' and @checked='checked']"));
+    private WebElement selectedClasses = $(By.xpath(".//*[contains(@class, 'selected_classes')]"));
+    private WebElement totalClasses = $(By.xpath(".//*[@class = 'total_classes']"));
+    private WebElement courseClassesChangeWarningNoButton = $(By.xpath("//*[contains(@class, 'changeWarning')]//*[@id='course-all-classes-warning-no-btn']"));
+    private By buildLessonCollectionBy = By.id("buildButton");
+    private ElementsCollection sectionHeaders = $$(By.xpath(".//*[@class = 'collection_arrow']/.."));
+    private By showClassesButtonBy = By.xpath(".//*[@id='show_classes' and @type='button']");
+    private By showClassesDialogBy = By.id("showClasses-dialog");
+    private By deleteCollectionYesButtonBy = By.xpath("//*[contains(@class, 'buttonset')]//*[contains(text(), 'Yes') or contains(text(), 'Sí')]");
+    private By couldntDeleteButtonBy = By.xpath("//*[contains(@class, 'buttonset')]//*[contains(text(), 'OK')]");
+    private By sectionHeadersBy = By.xpath(".//*[@class = 'collection_arrow']/..");
+    private WebElement selectedCollectionGrade = $(By.xpath(".//*[@id='grade_level']/*[@selected='']"));
+    private By showClassesDialogBy2 = By.xpath("//*[contains(@class, 'showClasses-dialog')]");
+    private By continueButtonClassPopupBy = By.id("continueBtn");
+    private WebElement showClassesCloseButton = $(By.xpath(".//*[@id='showClasses-dialog']/..//*[@role='button']"));
+    private By clearClassesButtonBy = By.xpath("//*[contains(@class, 'cancelLink')]");
+    private WebElement selectedClassesShowClasses = $(By.xpath("//*[@class='selected_classes']"));
+    private WebElement selectAllShowClassesRadio = $(By.xpath("//*[@type='radio' and contains(@class, 'allClasses')]"));
+    private WebElement someClassesCheckbox = $(By.xpath("//*[contains(@class, 'showClasses-dialog')]//*[contains(@class, 'someClasses')]"));
+    private ElementsCollection showClassesClassList = $$(By.xpath("//*[contains(@class, 'showClasses-dialog')]//*[@type='checkbox' and contains(@name, 'class')]"));
+    private By continueButtonInShowClassPopUpBy = By.id("continueBtn");
+    private ElementsCollection showClassesCheckedClasses = $$(By.xpath("//*[contains(@class, 'showClasses-dialog')]//*[@type='checkbox' and contains(@name, 'class') and @checked='']"));
+    private By disabledClassCheckboxListBy = By.xpath("//*[@class='className disabledClass']");
+    private ElementsCollection collectionList = $$(By.xpath(".//*[@class='collectionTable']//*[@class='courseName']"));
+    private WebElement collectionValidationAlert = $(By.xpath("//*[@class='validationAlert']"));
+    private WebElement collectionNameInput = $(By.id("collection_name"));
+    private By searchBtnBy = By.xpath("//div[@class='searchButton']//a");
+    private WebElement lessonCounter = $(By.xpath(".//*[contains(@class, 'lesson-counter')]"));
+    private By deleteLessonButtonListBy = By.xpath("//*[@class='closeBtn']");
+    private By lessonNumbersBy = By.xpath("//*[@class='lessonTitle']/span[@class='lessonNum']");
+    private By shareCollectionButtonBy = By.id("shareButton");
+    private By collectionListBy = By.xpath(".//*[@class='collectionTable']//*[@class='courseName']");
+    private WebElement alertDialog = $(By.xpath("//*[contains(@class, 'alert_dialog')]"));
+    private By shareCollectionContinueButtonBy = By.xpath("//*[contains(@class, 'ui-dialog')]//*[contains(@class, 'buttonset')]//*[contains(text(), 'Continue') or contains(text(), 'Continuar')]");
+
+
+
 
 
 
@@ -473,6 +520,18 @@ public class MyLessons extends Page {
         if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
             waitUntilElementStale(element);
         }
+        closeWalkmeNew();
+        $(deleteCollectionPopUpButtonYesBy).click();
+    }
+
+    public void waitUntilElementStale(By by) {
+        // waitUntilElementStale(element);
+        while (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+            closeWalkmeNew();
+        }
+        if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+            waitUntilElementStale(by);
+        }
         $(deleteCollectionPopUpButtonYesBy).click();
     }
 
@@ -530,14 +589,8 @@ public class MyLessons extends Page {
     public SearchWidgetPage clickOnAddLessonButton() {
         logger.info("Click On Add Lesson Button");
         waitUntilElementClickableBy(addLessonButtonBy);
-        int i = 0;
-        while (!isDisplayedBy(allTabsBy)) {
             clickJS(addLessonButtonBy);
-            if (i > 50) {
-                break;
-            }
-            i++;
-        }
+
         return new SearchWidgetPage(driver);
     }
 
@@ -598,6 +651,7 @@ public class MyLessons extends Page {
                 break;
             }
         }
+        closeWalkmeNew();
         String courseName = $($$(findEls(xpath)).get(0)).getText();
 
         logger.info("Course name is: " + courseName);
@@ -951,6 +1005,318 @@ public class MyLessons extends Page {
 
     public void clickNextMonth() {
         $(nextArrowCalendar).click();
+    }
+
+    public void clickOnChangeDistrictLink() {
+        logger.info("Click on change district link on My Lessons page");
+        $(changeDistrictLink).click();
+    }
+
+    public void showClassesFirstCourse() {
+        clickJS(showClassesButtonListBy);
+        logger.debug("Opened first course classes");
+    }
+
+    public WebElement getCourseClassesSaveButton() {
+        return $(courseClassesSaveButton);
+    }
+
+    public void openFirstActiveSchoolShowClasses() {
+        if (isElementAbsentBy(selectAllCheckboxCourseClassesBy)) {
+            $(activeSchoolShowClassesBy).click();
+        }
+    }
+
+    public void clickSelectAllCheckboxCourseClasses() {
+        $(selectAllCheckboxCourseClasses).click();
+        logger.debug("Clicked on select all classes checkbox");
+    }
+
+    public void clickCourseClassesSaveButton() {
+        $(courseClassesSaveButton).click();
+    }
+
+    public WebElement getCourseClassesChangeWarning() {
+        return $(courseClassesChangeWarning);
+    }
+
+    public void clickChangesWarningYesButton() {
+        $(courseClassesChangeWarningYesButton).click();
+    }
+
+    public void clickOkOnBeSurePopup() {
+        clickJS(changesSavedPopUpButtonBy);
+    }
+
+    public void clickCourseClassesCancelLink() {
+        clickScroll(courseClassesCancelLinkBy);
+    }
+
+    public boolean areAllShowClassesCheckboxesCheckedKba() {
+        return $$(showClassesCheckboxListKba).size() == $$(showClassesCheckboxListCheckedKba).size() + 1;
+    }
+
+    public boolean areAllShowClassesCheckboxesChecked() {
+        return $$(showClassesCheckboxList).size() == $$(showClassesCheckboxListChecked).size() + 1;
+    }
+
+    public String getSelectedClassesAmount() {
+        return $(selectedClasses).getText();
+    }
+
+    public String getClassesTotalAmount() {
+        return $(totalClasses).getText();
+    }
+
+    public void clickChangesWarningNoButton() {
+        $(courseClassesChangeWarningNoButton).click();
+    }
+
+    public void clickOnBuiltLessonCollectionBy() {
+        logger.info("Clicked Build Lesson Collection Button");
+        waitUntilElementClickableBy(buildLessonCollectionBy);
+        closeWalkmeNew();
+        closeWalkmeNew();
+        $(buildLessonCollectionBy).click();
+    }
+
+    public void saveCollection() {
+        clickJS(saveCollectionButtonBy);
+        //waitUntilElementStale(saveCollectionButtonBy);
+        logger.debug("Saving collection");
+    }
+
+    public String getCollectionDescriptionByName(String colName) {
+        return ($(By.xpath("//*[@class='collectionTable']//*[@class='courseName' and contains(text()," +
+                        " '" + colName + "')]//following-sibling::*")).getText());
+    }
+
+    public void editSpecifiedCollection(String str) {
+        waitForPageToLoad();
+        By path = By.xpath("//*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), '" + str + " ')]/../..//a[contains(@href, 'edit')]");
+        clickJS(path);
+    }
+
+    public void clickShowClasses() {
+        expandSectionHeaders();
+        waitUntilAppearsBy(showClassesButtonBy);
+        waitUntilElementClickableBy(showClassesButtonBy);
+        logger.debug("Clicked Show Classes button");
+        int i = 0;
+        while (!isDisplayedBy(showClassesDialogBy)) {
+            clickJS(showClassesButtonBy);
+            i++;
+            if (i > 50) {
+                break;
+            }
+        }
+    }
+
+    public void expandSectionHeaders() {
+        logger.info("Expand  sections headers");
+        for (WebElement el : sectionHeaders) {
+            if (!getAttribute(el, "class").contains("expanded")) {
+                $(el).click();
+            }
+        }
+    }
+
+    public void deleteSpecifiedCollection(String str) {
+        By path = By.xpath("//*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), '" + str + "')]/../..//a[contains(@class, 'deleteCollection')]");
+        if (isElementExist(path)) {
+            clickJS(path);
+        }
+    }
+
+    public void clickDeleteCollectionYesButton() {
+        $(deleteCollectionYesButtonBy).click();
+        if (isElementExist(couldntDeleteButtonBy)) {
+            $(couldntDeleteButtonBy).click();
+        }
+    }
+
+    public List<Boolean> isSectionHeadersOpen() {
+        List<Boolean> list = new ArrayList<>();
+        for (String str : getClassNamesOfSectionHeaders()) {
+            list.add(str.contains("expanded"));
+        }
+        return list;
+    }
+
+    public List<String> getClassNamesOfSectionHeaders() {
+        return getAttributesFromItemsOfListBy(sectionHeadersBy, "class");
+    }
+
+    public void collapseSectionHeaders() {
+        logger.info("Collapse  sections headers");
+        for (WebElement el : sectionHeaders) {
+            if (getAttribute(el, "class").contains("expanded")) {
+                $(el).click();
+            }
+        }
+    }
+
+    public String getSelectedCollectionGrade() {
+        return $(selectedCollectionGrade).getText().trim();
+    }
+
+    public boolean isPopupPresent() {
+        return isDisplayedBy(showClassesDialogBy2);
+    }
+
+    public void clickContinueButtonClassesPopup() {
+        clickUntilAnElementDisplayed(continueButtonClassPopupBy, continueButtonClassPopupBy, 10);
+//    	click(continueButtonClassPopup);
+    }
+
+    public void closeShowClassesDialog() {
+        logger.debug("Closing show classes dialog");
+        $(showClassesCloseButton).click();
+    }
+
+    public void clearClasses() {
+        waitUntilElementClickableBy(clearClassesButtonBy);
+        $(clearClassesButtonBy).click();
+    }
+
+    public String getSelectedClassesShowClasses() {
+        return $(selectedClassesShowClasses).getText();
+    }
+
+    public void clickSelectAllShowClassesRadio() {
+        $(selectAllShowClassesRadio).click();
+        logger.debug("Clicked All Classes checkbox in Show Classes popup");
+    }
+
+    public void clickSomeClassesCheckbox() {
+        $(someClassesCheckbox).click();
+    }
+
+    public ElementsCollection getShowClassesClassList() {
+        return showClassesClassList;
+    }
+
+    public void clickOnContinueButtonInShowClassPopUp() {
+        clickScroll(continueButtonInShowClassPopUpBy);
+    }
+
+    public ElementsCollection getshowClassesCheckedClasses() {
+        return showClassesCheckedClasses;
+    }
+
+    public boolean isClassCheckboxDisabled() {
+        try {
+            ElementsCollection temp = getDisabledClassCheckboxList();
+            return temp.size() != 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public ElementsCollection getDisabledClassCheckboxList() {
+        return findEls(disabledClassCheckboxListBy);
+    }
+
+    public ElementsCollection getCollectionList() {
+        return collectionList;
+    }
+
+    public boolean isValidationAlertPresent() {
+        return isElementPresent(collectionValidationAlert);
+    }
+
+    public void enterTextInCollectionNameInputNoClear(String str) {
+        logger.info("Enter Text In Collection Name Input: " + str);
+        enterTextInInput(collectionNameInput, str);
+    }
+
+    public String getCollectionNameInput() {
+        return $(collectionNameInput).getText().trim();
+    }
+
+    public String getCollectionDescription() {
+        return $(descriptionInput).getText().trim();
+    }
+
+    public void clearCollectionInputFields() {
+        $(collectionNameInput).clear();
+        logger.trace("Cleared collection name input");
+        $(descriptionInput).clear();
+        logger.trace("Cleared collection description input");
+    }
+
+    public void clickSearch() {
+        logger.debug("Search button clicked");
+        $(searchBtnBy).click();
+    }
+
+    public int getLessonsAmount() {
+        int result = findEls(By.xpath("//*[contains(@class, 'mylessonsContentContainer')]//*[contains(@class, 'lessonTitle')]")).size();
+        return result;
+    }
+
+    public int getLessonsCount() {
+        return Integer.parseInt($(lessonCounter).getText().split("\\s+")[0]);
+    }
+
+    public void deleteFirstLessonFromCollection() {
+        findEls(deleteLessonButtonListBy).get(0).click();
+    }
+
+    public ElementsCollection getLessonNumbers() {
+        return findEls(lessonNumbersBy);
+    }
+
+    public void openStartCalendar() {
+        while (isElementAbsentBy(By.xpath(".//*[@id='ui-datepicker-div']//*[@href='#']"))) {
+            $(collectionStartDateInputBy).click();
+            waitUntilAppearsBy(By.xpath(".//*[@id='ui-datepicker-div']"));
+        }
+        logger.debug("Opened start date calendar");
+    }
+
+    public void setClosestOnCalendar() {
+        waitUntilAppearsBy(By.xpath(".//*[@id='ui-datepicker-div']//*[@href='#']"));
+        ElementsCollection startList = getAvailableCalendarDays();
+        $($$(startList).get(0)).click();
+    }
+
+    public void openEndCalendar() {
+        $(collectionEndDateInputBy).click();
+        logger.debug("Opened end date calendar");
+    }
+
+    public boolean isShareButtonDisabled() {
+        return !findEl(shareCollectionButtonBy).isEnabled();
+    }
+
+    public boolean isCollectionAssigned(String colName) {
+       // waitUntilElementsAppearsBy(collectionListBy);
+        return isElementPresentBy(By.xpath(".//*[@class='courseName' and contains(text(), '" + colName + "')" +
+                "]/../following-sibling::*//*[@alt='Assigned Lesson Collection' or @alt='Colección de lecciones asignada']"));
+    }
+
+    public void clickSaveAndAssignCollection() {
+        waitUntilElementClickableBy(shareCollectionButtonBy);
+//        click(shareCollectionButtonBy);
+        clickScroll(shareCollectionButtonBy);
+        logger.debug("Clicked save and assign collection button");
+    }
+
+    public boolean isAlertDialogPresent() {
+        return isElementPresent(alertDialog);
+    }
+
+    public void continueAssignCollection() {
+        clickJS(shareCollectionContinueButtonBy);
+    }
+
+    public String getIdOfSpecifiedCollection(String str) {
+        By path = By.xpath("//*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), '" + str + " ')]/../..//a[contains(@href, 'edit')]");
+        String id = getAttributeBy(path, "href");
+        String tmp = id.substring(0, id.lastIndexOf('/'));
+        return tmp.substring(tmp.lastIndexOf('/') + 1);
     }
 
 

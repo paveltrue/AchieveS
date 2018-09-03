@@ -16,7 +16,7 @@ public class A3k_MyLessons_empower extends BasicTestCase {
     static MyLessons myLessonsPage;
 
     @Parameters({"login", "password", "program", "classToSelect", "language"})
-    @Test(dataProvider = "getUsers", groups = {"MyLessons", "Smoke", "All"})
+    @Test(dataProvider = "getUsers", groups = {"MyLessons", "Smoke", "All"}, invocationCount = 1)
     public void myLessonsStudent(
             @Optional("kidbizstud.one") String login,
             @Optional("kidbizstud.one") String password,

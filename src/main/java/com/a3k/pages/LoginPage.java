@@ -278,13 +278,30 @@ public class LoginPage extends Page {
         }
         Configuration.pageLoadStrategy = "normal";
         if (isDisplayedBy(chooseProgramComboBy)) {
+            Configuration.pageLoadStrategy = "normal";
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             Select selectProgram = new Select(findEl(chooseProgramComboBy));
             selectProgram.selectByVisibleText(program);
-
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (isDisplayedBy(chooseClassComboBy)) {
+                Configuration.pageLoadStrategy = "normal";
                 Select selectClass = new Select(findEl(chooseClassComboBy));
                 selectClass.selectByVisibleText(classToSelect);
                 //clickLoginButtonNew();
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Configuration.pageLoadStrategy = "normal";
                 clickGoNext();
             }else{
                 clickGoNext();

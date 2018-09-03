@@ -28,7 +28,7 @@ public class Reports extends BasicTestCase {
 
     @Step
     @Parameters({"login", "password", "classToSelect"})
-    @Test(dataProvider = "", groups = {"Refactoring", "Reports", "All"}, invocationCount = 3)
+    @Test(dataProvider = "", groups = {"Refactoring", "Reports", "All"}, invocationCount = 1)
     public void studentWork(
             @Optional("accessboost.teach") String login,
             @Optional("accessboost.teach") String password,

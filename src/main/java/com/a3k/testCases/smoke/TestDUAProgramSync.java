@@ -16,7 +16,7 @@ public class TestDUAProgramSync extends BasicTestCase {
     private final String username = "qa";
     private final String password = "KC7EH4dVYFEdx9aE";
 
-    @Test(groups = {"All", "DUA", "Sync"})
+    @Test(groups = {"All", "DUA", "Sync"}, invocationCount = 1)
     public void testSynchronization() {
         openDUATool();
         loginToDUA(username, password);

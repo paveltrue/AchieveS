@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
@@ -59,6 +60,15 @@ public abstract class Page {
     private By topNavToolbarBy = By.xpath("//nav[contains(@class, 'navbar-anchor')]");
     private By nextQuestionButtonLiteracyBy = By.xpath("//*[@ng-click='nextQuestionHandler()']");
     private By loginButtonBy = By.xpath(".//*[@id = 'button' and @type = 'submit']");
+    protected By hamburgerMenuButtonBy = By.xpath("//*[@class='hamburger' or contains(@class,'hamburgerBun')]");
+    protected By myLessonsButtonBy = By.xpath("//*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]");
+    private By gradeArrowSelectorBy = By.xpath("//*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img");
+    protected ElementsCollection gradesDropDownListSelector = $$(By.xpath("//div[@id='grade-dropdown']//li/a"));
+    private WebElement selectDistrictDDL = $(By.id("district"));
+    private WebElement selectDistrictButton = $(By.xpath("//input[@type='submit']"));
+    private WebElement userAdministrationMenuItem = $(By.xpath(".//*[@id='menu_link_1' or contains(@class,'section_admin')]"));
+    private WebElement grade = $(By.xpath("//div[@class='gradeName']"));
+
 
 
 
@@ -262,6 +272,23 @@ public abstract class Page {
             closeWalkme();
             waitElementIsClickable(by);
             clickJSChange(by);
+        }
+        //waitUntilLoaded();
+    }
+
+    public void clickJS(WebElement element) {
+        logger.info("Click on element " + element);
+        //waitUntilLoaded();
+        if(!isBecomeClickableBy(element)) {
+            closeWalkme();
+        }
+        waitElementIsClickable(element);
+        try {
+            clickJSChangeWebEl(element);
+        } catch (ElementNotInteractableException e) {
+            closeWalkme();
+            waitElementIsClickable(element);
+            clickJSChangeWebEl(element);
         }
         //waitUntilLoaded();
     }
@@ -491,7 +518,11 @@ public abstract class Page {
     }
 
     public void waitUntilAppearsBy(By by) {
+        Configuration.pageLoadStrategy = "normal";
+        closeWalkmeNew();
         try {
+            closeWalkmeNew();
+            closeWalkmeNew();
             $(by).shouldBe(visible).isDisplayed();
         } catch (Exception e) {
 
@@ -587,7 +618,6 @@ public abstract class Page {
 
     public WebElement findEl(By by) {
         loggerMessageWithXpathBy(by, "Try to FIND element ");
-
         return $(by);
     }
 
@@ -751,14 +781,28 @@ public abstract class Page {
         return isClickable;
     }
 
-    public boolean isBecomeClickableBy(By by) {
-
-            if ($(by).isDisplayed()) {
-                return true;
+    public boolean waitElementIsClickable(WebElement element) {
+        boolean isClickable = false;
+        logger.info("Wait until element " + element + " clickable");
+        try {
+            if($(element).isDisplayed()) {
+                isClickable = true;
             }
-            return false;
 
+        } catch (Exception e) {
+            logger.info("Element " + element + " not clickable ");
+        }
+        return isClickable;
     }
+
+    public boolean isBecomeClickableBy(By by) {
+            return $(by).isDisplayed();
+    }
+
+    public boolean isBecomeClickableBy(WebElement element) {
+        return $(element).isDisplayed();
+    }
+
     public void closeWalkmeNew(){
         if($(walkmePopupBy).isDisplayed())
             $(walkmePopupBy).click();
@@ -776,6 +820,15 @@ public abstract class Page {
 
     public void loggerMessageWithXpath(WebElement element, String message) {
         message = message + " " + element;
+        message = message.replaceFirst("\\[(.*?)\\]", "");
+        if (!message.isEmpty() && message.contains("]")) {
+            message = message.substring(0, message.lastIndexOf("]"));
+        }
+        logger.debug(message);
+    }
+
+    public void loggerMessageWithXpath(By by, String message) {
+        message = message + " " + by;
         message = message.replaceFirst("\\[(.*?)\\]", "");
         if (!message.isEmpty() && message.contains("]")) {
             message = message.substring(0, message.lastIndexOf("]"));
@@ -842,6 +895,12 @@ public abstract class Page {
         loggerMessageWithXpath(element, "Trying to scroll to element and click on element");
         executeJavaScript("arguments[0].scrollIntoView(false);", element);
         $(element).click();
+    }
+
+    public void clickScroll(By by) {
+        loggerMessageWithXpath(by, "Trying to scroll to element and click on element");
+        executeJavaScript("arguments[0].scrollIntoView(false);", findEl(by));
+        $(by).click();
     }
 
     public void selectFromDDL(WebElement selectDDL, String value) {
@@ -912,7 +971,7 @@ public abstract class Page {
     }
 
     public void enterTextInInput(WebElement el, String str) {
-        $(el).setValue(str);
+        el.sendKeys(str);
     }
 
     public void enterTextInInput(By by, String str) {
@@ -1161,8 +1220,12 @@ public abstract class Page {
             }
     }
 
-    public boolean isElementExist(WebElement web) {
-        return $(web).exists();
+    public boolean isElementExist(WebElement element) {
+        return $(element).exists();
+    }
+
+    public boolean isElementExist(By by) {
+        return $(by).exists();
     }
 
     public void pressOKbutton(){
@@ -1226,6 +1289,100 @@ public abstract class Page {
             $(loginButtonBy).click();
         }
         Configuration.pageLoadStrategy = "eager";
+    }
+
+    public MyLessons goToMyLessonsPage() {
+        closeWalkmeNew();
+        logger.info("Opening My Lessons page");
+        if (isElementExist(hamburgerMenuButtonBy)) {
+            if (!getAttributeBy(hamburgerMenuButtonBy, "class").contains("active")) {
+                clickOnHamburgerMenu();
+            }
+        }
+        if (!isDisplayedBy(myLessonsButtonBy)) {
+            closeWalkmeNew();
+            closeWalkmeNew();
+            clickOnHamburgerMenu();
+            closeWalkmeNew();
+//            waitUntilAppearsBy(myLessonsButtonBy);
+        }
+//        waitUntilElementClickableBy(myLessonsButtonBy);
+        clickJS(myLessonsButtonBy);
+
+        if (isAlertPresent()) {
+            acceptAlert();
+        }
+        if (getWebDriver().getWindowHandles().size() > 1) {
+            switchToNextWindowWhenExistOnly2();
+            closeWindow();
+            switchBackAfterClose();
+        }
+        return new MyLessons(driver);
+    }
+
+    public void clickOnHamburgerMenu() {
+        if (!waitElementIsClickable(hamburgerMenuButtonBy)) {
+            closeWalkmeNew();
+        }
+        try {
+            while (!$(hamburgerMenuButtonBy).isDisplayed()){
+                closeWalkmeNew();
+            }
+            closeWalkmeNew();
+            $(hamburgerMenuButtonBy).click();
+            logger.debug("Clicked hamburger menu");
+        } catch (Exception e ) {
+            closeWalkme();
+            waitUntilElementClickableBy(hamburgerMenuButtonBy);
+            $(hamburgerMenuButtonBy).click();
+            logger.debug("Clicked hamburger menu");
+        }
+    }
+
+    public void closeWindow() {
+        getWebDriver().close();
+    }
+
+    public void changeGradeTo(int n) {
+        waitUntilElementClickableBy(gradeArrowSelectorBy);
+        clickJS(gradeArrowSelectorBy);
+        for (WebElement grade : gradesDropDownListSelector) {
+            if (grade.getAttribute("data-value").equals("" + n)) {
+                clickJS(grade);
+                break;
+            }
+        }
+        waitElementBy(gradeArrowSelectorBy);
+    }
+
+    public void selectDistrictByValue(String value) {
+        Select selectDistrict = new Select(selectDistrictDDL);
+        selectDistrict.selectByValue(value);
+        $(selectDistrictButton).click();
+        waitElementWebEl(userAdministrationMenuItem);
+    }
+
+    public void backPage() {
+        logger.info("Navigate back");
+        back();
+    }
+
+    public List<String> getAttributesFromItemsOfListBy(By list, String attribute) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WebElement el : findEls(list)) {
+            result.add($(el).getAttribute(attribute));
+        }
+        return result;
+    }
+
+    public String getActiveGrade() {
+        return $(grade).getText().trim();
+    }
+
+    public void clickUntilAnElementDisplayed(By clickByElement, By displayedElement, int countOfTries ) {
+        for (int i = 0; i < countOfTries && !isElementDisappears(displayedElement); i++ ) {
+            $(clickByElement).click();
+        }
     }
 
 

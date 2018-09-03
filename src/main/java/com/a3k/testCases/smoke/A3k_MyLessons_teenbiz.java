@@ -17,7 +17,7 @@ public class A3k_MyLessons_teenbiz extends BasicTestCase {
 
     @Parameters({"login", "password", "classToSelect", "language"})
     @Test(dataProvider = "getUsers", groups = {"MyLessons", "Smoke",
-            "Student", "All"})
+            "Student", "All"}, invocationCount = 1)
     public void myLessonsStudent(
             @Optional("kidbizstud.one") String login,
             @Optional("kidbizstud.one") String password,

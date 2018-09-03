@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AdminPage extends Page {
 
-
     private By backToMenuLinkBy = By.xpath(".//*[@class = 'label']");
     private ElementsCollection listOfUsersRows = $$(By.xpath(".//*[@id='edit_users']//tr[ ./td[@class='row1' or @class='row2']]"));
     private WebElement editClassInformation = $(By.xpath("//a[@href='/options/teacher/class/edit_classes.php']"));
@@ -32,8 +31,9 @@ public class AdminPage extends Page {
     private WebElement userProfile = $(By.id("user_profile"));
     private By createNewClassBy = By.xpath(".//a[contains(@href, 'task=1')]");
     private ElementsCollection listOfNumbersBeforeUsers = $$(By.xpath(".//*[@id='edit_users']//tr[ ./td[@class='row1' or @class='row2']]//b[text()]"));
-
-
+    private By selectDistrictDDLBy = By.id("district");
+    private WebElement selectDistrictDDL = $(By.id("district"));
+    private By selectDistrictButtonBy = By.xpath("//input[@type='submit']");
 
 
 
@@ -130,6 +130,13 @@ public class AdminPage extends Page {
         logger.info("Click on 'Create New Class'");
         waitUntilElementClickableBy(createNewClassBy);
         clickJS(createNewClassBy);
+    }
+
+    public void selectDistrictByValue(String value) {
+        waitUntilAppearsBy(selectDistrictDDLBy);
+        Select selectDistrict = new Select(selectDistrictDDL);
+        selectDistrict.selectByValue(value);
+        $(selectDistrictButtonBy).click();
     }
 
 }

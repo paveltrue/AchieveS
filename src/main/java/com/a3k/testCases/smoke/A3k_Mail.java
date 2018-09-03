@@ -26,7 +26,7 @@ public class A3k_Mail extends BasicTestCase {
     @Issue("DE25998")
     @Parameters({"loginTeacher", "passwordTeacher", "program", "classToSelectTeacher"})
     @Test(dataProvider = "getUsers", groups = {"Smoke", "Mail", "Student",
-            "All"})
+            "All"}, invocationCount = 1)
     public void studentMail(@Optional("autokidbizsp.stud") String login, @Optional("autokidbizsp.stud") String password, @Optional("") String program, @Optional("Kidbiz Class") String classToSelect)
             throws InterruptedException {
         login(login, password, program, classToSelect);

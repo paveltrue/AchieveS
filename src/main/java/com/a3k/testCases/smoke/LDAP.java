@@ -15,7 +15,7 @@ public class LDAP extends BasicTestCase {
 
     @Issue("DE20861")
     @Parameters({"login", "password"})
-    @Test(groups = {"Smoke", "LDAP", "All"})
+    @Test(groups = {"Smoke", "LDAP", "All"}, invocationCount = 1)
     public void testLDAP(@Optional("qaldap") String login,
                          @Optional("hXbS9wAT") String password) {
         if ((!browserUrl.contains("-portal"))

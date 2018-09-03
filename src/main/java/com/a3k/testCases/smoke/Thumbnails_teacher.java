@@ -19,7 +19,7 @@ public class Thumbnails_teacher extends BasicTestCase {
 	boolean isNext = true;
 
 	@Parameters({ "loginTeacher", "passwordTeacher", "program", "classToSelectTeacher" })
-	@Test(groups = { "Smoke", "Teacher", "Thumbnails","All" })
+	@Test(groups = { "Smoke", "Teacher", "Thumbnails","All" }, invocationCount = 1)
 	public void testTeacherThumbnails(
 			@Optional("autospanish.teach") String login,
 			@Optional("autospanish.teach") String password,
