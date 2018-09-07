@@ -100,6 +100,15 @@ public class LoginPage extends Page {
         $(loginCellBy).setValue(user);
     }
 
+    public void setUserAfterAlert(String user){
+        logger.info("Type in username: " + user);
+        if (isAlertPresent()){
+            confirm();
+        }
+        $(loginCellBy).clear();
+        $(loginCellBy).setValue(user);
+    }
+
     public void setPassword(String password) {
         $(passwordCellBy).clear();
         logger.info("Type in password: " + password);
@@ -258,6 +267,7 @@ public class LoginPage extends Page {
     public void loginWithClassAndProgramIfNeeded(String login, String password, String program, String classToSelect){
         logger.info(String.format("Login with credentials %s\\%s", login, password));
         Configuration.pageLoadStrategy = "normal";
+        Configuration.timeout = 10000;
         setUser(login);
         setPassword(password);
         clickLoginButton();
@@ -323,11 +333,146 @@ public class LoginPage extends Page {
             $(loginButtonBy).click();
         }
         Configuration.pageLoadStrategy = "eager";
+        Configuration.timeout = 4000;
+    }
+
+    public void loginWithClassAndProgramIfNeededNew(String login, String password, String program, String classToSelect){
+        logger.info(String.format("Login with credentials %s\\%s", login, password));
+        Configuration.timeout = 10000;
+        setUser(login);
+        setPassword(password);
+        clickLoginButton();
+        if ((url().contains("home") || url().contains("levelset/welcome")) && !$(loginButtonBy).isDisplayed()) {
+            closeAllPopUpAfterLogin();
+            return;
+        }
+        if (isIncorrectMessagePresent() & !checkLoginWithRegExp(login)) {
+            refresh();
+            setUser(login);
+            setPassword(password, login);
+            clickLoginButton();
+
+            if (isIncorrectMessagePresent()) {
+                assertTrue(false, "The user = " + login + "/or password = " + password + " is incorrect.");
+            }
+        }
+        Configuration.pageLoadStrategy = "normal";
+        if (isDisplayedBy(chooseProgramComboBy)) {
+            Configuration.pageLoadStrategy = "normal";
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            Select selectProgram = new Select(findEl(chooseProgramComboBy));
+            selectProgram.selectByVisibleText(program);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (isDisplayedBy(chooseClassComboBy)) {
+                Configuration.pageLoadStrategy = "normal";
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByVisibleText(classToSelect);
+                //clickLoginButtonNew();
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Configuration.pageLoadStrategy = "normal";
+                clickGoNext();
+            }else{
+                clickGoNext();
+                //clickLoginButtonNew();
+            }
+        } else if (isDisplayedBy(chooseClassComboBy)){
+            waitUntilAppearsBy(chooseClassComboBy);
+            if(!classToSelect.isEmpty()){
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByVisibleText(classToSelect);
+            }
+            clickGoNext();
+            //clickLoginButtonNew();
+        } else {
+            closeAllPopUpAfterLogin();
+        }
+
+        while ($(loginButtonBy).isDisplayed()){
+            $(loginButtonBy).click();
+        }
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.timeout = 4000;
+    }
+
+    public void loginWithClassAndProgramIfNeededWithAlert(String login, String password, String program, String classToSelect){
+        logger.info(String.format("Login with credentials %s\\%s", login, password));
+        Configuration.pageLoadStrategy = "normal";
+        setUserAfterAlert(login);
+        setPassword(password);
+        clickLoginButton();
+        waitForPageToLoad();
+        //if ((url().contains("home") || url().contains("levelset/welcome")) && !$(loginButtonBy).isDisplayed()) {
+        if ((url().contains("home") || url().contains("levelset/welcome"))) {
+            closeAllPopUpAfterLogin();
+            return;
+        }
+        if (isIncorrectMessagePresent() & !checkLoginWithRegExp(login)) {
+            refresh();
+            setUserAfterAlert(login);
+            setPassword(password, login);
+            clickLoginButton();
+
+            if (isIncorrectMessagePresent()) {
+                assertTrue(false, "The user = " + login + "/or password = " + password + " is incorrect.");
+            }
+        }
+        Configuration.pageLoadStrategy = "normal";
+        if (isDisplayedBy(chooseProgramComboBy)) {
+            Configuration.pageLoadStrategy = "normal";
+            sleep(500);
+            Select selectProgram = new Select(findEl(chooseProgramComboBy));
+            selectProgram.selectByVisibleText(program);
+            sleep(500);
+            if (isDisplayedBy(chooseClassComboBy)) {
+                Configuration.pageLoadStrategy = "normal";
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByVisibleText(classToSelect);
+                //clickLoginButtonNew();
+                sleep(500);
+                Configuration.pageLoadStrategy = "normal";
+                clickGoNext();
+            }else{
+                clickGoNext();
+                //clickLoginButtonNew();
+            }
+        } else if (isDisplayedBy(chooseClassComboBy)){
+            waitUntilAppearsBy(chooseClassComboBy);
+            if(!classToSelect.isEmpty()){
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByVisibleText(classToSelect);
+            }
+            clickGoNext();
+            //clickLoginButtonNew();
+        } else {
+            closeAllPopUpAfterLogin();
+        }
+
+        if ($(loginButtonBy).isDisplayed()){
+            $(loginButtonBy).click();
+        }
+        if (isAlertPresent()){
+            confirm();
+            Select selectProgram = new Select(findEl(chooseProgramComboBy));
+            selectProgram.selectByVisibleText(program);
+            clickGoNext();
+        }
     }
 
     public void closeAllPopUpAfterLogin(){
 
-        closeWalkme();
+        closeWalkmeNew();
 
         waitAndCLickIfExist(popupViewBy);
 

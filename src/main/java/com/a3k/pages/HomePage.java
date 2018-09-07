@@ -11,25 +11,29 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class HomePage extends Page {
 
-    ElementsCollection teachermaterialsButtons = $$(By.xpath("//*[@style='display: block;' and @class='instructionalMaterial']//a"));
-    WebElement lessonImg = $(By.xpath("//*[@class='photoContainer' and @style='']//img[1]"));
-    WebElement lessonSummary = $(By.xpath("//*[@style='']/*[contains(@class, 'summary') and text()]"));
-    WebElement lessonTitle = $(By.xpath("(//*[@aria-hidden='false']//*[contains(@class,'lessonTitle')])" +
+    private ElementsCollection teachermaterialsButtons = $$(By.xpath("//*[@style='display: block;' and @class='instructionalMaterial']//a"));
+    private WebElement lessonImg = $(By.xpath("//*[@class='photoContainer' and @style='']//img[1]"));
+    private WebElement lessonSummary = $(By.xpath("//*[@style='']/*[contains(@class, 'summary') and text()]"));
+    private WebElement lessonTitle = $(By.xpath("(//*[@aria-hidden='false']//*[contains(@class,'lessonTitle')])" +
             "[count(//*[@aria-hidden='false']/*[@class='card panel flip'])+1]/a | //*[@style='']/*[contains(@class, 'title')]"));
-    By startLessonButtonCSS = By.cssSelector(".startButton.button,a#home-button");
+    private By startLessonButtonCSS = By.cssSelector(".startButton.button,a#home-button");
     private By lessonTitleBy = By.xpath("//*[@class='lessonHeader']/*[@class='title']/div[@class='titleText']");
     private WebElement lessonTitleOfWritingLesson = $(By.className("article_title"));
-    WebElement gradeArrow = $(By.xpath("//*[@class='gradeContainer']//*[@class='classArrow'] | //*[@class='gradeName']//img"));
-    ElementsCollection allGrades = $$(By.xpath("//*[@id='grade-dropdown']//a"));
-    WebElement activeGrade = $(By.className("gradeName"));
-    WebElement arcticleTitle = $(By.className("article_title"));
-    ElementsCollection lessonThumbnauls = $$(By.xpath("//*[normalize-space(@class)='thumb'] | //*[@class='slick-dots']/*"));
-    WebElement classArrow = $(By.xpath("//*[@class='classContainer']//*[@class='classArrow']"));
-    ElementsCollection allClasses = $$(By.xpath("//*[@data-color]"));
-    WebElement languageButton = $(By.xpath("//*[@data-dropdown='#teacher-languages-dropdown']"));
-    ElementsCollection elementsOfLanguageDDl = $$(By.xpath("//*[@action='/change_language']//a"));
-    WebElement arrowNearAvatar1 = $(By.xpath("//*[@class='name' or @class='ribbonTop']//img"));
-    WebElement arrowNearAvatar2 = $(By.xpath("//*[@class='selectName']"));
+    private WebElement gradeArrow = $(By.xpath("//*[@class='gradeContainer']//*[@class='classArrow'] | //*[@class='gradeName']//img"));
+    private ElementsCollection allGrades = $$(By.xpath("//*[@id='grade-dropdown']//a"));
+    private WebElement activeGrade = $(By.className("gradeName"));
+    private WebElement arcticleTitle = $(By.className("article_title"));
+    private ElementsCollection lessonThumbnauls = $$(By.xpath("//*[normalize-space(@class)='thumb'] | //*[@class='slick-dots']/*"));
+    private WebElement classArrow = $(By.xpath("//*[@class='classContainer']//*[@class='classArrow']"));
+    private ElementsCollection allClasses = $$(By.xpath("//*[@data-color]"));
+    private WebElement languageButton = $(By.xpath("//*[@data-dropdown='#teacher-languages-dropdown']"));
+    private ElementsCollection elementsOfLanguageDDl = $$(By.xpath("//*[@action='/change_language']//a"));
+    private WebElement arrowNearAvatar1 = $(By.xpath("//*[@class='name' or @class='ribbonTop']//img"));
+    private WebElement arrowNearAvatar2 = $(By.xpath("//*[@class='selectName']"));
+    private WebElement lexileButton = $(By.xpath("//*[@data-dropdown='#teacher-lexile-dropdown']"));
+    private ElementsCollection elementsOfLexileDDl = $$(By.xpath("//*[@action='/change_lexile']//a"));
+
+
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -229,6 +233,26 @@ public class HomePage extends Page {
     public CurriculumScheduler goToCurriculumScheduler() {
         goToNewUrl("/n/scheduler/");
         return new CurriculumScheduler(driver);
+    }
+
+    public void selectLexileByValue(String value) {
+        closeWalkmeNew();
+        $(lexileButton).click();
+        $(By.xpath("//*[@action='/change_lexile']//*[@data-value='" + value + "']")).click();
+        logger.debug("Selected " + value + " in lexile DDL");
+        closeWalkmeNew(2);
+    }
+
+    public String getLexileText() {
+        return $(lexileButton).getText();
+    }
+
+    public void openLexileDDL() {
+        $(lexileButton).click();
+    }
+
+    public ElementsCollection getListOfElementsOfLexileDDL() {
+        return elementsOfLexileDDl;
     }
 
 }

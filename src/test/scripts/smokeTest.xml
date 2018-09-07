@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <!-- changed number of threads for grid -->
-<suite name="SmokeTest" verbose="1" parallel="tests" thread-count="3">
+<suite name="SmokeTest" verbose="1" parallel="tests" thread-count="4">
 
     <listeners>
        <listener class-name="com.a3k.utils.selenium.TestListener"/>

@@ -43,7 +43,7 @@ public class US14585 extends BasicTestCase {
         homePage = new HomePage(driver);
         myLessons = new MyLessons(driver);
 
-        loginPage.loginWithClassAndProgramIfNeeded(username, password, studentProgram, selectedClass);
+        loginPage.loginWithClassAndProgramIfNeededWithAlert(username, password, studentProgram, selectedClass);
 
         homePage.goToMyLessonsPage();
 
@@ -84,7 +84,7 @@ public class US14585 extends BasicTestCase {
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
 
-        loginPage.loginWithClassAndProgramIfNeeded(username, password, studentProgram, selectedClass);
+        loginPage.loginWithClassAndProgramIfNeededWithAlert(username, password, studentProgram, selectedClass);
 
         myLessons = homePage.goToMyLessonsPage();
 

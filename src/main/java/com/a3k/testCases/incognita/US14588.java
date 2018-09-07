@@ -45,7 +45,7 @@ public class US14588 extends BasicTestCase {
         homePage = new HomePage(driver);
         searchWidgetPage = new SearchWidgetPage(driver);
 
-        loginPage.loginWithClassAndProgramIfNeeded(username, password, studentProgram, selectedClass);
+        loginPage.loginWithClassAndProgramIfNeededWithAlert(username, password, studentProgram, selectedClass);
 
         myLessons = homePage.goToMyLessonsPage();
 
@@ -59,6 +59,10 @@ public class US14588 extends BasicTestCase {
         int beforeAdd = myLessons.getLessonsAmount();
 
         int counterBeforeAdding = myLessons.getLessonsCount();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         searchWidgetPage.dragAndDropFirstNotAddedLessonBy();
 
         verifyNumbers();

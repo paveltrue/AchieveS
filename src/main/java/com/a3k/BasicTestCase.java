@@ -1,10 +1,10 @@
 package com.a3k;
 
-import com.a3k.utils.selenium.ExtendedSoftAssert;
 import com.a3k.utils.Utils;
 import com.a3k.utils.logger.BasicLogger;
 import com.a3k.utils.properties.AchieveProperties;
 import com.a3k.utils.properties.FilepathProperties;
+import com.a3k.utils.selenium.ExtendedSoftAssert;
 import com.codeborne.selenide.Configuration;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;

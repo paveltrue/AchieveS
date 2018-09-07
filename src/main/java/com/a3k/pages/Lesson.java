@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class Lesson  extends Page{
+public class Lesson  extends Page {
 
     private By activityTabBy = By.xpath("//li[contains(@onclick,'view_page(14, 1)')]/div");
     private By viewResultsButtonBy = By.xpath(".//button[contains(@class, 'view-results')]");
@@ -103,6 +103,10 @@ public class Lesson  extends Page{
     private WebElement activityLinkMath = $(By.id("link-step18page1"));
     private WebElement resultsLinkMath = $(By.id("link-step18page2"));
     private WebElement throughtQuestionButton = $(By.xpath("//*[@id=\"appContentStart\"]/div[2]/div[1]/ul/li[5]/div"));
+    WebElement okButtonFromPrintPopup = $(By.xpath("//input[contains(@onclick,'lesson.print_submit')]"));
+    private WebElement print = $(By.xpath("//a[@class='printLink' or @title='Print']"));
+
+
 
 
     public List<String> invalidAlertsPopupText;
@@ -1007,6 +1011,19 @@ public class Lesson  extends Page{
     public boolean verifyDisableResultsWordMath() {
         String value = getAttribute(resultsLinkMath, "class");
         return value.equals("disabled rolloverAnchor");
+    }
+
+    public void clickPrintButton() {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        $(print).click();
+    }
+
+    public void clickOnOkButtonFromPrintPopup() {
+        $(okButtonFromPrintPopup).click();
     }
 
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IncognitaTeam" verbose="1" parallel="classes" thread-count="5">
+
+    <listeners>
+        <listener class-name="com.a3k.utils.selenium.TestListener"/>
+        <listener class-name="com.a3k.utils.selenium.RetryListener"/>
+    </listeners>
+
+    <test name="IncognitaTeam" parallel="classes">
+
+        <classes>
+            <class name="com.a3k.testCases.incognita.US14045"/>
+            <class name="com.a3k.testCases.incognita.US14585"/>
+            <class name="com.a3k.testCases.incognita.US14588"/>
+            <class name="com.a3k.testCases.incognita.US14593"/>
+            <class name="com.a3k.testCases.incognita.US15148"/>
+            <class name="com.a3k.testCases.incognita.US15349"/>
+            <class name="com.a3k.testCases.incognita.US16530"/>
+            <class name="com.a3k.testCases.incognita.US17473"/>
+            <class name="com.a3k.testCases.incognita.US14587_AND_US14806"/>
+            <class name="com.a3k.testCases.incognita.US15621"/>
+            <class name="com.a3k.testCases.incognita.US16050_14592_17048"/>
+            <class name="com.a3k.testCases.incognita.US16109"/>
+        </classes>
+    </test>
+</suite>

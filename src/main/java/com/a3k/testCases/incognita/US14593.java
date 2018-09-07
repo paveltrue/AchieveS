@@ -80,8 +80,12 @@ public class US14593 extends BasicTestCase {
 
         searchWidgetPage.selectInCourseDDL("News");
 
-        searchWidgetPage.clickOnSearchButton();
-
+        searchWidgetPage.clickOnSearchButtonByText();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         searchWidgetPage.addLessonsOnSinglePage(5);
         myLessons.clickOkOnBeSurePopup();
         myLessons.clickSaveAndAssignCollection();
