@@ -250,8 +250,8 @@ public class PreReportPage extends Page {
     }
 
     public String getReportTitleText() {
-        waitUntilAttributeToBeNotEmptyBy(reportTitleBy, "textContent");
-        return getTextBy(reportTitleBy).trim();
+        waitUntilAttributeToBeNotEmpty(reportTitleBy, "textContent");
+        return getText(reportTitleBy).trim();
     }
 
     public WebElement getReportTitle() {

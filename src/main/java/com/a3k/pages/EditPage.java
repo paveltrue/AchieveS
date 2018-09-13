@@ -16,11 +16,11 @@ public class EditPage extends Page {
     }
 
     public String getSchoolName() {
-        return getTextBy(schoolBy);
+        return getText(schoolBy);
     }
 
     public String getClassNames() {
-        return getTextBy(classNameBy);
+        return getText(classNameBy);
     }
 
     public String getLoginName() {

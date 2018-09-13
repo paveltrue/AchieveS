@@ -92,7 +92,7 @@ public class AllReportsPage extends Page {
     }
 
     public String getHowCanIDifferentiateText() {
-        return getTextBy(howCanIDifferentiateBy);
+        return getText(howCanIDifferentiateBy);
     }
 
     public void openStudentWork() {

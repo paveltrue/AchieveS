@@ -24,6 +24,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class BasicTestCase {
 
     protected RemoteWebDriver driver;
+
     protected ExtendedSoftAssert softAssert;
     public static String browserType;
     public static String browserUrl;
@@ -85,7 +86,6 @@ public class BasicTestCase {
     public void beforeSuite(ITestContext context) {
 
         setUpProperties();
-
 
         //TODO refactor this
         if (context.getName().equals("Lexile Grading")) {
@@ -229,12 +229,8 @@ public class BasicTestCase {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(Method m) {
-
         logger.debug("Finishing test");
         logger.trace("Getting selenium logs");
         logger.debug("Finished test");
-
     }
-
-
 }

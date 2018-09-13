@@ -1,4 +1,4 @@
-package com.a3k.testCases.incognita;
+package com.a3k.testCases.incognita.part1;
 
 import com.a3k.BasicTestCase;
 import com.a3k.pages.AdminPage;

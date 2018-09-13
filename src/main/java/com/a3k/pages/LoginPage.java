@@ -468,6 +468,12 @@ public class LoginPage extends Page {
             selectProgram.selectByVisibleText(program);
             clickGoNext();
         }
+
+        if (!(url().contains("home") || !url().contains("levelset/welcome"))) {
+            Select selectProgram = new Select(findEl(chooseProgramComboBy));
+            selectProgram.selectByVisibleText(program);
+            clickGoNext();
+        }
     }
 
     public void closeAllPopUpAfterLogin(){

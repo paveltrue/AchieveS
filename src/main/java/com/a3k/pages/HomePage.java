@@ -32,6 +32,20 @@ public class HomePage extends Page {
     private WebElement arrowNearAvatar2 = $(By.xpath("//*[@class='selectName']"));
     private WebElement lexileButton = $(By.xpath("//*[@data-dropdown='#teacher-lexile-dropdown']"));
     private ElementsCollection elementsOfLexileDDl = $$(By.xpath("//*[@action='/change_lexile']//a"));
+    private By searchBoxBy = By.id("search");
+    private WebElement metricCompletingTheMostActivities = $(By.id("metric-4"));
+    private ElementsCollection listOfStudentsComplitingTheMostActivities = $$(By.xpath(".//*[name() = 'svg']//*[name() = 'g' and @id = 'yaxis'] //*[name() = 'g' and @class = 'tick']//*[name() = 'text']"));
+    private WebElement metricCircle = $(By.xpath(".//*[@id='populationSize']/.."));
+    private ElementsCollection numbersOnScaleOfMetricComplitingTheMostActivities = $$(By.xpath(".//*[name() = 'svg']//*[name() = 'g' and @id = 'xaxis'] //*[name() = 'g' and contains(@class, 'tick')]//*[name() = 'text']"));
+    private By dateRangeLabelBy = By.xpath("//div[@class = 'dateRange']");
+    private WebElement moreButton = $(By.id("dataPanel-moreBtn"));
+    private WebElement metricHighestLexileGains = $(By.id("metric-3"));
+    private ElementsCollection languageTogglesOnKeyInsightDataPanel = $$(By.xpath(".//div[@class = 'languageToggleContainer']/a"));
+    private ElementsCollection labelsBelowBars = $$(By.xpath(".//*[name() = 'svg']//*[@class = 'bottom-txt-label']"));
+    private WebElement languageToggleSP = $(By.xpath(".//div[@class = 'languageToggleContainer']/a[contains(@class, 'right')]"));
+    private WebElement languageToggleENG = $(By.xpath(".//div[@class = 'languageToggleContainer']/a[contains(@class, 'left')]"));
+    private By visitNowButtonBy = By.id("button");
+
 
 
 
@@ -253,6 +267,103 @@ public class HomePage extends Page {
 
     public ElementsCollection getListOfElementsOfLexileDDL() {
         return elementsOfLexileDDl;
+    }
+
+    public void search(String forSearch) {
+        if (!isDisplayedBy(findButtonBy)) {
+            click(searchButtonBy);
+        }
+       // findEl(searchBoxBy).sendKeys(forSearch);
+        $(findEl(searchBoxBy)).setValue(forSearch);
+        clickActions(findButtonBy);
+        sleep(1000);
+    }
+
+    public String getTextOfMetricCompletingTheMostActivities() {
+        waitForJSandJQueryToLoad();
+        return $(metricCompletingTheMostActivities).getText();
+    }
+
+    public void clickOnMetricCompletingTheMostActivities() {
+        closeWalkmeNew();
+        waitForJSandJQueryToLoad();
+        closeWalkmeNew(3);
+        $(metricCompletingTheMostActivities).click();
+    }
+
+    public int getNumberOfStudentsCompletingMostActivities() {
+        return $$(listOfStudentsComplitingTheMostActivities).size();
+    }
+
+    public String getTextFromMetricCircle() {
+        return $(metricCircle).getText();
+    }
+
+    public String getFirstNumberOnScaleOfMetricCompletingMostActivities() {
+        return getTextFromWebElementsByList(numbersOnScaleOfMetricComplitingTheMostActivities).get(0);
+    }
+
+    public String getTextOfDateRangeLabel() {
+        waitForJSandJQueryToLoad();
+        waitUntilAttributeToBeNotEmpty(dateRangeLabelBy, "textContent");
+        return getTextBy(dateRangeLabelBy);
+    }
+
+    public String getColorOfFirstNumberOnScaleOfMetricCompletingMostActivities() {
+        return $$(numbersOnScaleOfMetricComplitingTheMostActivities).get(0).getCssValue("fill");
+    }
+
+    public String getColorOfThresholdValue() {
+        String result;
+        for (WebElement el : numbersOnScaleOfMetricComplitingTheMostActivities) {
+            if ("40".equals($(el).getText()) | "80".equals($(el).getText())) {
+                return el.getCssValue("fill");
+            }
+        }
+        return result = "";
+    }
+
+    public String getTextOfMoreButton() {
+        return $(moreButton).getText();
+    }
+
+    public void clickOnMoreButton() {
+        waitForJSandJQueryToLoad();
+        $(getMoreButton()).click();
+    }
+
+    public WebElement getMoreButton() {
+        return moreButton;
+    }
+
+    public void clickOnMetricHighestLexileGains() {
+        closeWalkmeNew(5);
+        $(metricHighestLexileGains).click();
+    }
+
+    public ElementsCollection getLanguageTogglesOnKeyInsightDataPanel() {
+        return languageTogglesOnKeyInsightDataPanel;
+    }
+
+    public ElementsCollection getLabelsBelowBars() {
+        return labelsBelowBars;
+    }
+
+    public WebElement getLanguageToggleSP() {
+        return languageToggleSP;
+    }
+
+    public WebElement getLanguageToggleENG() {
+        return languageToggleENG;
+    }
+
+    public WebElement getMetricHighestLexileGains() {
+        return $(metricHighestLexileGains);
+    }
+
+    public void ckickOnVisitNowButton() {
+        closeWalkmeNew();
+        $(visitNowButtonBy).click();
     }
 
 }

@@ -103,8 +103,20 @@ public class Lesson  extends Page {
     private WebElement activityLinkMath = $(By.id("link-step18page1"));
     private WebElement resultsLinkMath = $(By.id("link-step18page2"));
     private WebElement throughtQuestionButton = $(By.xpath("//*[@id=\"appContentStart\"]/div[2]/div[1]/ul/li[5]/div"));
-    WebElement okButtonFromPrintPopup = $(By.xpath("//input[contains(@onclick,'lesson.print_submit')]"));
+    private WebElement okButtonFromPrintPopup = $(By.xpath("//input[contains(@onclick,'lesson.print_submit')]"));
     private WebElement print = $(By.xpath("//a[@class='printLink' or @title='Print']"));
+    private WebElement closeLessonPopUp = $(By.xpath(".//*[contains(@class, 'ui-icon-closethick')]"));
+    private WebElement favoriteIconNearTitleOfLesson = $(By.xpath("//*[@class='lessonHeader']//div[contains(@class, 'favorite')]"));
+    private WebElement titleOfLesson = $(By.xpath("//*[@class='lessonHeader']/*[@class='title']/div[@class = 'titleText']"));
+    private By favoriteIconBy = By.xpath(".//*[@class = 'title']/*[contains(@class, 'favorite')]");
+    private WebElement articleTab = $(By.xpath("//*[@onclick='a3k.lesson.view_page(11, 1);']"));
+    private WebElement popup = $(By.id("ui-id-1"));
+    private WebElement afterReadingPollButton = $(By.xpath("//*[contains(@onclick,'(15, 1)')]"));
+    private WebElement thoughtQuestionTab = $(By.xpath("//*[@onclick='a3k.lesson.view_page(16, 1);']"));
+    private WebElement pollResults = $(By.xpath(".//*[@onclick='a3k.lesson.view_page(17, 1);']"));
+    private WebElement stretchArticleTab = $(By.xpath("//li[@onclick='a3k.lesson.view_page(19, 1);']/div"));
+
+
 
 
 
@@ -1000,7 +1012,7 @@ public class Lesson  extends Page {
     }
 
     public int totalQuestionsMath() {
-        return Integer.parseInt(getTextBy(totalQuestionsMathBy));
+        return Integer.parseInt(getText(totalQuestionsMathBy));
     }
 
     public boolean verifyHighlightActivityWordMath() {
@@ -1024,6 +1036,45 @@ public class Lesson  extends Page {
 
     public void clickOnOkButtonFromPrintPopup() {
         $(okButtonFromPrintPopup).click();
+    }
+
+    public WebElement getCloseLessonPopUp() {
+        return closeLessonPopUp;
+    }
+
+    public WebElement getFavoriteIconNearTitleOfLesson() {
+        return favoriteIconNearTitleOfLesson;
+    }
+
+    public WebElement getTitleOfLesson() {
+        return titleOfLesson;
+    }
+
+    public boolean isTheLessonFavorite() {
+        return isLessonFavorite(favoriteIconBy);
+    }
+
+    public void goToArticleTab() {
+        $(articleTab).click();
+    }
+
+    public void goToAfterReadingPollSection() {
+        if (isElementExist(popup)) {
+            closePopup();
+        }
+        $(afterReadingPollButton).click();
+    }
+
+    public void goToThoughtQuestionTab() {
+        $(thoughtQuestionTab).click();
+    }
+
+    public void goToPollResultsTab() {
+        $(pollResults).click();
+    }
+
+    public void goToStretchArticleTab() {
+        $(stretchArticleTab).click();
     }
 
 

@@ -2,18 +2,22 @@ package com.a3k.pages;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MyLessons extends Page {
 
@@ -161,6 +165,28 @@ public class MyLessons extends Page {
     protected By noButtonOnCollectionWarningBy = By.id("collection-warning-no-btn");
     protected By yesButtonOnCollectionWarningBy = By.id("collection-warning-yes-btn");
     private By selectIndividualClassRadioButtonBy = By.xpath("(.//*[@id='showClassesForm']//*[contains(@class, 'selectToggle')])[2]");
+    protected By closeButtonsOflessonsOnLessonListAreaBy = By.xpath(".//*[@class = 'lessonSection']//a[@class = 'closeBtn']");
+    private By importDialogButtonBy = By.id("doImport");
+    private By verifyScheduleButtonBy = By.id("verifyScheduleButton");
+    protected By printButtonOfCollectionBy = By.xpath(".//*[not(contains(@class, 'PrintLeft'))]/*[@class = 'printLink']");
+    private By allSubjectsDDLBy = By.xpath(".//*[@id='collection_content_area_id' and @name='collection_content_area_id']");
+    protected By lessonsOnLessonListAreaBy = By.xpath(".//*[contains(@class, 'lessonSection')]//*[@class = 'lessonTitle']//*[contains(@class, 'title-box')]");
+    private By collectionDDLBy = By.xpath(".//select[contains(@name, 'collection_id')]");
+    private By editCollectionDatesPopUpBy = By.xpath(".//*[contains(@id, 'wm-shoutout-')]//*[contains(@class, 'walkme-action') and text()='OK']");
+    private By favoriteIconInfoPopUpBy = By.xpath(".//*[@id = 'snapshot_dialog']/*[contains(@class, 'favorite')]");
+    private By lessonTitleOnInfoPopUpBy = By.xpath(".//*[@class = 'lessonDetailContainer']//a[@class = 'title']");
+    private By allInputsOfIndividualClassRadioButtonBy = By.xpath(".//*[@id='showClassesForm']//input[contains(@class, 'selectToggle') and @value='0']");
+    private ElementsCollection collectionLessons = $$(By.xpath(".//*[@class='lessonSection']//*[@class='title-box']"));
+    private By infoIconOfLessonWithID = By.xpath("//*[contains(@class,'detailIcon') and contains(@href,'pattern')]");
+    protected WebElement lessonStartDateInPopup = $(By.xpath("//p[@class='dates']/a[1]"));
+    private By startDateMonthOfDoubleCalendarBy = By.xpath(".//*[@id ='startCal']//*[@class = 'ui-datepicker-month']");
+    private By endDateMonthOfDoubleCalendarBy = By.xpath(".//*[@id ='endCal']//*[@class = 'ui-datepicker-month']");
+    protected By collectionBy = By.xpath(".//*[@id='collectionTable']//tr[contains(@id, 'collectionRow')]");
+    private By collectionLessonsIDsBy = By.xpath(".//*[@class='lessonSection']//*[contains(@name, '[id]')]");
+    private By collectionSelectDDLBy = By.xpath(".//*[@name='collection_id']");
+    private By lessonsOnMonthViewBy = By.xpath(".//div[contains(@class, 'fc-event-start')]//*[@class = 'fc-event-title']");
+    protected WebElement nextArrow2 = $(By.className("arrowNext"));
+
 
 
 
@@ -174,7 +200,6 @@ public class MyLessons extends Page {
             .compile("([a-zA-Z]{3}/[1-3]?[0-9]/[0-9]{4})|([1-3]?[0-9]-[a-zA-Z]{3}-[0-9]{2})");
 
     Pattern percents = Pattern.compile("(([0-9])|([1-9][0-9])|100)%");
-
 
 
     public MyLessons(WebDriver driver) {
@@ -379,6 +404,7 @@ public class MyLessons extends Page {
         }
         return result;
     }
+
     private boolean checkLessonCell(WebElement cell, boolean isFutureLesson) {
 
         boolean title = false;
@@ -529,8 +555,8 @@ public class MyLessons extends Page {
         }
     }
 
-    public void clickAfterClosePopup(By by){
-        for(int i = 0; i < 10; i++) {
+    public void clickAfterClosePopup(By by) {
+        for (int i = 0; i < 10; i++) {
             closeWalkmeNew();
         }
         closeWalkmeNew();
@@ -546,13 +572,13 @@ public class MyLessons extends Page {
     }
 
     public void waitUntilElementStale(WebElement element) {
-       // waitUntilElementStale(element);
+        // waitUntilElementStale(element);
         closeWalkmeNew();
         $(deleteCollectionPopUpButtonYesBy).click();
-        while (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+        while (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()) {
             closeWalkmeNew();
         }
-        if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+        if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()) {
             waitUntilElementStale(element);
         }
 
@@ -560,10 +586,10 @@ public class MyLessons extends Page {
 
     public void waitUntilElementStale(By by) {
         // waitUntilElementStale(element);
-        while (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+        while (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()) {
             closeWalkmeNew();
         }
-        if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()){
+        if (!$(deleteCollectionPopUpButtonYesBy).isDisplayed()) {
             waitUntilElementStale(by);
         }
         $(deleteCollectionPopUpButtonYesBy).click();
@@ -624,8 +650,8 @@ public class MyLessons extends Page {
     public SearchWidgetPage clickOnAddLessonButton() {
         logger.info("Click On Add Lesson Button");
         waitUntilElementClickableBy(addLessonButtonBy);
-            clickJS(addLessonButtonBy);
-            sleep(1000);
+        clickJS(addLessonButtonBy);
+        sleep(1000);
 
         return new SearchWidgetPage(driver);
     }
@@ -633,7 +659,7 @@ public class MyLessons extends Page {
     public void setDateOnCalendarBy(String year, String month, String day, By dateInputBy) {
         waitUntilElementClickableBy(dateInputBy);
         clickActions(dateInputBy);
-        for (int i = 0; i < 4 && !isDisplayedBy(actualYearOnCalendarBy); i++ ) {
+        for (int i = 0; i < 4 && !isDisplayedBy(actualYearOnCalendarBy); i++) {
             clickJS(dateInputBy);
         }
 
@@ -678,7 +704,7 @@ public class MyLessons extends Page {
             clickJS(changesSavedPopUpButtonBy);
         }
         sleep(1000);
-        if (isDisplayedBy(changesSavedPopUpButtonBy)){
+        if (isDisplayedBy(changesSavedPopUpButtonBy)) {
             $(changesSavedPopUpButtonBy).click();
         }
         sleep(1000);
@@ -686,7 +712,7 @@ public class MyLessons extends Page {
 
     public String getUncheckedCourseName() {
         By xpath = By.xpath(".//*[@class='courseName' and not(contains(text(), '('))]");
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             if ($(By.xpath("/html/body/div[20]/div[3]/div/button/span")).isDisplayed()) {
                 $(By.xpath("/html/body/div[20]/div[3]/div/button/span")).click();
                 break;
@@ -1131,7 +1157,7 @@ public class MyLessons extends Page {
 
     public String getCollectionDescriptionByName(String colName) {
         return ($(By.xpath("//*[@class='collectionTable']//*[@class='courseName' and contains(text()," +
-                        " '" + colName + "')]//following-sibling::*")).getText());
+                " '" + colName + "')]//following-sibling::*")).getText());
     }
 
     public void editSpecifiedCollection(String str) {
@@ -1338,7 +1364,7 @@ public class MyLessons extends Page {
     }
 
     public boolean isCollectionAssigned(String colName) {
-       // waitUntilElementsAppearsBy(collectionListBy);
+        // waitUntilElementsAppearsBy(collectionListBy);
         return isElementPresentBy(By.xpath(".//*[@class='courseName' and contains(text(), '" + colName + "')" +
                 "]/../following-sibling::*//*[@alt='Assigned Lesson Collection' or @alt='Colección de lecciones asignada']"));
     }
@@ -1443,7 +1469,7 @@ public class MyLessons extends Page {
     public void goToMonthView() {
         waitUntilElementClickableBy(monthViewButtonBy);
         $(monthViewButtonBy).click();
-       // waitUntilElementStale(loadingHoverBy);
+        // waitUntilElementStale(loadingHoverBy);
     }
 
     public void clickOnlessonOnMonthView(int number) {
@@ -1534,7 +1560,7 @@ public class MyLessons extends Page {
         try {
             Thread.sleep(1000);
             select.selectByVisibleText(course.trim());
-        } catch (Exception e){
+        } catch (Exception e) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
@@ -1546,7 +1572,7 @@ public class MyLessons extends Page {
     }
 
     public String getCollectionName() {
-        return getTextBy(collectionNameBy).trim();
+        return getText(collectionNameBy).trim();
     }
 
     public int getCountOfAddedLessons() {
@@ -1567,7 +1593,7 @@ public class MyLessons extends Page {
     public boolean isNeededCollectionPresent(String str) {
         By rowPath = By.xpath(".//*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), '" + str + "')]/../..");
         if ($(rowPath).isDisplayed()) {
-            waitUntilAttributeToBeNotEmptyBy(rowPath, "textContent");
+            waitUntilAttributeToBeNotEmpty(rowPath, "textContent");
         }
         return isElementExist(rowPath);
     }
@@ -1599,6 +1625,316 @@ public class MyLessons extends Page {
 
     public void clickOnSelectIndividualClassRadioButton() {
         $(selectIndividualClassRadioButtonBy).click();
+    }
+
+    public void deleteAllLessonsFromLessonListArea() {
+        logger.info("Delete all lessons from lesson list area");
+        clickOnEachElementsInListBy(closeButtonsOflessonsOnLessonListAreaBy);
+    }
+
+    public void importCollectionByName(String nameOfCollection) {
+        clickJS(By.xpath(".//*[@id='courseList']/..//label[normalize-space(.) = '" + nameOfCollection + "']/input"));
+        $(importDialogButtonBy).click();
+    }
+
+    public void importCourseByName(String nameOfCourse) {
+        waitUntilElementClickableBy(By.xpath(".//*[@id='courseList']//label/text()[contains(., '" + nameOfCourse + "')]/../input"));
+        clickJS(By.xpath(".//*[@id='courseList']//label/text()[contains(., '" + nameOfCourse + "')]/../input"));
+        $(importDialogButtonBy).click();
+    }
+
+    public Set<String> getStatusOfLessonsInCollection() {
+        List<String> tempList = getCssValuesFromItemsOfList(findEls(addedLessonsBy), "background-color");
+
+        tempList.replaceAll(s -> s.replaceAll("rgba", "rgb").replaceAll(", \\d\\)", ")"));
+
+        Set<String> temp = new HashSet<>(tempList);
+
+        return temp;
+    }
+
+    public boolean isLessonCannotBeAddedMessagePresent() {
+        return isDisplayedByNEW(okButtonOfLessonCannotBeAddedMessageBy);
+    }
+
+    public void clickVerifyScheduleButtonBy() {
+        waitUntilElementClickableBy(verifyScheduleButtonBy);
+        scrollToEl(verifyScheduleButtonBy);
+        clickJS(verifyScheduleButtonBy);
+        logger.debug("Clicked verify schedule button");
+    }
+
+    public String getStatusOfLessonInCollection(String nameOfLesson) {
+        return getCssValue(getLessonByNameFromCollection(nameOfLesson), "background-color");
+    }
+
+    public WebElement getLessonByNameFromCollection(String nameOfLesson) {
+        // remove the '-character from name of lesson (if it exist) for avoid xPath issue
+        nameOfLesson = apostropheHandlerForStringXpath(nameOfLesson);
+        By pathOfLesson = By.xpath(".//*[contains(@id, 'collectionLesson')]//*[@class = 'title-box' and contains(text(), '" + nameOfLesson + "')]/..");
+        //waitUntilDisplayedBy(pathOfLesson, 5);
+        return findEl(pathOfLesson);
+    }
+
+    public void clickOnPrintButtonOfCollectionBy() {
+        clickJS(printButtonOfCollectionBy);
+    }
+
+    public void selectInSubjectsDDL(String subject) {
+        waitUntilAppearsBy(allSubjectsDDLBy);
+        Select select = new Select(refEl(allSubjectsDDLBy));
+        select.selectByVisibleText(subject);
+        logger.debug("Selected " + subject + " in subjects DDL");
+    }
+
+    public List<String> getNamesOfLessonsFromLessonListArea() {
+        return getTextFromWebElementsByListBy(lessonsOnLessonListAreaBy);
+    }
+
+    public void checkSomeDaysOfWeek(int count) {
+        clickOnSomeElementsInListBy(daysOfWeekBy, count);
+    }
+
+    public String getSelectedStartDate() {
+        waitUntilAttributeToBeNotEmpty(collectionStartDateInputBy, "value");
+        return getAttributeBy(collectionStartDateInputBy, "value");
+    }
+
+    public String getSelectedEndDate() {
+        waitUntilAttributeToBeNotEmpty(collectionEndDateInputBy, "value");
+        return getAttributeBy(collectionEndDateInputBy, "value");
+    }
+
+    public void clickOnCollectionDDL() {
+        waitUntilElementClickableBy(collectionDDLBy);
+        clickUntilAnElementAppears(collectionDDLBy, editCollectionDatesPopUpBy, 5);
+    }
+
+    public boolean isEditCollectionDatesPopUpExist() {
+        return isElementsExist(editCollectionDatesPopUpBy);
+    }
+
+    public void clickOkOnEditCollectionDatesPopUp() {
+        if ($(editCollectionDatesPopUpBy).isDisplayed()) {
+            $(editCollectionDatesPopUpBy).click();
+        }
+    }
+
+    public boolean isEditCollectionDatesPopUpAbsent() {
+        return isElementAbsentBy(editCollectionDatesPopUpBy);
+    }
+
+    public void clickOnAdvancedOptions() {
+        logger.info("Open Advanced Options");
+        clickJS(advancedOptionsBy);
+    }
+
+    public void chooseTypeAtSearchForMoreLesson(String type) {
+        logger.info("Select Lesson type: " + type);
+        By xpath = By.xpath("//select[@id='lesson_type_id']//option[contains(text(),'" + type + "')]");
+        $(xpath).click();
+    }
+
+    public void markLessonFavorite() {
+        if (!isLessonFavorite(favoriteIconInfoPopUpBy)) {
+            $(favoriteIconInfoPopUpBy).click();
+        }
+    }
+
+    public String getTextOfTitleFromLessonInfoPopUp() {
+        return getTextBy(lessonTitleOnInfoPopUpBy);
+    }
+
+    public boolean isCurrentLessonFavorite() {
+        return isLessonFavorite(favoriteIconInfoPopUpBy);
+    }
+
+    public String checkNeededClassAndGetIdOnShowClasses(String className) {
+        checkNeededClassOnShowClasses(className);
+        By xpath = By.xpath(".//*[@id='showClassesForm']//*[@class='className']//label[contains(normalize-space(.), '" + className + "')]/input");
+        return getAttributeBy(xpath, "value");
+    }
+
+    public void checkNeededClassOnShowClasses(String className) {
+        By xpath = By.xpath(".//*[@id='showClassesForm']//*[@class='className']//label[contains(normalize-space(.), '" + className + "')]/input");
+        clickOnEachElementsInListBy(activeSchoolShowClassesBy);
+        clickOnEachSelectIndividualClassOfRadioButtons();
+        $(xpath).click();
+    }
+
+    public void clickOnEachSelectIndividualClassOfRadioButtons() {
+        clickOnEachElementsInListBy(allInputsOfIndividualClassRadioButtonBy);
+    }
+
+    public List<String> getCollectionLessonsTitles() {
+        List<String> returnable = new ArrayList<>();
+        for (WebElement node : collectionLessons) {
+            returnable.add($(node).getText().trim());
+        }
+        return returnable;
+    }
+
+    public void clickInfoIconOfLesson(String lessonID) {
+        String infoIconOflesson = StringUtils.replace(infoIconOfLessonWithID.toString(),
+                "pattern", lessonID);
+        infoIconOflesson = StringUtils.remove(infoIconOflesson, "By.xpath: ");
+
+        if (isElementPresentBy(By.xpath(infoIconOflesson))) {
+            $(findEl(By.xpath(infoIconOflesson))).click();
+        } else {
+            int pageCount = 16;
+            while (isElementExist(nextArrowOnListViewBy) && (pageCount > 0)) {
+                if (isElementsExist(By.xpath(infoIconOflesson))) {
+                    waitForJSandJQueryToLoad();
+                    $(findEl(By.xpath(infoIconOflesson))).click();
+                    return;
+
+                }
+                $(nextArrowOnListViewBy).click();
+                pageCount--;
+            }
+        }
+    }
+
+    public void openStartCalendarLessonInfo() {
+        $(lessonStartDateInPopup).click();
+    }
+
+    public void setStartDateOnCalendar(LocalDate changedStartDate) {
+        String date = changedStartDate.format(DateTimeFormatter.ofPattern("MMMM-d",
+                Locale.US));
+        String dateOfTodaySplitter[] = date.split("-");
+
+        String day = dateOfTodaySplitter[1];
+        String month = dateOfTodaySplitter[0].substring(0, 3);
+        waitElement(startDateMonthOfDoubleCalendarBy);
+
+        setDateOnDoubleCalendar(month, day, startDateMonthOfDoubleCalendarBy);
+    }
+
+    public void setDateOnDoubleCalendar(String month, String day, By monthLocator) {
+        String actualMonthInCalendar = getTextBy(monthLocator);
+
+        By nextButton = By.xpath("./../..//a[contains(@class, 'next')]");
+        By prevButton = By.xpath("./../..//a[contains(@class, 'prev')]");
+
+        HashMap<String, Integer> calendar = new HashMap<>();
+        HashMap<String, String> calendarTranslator = new HashMap<>();
+
+        if (!getLanguage().equals("Español")) {
+            calendar.put("Jan", 1);
+            calendar.put("Feb", 2);
+            calendar.put("Mar", 3);
+            calendar.put("Apr", 4);
+            calendar.put("May", 5);
+            calendar.put("Jun", 6);
+            calendar.put("Jul", 7);
+            calendar.put("Aug", 8);
+            calendar.put("Sep", 9);
+            calendar.put("Oct", 10);
+            calendar.put("Nov", 11);
+            calendar.put("Dec", 12);
+        } else {
+            calendar.put("ene", 1);
+            calendar.put("feb", 2);
+            calendar.put("mar", 3);
+            calendar.put("abr", 4);
+            calendar.put("may", 5);
+            calendar.put("jun", 6);
+            calendar.put("jul", 7);
+            calendar.put("ago", 8);
+            calendar.put("sep", 9);
+            calendar.put("oct", 10);
+            calendar.put("nov", 11);
+            calendar.put("dic", 12);
+
+            calendarTranslator.put("Jan", "ene");
+            calendarTranslator.put("Feb", "feb");
+            calendarTranslator.put("Mar", "mar");
+            calendarTranslator.put("Apr", "abr");
+            calendarTranslator.put("May", "may");
+            calendarTranslator.put("Jun", "jun");
+            calendarTranslator.put("Jul", "jul");
+            calendarTranslator.put("Aug", "ago");
+            calendarTranslator.put("Sep", "sep");
+            calendarTranslator.put("Oct", "oct");
+            calendarTranslator.put("Nov", "nov");
+            calendarTranslator.put("Dec", "dic");
+
+            month = calendarTranslator.get(month);
+        }
+
+        int actualMonthNumber = calendar.get(actualMonthInCalendar);
+        int neededMonthNumber = calendar.get(month);
+
+        if (actualMonthNumber > neededMonthNumber) {
+            int i = 0;
+            while (!month.equals(actualMonthInCalendar)) {
+                i = i + 1;
+                $(findEl(monthLocator).findElement(prevButton)).click();
+                actualMonthInCalendar = getTextBy(monthLocator);
+                if (i == 10) {
+                    break;
+                }
+            }
+        }
+
+        if (actualMonthNumber < neededMonthNumber) {
+            int i = 0;
+            while (!month.equals(actualMonthInCalendar)) {
+                i = i + 1;
+                clickJS(findEl(monthLocator).findElement(nextButton));
+                actualMonthInCalendar = getTextBy(monthLocator);
+                if (i == 10) {
+                    break;
+                }
+            }
+        }
+
+        if (actualMonthNumber == neededMonthNumber || actualMonthInCalendar.equals(month)) {
+            clickOnTheDayOfCalendar(monthLocator, day);
+        }
+    }
+
+    private void clickOnTheDayOfCalendar(By by, String day) {
+        String temp = by.toString().replace("By.xpath: ", "").replace("*[@class = 'ui-datepicker-month']", "");
+        temp = temp + "td[@data-handler = 'selectDay']/a[text() = '" + day + "']";
+        WebElement date = $(By.xpath(temp));
+        new Actions(getWebDriver()).moveToElement(date).click().perform();
+    }
+
+    public void setEndDateOnCalendar(LocalDate changedStartDate) {
+        String date = changedStartDate.format(DateTimeFormatter.ofPattern("MMMM-d"));
+        String dateOfTodaySplitter[] = date.split("-");
+
+        String day = dateOfTodaySplitter[1];
+        String month = dateOfTodaySplitter[0].substring(0, 3);
+        waitElement(endDateMonthOfDoubleCalendarBy);
+        setDateOnDoubleCalendar(month, day, endDateMonthOfDoubleCalendarBy);
+    }
+
+    public List<String> getIDsOfColectionLessons() {
+        return getAttributesFromItemsOfListBy(collectionLessonsIDsBy, "value");
+    }
+
+    public String getFirstCollectionID() {
+        return getAttributeBy(collectionBy, "id").replace("collectionRow", "");
+    }
+
+    public void selectInCollectionDDLByNameContains(String colName) {
+        waitUntilJSandJQLoaded();
+        String temp = "(.*)\\s" + colName + ".*";
+        selectItemFromDdlByRegEx(temp, collectionSelectDDLBy);
+    }
+
+    public Set<String> getNamesOfLessonsFromMonthView() {
+        waitUntilPageLoaded();
+        return getTextFromWebElementsBySet(lessonsOnMonthViewBy);
+    }
+
+    public void clickOnNextArrow() {
+        $(nextArrow2).click();
+        sleep(300);
     }
 
 

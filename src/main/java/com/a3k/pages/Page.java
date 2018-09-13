@@ -8,18 +8,18 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Pattern;
 
-import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.*;
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
+import static org.openqa.selenium.support.ui.ExpectedConditions.attributeToBeNotEmpty;
 
 
 public abstract class Page {
@@ -81,7 +81,13 @@ public abstract class Page {
     private WebElement favoritesTab = $(By.xpath(".//div[@id='moreLessonsContainer']//div[@id = 'favorites-link']"));
     private WebElement newForYouTab = $(By.xpath("//div[@id='moreLessonsContainer']//div[contains(@class,'ml_view')][3]/a"));
     private WebElement searchTab = $(By.xpath("//*[@id=\"moreLessonsContainer\"]/div[1]/div[1]/a"));
-
+    private By favoritesIconBy = By.xpath(".//a[@href = '/favorites']");
+    private By searchIconBy = By.xpath(".//div[@class = 'search']/a");
+    protected By findButtonBy = By.xpath(".//*[@class = 'submitSearch']");
+    private WebElement favoritesIcon = $(By.xpath(".//a[@href = '/favorites']"));
+    private By studentProfileDropdownBy = By.xpath("//div[contains(@class,'profile')]");
+    private By userSettingsBy = By.xpath(".//*[contains(@data-dropdown,'settings-dropdown')]");
+    protected By logOutBy = By.xpath(".//*[contains(@href,'/logout')]");
 
 
 
@@ -269,14 +275,14 @@ public abstract class Page {
             clickJS(homeButtonBy);
         }
         acceptAlert();
-        closeWalkme();
+        closeWalkmeNew();
     }
 
     public void clickJS(By by) {
         logger.info("Click on element " + by);
         //waitUntilLoaded();
         if(!isBecomeClickableBy(by)) {
-            closeWalkme();
+            closeWalkmeNew();
         }
         waitElementIsClickable(by);
         try {
@@ -335,7 +341,7 @@ public abstract class Page {
         Configuration.pageLoadStrategy = "normal";
         clickIfDisplayedSubmitButton();
         try {
-            WebElement element = $(by);
+            WebElement element = findEl(by);
             //((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
             clickIfDisplayedSubmitButton();
             executeJavaScript("arguments[0].click();", element);
@@ -398,12 +404,15 @@ public abstract class Page {
     }
 
     public void waitAndAcceptAlert() {
-        //confirm("The passwords do not match. Please try again.");
-        //$(By.xpath("/html/body/div[3]/div[11]/div/button/span")).click();
-
-        //confirm();
-        //dismiss();
-
+        try {
+            Wait().until(alertIsPresent());
+//            Alert alert = driver.switchTo().alert();
+////            alert.accept();
+            confirm();
+            switchTo().defaultContent();
+        } catch (Exception e) {
+            logger.trace(e.getMessage());
+        }
     }
 
     public void goToInitialUrl() {
@@ -495,6 +504,20 @@ public abstract class Page {
         waitUntilPageLoaded();
     }
 
+    public void switchToNextWindowWhenExistOnly2New() {
+        logger.info("Switch to Next window");
+        logger.debug("Switching from window " + title());
+
+        waitUntilSecondWindowAppears();
+        ArrayList<String> tabs = new ArrayList<>(getWebDriver().getWindowHandles());
+        switchTo().window(tabs.get(tabs.size() - 1));
+
+        logger.debug("Switched to window " + title());
+
+        waitUntilPageLoaded();
+        getWebDriver().close();
+    }
+
     public void waitUntilSecondWindowAppears() {
             if (getWebDriver().getWindowHandles().size() < 1) {
                waitUntilSecondWindowAppears();
@@ -570,11 +593,9 @@ public abstract class Page {
 //        Actions dragAndDrop = new Actions(driver);
 ////        Action action = dragAndDrop.dragAndDrop(sourceElement, targetElement).build();
 ////        action.perform();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        }
+        sleep(1000);
         actions().dragAndDrop(sourceElement, targetElement).build().perform();
+        sleep(500);
     }
 
     public void changeSequence(WebElement sourceElement, WebElement targetElement) {
@@ -622,12 +643,13 @@ public abstract class Page {
     }
 
     public String getPopupContent() {
-        waitUntilAttributeToBeNotEmptyBy(popupContentBy, "textContent");
+        waitUntilAttributeToBeNotEmpty(popupContentBy, "textContent");
         return $(popupContentBy).getText();
     }
 
-    public void waitUntilAttributeToBeNotEmptyBy(By by, String attribute) {
-            $(by).shouldHave(attribute(attribute));
+    public void waitUntilAttributeToBeNotEmpty(By by, String attribute) {
+           // $(by).shouldHave(attribute(attribute));
+        Wait().until(attributeToBeNotEmpty(findEl(by), attribute));
     }
 
     public WebElement findEl(By by) {
@@ -649,10 +671,10 @@ public abstract class Page {
     }
 
     public void waitUntilAttributeToBeNotEmpty(WebElement element, String attribute) {
-        try {
-            $(element).shouldHave(attribute(attribute));
-        } catch (Exception e) {
-        }
+        Wait().until(attributeToBeNotEmpty(element, attribute));
+//        if ($(element).isDisplayed()) {
+//            $(element).shouldHave(attribute(attribute));
+//        }
     }
 
     public void switchBackAfterClose() {
@@ -706,8 +728,12 @@ public abstract class Page {
         executeJavaScript("arguments[0].parentNode.removeChild(arguments[0])", element);
     }
 
-    public String getTextBy(By by) {
+    public String getText(By by) {
         return refEl(by).getText();
+    }
+
+    public String getText(WebElement element) {
+        return $(element).getText();
     }
 
     public WebElement refEl(By locator) {
@@ -742,7 +768,7 @@ public abstract class Page {
     }
 
     public String getAttributeBy(By by, String att) {
-        waitUntilAttributeToBeNotEmptyBy(by, att);
+        waitUntilAttributeToBeNotEmpty(by, att);
         return refEl(by).getAttribute(att);
     }
 
@@ -1147,19 +1173,19 @@ public abstract class Page {
     }
 
     public String getActualYearFromCalendar() {
-        waitUntilAttributeToBeNotEmptyBy(actualYearOnCalendarBy, "textContent");
-        String result = getTextBy(actualYearOnCalendarBy);
+        waitUntilAttributeToBeNotEmpty(actualYearOnCalendarBy, "textContent");
+        String result = getText(actualYearOnCalendarBy);
         if(result.equals("")) {
-            result = getTextBy(actualYearOnCalendarBy);
+            result = getText(actualYearOnCalendarBy);
         }
         return result;
     }
 
     public String getActualMonthFromCalendar() {
-        waitUntilAttributeToBeNotEmptyBy(actualMonthOnCalendarBy, "textContent");
-        String result = getTextBy(actualMonthOnCalendarBy);
+        waitUntilAttributeToBeNotEmpty(actualMonthOnCalendarBy, "textContent");
+        String result = getText(actualMonthOnCalendarBy);
         if(result.equals("")) {
-            result = getTextBy(actualMonthOnCalendarBy);
+            result = getText(actualMonthOnCalendarBy);
         }
         return result;
     }
@@ -1383,16 +1409,12 @@ public abstract class Page {
 
     public void clickOnHamburgerMenuNew(){
         closeWalkmeNew();
-        while (!$(hamburgerMenuButtonBy).isDisplayed()){
+        if (!$(hamburgerMenuButtonBy).isDisplayed()){
                 closeWalkmeNew();
             }
             closeWalkmeNew();
             closeWalkmeNew();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        sleep(1000);
             if ($(hamburgerMenuButtonBy).isDisplayed()) {
                 closeWalkmeNew();
                 closeWalkmeNew();
@@ -1583,6 +1605,253 @@ public abstract class Page {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void clickOnEachElementsInListBy(By by) {
+        for (WebElement el : findEls(by)) {
+            sleep(10);
+            clickJS(el);
+        }
+    }
+
+    public List<String> getCssValuesFromItemsOfList(ElementsCollection list, String cssValue) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WebElement el : list) {
+            result.add(el.getCssValue(cssValue));
+        }
+        return result;
+    }
+
+    public void selectFirstItemContainsDDLBy(By by, String str) {
+        Select select = new Select($(by));
+        List<WebElement> options = select.getOptions();
+        for (WebElement el : options) {
+            if (el.getText().contains(str)) {
+                select.selectByVisibleText(el.getText());
+                break;
+            }
+        }
+    }
+
+    public void scrollToEl(By by) {
+        executeJavaScript("arguments[0].scrollIntoView(false);", findEl(by));
+    }
+
+    public String apostropheHandlerForStringXpath(String str) {
+        // remove the '-character from string (if it exist) for avoid xPath issue
+        if (str.contains("'")) {
+            Comparator<String> comprator = (o1, o2) -> o2.length() - o1.length();
+            String[] subStrings = str.split("'");
+            Arrays.sort(subStrings, comprator);
+            str = subStrings[0];
+        }
+        return str;
+    }
+
+    public String getCssValue(WebElement webElement, String attribute) {
+        waitUntilAttributeToBeNotEmpty(webElement, attribute);
+        return webElement.getCssValue(attribute);
+    }
+
+    public String getWindowTitle() {
+        waitUntilPageLoaded();
+        return title();
+    }
+
+    public List<String> getTextFromWebElementsByListBy(By by) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WebElement el : findEls(by)) {
+            result.add(el.getText().trim());
+        }
+        return result;
+    }
+
+    public String getTextTrim(By by) {
+        return getText(by).trim();
+    }
+
+    public String getTextTrim(WebElement element) {
+        return getText(element).trim();
+    }
+
+    public void clickOnSomeElementsInListBy(By by, int count) {
+        int i = 1;
+        for (WebElement el : findEls(by)) {
+            clickJS(el);
+            if (i >= count) {
+                break;
+            }
+            i++;
+        }
+    }
+
+    public void clickUntilAnElementAppears(By clickByElement, By elementShouldAppears, int countOfTries ) {
+        for (int i = 0; i < countOfTries && !isDisplayedBy(elementShouldAppears); i++ ) {
+            //click(clickByElement);
+            $(clickByElement).click();
+        }
+    }
+
+    public void goToFavoritePage() {
+        waitUntilElementClickableBy(favoritesIconBy);
+        $(favoritesIconBy).click();
+    }
+
+    public void clickOnSearchIcon() {
+        click(searchIconBy);
+    }
+
+    public String getCssValueUntilAttributeContains(WebElement webElement, String attribute, String value) {
+        return $(webElement).getCssValue(attribute);
+    }
+
+    public boolean isElementVisible(WebElement element) {
+            if (element.isDisplayed()) {
+                return true;
+            }
+        return false;
+    }
+
+    public WebElement getFavoritesIcon() {
+        return favoritesIcon;
+    }
+
+    public void logOut() {
+        if (isElementExist(studentProfileDropdownBy)) {
+            $(studentProfileDropdownBy).click();
+        } else {
+            $(userSettingsBy).click();
+        }
+        //clickActions(logOutBy);
+        clickJS(logOutBy);
+    }
+
+    public List<String> getTextFromWebElementsByList(ElementsCollection webElements) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WebElement el : webElements) {
+            result.add($(el).getText().trim());
+        }
+        return result;
+    }
+
+    public boolean isLessonFavorite(By by) {
+        waitUntilAttributeToBeNotEmpty(by, "class");
+        String str = getAttributeBy(by, "class");
+        if (str.contains(" pick")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String getTextBy(By by) {
+        return $(refEl(by)).getText();
+    }
+
+    public void unmarkAllLessons() {
+        By allLessonsOnSearchTabBy = By.xpath(".//div[contains(@class, 'ml_tab moreLessonsSearch')]//*[contains(@class , 'lessonSmall')]//div[@class = 'lessonTitle']");
+        for (WebElement el : refEls(allLessonsOnSearchTabBy, 10)) {
+            clickActions(el);
+            unmarkLessonFavorite();
+        }
+    }
+
+    public ElementsCollection refEls(By locator, int countOfTries) {
+        boolean condition = true;
+        ElementsCollection elements = null;
+        int count = 0;
+        while (condition || count <= countOfTries) {
+            count++;
+            try {
+                elements = $$(locator);
+                if (!elements.isEmpty()) {
+                    condition = false;
+                    break;
+                }
+            } catch (StaleElementReferenceException | NoSuchElementException e) {
+                if (count == countOfTries) {
+                    logger.trace("The elements by " + locator + " is absent. Count of refresh: " + count);
+                    $(locator);
+                    condition = false;
+                }
+            }
+        }
+        return elements;
+    }
+
+    public void unmarkLessonFavorite() {
+        By favoriteIconInfoPopUpBy = By.xpath(".//*[@id = 'snapshot_dialog']/*[contains(@class, 'favorite')]");
+        if (isLessonFavorite(favoriteIconInfoPopUpBy)) {
+            $(findEl(favoriteIconInfoPopUpBy)).click();
+        }
+    }
+
+    public Set<String> getTextFromWebElementsBySet(By by) {
+        HashSet<String> result = new HashSet<>();
+        for (WebElement el : findEls(by)) {
+            result.add($(el).getText().trim());
+        }
+        return result;
+    }
+
+    public int amountOfElements(By by) {
+        return findEls(by).size();
+    }
+
+    public List<String> getAttributeOfSomeElementsInListStartFromBy(By by, String attribute, int start, int count) {
+        ElementsCollection els = findEls(by);
+        ArrayList<String> result = new ArrayList<>();
+        for (int i = start; i <= count; i++) {
+            result.add($(els.get(i)).getAttribute(attribute).trim());
+        }
+        return result;
+    }
+
+    public MyLessons goToMyLessonsByLink(String pageNum) {
+        logger.info("Opening My Lessons page");
+        goToNewUrl("/my_lessons?page_index=" + pageNum);
+        if (getWebDriver().getWindowHandles().size() > 1) {
+            switchToNextWindowWhenExistOnly2();
+            closeWindow();
+            switchBackAfterClose();
+        }
+        return new MyLessons(driver);
+    }
+
+    public void selectItemFromDdlByRegEx(String str, By by) {
+        String itemName;
+        Pattern p = Pattern.compile(str);
+        List<WebElement> items = getAllOptionsFromSelect(by);
+        for (WebElement el : items) {
+            itemName = $(el).getText();
+            if (p.matcher(itemName).matches()) {
+                selectFromDDLBy(by, itemName);
+                break;
+            }
+        }
+    }
+
+    public List<WebElement> getAllOptionsFromSelect(By by) {
+        Select sel = new Select(refEl(by));
+        return sel.getOptions();
+    }
+
+    public void selectFromDDLBy(By by, String value) {
+        Select select = new Select(refEl(by));
+        select.selectByVisibleText(value);
+    }
+
+    public void clickFavoritesIcon() {
+        closeWalkmeNew();
+        $(favoritesIconBy).click();
+    }
+
+    public Map<String, String> getAttributesFromItemsOfListByMap(ElementsCollection list, String attribute) {
+        HashMap<String, String> result = new HashMap<>();
+        for (WebElement el : list) {
+            result.put($(el).getText(), $(el).getAttribute(attribute));
+        }
+        return result;
     }
 
 

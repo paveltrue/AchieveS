@@ -41,6 +41,8 @@ public class SearchWidgetPage extends Page {
     private By advancedOptionsDDLsBy = By.xpath(".//*[@class='advancedOptions']//select[not(contains(@style, ' none'))]");
     private By allGradesDDLBy = By.id("content_range_id");
     private WebElement lessonTypeDDL = $(By.id("lesson_type_id"));
+    private By courseDDLBy = By.id("course_id");
+    private By firstLessonFromResultOfActiveTab = By.xpath(".//*[contains(@class, 'ml_tab') and contains(@style, 'block') ]//*[@class = 'searchResults']//*[contains(@id, 'lessonSearch')][1]//*[@class = 'lessonTitle']");
 
 
 
@@ -66,20 +68,17 @@ public class SearchWidgetPage extends Page {
         Select select = new Select(courseDDL);
         for (int i = 0; i < 2; i++) {
             try {
-                Thread.sleep(1000);
+                sleep(1000);
                 select.selectByVisibleText(course.toString().trim());
             } catch (Exception e) {
                 try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e1) {
+                    sleep(1000);
+                } catch (Exception e1) {
                     try {
-                        Thread.sleep(1000);
+                        sleep(1000);
                         select.selectByVisibleText(course.toString().trim());
                     } catch (Exception ex) {
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e11) {
-                        }
+                        sleep(1000);
                         select.selectByVisibleText(course.toString().trim());
                     }
                 }
@@ -121,7 +120,7 @@ public class SearchWidgetPage extends Page {
 
     public void dragAndDropBy(By sourceElement, By targetElement) {
         //Actions dragAndDrop = new Actions(driver);
-        int longTime = 500;
+        int longTime = 600;
         actions().moveToElement(refEl(sourceElement)).clickAndHold(refEl(sourceElement)).perform();
         myWait(longTime);
         actions().moveByOffset(-100, 10).build().perform();
@@ -172,10 +171,7 @@ public class SearchWidgetPage extends Page {
     public void dragAndDropFirstNotAddedLessonBy() {
         waitUntilElementsAppearsLocatedBy(notAddedLessonBy);
         ElementsCollection elements = findEls(notAddedLessonBy);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        }
+        sleep(1000);
         dragAndDrop(elements.get(0), placeToDropLessonsWeb);
     }
 
@@ -239,20 +235,11 @@ public class SearchWidgetPage extends Page {
 
         addFirstLesson();
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        sleep(1000);
         if ($(yesButtonIfLessonAlreadyAssigned).isDisplayed()){
             ($(yesButtonIfLessonAlreadyAssigned)).click();
         }
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        sleep(1000);
     }
 
     public void clickOnAdvancedOptionsBy() {
@@ -376,6 +363,39 @@ public class SearchWidgetPage extends Page {
     public WebElement getFirstLessonSearchTab() {
         waitUntilElementClickableBy(firstLessonOnSearchTabBy);
         return findEl(firstLessonOnSearchTabBy);
+    }
+
+    public void selectFromCourseDDLFirstItemContainsBy(Courses course) {
+        selectFirstItemContainsDDLBy(courseDDLBy, course.toString());
+    }
+
+    public String getNameOfFirstLesson() {
+        waitUntilAttributeToBeNotEmpty(firstLessonFromResultOfActiveTab, "textContent");
+        return getText(firstLessonFromResultOfActiveTab);
+    }
+
+    public void dragAndDrop(WebElement sourceElement, WebElement targetElement) {
+        //Actions dragAndDrop = new Actions(driver);
+        int longTime = 500;
+        actions().moveToElement(sourceElement).clickAndHold(sourceElement).perform();
+        myWait(longTime);
+        actions().moveByOffset(-100, 10).build().perform();
+        myWait(longTime);
+        actions().moveToElement(targetElement).build().perform();
+        myWait(longTime);
+        actions().release().build().perform();
+    }
+
+    public void dragAndDrop(WebElement sourceElement, By targetElement) {
+        //Actions dragAndDrop = new Actions(driver);
+        int longTime = 500;
+        actions().moveToElement(sourceElement).clickAndHold(sourceElement).perform();
+        myWait(longTime);
+        actions().moveByOffset(-100, 10).build().perform();
+        myWait(longTime);
+        actions().moveToElement(refEl(targetElement)).build().perform();
+        myWait(longTime);
+        actions().release().build().perform();
     }
 
 }
