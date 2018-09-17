@@ -8,7 +8,6 @@
     </listeners>
 
     <test name="IncognitaTeam" parallel="classes">
-
         <classes>
             <class name="com.a3k.testCases.incognita.part1.US14045"/>
             <class name="com.a3k.testCases.incognita.part1.US14585"/>

@@ -361,7 +361,7 @@ public class SearchWidgetPage extends Page {
     }
 
     public WebElement getFirstLessonSearchTab() {
-        waitUntilElementClickableBy(firstLessonOnSearchTabBy);
+//        waitUntilElementClickableBy(firstLessonOnSearchTabBy);
         return findEl(firstLessonOnSearchTabBy);
     }
 

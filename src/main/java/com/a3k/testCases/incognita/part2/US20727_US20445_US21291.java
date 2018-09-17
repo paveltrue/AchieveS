@@ -11,6 +11,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.sleep;
@@ -50,6 +51,7 @@ public class US20727_US20445_US21291 extends BasicTestCase {
 
         loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, studentProgram, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
         newHomePage = new NewHomePage(driver);
         newHomePage.clickOnMotivationMenuArrow();
@@ -81,25 +83,26 @@ public class US20727_US20445_US21291 extends BasicTestCase {
 		}
     	
         newHomePage.openLexileDetails();
-
+        sleep(1000);
         String result = getPreferenceValueFromDB(login);
-        sleep(1500);
+        sleep(1000);
         softAssert.assertEquals(result, "1",
                 "  3  The preference value from db is not correct after switching lexile details toggle.");
-        sleep(1500);
+        sleep(1000);
         newHomePage.clickOnLexileToggle();
 
         newHomePage.waitForPageToLoad();
-        //newHomePage.waitForPageToLoad();
+        newHomePage.waitForPageToLoad();
 
+        sleep(1000);
         result = getPreferenceValueFromDB(login);
-        sleep(1500);
+        sleep(1000);
         softAssert.assertEquals(result, "0",
                 "  4  The preference value from db is not correct after switching BACK lexile details toggle.");
         sleep(1500);
         softAssert.assertFalse(newHomePage.isLexileValueDisplayed(),
                 "  5  The Lexile value information is present after switching lexile details toggle.");
-        sleep(1500);
+        sleep(1000);
 
 
         newHomePage.clickOnLexileToggle();
@@ -123,6 +126,8 @@ public class US20727_US20445_US21291 extends BasicTestCase {
 
         newHomePage.clickOnSeeTheRulesButton();
         newHomePage.switchToNextWindow();
+        List<String> tab = new ArrayList<>(getWebDriver().getWindowHandles());
+        System.out.println(getWebDriver().getWindowHandles().size());
 
         detailsPage = new DetailsPage(driver);
 
@@ -133,13 +138,18 @@ public class US20727_US20445_US21291 extends BasicTestCase {
 
         currentLexileFromDetails = detailsPage.getValueOfCurrentLexile().replaceAll(".*[a-z]", "").trim();
         softAssert.assertEquals(currentLexileFromMotivationMenu, currentLexileFromDetails, "  14  The Current Lexile from details page is not the same as from Motivation Menu.");
-        getWebDriver().close();
+        getWebDriver().switchTo().window(tab.get(1)).close();
+        sleep(1000);
+        getWebDriver().switchTo().window(tab.get(0));
+
         softAssert.assertAll();
 
     }
 
     private String getPreferenceValueFromDB(String login) {
+        sleep(1000);
         DatabaseReader dbReader = new DatabaseReader(url());
+        sleep(1000);
         String sql = "select * from subscriber_preferences where user_id =(" +
                 "select user_id from subscriber where login_name='"+login+"')";
         String result = dbReader.query(sql, "preference_value");

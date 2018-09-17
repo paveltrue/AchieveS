@@ -45,6 +45,7 @@ public class US13977 extends BasicTestCase {
 		
 		loginPage = new LoginPage(driver);
 		loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+		loginPage.afterLoginCheck(selectedClass);
 		
 		homePage = new HomePage(driver);
 		homePage.goToFavoritePage();		
@@ -104,6 +105,7 @@ public class US13977 extends BasicTestCase {
 
         favoritesPage.logOut();
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+		loginPage.afterLoginCheck(selectedClass);
         homePage.goToFavoritePage();
 		result = favoritesPage.getTitleOfFavoriteLessonsByList().contains(expTitleOfLesson);		
 		softAssert.assertTrue(result, "The required lesson is absent on favorite page.");		

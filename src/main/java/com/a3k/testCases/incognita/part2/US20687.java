@@ -44,6 +44,7 @@ public class US20687 extends BasicTestCase {
 
         loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
         homePage = new HomePage(driver);
         homePage.changeGradeTo(6);

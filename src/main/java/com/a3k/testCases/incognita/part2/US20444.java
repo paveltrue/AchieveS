@@ -8,8 +8,11 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
@@ -43,12 +46,13 @@ public class US20444 extends BasicTestCase {
 
         loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, studentProgram, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
         newHomePage = new NewHomePage(driver);
         newHomePage.clickStudentsSelector();
         newHomePage.chooseStudentByNameContains("emma");
 
-        newHomePage.waitThreadSleep(2000);
+        newHomePage.waitThreadSleep(1000);
         newHomePage.waitForJSandJQueryToLoad();
 
         newHomePage.clickOnMotivationMenuArrow();
@@ -79,7 +83,7 @@ public class US20444 extends BasicTestCase {
         newHomePage.clickStudentsSelector();
         newHomePage.chooseStudentByNameContains("tina");
 
-        newHomePage.waitThreadSleep(2000);
+        newHomePage.waitThreadSleep(1000);
         newHomePage.waitForJSandJQueryToLoad();
 
         newHomePage.clickOnMotivationMenuArrow();
@@ -113,6 +117,7 @@ public class US20444 extends BasicTestCase {
         newHomePage.clickOnSeeTheRulesButton();
 
         newHomePage.switchToNextWindow();
+        List<String> tab = new ArrayList<>(getWebDriver().getWindowHandles());
 
         detailsPage = new DetailsPage(driver);
 
@@ -122,8 +127,12 @@ public class US20444 extends BasicTestCase {
         currentLexileFromDetails = detailsPage.getValueOfCurrentLexile().replaceAll(".*[a-z]", "").trim();
         softAssert.assertEquals(carrentLexileFromMotivationMenu, currentLexileFromDetails, "  18  The Current Lexile from details page is not the same as from Motivation Menu.");
 
-        getWebDriver().close();
+        getWebDriver().switchTo().window(tab.get(1)).close();
+        sleep(1000);
+        getWebDriver().switchTo().window(tab.get(0));
+
         softAssert.assertAll();
+
     }
 
     private String getPreferenceValueFromDB(String login) {

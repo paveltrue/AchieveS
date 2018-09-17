@@ -49,6 +49,7 @@ public class BasicTestCase {
 
         softAssert = new ExtendedSoftAssert(driver);
 
+
         navigateToUrl(browserUrl);
 
         logger.debug("Browser's set up. Starting test.");
@@ -124,6 +125,7 @@ public class BasicTestCase {
     }
 
     private void navigateToUrl(String browserUrl) {
+        //Configuration.pageLoadStrategy = "none";
         logger.info("Opening " + browserUrl);
         open("" + browserUrl + "");
     }

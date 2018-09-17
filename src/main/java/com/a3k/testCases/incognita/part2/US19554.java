@@ -9,6 +9,10 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class US19554 extends BasicTestCase {
@@ -30,7 +34,10 @@ public class US19554 extends BasicTestCase {
 
 	@Parameters({ "login", "password", "program", "selectedClass" })
     @Test(dataProvider = "getUsers", groups = {"My Lessons", "Incognita", "All"})
-	public void check_US19554(@Optional() String login, @Optional() String password, @Optional() String program, @Optional() String selectedClass) {
+	public void check_US19554(@Optional() String login,
+							  @Optional() String password,
+							  @Optional() String program,
+							  @Optional() String selectedClass) {
 
 		login(login, password, program, selectedClass);
 
@@ -44,11 +51,16 @@ public class US19554 extends BasicTestCase {
 		
 		myLessons.clickOnPrintButtonOfCollectionBy();		
 		myLessons.switchToNextWindowWhenExistOnly2();
-		
+		List<String> tab = new ArrayList<>(getWebDriver().getWindowHandles());
+
+
 		softAssert.assertTrue(myLessons.getWindowTitle().contains("Achieve3000"), "The wrong page opened after click print button");
-		
+		getWebDriver().switchTo().window(tab.get(1)).close();
+		sleep(1000);
+		getWebDriver().switchTo().window(tab.get(0));
 		softAssert.assertAll();
-		getWebDriver().close();
+
+
 	}
 	
 	private void createCollectionWithoutAssignToClass(String name) {
@@ -73,5 +85,6 @@ public class US19554 extends BasicTestCase {
 	private void login(String login, String password, String program, String selectedClass) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+		loginPage.afterLoginCheck(selectedClass);
 	}	
 }

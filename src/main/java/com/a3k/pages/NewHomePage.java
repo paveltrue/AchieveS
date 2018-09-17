@@ -104,6 +104,7 @@ public class NewHomePage extends HomePage {
     }
 
     public boolean isLexileValueDisplayed(){
+        sleep(1500);
         return isDisplayedBy(lexileValueBy);
     }
 

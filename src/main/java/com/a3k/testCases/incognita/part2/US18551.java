@@ -19,6 +19,8 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 
 public class US18551 extends BasicTestCase {
 	
@@ -139,6 +141,7 @@ public class US18551 extends BasicTestCase {
 		myLessons.clickOnSaveCollectionButtonBy();
 		myLessons.clickOkButtonOnPopUpChangesSaved();
 
+		sleep(1000);
 		myLessons.clickOnBuiltLessonCollectionBy();		
 		myLessons.clickImportCollectionButton();		
 		myLessons.importCollectionByName(collectionName);
@@ -351,12 +354,15 @@ public class US18551 extends BasicTestCase {
 
 		map.put(lessonType.toString(), searchWidget.getNameOfFirstLesson());
 
+		sleep(500);
 		searchWidget.dragAndDrop(searchWidget.getFirstLessonSearchTab(), myLessons.getLessonListArea());
 	}
 
 	@Step
 	private String getStatusOfLessonByType(String typeOfLesson) {
+		sleep(500);
 		String lessonName = map.get(typeOfLesson);
+		sleep(500);
 		return myLessons.getStatusOfLessonInCollection(lessonName);
 	}
 
@@ -364,6 +370,7 @@ public class US18551 extends BasicTestCase {
 	private void login(String login, String password, String program, String selectedClass) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+		loginPage.afterLoginCheck(selectedClass);
 	}
 
 	@Step

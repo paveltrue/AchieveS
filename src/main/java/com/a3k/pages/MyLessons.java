@@ -186,7 +186,16 @@ public class MyLessons extends Page {
     private By collectionSelectDDLBy = By.xpath(".//*[@name='collection_id']");
     private By lessonsOnMonthViewBy = By.xpath(".//div[contains(@class, 'fc-event-start')]//*[@class = 'fc-event-title']");
     protected WebElement nextArrow2 = $(By.className("arrowNext"));
-
+    private WebElement schoolYearDates = $(By.xpath("//div[@class='schoolYear']/div/span[@class='dates']"));
+    private WebElement startEndLessonDate = $(By.cssSelector("div#datecontent1.datecontent.dates.date-link"));
+    protected WebElement lessonEndDateInPopup = $(By.xpath("//p[@class='dates']/a[2]"));
+    protected WebElement lessonStartDateInSearchSideBar = $(By.xpath("//p[@class='dates']/span[2]"));
+    protected WebElement lessonEndDateInSearchSideBar = $(By.xpath("//p[@class='dates']/span[4]"));
+    private WebElement searchInput = $(By.cssSelector("input#searchBar"));
+    private WebElement searchButtonSideBar = $(By.xpath("//div[@class='searchButton']"));
+    private WebElement lessonSearchResultsSideBar = $(By.xpath("//div[contains(@id,'lessonSearch')]"));
+    private WebElement activitiesDate = $(By.xpath("//table[@class='mylessonsTable']/tbody/tr/td[@class='row1']"));
+    private WebElement checkAvailableActivities = $(By.xpath("//*[@id=\"xstudent-portfolio\"]/tbody/tr[2]/td"));
 
 
 
@@ -1935,6 +1944,63 @@ public class MyLessons extends Page {
     public void clickOnNextArrow() {
         $(nextArrow2).click();
         sleep(300);
+    }
+
+    public String getSchoolDates() {
+        return getText(schoolYearDates).trim();
+    }
+
+    public String getStartEndLessonDate() {
+        return getText(startEndLessonDate);
+    }
+
+    public String getLessonStartDateInPopup() {
+        return $(lessonStartDateInPopup).getText();
+    }
+
+    public String getLessonEndDateInPopup() {
+        return $(lessonEndDateInPopup).getText();
+    }
+
+    public String getLessonStartDateInSearchSideBar() {
+        return $(lessonStartDateInSearchSideBar).getAttribute("innerHTML").trim();
+    }
+
+    public String getLessonEndDateInSearchSideBar() {
+        return getText(lessonEndDateInSearchSideBar).trim();
+    }
+
+    public void inputTextToSearchField(String searchString) {
+        typeText(searchInput, searchString);
+    }
+
+    public void clickSearchButtonOnSideBar() {
+        $(searchButtonSideBar).click();
+    }
+
+    public void clickOnFoundLessonSideBar() {
+        waitElement(lessonSearchResultsSideBar);
+        clickActions(lessonSearchResultsSideBar);
+    }
+
+    public String getStudentDateLessonProgress() {
+        return $(findEl(dataText)).getText();
+    }
+
+    public void switchToActivities() {
+        goToNewUrl("/my_lessons/activities");
+    }
+
+    public String getDatesPortfolio() {
+        return getText(activitiesDate);
+    }
+
+    public boolean checkDatesPortfolio(){
+        if(!$(activitiesDate).isDisplayed() &&
+                ($(checkAvailableActivities).getText()).contains("no activities available")){
+            return false;
+        }
+        return true;
     }
 
 

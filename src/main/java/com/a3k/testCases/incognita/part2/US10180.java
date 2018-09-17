@@ -61,6 +61,7 @@ public class US10180 extends BasicTestCase {
 		
 		loginPage = new LoginPage(driver);
 		loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+		loginPage.afterLoginCheck(selectedClass);
 		
 		homePage = new HomePage(driver);
 		

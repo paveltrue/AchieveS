@@ -49,11 +49,12 @@ public class US13352_US13353_US13747 extends BasicTestCase {
 	
 
 	@Parameters({"login", "password", "program", "selectedClass"})
-	@Test(dataProvider="getUsers", groups = {"Key Insights", "Archived","Incognita", "All"}, invocationCount = 10)
+	@Test(dataProvider="getUsers", groups = {"Key Insights", "Archived","Incognita", "All"}, invocationCount = 1)
 	public void check_US13352_US13353_US13747(@Optional String login, @Optional String password, @Optional String program, @Optional String selectedClass){
 				
 		loginPage = new LoginPage(driver);
 		loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+		loginPage.afterLoginCheck(selectedClass);
 		
 		homePage = new HomePage(driver);
 		homePage.refreshPage();

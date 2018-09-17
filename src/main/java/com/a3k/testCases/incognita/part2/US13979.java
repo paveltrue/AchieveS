@@ -49,6 +49,7 @@ public class US13979 extends BasicTestCase {
 
         loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
         homePage = new HomePage(driver);
         actIconText = homePage.getFavoritesIcon().getAttribute("title").trim();
@@ -80,6 +81,7 @@ public class US13979 extends BasicTestCase {
 
         loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
         homePage = new HomePage(driver);
         actIconText = homePage.getFavoritesIcon().getAttribute("title").trim();

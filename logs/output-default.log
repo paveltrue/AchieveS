@@ -1,26 +1,35 @@
-[10:24:07] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[10:24:07] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[10:24:07] INFO  (BasicTestCase.java:68) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[10:24:07] INFO  (BasicTestCase.java:71) - browser type set from properties file: chrome
-[10:24:07] INFO  (BasicTestCase.java:77) - grid mode set from properties file:false
-[10:24:07] INFO  (BasicTestCase.java:78) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[10:24:07] INFO  (BasicTestCase.java:81) - Headless Mode set to false
-[10:24:07] DEBUG (BasicTestCase.java:110) - Finished before suite
-[10:24:08] TRACE (BasicTestCase.java:46) - Starting test check_US16821
-[10:24:08] INFO  (BasicTestCase.java:117) - Setting the browser up
-[10:24:08] INFO  (BasicTestCase.java:132) -  Executing on CHROME
-[10:24:08] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[10:24:18] DEBUG (BasicTestCase.java:54) - Browser's set up. Starting test.
-[10:24:19] INFO  (LoginPage.java:410) - Login with credentials usda16821.alexnoclass\usda16821.alexnoclass
-[10:24:19] INFO  (LoginPage.java:104) - Type in username: usda16821.alexnoclass
-[10:24:24] INFO  (LoginPage.java:114) - Type in password: usda16821.alexnoclass
-[10:24:25] DEBUG (LoginPage.java:247) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[10:24:25] INFO  (Page.java:102) - Try to execute Close Walkme
-[10:24:26] DEBUG (Page.java:254) - Try to FIND element  By.id: active_pgm
-[10:24:32] INFO  (LoginPage.java:498) -  Stop login 
-[10:24:36] INFO  (Page.java:1492) - Try to execute Close Walkme
-[10:24:36] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
-[10:24:37] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'owl-item']//*[@id='ActivityAverageScore']/preceding-sibling::*/*[contains(@class, 'indicator')]
-[10:24:41] DEBUG (BasicTestCase.java:232) - Finishing test
-[10:24:41] TRACE (BasicTestCase.java:233) - Getting selenium logs
-[10:24:41] DEBUG (BasicTestCase.java:234) - Finished test
+[11:39:43] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[11:39:43] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[11:39:43] INFO  (BasicTestCase.java:69) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[11:39:43] INFO  (BasicTestCase.java:72) - browser type set from properties file: chrome
+[11:39:43] INFO  (BasicTestCase.java:78) - grid mode set from properties file:false
+[11:39:43] INFO  (BasicTestCase.java:79) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[11:39:43] INFO  (BasicTestCase.java:82) - Headless Mode set to false
+[11:39:43] DEBUG (BasicTestCase.java:111) - Finished before suite
+[11:39:43] TRACE (BasicTestCase.java:46) - Starting test validateDateFormatsInMyLessons
+[11:39:43] INFO  (BasicTestCase.java:118) - Setting the browser up
+[11:39:43] INFO  (BasicTestCase.java:134) -  Executing on CHROME
+[11:39:43] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[11:39:51] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
+[11:39:51] INFO  (US22477_NationalTeacher.java:32) - Login with credentials uk.super\uk.super
+[11:39:52] INFO  (LoginPage.java:237) - Login with credentials uk.super\uk.super 
+[11:39:52] INFO  (LoginPage.java:99) - Type in username: uk.super
+[11:39:52] INFO  (LoginPage.java:114) - Type in password: uk.super
+[11:39:53] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[11:39:53] INFO  (Page.java:102) - Try to execute Close Walkme
+[11:39:53] INFO  (LoginPage.java:99) - Type in username: uk.super
+[11:39:53] INFO  (LoginPage.java:114) - Type in password: uk.super
+[11:39:54] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[11:39:54] INFO  (Page.java:102) - Try to execute Close Walkme
+[11:39:54] INFO  (LoginPage.java:99) - Type in username: uk.super
+[11:39:54] INFO  (LoginPage.java:114) - Type in password: game
+[11:39:55] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[11:39:55] INFO  (Page.java:102) - Try to execute Close Walkme
+[11:39:59] DEBUG (Page.java:254) - Try to FIND element   .//button[contains(@class, 'begin-response-button') or contains(@class, 'next-page-button') or contains(@class, 'md-button')]
+[11:39:59] DEBUG (Page.java:254) - Try to FIND element   .//*[@id = 'button' and @type = 'submit']
+[11:39:59] INFO  (Page.java:856) - Try to execute Close Walkme(NEW)
+[11:40:00] INFO  (Page.java:383) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/n/my_lessons/
+[11:40:02] DEBUG (Page.java:254) - Try to FIND element  By.className: lesson-date
+[11:40:02] DEBUG (BasicTestCase.java:234) - Finishing test
+[11:40:02] TRACE (BasicTestCase.java:235) - Getting selenium logs
+[11:40:02] DEBUG (BasicTestCase.java:236) - Finished test

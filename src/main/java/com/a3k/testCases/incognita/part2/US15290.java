@@ -10,9 +10,11 @@ import org.testng.annotations.Test;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class US15290 extends BasicTestCase {
@@ -57,7 +59,10 @@ public class US15290 extends BasicTestCase {
 
     @Parameters({"login", "password", "program", "selectedClass"})
     @Test(dataProvider = "getUsers", groups = {"Build Lesson Collections", "Print", "Incognita", "All"})
-    public void check_US15290(@Optional() String login, @Optional() String password, @Optional() String program, @Optional() String selectedClass) {
+    public void check_US15290(@Optional() String login,
+                              @Optional() String password,
+                              @Optional() String program,
+                              @Optional() String selectedClass) {
 
         expProductValue = MyLessons.Product.PRO;
         expSubjectValue = "English Language Arts/Reading";
@@ -83,6 +88,7 @@ public class US15290 extends BasicTestCase {
         printPage = new PrintCollectionPage(driver);
 
         getWebDriver().manage().window().maximize();
+        List<String> tab = new ArrayList<>(getWebDriver().getWindowHandles());
 
         actCollectionName = printPage.getNameOfCollection();
         softAssert.assertEquals(actCollectionName, expCollectionName, "The name of collection is incorrect.");
@@ -111,9 +117,11 @@ public class US15290 extends BasicTestCase {
 
         actKeepLessonsLiveDays = printPage.getValueOfNeededRowFromDeliveryTable("Keep lessons live");
         softAssert.assertEquals(actKeepLessonsLiveDays, expKeepLessonsLiveDays, "The value of Keep lessons live is incorrect.");
-
+        getWebDriver().switchTo().window(tab.get(1)).close();
+        sleep(100);
+        getWebDriver().switchTo().window(tab.get(0));
         softAssert.assertAll();
-        getWebDriver().close();
+
     }
 
 
@@ -121,6 +129,7 @@ public class US15290 extends BasicTestCase {
     private void login(String login, String password, String program, String selectedClass) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
     }
 
     @Step

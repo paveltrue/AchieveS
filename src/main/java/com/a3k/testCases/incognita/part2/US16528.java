@@ -45,7 +45,7 @@ public class US16528 extends BasicTestCase {
 
 
     @Parameters({"login", "password", "program", "selectedClass", "loginTeacher", "passwordTeacher"})
-    @Test(dataProvider = "getUsers", groups = {"Collection Details", "Incognita", "All"}, invocationCount = 5)
+    @Test(dataProvider = "getUsers", groups = {"Collection Details", "Incognita", "All"}, invocationCount = 1)
     public void check_US16528(@Optional() String login,
                               @Optional() String password,
                               @Optional() String program,
@@ -54,6 +54,7 @@ public class US16528 extends BasicTestCase {
                               @Optional() String passwordTeacher) {
         loginPage = new LoginPage(driver);
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
         homePage = new HomePage(driver);
         homePage.changeGradeTo(8);
@@ -136,6 +137,7 @@ public class US16528 extends BasicTestCase {
         loginPage.waitForJSandJQueryToLoad();
 
         loginPage.loginWithClassAndProgramIfNeededWithAlert(loginTeacher, passwordTeacher, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
         myLessons = loginPage.goToMyLessonsByLink("1");
 
         String lessonIdFromCollection = myLessons.openAnyNotStartedLesson();

@@ -388,6 +388,7 @@ public abstract class Page {
         }
         waitForPageToLoad();
     }
+
     public void goToNewUrlWitoutLoadPage(String addEnding) {
         String url = url();
         url = url.split("\\.com")[0] + ".com" + addEnding;
@@ -584,6 +585,14 @@ public abstract class Page {
     public boolean isDisplayedBy(By by) {
         try {
             return $(by).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isDisplayedBy(WebElement element) {
+        try {
+            return $(element).isDisplayed();
         } catch (Exception e) {
             return false;
         }
@@ -1368,9 +1377,7 @@ public abstract class Page {
             closeWalkmeNew();
             clickOnHamburgerMenuNew();
             closeWalkmeNew();
-//            waitUntilAppearsBy(myLessonsButtonBy);
         }
-//        waitUntilElementClickableBy(myLessonsButtonBy);
         clickJS(myLessonsButtonBy);
 
         if (isAlertPresent()) {
@@ -1649,7 +1656,9 @@ public abstract class Page {
     }
 
     public String getCssValue(WebElement webElement, String attribute) {
+        sleep(500);
         waitUntilAttributeToBeNotEmpty(webElement, attribute);
+        sleep(500);
         return webElement.getCssValue(attribute);
     }
 
@@ -1852,6 +1861,10 @@ public abstract class Page {
             result.put($(el).getText(), $(el).getAttribute(attribute));
         }
         return result;
+    }
+
+    public void typeText(WebElement webElement, String string) {
+        $(webElement).setValue(string);
     }
 
 

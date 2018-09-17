@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
@@ -35,6 +34,7 @@ public class LoginPage extends Page {
     private By submitEmailButtonBy = By.xpath("//table[@class='emailAlert']//input[@name='btn1']");
     private By incorectPassowrdMessageBy = By.xpath("//div//alert");
     private By chooseClassComboBy = By.id("active_class");
+    private WebElement chooseClassComboXpath = $(By.xpath("//*[@id=\"programs_selector\"]/label"));
     private By levelSetApproachingNoteCloseButtonBy = By.xpath(".//*[@class='textRed']");
     private By chooseProgramComboBy = By.id("active_pgm");
     private By nextButtonOfSurveyBy = By.xpath(".//button[contains(@class, 'begin-response-button') or contains(@class, 'next-page-button') or contains(@class, 'md-button')]");
@@ -45,7 +45,8 @@ public class LoginPage extends Page {
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
-        PageFactory.initElements(driver, this);}
+        //PageFactory.initElements(driver, this);
+        }
 
     public void login(String login, String password, String... parametrs) {
         loginWithoutRefresh(login, password, parametrs);
@@ -105,7 +106,6 @@ public class LoginPage extends Page {
         if (isAlertPresent()){
             confirm();
         }
-        $(loginCellBy).clear();
         $(loginCellBy).setValue(user);
     }
 
@@ -166,7 +166,12 @@ public class LoginPage extends Page {
             clickLoginButton();
 
             if (isIncorrectMessagePresent()) {
-                assertTrue(false, "The user/or password is incorrect.");
+                setUser(login);
+                setPassword(password, login);
+                clickLoginButton();
+                if (isIncorrectMessagePresent()) {
+                    assertTrue(false, "The user/or password is incorrect.");
+                }
             }
         }
         if (parametrs.length > 0) {
@@ -227,6 +232,58 @@ public class LoginPage extends Page {
             waitForJSandJQueryToLoad();
         }
     }
+
+    public void loginWithoutRefreshNew(String login, String password, String classToSelect) {
+        logger.info(String.format("Login with credentials %s\\%s ",
+                login, password));
+
+        setUser(login);
+        setPassword(password);
+        clickLoginButton();
+
+        if (isIncorrectMessagePresent() & !login.contains("[a-z]*[0-9]")){
+            setUser(login);
+            setPassword(password);
+            clickLoginButton();
+
+            if (isIncorrectMessagePresent()) {
+                if (isIncorrectMessagePresent()) {
+                    setUser(login);
+                    setPassword(password, login);
+                    clickLoginButton();
+                    if (isIncorrectMessagePresent()) {
+                        assertTrue(false, "The user/or password is incorrect.");
+                    }
+                }
+            }
+        }
+
+        if (isDisplayedBy(chooseClassComboBy) || isDisplayedBy(chooseClassComboXpath)) {
+            if ($(chooseClassComboBy).isDisplayed()) {
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByVisibleText(classToSelect);
+                sleep(500);
+                clickGoNext();
+            } else if ($(chooseClassComboXpath).isDisplayed()){
+                Select selectClass = new Select($(By.xpath("//*[@id=\"active_pgm\"]")));
+                selectClass.selectByVisibleText(classToSelect);
+                sleep(500);
+                clickGoNext();
+            }
+        }
+        afterLoginCheck(classToSelect);
+
+        sleep(1000);
+        if (!$(loginCellBy).isDisplayed()) {
+            return;
+        } else {
+            loginWithoutRefreshNew(login, password, classToSelect);
+        }
+
+
+    }
+
+
 
     public void closeTeachersSurv() {
         if (isTextOnPagePresent("Tell us a little more")) {
@@ -418,6 +475,13 @@ public class LoginPage extends Page {
             closeAllPopUpAfterLogin();
             return;
         }
+
+        if (isIncorrectMessagePresent()){
+            refresh();
+            setUserAfterAlert(login);
+            setPassword(password);
+            clickLoginButton();
+        }
         if (isIncorrectMessagePresent() & !checkLoginWithRegExp(login)) {
             refresh();
             setUserAfterAlert(login);
@@ -472,6 +536,38 @@ public class LoginPage extends Page {
         if (!(url().contains("home") || !url().contains("levelset/welcome"))) {
             Select selectProgram = new Select(findEl(chooseProgramComboBy));
             selectProgram.selectByVisibleText(program);
+            clickGoNext();
+            if (isDisplayedBy(chooseClassComboBy)) {
+                Configuration.pageLoadStrategy = "normal";
+                Select selectClass = new Select(findEl(chooseClassComboBy));
+                selectClass.selectByVisibleText(classToSelect);
+                sleep(500);
+                Configuration.pageLoadStrategy = "normal";
+                clickGoNext();
+            }
+        }
+        if (isIncorrectMessagePresent()) {
+            refresh();
+            setUserAfterAlert(login);
+            setPassword(password, login);
+            clickLoginButton();
+        }
+        sleep(1500);
+        if (isDisplayedBy(chooseClassComboBy)) {
+            Configuration.pageLoadStrategy = "normal";
+            Select selectClass = new Select(findEl(chooseClassComboBy));
+            selectClass.selectByVisibleText(classToSelect);
+            sleep(500);
+            Configuration.pageLoadStrategy = "normal";
+            clickGoNext();
+        }
+    }
+
+    public void afterLoginCheck(String classToSelect){
+        if (isDisplayedBy(chooseClassComboBy)) {
+            Select selectClass = new Select(findEl(chooseClassComboBy));
+            selectClass.selectByVisibleText(classToSelect);
+            sleep(500);
             clickGoNext();
         }
     }

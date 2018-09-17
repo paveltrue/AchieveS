@@ -76,6 +76,7 @@ public class US16532 extends BasicTestCase {
         myLessons = new MyLessons(driver);
 
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
         homePage.goToMyLessonsPage();
         
         myLessons.goToWeekView();        
@@ -113,6 +114,7 @@ public class US16532 extends BasicTestCase {
         myLessons = new MyLessons(driver);
 
         loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, selectedClass);
+        loginPage.afterLoginCheck(selectedClass);
 
 
         homePage.goToMyLessonsPage();
