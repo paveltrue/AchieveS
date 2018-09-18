@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IncognitaTeam" verbose="1" parallel="classes" thread-count="4">
+
+    <listeners>
+        <listener class-name="com.a3k.utils.selenium.TestListener"/>
+        <listener class-name="com.a3k.utils.selenium.RetryListener"/>
+    </listeners>
+
+    <test name="IncognitaTeam">
+
+        <classes>
+
+            <!--             NOT FOR BTS2017 RELEASE -->
+
+            <!--<class name="com.a3k.testCases.incognita.US11587"/>--> <!--challenge lesson-->
+            <class name="com.a3k.testCases.incognita.part3.US10709_NewIntroductoryText"/>
+            <class name="com.a3k.testCases.incognita.US13443_US9954_DemoUsers"/>
+            <class name="com.a3k.testCases.incognita.US13443_US9954_NormalUsers"/>
+            <class name="com.a3k.testCases.incognita.US13443_US9954_SparkAndKBAUsers"/>
+            <class name="com.a3k.testCases.incognita.US9955"/>
+            <class name="com.a3k.testCases.incognita.US10179"/>
+            <class name="com.a3k.testCases.incognita.US13715_AND_US13716"/>
+            <!--<class name="com.a3k.testCases.incognita.US13522"/>--> <!--challenge-->
+            <class name="com.a3k.testCases.incognita.US11858"/>
+            <class name="com.a3k.testCases.incognita.US10021"/>
+            <class name="com.a3k.testCases.incognita.US10022"/>
+            <class name="com.a3k.testCases.incognita.US10023"/>
+
+
+            <!--                      NOT FOR REGRESSION                                 -->
+            <!--        <class name="com.a3k.testCases.incognita.US14586_US14889"/>      -->
+            <!--        <class name="com.a3k.testCases.incognita.US14978"/>              -->
+            <!--        <class name="com.a3k.testCases.incognita.US10710andUS11265"/>    -->
+            <!-- 	    <class name="com.a3k.testCases.incognita.US10119" />			             -->
+        </classes>
+    </test>
+</suite>

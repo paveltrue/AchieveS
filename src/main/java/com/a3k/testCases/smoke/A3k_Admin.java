@@ -350,7 +350,7 @@ public class A3k_Admin extends BasicTestCase {
     protected void login(String login, String password, String program, String classToSelect) {
         logger.info(String.format("Login with credentials %s\\%s", login, password));
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
     }
 
     @Step

@@ -5,6 +5,7 @@ import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,12 +45,18 @@ public class AllReportsPage extends Page {
     private ElementsCollection reportLinksInUsageReportsSection = $$(By.xpath("//table[@id='submenu_3']//a"));
     private ElementsCollection reportLinksInPerformanceReportsSection = $$(By.xpath("//table[@id='submenu_4']//a"));
     private ElementsCollection reportLinksInAssessmentToolsSection = $$(By.xpath("//table[@id='submenu_6']//a"));
+    private WebElement performanceReport = $(By.id("menu_link_4"));
+    private WebElement expandedArrowOfPerformanceReport = $(By.xpath("//a[@id='menu_link_4']//ancestor::tr[1]//img[contains(@src,'minus')]"));
+    private WebElement userAndSchoolName = $(By.xpath("//td[@class='menu_bar' and @align='left']"));
+    private By viewRerpotButtonBy = By.xpath(".//*[@class = 'button']");
+    private WebElement doneButton = $(By.xpath("//*[@id=\"walkme-balloon-3886155\"]/div/div[1]/div[4]/div[2]/div/button/span"));
+    private WebElement classSelect = $(By.xpath("//*[@id='class_id' or @name='class_id']"));
+    private By userComboBy = By.xpath(".//select[@name='user_id']");
+    private By whichLanguageDDLBy = By.xpath("//select[@name='force_language' or @name='rpt_language']");
+    private WebElement myLessonsDdl = $(By.xpath("(.//select[@class = 'admin_input'])[1]"));
 
 
-
-
-
-
+    private String linkXpath = "//a[contains(text(), '%s')]";
 
     public AllReportsPage(WebDriver driver) {
         this.driver = driver;
@@ -80,6 +87,7 @@ public class AllReportsPage extends Page {
 
     public void openPerformanseReports() {
         logger.info("Opening Performance Reports");
+        closeDoneButtonIfExist();
         $(performanceReportBy).click();
     }
 
@@ -264,6 +272,62 @@ public class AllReportsPage extends Page {
 
     public void openWelcomeLetter() {
         $(welcomeLetter).click();
+    }
+
+    public boolean checkPresenceOfPerformanceReports() {
+        return isElementPresent(performanceReport);
+    }
+
+    public boolean checkIfPerformanceReportsExpand() {
+        sleep(1000);
+        closeDoneButtonIfExist();
+        return $(expandedArrowOfPerformanceReport).isDisplayed();
+    }
+
+    public void openHowAreMyStudentsPerformingOnStandards() {
+        $(howAreMyStudentsPerformingOnStandards).click();
+    }
+
+    public boolean checkSchoolName() {
+        return !$(userAndSchoolName).getText().trim().equals("");
+    }
+
+    public void clickViewReportButton() {
+        $(viewRerpotButtonBy).click();
+    }
+
+    public boolean checkWordYearInReport(){
+        logger.debug("Check word Year on the page");
+        return isTextOnPagePresent("Year");
+    }
+
+    public void closeDoneButtonIfExist(){
+        if($(doneButton).isDisplayed()){
+            $(doneButton).click();
+        }
+    }
+
+    public void clickLinkByText(String text) {
+        $(By.xpath(String.format(linkXpath, text))).click();
+    }
+
+    public void selectClassByNameWithoutClick(String className) {
+        Select classes = new Select(classSelect);
+        classes.selectByVisibleText(className);
+    }
+
+    public void selectUserForReport(String user) {
+        Select uCombo = new Select(findEl(userComboBy));
+        uCombo.selectByVisibleText(user);
+    }
+
+    public void selectLanguageDDL(String text) {
+        new Select($(whichLanguageDDLBy)).selectByVisibleText(text);
+    }
+
+    public void chooseItemInMyLessonsDdl(String text) {
+        Select sel = new Select(myLessonsDdl);
+        sel.selectByVisibleText(text);
     }
 
 }

@@ -31,7 +31,7 @@ public class DE22913 extends BasicTestCase {
 
 //        driver.get("https://trunk-portal.achieve3000.com");
         loginPage = new LoginPage(driver);
-        loginPage.loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
         mainPage = new HomePage(driver);
 
         openCollectionsPageAndDeleteOldCollections();

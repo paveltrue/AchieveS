@@ -36,7 +36,7 @@ public class A3k_MyLessons_empower extends BasicTestCase {
             "{program} " +
             "and class {classToSelect}")
     private void login(String login, String password, String program, String classToSelect) {
-        new LoginPage(driver).loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        new LoginPage(driver).loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
     }
 
     @Step

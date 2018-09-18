@@ -12,6 +12,8 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 public class FiveStep_student_empower extends BasicTestCase {
 
     private static String finishLaterPopupContent;
@@ -269,6 +271,7 @@ public class FiveStep_student_empower extends BasicTestCase {
     @Step
     protected void verifyStretchTab(Lesson lesson, String testName) {
         logger.info("Verify Stretch Tab");
+        sleep(1000);
         if (!lesson.isStretchTabBlocked()) {
 
             try {
@@ -358,7 +361,7 @@ public class FiveStep_student_empower extends BasicTestCase {
                          String program,
                          String classToSelect) {
         logger.info(String.format("Login with credentials %s\\%s", login, password));
-        new LoginPage(driver).loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        new LoginPage(driver).loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
     }
 
     @DataProvider

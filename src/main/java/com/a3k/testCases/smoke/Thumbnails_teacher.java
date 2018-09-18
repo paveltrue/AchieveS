@@ -29,7 +29,7 @@ public class Thumbnails_teacher extends BasicTestCase {
 
 		LoginPage loginPage = new LoginPage(driver);
 
-		loginPage.loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+		loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
 
 		HomePage main = new HomePage(driver);
 

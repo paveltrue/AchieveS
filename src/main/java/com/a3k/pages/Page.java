@@ -88,9 +88,14 @@ public abstract class Page {
     private By studentProfileDropdownBy = By.xpath("//div[contains(@class,'profile')]");
     private By userSettingsBy = By.xpath(".//*[contains(@data-dropdown,'settings-dropdown')]");
     protected By logOutBy = By.xpath(".//*[contains(@href,'/logout')]");
-
-
-
+    private By langSelectorSpanishBy = By.xpath("//div[@id='teacher-languages-dropdown']//a[@data-value='2']");
+    private By langSelectorUSEnglishBy = By.xpath("//div[@id='teacher-languages-dropdown']//a[@data-value='1' or @data-value='7']");
+    private By langSelectorUKEnglishBy = By.xpath("//div[@id='teacher-languages-dropdown']//a[@data-value='1' or @data-value='7']");
+    private By langSelectorSpanishSupportBy = By.xpath("//div[@id='teacher-languages-dropdown']//a[@data-value='3']");
+    private By langSelectorHaitianSupportBy = By.xpath("//div[@id='teacher-languages-dropdown']//a[@data-value='6']");
+    protected WebElement doneButton = $(By.xpath("//*[@id=\"walkme-balloon-3886155\"]/div/div[1]/div[4]/div[2]/div/button/span"));
+    protected WebElement searchButton = $(By.xpath("//*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']"));
+    protected WebElement walkmePopupCivics = $(By.xpath("//*[@id=\"wm-shoutout-119519\"]/div[3]/div[2]/span"));
     protected static Logger logger = BasicLogger.getInstance();
 
     protected By walkmePopupBy = By.xpath(".//*[contains(@class, 'wm-close-button')" +
@@ -853,13 +858,24 @@ public abstract class Page {
     }
 
     public void closeWalkmeNew(){
-        logger.info("Try to execute Close Walkme(NEW)");
+        logger.info("Try to execute Close WalkmeNew");
         for (int i = 0; i < 3; i++) {
             if ($(walkmePopupBy).isDisplayed()) {
                 $(walkmePopupBy).click();
+                break;
             }
         }
+    }
 
+    public void closeWalkmeCivics(){
+        logger.info("Try to execute Close Walkme Civics");
+        for (int i = 0; i < 3; i++) {
+            sleep(100);
+            if ($(walkmePopupCivics).isDisplayed()) {
+                $(walkmePopupCivics).click();
+                break;
+            }
+        }
     }
 
     public MailboxPage goToMailboxPage() {
@@ -1644,6 +1660,10 @@ public abstract class Page {
         executeJavaScript("arguments[0].scrollIntoView(false);", findEl(by));
     }
 
+    public void scrollToEl(WebElement element) {
+        executeJavaScript("arguments[0].scrollIntoView(false);", element);
+    }
+
     public String apostropheHandlerForStringXpath(String str) {
         // remove the '-character from string (if it exist) for avoid xPath issue
         if (str.contains("'")) {
@@ -1803,6 +1823,14 @@ public abstract class Page {
         return result;
     }
 
+    public Set<String> getTextFromWebElementsBySet(ElementsCollection collection) {
+        HashSet<String> result = new HashSet<>();
+        for (WebElement el : findEls(collection)) {
+            result.add($(el).getText().trim());
+        }
+        return result;
+    }
+
     public int amountOfElements(By by) {
         return findEls(by).size();
     }
@@ -1865,6 +1893,45 @@ public abstract class Page {
 
     public void typeText(WebElement webElement, String string) {
         $(webElement).setValue(string);
+    }
+
+    public void changeLanguageIfNeed(String language) {
+        sleep(300);
+        closeDoneButtonIfExist();
+        if (!getTextBy(teacherLangSelectorBy).toLowerCase().contains(language)) {
+            changeLangTo(language);
+        }
+    }
+
+    public void changeLangTo(String language) {
+        logger.info("Changing language to " + language);
+        $(standardDDLBy).click();
+        $(languageInStandardDDLBy).click();
+        $(teacherLangSelectorBy).click();
+
+        if (language.equalsIgnoreCase("spanish")) {
+            $(langSelectorSpanishBy).click();
+        } else if (language.equalsIgnoreCase("english")) {
+            $(langSelectorUSEnglishBy).click();
+        } else if (language.equalsIgnoreCase("englishUK")) {
+            $(langSelectorUKEnglishBy).click();
+        } else if (language.equalsIgnoreCase("spanishSupport")) {
+            $(langSelectorSpanishSupportBy).click();
+        } else if (language.equalsIgnoreCase("haitianSupport")) {
+            $(langSelectorHaitianSupportBy).click();
+        }
+        closeWalkmeNew();
+    }
+
+    public String getSelectedOptionFromSelect(WebElement select) {
+        Select sel = new Select(select);
+        return sel.getFirstSelectedOption().getText();
+    }
+
+    public void closeDoneButtonIfExist(){
+        if($(doneButton).isDisplayed()){
+            $(doneButton).click();
+        }
     }
 
 

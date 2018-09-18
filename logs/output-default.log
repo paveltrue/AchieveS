@@ -1,35 +1,431 @@
-[11:39:43] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
-[11:39:43] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
-[11:39:43] INFO  (BasicTestCase.java:69) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
-[11:39:43] INFO  (BasicTestCase.java:72) - browser type set from properties file: chrome
-[11:39:43] INFO  (BasicTestCase.java:78) - grid mode set from properties file:false
-[11:39:43] INFO  (BasicTestCase.java:79) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
-[11:39:43] INFO  (BasicTestCase.java:82) - Headless Mode set to false
-[11:39:43] DEBUG (BasicTestCase.java:111) - Finished before suite
-[11:39:43] TRACE (BasicTestCase.java:46) - Starting test validateDateFormatsInMyLessons
-[11:39:43] INFO  (BasicTestCase.java:118) - Setting the browser up
-[11:39:43] INFO  (BasicTestCase.java:134) -  Executing on CHROME
-[11:39:43] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
-[11:39:51] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
-[11:39:51] INFO  (US22477_NationalTeacher.java:32) - Login with credentials uk.super\uk.super
-[11:39:52] INFO  (LoginPage.java:237) - Login with credentials uk.super\uk.super 
-[11:39:52] INFO  (LoginPage.java:99) - Type in username: uk.super
-[11:39:52] INFO  (LoginPage.java:114) - Type in password: uk.super
-[11:39:53] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[11:39:53] INFO  (Page.java:102) - Try to execute Close Walkme
-[11:39:53] INFO  (LoginPage.java:99) - Type in username: uk.super
-[11:39:53] INFO  (LoginPage.java:114) - Type in password: uk.super
-[11:39:54] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[11:39:54] INFO  (Page.java:102) - Try to execute Close Walkme
-[11:39:54] INFO  (LoginPage.java:99) - Type in username: uk.super
-[11:39:54] INFO  (LoginPage.java:114) - Type in password: game
-[11:39:55] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
-[11:39:55] INFO  (Page.java:102) - Try to execute Close Walkme
-[11:39:59] DEBUG (Page.java:254) - Try to FIND element   .//button[contains(@class, 'begin-response-button') or contains(@class, 'next-page-button') or contains(@class, 'md-button')]
-[11:39:59] DEBUG (Page.java:254) - Try to FIND element   .//*[@id = 'button' and @type = 'submit']
-[11:39:59] INFO  (Page.java:856) - Try to execute Close Walkme(NEW)
-[11:40:00] INFO  (Page.java:383) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/n/my_lessons/
-[11:40:02] DEBUG (Page.java:254) - Try to FIND element  By.className: lesson-date
-[11:40:02] DEBUG (BasicTestCase.java:234) - Finishing test
-[11:40:02] TRACE (BasicTestCase.java:235) - Getting selenium logs
-[11:40:02] DEBUG (BasicTestCase.java:236) - Finished test
+[12:14:38] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[12:14:38] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[12:14:38] INFO  (BasicTestCase.java:69) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[12:14:38] INFO  (BasicTestCase.java:72) - browser type set from properties file: chrome
+[12:14:38] INFO  (BasicTestCase.java:78) - grid mode set from properties file:false
+[12:14:38] INFO  (BasicTestCase.java:79) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[12:14:38] INFO  (BasicTestCase.java:82) - Headless Mode set to false
+[12:14:38] DEBUG (BasicTestCase.java:111) - Finished before suite
+[12:14:38] TRACE (BasicTestCase.java:46) - Starting test check_US10709
+[12:14:38] INFO  (BasicTestCase.java:118) - Setting the browser up
+[12:14:38] INFO  (BasicTestCase.java:134) -  Executing on CHROME
+[12:14:38] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[12:14:46] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
+[12:14:47] INFO  (PropertiesReader.java:30) - Here {url=jdbc:mysql://localhost:3306/, port=22, password1=g6tUpnKt, dbDriver=com.mysql.jdbc.Driver, rport=3306, user=hvashchylo, dbName=qa, userName=mschlesinger, lport=3306, password=nwcredpill2517, autoReconnect=?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1, host=gw1.achieve3000.com}
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop userName mschlesinger
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop password1 g6tUpnKt
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop url jdbc:mysql://localhost:3306/
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop dbName qa
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop dbDriver com.mysql.jdbc.Driver
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop autoReconnect ?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1
+[12:14:47] INFO  (DatabaseReader.java:58) - URL part trunk.qa-esc
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop user hvashchylo
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop password nwcredpill2517
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop host gw1.achieve3000.com
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop port 22
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop lport 3306
+[12:14:47] INFO  (PropertiesReader.java:46) - Prop rport 3306
+[12:14:47] INFO  (DatabaseReader.java:156) - Establishing Connection...
+[12:14:49] DEBUG (DatabaseReader.java:159) - localhost:3306 -> qa-main-master:3306
+[12:14:49] INFO  (DatabaseReader.java:161) - connected
+[12:14:49] INFO  (DatabaseReader.java:129) - Try connect to BD url = jdbc:mysql://localhost:3306/ ; name = qa ; user name = mschlesinger ; password = g6tUpnKt
+[12:14:51] INFO  (DatabaseReader.java:133) - Connected.
+[12:14:51] INFO  (LoginPage.java:467) - Login with credentials kb.ref\kb.ref
+[12:14:51] INFO  (LoginPage.java:105) - Type in username: kb.ref
+[12:14:56] INFO  (LoginPage.java:114) - Type in password: kb.ref
+[12:14:56] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[12:14:56] INFO  (Page.java:107) - Try to execute Close Walkme
+[12:14:57] DEBUG (Page.java:259) - Try to FIND element  By.id: active_pgm
+[12:15:02] INFO  (LoginPage.java:594) -  Stop login 
+[12:15:08] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:15:09] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:15:09] DEBUG (Page.java:259) - Wait until element will be clickable. By.id: view-courses-btn
+[12:15:15] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:15] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:15] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:15:15] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:15] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:15] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:15] INFO  (Page.java:304) - Click on element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:15:15] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a> clickable
+[12:15:16] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:15:16] DEBUG (Page.java:271) - Element was clicked via JS <a data-arg="Grade 1" data-value="1" href="#" displayed:false></a>
+[12:15:16] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:16] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:16] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:16] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:15:16] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:16] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:16] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:17] INFO  (Page.java:304) - Click on element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:15:17] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a> clickable
+[12:15:17] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:15:18] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:15:18] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:20] INFO  (Page.java:871) - Try to execute Close Walkme Civics
+[12:15:21] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:21] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:21] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:15:21] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:21] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:21] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:22] INFO  (Page.java:304) - Click on element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:15:22] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a> clickable
+[12:15:22] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:15:23] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:15:23] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:30] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:15:30] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:15:31] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:15:34] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:34] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:34] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:15:34] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:34] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:34] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:35] INFO  (Page.java:304) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:15:36] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[12:15:36] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:15:37] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:15:37] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:15:44] DEBUG (BasicTestCase.java:234) - Finishing test
+[12:15:44] TRACE (BasicTestCase.java:235) - Getting selenium logs
+[12:15:44] DEBUG (BasicTestCase.java:236) - Finished test
+[12:15:44] TRACE (BasicTestCase.java:46) - Starting test check_US10709
+[12:15:44] INFO  (BasicTestCase.java:118) - Setting the browser up
+[12:15:44] INFO  (BasicTestCase.java:134) -  Executing on CHROME
+[12:15:44] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[12:15:46] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
+[12:15:46] INFO  (PropertiesReader.java:30) - Here {url=jdbc:mysql://localhost:3306/, port=22, password1=g6tUpnKt, dbDriver=com.mysql.jdbc.Driver, rport=3306, user=hvashchylo, dbName=qa, userName=mschlesinger, lport=3306, password=nwcredpill2517, autoReconnect=?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1, host=gw1.achieve3000.com}
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop userName mschlesinger
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop password1 g6tUpnKt
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop url jdbc:mysql://localhost:3306/
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop dbName qa
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop dbDriver com.mysql.jdbc.Driver
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop autoReconnect ?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1
+[12:15:46] INFO  (DatabaseReader.java:58) - URL part trunk.qa-esc
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop user hvashchylo
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop password nwcredpill2517
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop host gw1.achieve3000.com
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop port 22
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop lport 3306
+[12:15:46] INFO  (PropertiesReader.java:46) - Prop rport 3306
+[12:15:46] INFO  (DatabaseReader.java:156) - Establishing Connection...
+[12:15:48] INFO  (DatabaseReader.java:129) - Try connect to BD url = jdbc:mysql://localhost:3306/ ; name = qa ; user name = mschlesinger ; password = g6tUpnKt
+[12:15:50] INFO  (DatabaseReader.java:133) - Connected.
+[12:15:50] INFO  (LoginPage.java:467) - Login with credentials kb.ref\kb.ref
+[12:15:50] INFO  (LoginPage.java:105) - Type in username: kb.ref
+[12:15:54] INFO  (LoginPage.java:114) - Type in password: kb.ref
+[12:15:54] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[12:15:55] INFO  (Page.java:107) - Try to execute Close Walkme
+[12:15:55] DEBUG (Page.java:259) - Try to FIND element  By.id: active_pgm
+[12:15:58] INFO  (LoginPage.java:594) -  Stop login 
+[12:16:04] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:04] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:04] DEBUG (Page.java:259) - Wait until element will be clickable. By.id: view-courses-btn
+[12:16:10] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:10] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:10] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:16:10] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:10] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:10] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:10] INFO  (Page.java:304) - Click on element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:16:11] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a> clickable
+[12:16:11] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:16:11] DEBUG (Page.java:271) - Element was clicked via JS <a data-arg="Grade 1" data-value="1" href="#" displayed:false></a>
+[12:16:11] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:11] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:11] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:11] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:16:11] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:11] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:11] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:12] INFO  (Page.java:304) - Click on element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:16:12] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a> clickable
+[12:16:12] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:16:13] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:16:13] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:15] INFO  (Page.java:871) - Try to execute Close Walkme Civics
+[12:16:16] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:16] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:16] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:16:16] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:16] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:16] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:16] INFO  (Page.java:304) - Click on element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:16:17] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a> clickable
+[12:16:17] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:16:18] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:16:18] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:23] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:23] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:24] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:28] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:28] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:29] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:16:29] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:29] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:29] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:30] INFO  (Page.java:304) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:16:31] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[12:16:31] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:16:32] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:16:32] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:16:39] DEBUG (BasicTestCase.java:234) - Finishing test
+[12:16:39] TRACE (BasicTestCase.java:235) - Getting selenium logs
+[12:16:39] DEBUG (BasicTestCase.java:236) - Finished test
+[12:16:39] TRACE (BasicTestCase.java:46) - Starting test check_US10709
+[12:16:39] INFO  (BasicTestCase.java:118) - Setting the browser up
+[12:16:39] INFO  (BasicTestCase.java:134) -  Executing on CHROME
+[12:16:39] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[12:16:41] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
+[12:16:41] INFO  (PropertiesReader.java:30) - Here {url=jdbc:mysql://localhost:3306/, port=22, password1=g6tUpnKt, dbDriver=com.mysql.jdbc.Driver, rport=3306, user=hvashchylo, dbName=qa, userName=mschlesinger, lport=3306, password=nwcredpill2517, autoReconnect=?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1, host=gw1.achieve3000.com}
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop userName mschlesinger
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop password1 g6tUpnKt
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop url jdbc:mysql://localhost:3306/
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop dbName qa
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop dbDriver com.mysql.jdbc.Driver
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop autoReconnect ?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1
+[12:16:41] INFO  (DatabaseReader.java:58) - URL part trunk.qa-esc
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop user hvashchylo
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop password nwcredpill2517
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop host gw1.achieve3000.com
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop port 22
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop lport 3306
+[12:16:41] INFO  (PropertiesReader.java:46) - Prop rport 3306
+[12:16:41] INFO  (DatabaseReader.java:156) - Establishing Connection...
+[12:16:43] INFO  (DatabaseReader.java:129) - Try connect to BD url = jdbc:mysql://localhost:3306/ ; name = qa ; user name = mschlesinger ; password = g6tUpnKt
+[12:16:44] INFO  (DatabaseReader.java:133) - Connected.
+[12:16:44] INFO  (LoginPage.java:467) - Login with credentials kb.ref\kb.ref
+[12:16:44] INFO  (LoginPage.java:105) - Type in username: kb.ref
+[12:16:49] INFO  (LoginPage.java:114) - Type in password: kb.ref
+[12:16:49] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[12:16:49] INFO  (Page.java:107) - Try to execute Close Walkme
+[12:16:50] DEBUG (Page.java:259) - Try to FIND element  By.id: active_pgm
+[12:16:53] INFO  (LoginPage.java:594) -  Stop login 
+[12:16:54] INFO  (DatabaseReader.java:174) - Close connection...
+[12:16:54] INFO  (DatabaseReader.java:174) - Close connection...
+[12:16:59] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:59] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:16:59] DEBUG (Page.java:259) - Wait until element will be clickable. By.id: view-courses-btn
+[12:17:04] ERROR (ExtendedSoftAssert.java:38) - Items of paragraph are incorrect
+[12:17:04] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:05] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:05] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:17:05] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:05] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:05] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:05] INFO  (Page.java:304) - Click on element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:17:05] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a> clickable
+[12:17:05] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:17:06] DEBUG (Page.java:271) - Element was clicked via JS <a data-arg="Grade 1" data-value="1" href="#" displayed:false></a>
+[12:17:06] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:06] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:06] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:06] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:17:06] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:06] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:06] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:06] INFO  (Page.java:304) - Click on element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:17:06] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a> clickable
+[12:17:07] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:17:08] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:17:08] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:10] INFO  (Page.java:871) - Try to execute Close Walkme Civics
+[12:17:11] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:11] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:11] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:17:11] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:11] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:11] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:11] INFO  (Page.java:304) - Click on element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:17:11] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a> clickable
+[12:17:12] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:17:13] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:17:13] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:18] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:17:18] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:17:18] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:17:23] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:23] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:23] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:17:23] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:23] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:23] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:24] INFO  (Page.java:304) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:17:24] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[12:17:25] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:17:26] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:17:26] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:33] DEBUG (BasicTestCase.java:234) - Finishing test
+[12:17:33] TRACE (BasicTestCase.java:235) - Getting selenium logs
+[12:17:33] DEBUG (BasicTestCase.java:236) - Finished test
+[12:17:33] TRACE (BasicTestCase.java:46) - Starting test check_US10709
+[12:17:33] INFO  (BasicTestCase.java:118) - Setting the browser up
+[12:17:33] INFO  (BasicTestCase.java:134) -  Executing on CHROME
+[12:17:33] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[12:17:34] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
+[12:17:34] INFO  (PropertiesReader.java:30) - Here {url=jdbc:mysql://localhost:3306/, port=22, password1=g6tUpnKt, dbDriver=com.mysql.jdbc.Driver, rport=3306, user=hvashchylo, dbName=qa, userName=mschlesinger, lport=3306, password=nwcredpill2517, autoReconnect=?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1, host=gw1.achieve3000.com}
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop userName mschlesinger
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop password1 g6tUpnKt
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop url jdbc:mysql://localhost:3306/
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop dbName qa
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop dbDriver com.mysql.jdbc.Driver
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop autoReconnect ?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1
+[12:17:34] INFO  (DatabaseReader.java:58) - URL part trunk.qa-esc
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop user hvashchylo
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop password nwcredpill2517
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop host gw1.achieve3000.com
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop port 22
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop lport 3306
+[12:17:34] INFO  (PropertiesReader.java:46) - Prop rport 3306
+[12:17:34] INFO  (DatabaseReader.java:156) - Establishing Connection...
+[12:17:36] DEBUG (DatabaseReader.java:159) - localhost:3306 -> qa-main-master:3306
+[12:17:36] INFO  (DatabaseReader.java:161) - connected
+[12:17:36] INFO  (DatabaseReader.java:129) - Try connect to BD url = jdbc:mysql://localhost:3306/ ; name = qa ; user name = mschlesinger ; password = g6tUpnKt
+[12:17:37] INFO  (DatabaseReader.java:133) - Connected.
+[12:17:37] INFO  (LoginPage.java:467) - Login with credentials kb.ref\kb.ref
+[12:17:37] INFO  (LoginPage.java:105) - Type in username: kb.ref
+[12:17:42] INFO  (LoginPage.java:114) - Type in password: kb.ref
+[12:17:42] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[12:17:43] INFO  (Page.java:107) - Try to execute Close Walkme
+[12:17:43] DEBUG (Page.java:259) - Try to FIND element  By.id: active_pgm
+[12:17:46] INFO  (LoginPage.java:594) -  Stop login 
+[12:17:52] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:17:52] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:17:52] DEBUG (Page.java:259) - Wait until element will be clickable. By.id: view-courses-btn
+[12:17:58] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:58] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:58] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:17:58] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:58] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:59] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:59] INFO  (Page.java:304) - Click on element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:17:59] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a> clickable
+[12:17:59] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:17:59] DEBUG (Page.java:271) - Element was clicked via JS <a data-arg="Grade 1" data-value="1" href="#" displayed:false></a>
+[12:17:59] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:59] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:59] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:59] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:17:59] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:17:59] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:00] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:00] INFO  (Page.java:304) - Click on element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:18:00] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a> clickable
+[12:18:00] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:18:01] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:18:01] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:03] INFO  (Page.java:871) - Try to execute Close Walkme Civics
+[12:18:04] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:04] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:04] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:18:04] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:04] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:04] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:05] INFO  (Page.java:304) - Click on element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:18:05] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a> clickable
+[12:18:05] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:18:06] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:18:06] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:12] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:18:12] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:18:12] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:18:12] INFO  (DatabaseReader.java:174) - Close connection...
+[12:18:16] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:16] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:16] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:18:16] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:16] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:17] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:18] INFO  (Page.java:304) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:18:19] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[12:18:19] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:18:20] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:18:20] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:28] DEBUG (BasicTestCase.java:234) - Finishing test
+[12:18:28] TRACE (BasicTestCase.java:235) - Getting selenium logs
+[12:18:28] DEBUG (BasicTestCase.java:236) - Finished test
+[12:18:28] TRACE (BasicTestCase.java:46) - Starting test check_US10709
+[12:18:28] INFO  (BasicTestCase.java:118) - Setting the browser up
+[12:18:28] INFO  (BasicTestCase.java:134) -  Executing on CHROME
+[12:18:28] INFO  (BasicTestCase.java:129) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[12:18:29] DEBUG (BasicTestCase.java:55) - Browser's set up. Starting test.
+[12:18:29] INFO  (PropertiesReader.java:30) - Here {url=jdbc:mysql://localhost:3306/, port=22, password1=g6tUpnKt, dbDriver=com.mysql.jdbc.Driver, rport=3306, user=hvashchylo, dbName=qa, userName=mschlesinger, lport=3306, password=nwcredpill2517, autoReconnect=?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1, host=gw1.achieve3000.com}
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop userName mschlesinger
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop password1 g6tUpnKt
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop url jdbc:mysql://localhost:3306/
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop dbName qa
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop dbDriver com.mysql.jdbc.Driver
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop autoReconnect ?autoReconnect=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;characterSetResults=ISO8859_1
+[12:18:29] INFO  (DatabaseReader.java:58) - URL part trunk.qa-esc
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop user hvashchylo
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop password nwcredpill2517
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop host gw1.achieve3000.com
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop port 22
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop lport 3306
+[12:18:29] INFO  (PropertiesReader.java:46) - Prop rport 3306
+[12:18:29] INFO  (DatabaseReader.java:156) - Establishing Connection...
+[12:18:30] INFO  (DatabaseReader.java:129) - Try connect to BD url = jdbc:mysql://localhost:3306/ ; name = qa ; user name = mschlesinger ; password = g6tUpnKt
+[12:18:32] INFO  (DatabaseReader.java:133) - Connected.
+[12:18:32] INFO  (LoginPage.java:467) - Login with credentials kb.ref\kb.ref
+[12:18:32] INFO  (LoginPage.java:105) - Type in username: kb.ref
+[12:18:36] INFO  (LoginPage.java:114) - Type in password: kb.ref
+[12:18:37] DEBUG (LoginPage.java:304) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[12:18:37] INFO  (Page.java:107) - Try to execute Close Walkme
+[12:18:38] DEBUG (Page.java:259) - Try to FIND element  By.id: active_pgm
+[12:18:41] INFO  (LoginPage.java:594) -  Stop login 
+[12:18:47] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:18:47] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:18:47] DEBUG (Page.java:259) - Wait until element will be clickable. By.id: view-courses-btn
+[12:18:53] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:53] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:53] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:18:53] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:53] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:53] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:53] INFO  (Page.java:304) - Click on element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:18:53] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a> clickable
+[12:18:53] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 1" data-value="1" href="#">Grade 1</a>
+[12:18:54] DEBUG (Page.java:271) - Element was clicked via JS <a data-arg="Grade 1" data-value="1" href="#" displayed:false></a>
+[12:18:54] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:54] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:54] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:54] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:18:54] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:54] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:54] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:54] INFO  (Page.java:304) - Click on element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:18:54] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a> clickable
+[12:18:55] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 6" data-value="6" href="#">Grade 6</a>
+[12:18:56] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:18:56] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:58] INFO  (Page.java:871) - Try to execute Close Walkme Civics
+[12:18:59] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:59] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:59] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:18:59] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:59] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:18:59] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:00] INFO  (Page.java:304) - Click on element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:19:00] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a> clickable
+[12:19:00] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 9" data-value="9" href="#">Grade 9</a>
+[12:19:01] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:19:01] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:06] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:19:07] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:19:07] INFO  (Page.java:861) - Try to execute Close WalkmeNew
+[12:19:11] DEBUG (Page.java:259) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:11] INFO  (Page.java:287) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:11] INFO  (Page.java:826) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[12:19:11] DEBUG (Page.java:259) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:11] DEBUG (Page.java:259) - Try to FIND element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:12] DEBUG (Page.java:259) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:13] INFO  (Page.java:304) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:19:13] INFO  (Page.java:840) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[12:19:13] DEBUG (Page.java:271) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[12:19:15] DEBUG (Page.java:271) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[12:19:15] DEBUG (Page.java:259) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[12:19:22] DEBUG (BasicTestCase.java:234) - Finishing test
+[12:19:22] TRACE (BasicTestCase.java:235) - Getting selenium logs
+[12:19:22] DEBUG (BasicTestCase.java:236) - Finished test

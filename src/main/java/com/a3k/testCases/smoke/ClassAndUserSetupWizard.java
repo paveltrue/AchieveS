@@ -55,7 +55,7 @@ public class ClassAndUserSetupWizard extends BasicTestCase {
     private void login(String login, String password, String program,
                        String classToSelect) {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        loginPage.loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
     }
 
     @Step

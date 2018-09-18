@@ -20,7 +20,7 @@ public class A3k_Mail extends BasicTestCase {
             "{program} " +
             "and class {classToSelect}")
     private void login(String login, String password, String program, String classToSelect) {
-        new LoginPage(getWebDriver()).loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        new LoginPage(getWebDriver()).loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
     }
 
     @Issue("DE25998")

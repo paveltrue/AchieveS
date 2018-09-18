@@ -132,7 +132,7 @@ public class TestContentPresent extends BasicTestCase {
                          String program,
                          String classToSelect) {
         logger.info(String.format("Login with credentials %s\\%s", login, password));
-        new LoginPage(driver).loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+        new LoginPage(driver).loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
     }
 
     @DataProvider

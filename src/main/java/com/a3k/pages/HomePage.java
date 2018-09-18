@@ -45,7 +45,7 @@ public class HomePage extends Page {
     private WebElement languageToggleSP = $(By.xpath(".//div[@class = 'languageToggleContainer']/a[contains(@class, 'right')]"));
     private WebElement languageToggleENG = $(By.xpath(".//div[@class = 'languageToggleContainer']/a[contains(@class, 'left')]"));
     private By visitNowButtonBy = By.id("button");
-
+    By coursesButtonBy = By.id("view-courses-btn");
 
 
 
@@ -364,6 +364,14 @@ public class HomePage extends Page {
     public void ckickOnVisitNowButton() {
         closeWalkmeNew();
         $(visitNowButtonBy).click();
+    }
+
+    public void clickOnCoursesButton() {
+        // TODO: TEMPORARY WALK ME CLOSE METHOD
+        // closeWalkmeTmp();
+        closeWalkmeNew();
+        waitUntilElementClickableBy(coursesButtonBy);
+        $(coursesButtonBy).click();
     }
 
 }

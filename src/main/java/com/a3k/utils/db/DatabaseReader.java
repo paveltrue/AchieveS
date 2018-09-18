@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 
 public class DatabaseReader {
 
@@ -125,6 +127,7 @@ public class DatabaseReader {
 //            rhost = "qa-main-master";
 			sschConnect(rhost);
             logger.info("Try connect to BD url = " + url + " ; name = " + dbName + " ; user name = " + userName + " ; password = " + password1);
+            sleep(100);
             connect = DriverManager.getConnection(url + dbName, userName, password1);
             //createdGood = true;
             logger.info("Connected.");

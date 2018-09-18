@@ -157,7 +157,7 @@ public class MyLessonsTeacher extends BasicTestCase {
 			"and class {classToSelect}")
 	private void login(String login, String password,String program, String classToSelect) {
 		logger.info(String.format("Login with credentials %s/%s to class %s", login, password, classToSelect));
-		new LoginPage(driver).loginWithClassAndProgramIfNeeded(login, password, program, classToSelect);
+		new LoginPage(driver).loginWithClassAndProgramIfNeededWithAlert(login, password, program, classToSelect);
 	}
 
 	@Step
