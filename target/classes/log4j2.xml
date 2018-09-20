@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" packages="TestLogger">
+    <properties>
+        <property name="pattern">[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</property>
+    </properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--<PatternLayout pattern="%d [%p] %c{} [%t] %m%n"/>-->
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+        <RollingFile name="RollingFile" fileName="logs/output-default.log"
+                     filePattern="logs/$${date:yyyy-MM}/output-default-%d{MM-dd-yyyy}-%i.log.gz">
+
+            <PatternLayout pattern="${pattern}"/>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5" fileIndex="max"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Console"/>
+            <!--<AppenderRef ref="RollingFile"/>-->
+            <AppenderRef ref="RollingFile"/>
+
+        </Root>
+        <Logger name="mylogger" level="debug" additivity="false">
+            <appender-ref ref="RollingFile" level="debug"/>
+        </Logger>
+
+    </Loggers>
+</Configuration>

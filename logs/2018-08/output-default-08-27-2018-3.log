@@ -1,0 +1,76 @@
+[17:54:22] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:54:22] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:54:22] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:54:22] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:54:22] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:54:22] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:54:22] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:54:22] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:54:22] TRACE (BasicTestCase.java:44) - Starting test verify5StepLessons
+[17:54:22] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:54:22] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:54:22] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:54:30] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:54:30] INFO  (FiveStep_teacher.java:98) - Language is set to English
+[17:54:30] INFO  (FiveStep_teacher.java:111) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:54:32] INFO  (LoginPage.java:257) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:54:32] INFO  (LoginPage.java:96) - Type in username: kidbizteach.one
+[17:54:32] INFO  (LoginPage.java:103) - Type in password: kidbizteach.one
+[17:54:33] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:54:33] INFO  (Page.java:68) - Try to execute Close Walkme
+[17:54:38] INFO  (Page.java:68) - Try to execute Close Walkme
+[17:54:38] INFO  (Page.java:397) - Opening My Lesson page
+[17:54:38] INFO  (Page.java:303) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
+[17:54:42] INFO  (Page.java:411) - Switch to Next window
+[17:54:42] DEBUG (Page.java:412) - Switching from window Achieve3000: My Lessons
+[17:54:44] DEBUG (Page.java:418) - Switched to window Achieve3000: Course Details
+[17:54:44] INFO  (Page.java:580) - Switch Back after close
+[17:54:49] INFO  (FiveStep_teacher.java:125) - Opening any not started lesson
+[17:54:50] INFO  (Page.java:303) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons?sort=step1&sort=focus&sort_dir=desc&page_index=1
+[17:54:54] INFO  (Page.java:239) - Click on element <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:54:55] DEBUG (Page.java:206) - Trying to click on locator via JS <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:55:00] DEBUG (Page.java:206) - Element was clicked via JS java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+[17:55:00] INFO  (MyLessons.java:143) - Open lesson with id = 15235
+[17:55:01] INFO  (FiveStep_teacher.java:138) - Complete 'Before Reading' form
+[17:55:01] DEBUG (Page.java:200) - Try to FIND element  By.id: textarea-step10page1response1_ifr
+[17:55:02] DEBUG (Page.java:200) - Try to FIND element   .//*[(@name='response') or (@id='tinymce') or (@id='textarea-step10page1response1')]
+[17:55:02] DEBUG (Page.java:200) - Try to FIND element   //li[contains(@onclick,'a3k.poll.select_poll_choice')]
+[17:55:02] INFO  (Page.java:222) - Click on element By.id: pollSubmit-step10page1
+[17:55:02] INFO  (Page.java:706) - Wait until element By.id: pollSubmit-step10page1 clickable
+[17:55:02] DEBUG (Page.java:200) - Trying to click on locator via JS By.id: pollSubmit-step10page1
+[17:55:02] DEBUG (Page.java:200) - Element was clicked via JS By.id: pollSubmit-step10page1
+[17:55:03] INFO  (Page.java:222) - Click on element By.xpath: //div[contains(@class,'next_tab')]/a
+[17:55:03] INFO  (Page.java:68) - Try to execute Close Walkme
+[17:55:03] INFO  (Page.java:706) - Wait until element By.xpath: //div[contains(@class,'next_tab')]/a clickable
+[17:55:03] DEBUG (Page.java:200) - Trying to click on locator via JS  //div[contains(@class,'next_tab')]/a
+[17:55:05] DEBUG (Page.java:200) - Element was clicked via JS  //div[contains(@class,'next_tab')]/a
+[17:55:05] INFO  (FiveStep_teacher.java:147) - Before Reading form has been submitted
+[17:55:05] INFO  (FiveStep_teacher.java:152) - Verify vocabulary
+[17:55:07] INFO  (FiveStep_teacher.java:158) - Verify Reading Connections section
+[17:55:07] DEBUG (Lesson.java:838) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:55:08] DEBUG (Lesson.java:839) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:55:08] INFO  (Lesson.java:846) - Type text 'Test Reading Connections' to input
+[17:55:09] INFO  (Lesson.java:851) - Saving...
+[17:55:09] DEBUG (Lesson.java:838) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:55:09] DEBUG (Lesson.java:839) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:55:10] INFO  (Lesson.java:846) - Type text 'Test Reading Connections' to input
+[17:55:10] INFO  (Lesson.java:851) - Saving...
+[17:55:11] DEBUG (Lesson.java:838) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:55:11] DEBUG (Lesson.java:839) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:55:11] INFO  (Lesson.java:846) - Type text 'Test Reading Connections' to input
+[17:55:12] INFO  (Lesson.java:851) - Saving...
+[17:55:12] DEBUG (FiveStep_teacher.java:216) - Started verifying article tab
+[17:55:13] DEBUG (FiveStep_teacher.java:228) - Finished verifying article page
+[17:55:13] INFO  (Page.java:222) - Click on element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:55:13] INFO  (Page.java:706) - Wait until element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div clickable
+[17:55:13] DEBUG (Page.java:200) - Trying to click on locator via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:55:17] DEBUG (Page.java:200) - Element was clicked via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:55:17] INFO  (FiveStep_teacher.java:164) - Verifying Activity Page
+[17:55:17] DEBUG (Page.java:200) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:55:18] DEBUG (Page.java:200) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:55:20] INFO  (Lesson.java:539) - Click on answer 0
+[17:55:22] INFO  (Lesson.java:539) - Click on answer 0
+[17:55:23] INFO  (Lesson.java:539) - Click on answer 0
+[17:55:24] INFO  (Lesson.java:539) - Click on answer 0
+[17:55:25] INFO  (Lesson.java:539) - Click on answer 0
+[17:55:26] INFO  (Lesson.java:539) - Click on answer 0

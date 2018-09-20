@@ -1,0 +1,112 @@
+[17:47:42] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://portal.achieve3000.com, gridMode=false}
+[17:47:42] INFO  (AchieveProperties.java:43) - https://portal.achieve3000.com
+[17:47:42] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://portal.achieve3000.com
+[17:47:42] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
+[17:47:42] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
+[17:47:42] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:47:42] INFO  (BasicTestCase.java:80) - Headless Mode set to false
+[17:47:42] DEBUG (BasicTestCase.java:110) - Finished before suite
+[17:47:42] TRACE (BasicTestCase.java:45) - Starting test verifyDeletionAssigned_US15349
+[17:47:42] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:47:42] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:47:42] INFO  (BasicTestCase.java:127) - Opening https://portal.achieve3000.com
+[17:47:53] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:47:54] INFO  (LoginPage.java:268) - Login with credentials ussa15349.pooh\ussa15349.pooh
+[17:47:54] INFO  (LoginPage.java:98) - Type in username: ussa15349.pooh
+[17:47:54] INFO  (LoginPage.java:114) - Type in password: ussa15349.pooh
+[17:47:55] DEBUG (LoginPage.java:247) - falsehttps://portal.achieve3000.com/index
+[17:47:56] INFO  (Page.java:88) - Try to execute Close Walkme
+[17:47:57] DEBUG (Page.java:240) - Try to FIND element  By.id: active_pgm
+[17:48:02] INFO  (LoginPage.java:428) -  Stop login 
+[17:48:02] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:48:03] INFO  (Page.java:1314) - Opening My Lessons page
+[17:48:03] INFO  (Page.java:777) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:48:03] INFO  (Page.java:88) - Try to execute Close Walkme
+[17:48:03] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:48:04] DEBUG (Page.java:1352) - Clicked hamburger menu
+[17:48:05] INFO  (Page.java:268) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:06] INFO  (Page.java:777) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:48:06] DEBUG (Page.java:240) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:08] DEBUG (Page.java:240) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:12] INFO  (MyLessons.java:507) - Try to delete all exist collections on My Lessons page
+[17:48:12] INFO  (MyLessons.java:1097) - Clicked Build Lesson Collection Button
+[17:48:12] DEBUG (Page.java:240) - Wait until element will be clickable. By.id: buildButton
+[17:48:13] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:48:13] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:48:14] INFO  (MyLessons.java:567) - Clicked Create Collection Button
+[17:48:15] INFO  (MyLessons.java:572) - Enter Text In Collection Name Input: Collection to delete 15349
+[17:48:15] DEBUG (Page.java:240) - Wait until element will be clickable. By.id: collection_name
+[17:48:16] DEBUG (Page.java:240) - Try to FIND element  By.id: collection_name
+[17:48:17] INFO  (MyLessons.java:579) - Enter Text In Description Input: I am to be deleted :(
+[17:48:17] INFO  (MyLessons.java:611) - Click On Add Lesson Button
+[17:48:17] DEBUG (Page.java:240) - Wait until element will be clickable. By.id: addLessonButton
+[17:48:18] INFO  (Page.java:268) - Click on element By.id: addLessonButton
+[17:48:18] INFO  (Page.java:777) - Wait until element By.id: addLessonButton clickable
+[17:48:18] DEBUG (Page.java:240) - Trying to click on locator via JS By.id: addLessonButton
+[17:48:18] DEBUG (Page.java:240) - Element was clicked via JS By.id: addLessonButton
+[17:48:18] DEBUG (Page.java:240) - Wait until element will be clickable.  //div[@class='advancedOptionsBar']/a
+[17:48:18] INFO  (SearchWidgetPage.java:46) - Set course News
+[17:48:18] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:48:21] DEBUG (Page.java:240) - Try to FIND element   //*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']
+[17:48:21] DEBUG (Page.java:240) - Wait until element will be clickable.  //*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']
+[17:48:27] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:48:27] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:48:27] DEBUG (BasicTestCase.java:235) - Finished test
+[17:48:27] TRACE (BasicTestCase.java:45) - Starting test verifyDeletionAssigned_US15349
+[17:48:27] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:48:27] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:48:27] INFO  (BasicTestCase.java:127) - Opening https://portal.achieve3000.com
+[17:48:27] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:48:28] INFO  (LoginPage.java:268) - Login with credentials usda15349.pooh\usda15349.pooh
+[17:48:28] INFO  (LoginPage.java:98) - Type in username: usda15349.pooh
+[17:48:43] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:48:43] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:48:43] DEBUG (BasicTestCase.java:235) - Finished test
+[17:48:43] TRACE (BasicTestCase.java:45) - Starting test verifyDeletionFuture_US15349
+[17:48:43] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:48:43] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:48:43] INFO  (BasicTestCase.java:127) - Opening https://portal.achieve3000.com
+[17:48:44] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:48:44] INFO  (LoginPage.java:340) - Login with credentials ussa15349.pooh\ussa15349.pooh
+[17:48:44] INFO  (LoginPage.java:104) - Type in username: ussa15349.pooh
+[17:48:56] INFO  (LoginPage.java:114) - Type in password: ussa15349.pooh
+[17:48:57] DEBUG (LoginPage.java:247) - falsehttps://portal.achieve3000.com/index
+[17:48:58] INFO  (Page.java:88) - Try to execute Close Walkme
+[17:48:59] DEBUG (Page.java:240) - Try to FIND element  By.id: active_pgm
+[17:49:05] INFO  (LoginPage.java:428) -  Stop login 
+[17:49:05] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:06] INFO  (Page.java:1314) - Opening My Lessons page
+[17:49:07] INFO  (Page.java:777) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:49:07] INFO  (Page.java:88) - Try to execute Close Walkme
+[17:49:08] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:08] DEBUG (Page.java:1352) - Clicked hamburger menu
+[17:49:08] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:08] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:08] INFO  (Page.java:777) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:49:09] INFO  (Page.java:88) - Try to execute Close Walkme
+[17:49:09] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:09] DEBUG (Page.java:1352) - Clicked hamburger menu
+[17:49:09] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:09] INFO  (Page.java:268) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:09] INFO  (Page.java:777) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:49:09] DEBUG (Page.java:240) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:12] DEBUG (Page.java:240) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:22] INFO  (MyLessons.java:507) - Try to delete all exist collections on My Lessons page
+[17:49:22] INFO  (MyLessons.java:1097) - Clicked Build Lesson Collection Button
+[17:49:22] DEBUG (Page.java:240) - Wait until element will be clickable. By.id: buildButton
+[17:49:22] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:22] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)
+[17:49:24] INFO  (MyLessons.java:567) - Clicked Create Collection Button
+[17:49:25] INFO  (MyLessons.java:572) - Enter Text In Collection Name Input: Collection to delete 15349
+[17:49:25] DEBUG (Page.java:240) - Wait until element will be clickable. By.id: collection_name
+[17:49:26] DEBUG (Page.java:240) - Try to FIND element  By.id: collection_name
+[17:49:27] INFO  (MyLessons.java:579) - Enter Text In Description Input: I am to be deleted :(
+[17:49:27] INFO  (MyLessons.java:611) - Click On Add Lesson Button
+[17:49:27] DEBUG (Page.java:240) - Wait until element will be clickable. By.id: addLessonButton
+[17:49:27] INFO  (Page.java:268) - Click on element By.id: addLessonButton
+[17:49:27] INFO  (Page.java:777) - Wait until element By.id: addLessonButton clickable
+[17:49:28] DEBUG (Page.java:240) - Trying to click on locator via JS By.id: addLessonButton
+[17:49:28] DEBUG (Page.java:240) - Element was clicked via JS By.id: addLessonButton
+[17:49:28] DEBUG (Page.java:240) - Wait until element will be clickable.  //div[@class='advancedOptionsBar']/a
+[17:49:28] INFO  (SearchWidgetPage.java:46) - Set course News
+[17:49:28] INFO  (Page.java:812) - Try to execute Close Walkme(NEW)

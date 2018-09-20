@@ -1,0 +1,110 @@
+[16:38:35] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[16:38:35] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[16:38:35] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[16:38:35] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
+[16:38:35] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
+[16:38:35] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[16:38:35] INFO  (BasicTestCase.java:80) - Headless Mode set to false
+[16:38:35] DEBUG (BasicTestCase.java:110) - Finished before suite
+[16:38:35] TRACE (BasicTestCase.java:45) - Starting test verifySharingNew_US14593
+[16:38:35] INFO  (BasicTestCase.java:117) - Setting the browser up
+[16:38:35] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[16:38:35] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[16:38:45] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[16:38:46] INFO  (LoginPage.java:259) - Login with credentials usda14593.pooh\usda14593.pooh
+[16:38:46] INFO  (LoginPage.java:98) - Type in username: usda14593.pooh
+[16:38:46] INFO  (LoginPage.java:105) - Type in password: usda14593.pooh
+[16:38:47] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[16:38:47] INFO  (Page.java:83) - Try to execute Close Walkme
+[16:38:48] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[16:38:53] INFO  (LoginPage.java:347) -  Stop login 
+[16:38:53] INFO  (Page.java:1296) - Opening My Lessons page
+[16:38:53] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[16:38:54] DEBUG (Page.java:1333) - Clicked hamburger menu
+[16:38:54] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[16:38:54] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[16:38:54] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[16:38:59] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[16:39:03] INFO  (MyLessons.java:486) - Try to delete all exist collections on My Lessons page
+[16:39:03] DEBUG (Page.java:235) - Wait until element will be clickable.  .//a[contains(@class, 'deleteCollection')]
+[16:39:03] INFO  (Page.java:962) - Wait For JQuery load.
+[16:39:03] INFO  (Page.java:968) - Wait For JS load.
+[16:39:04] INFO  (MyLessons.java:1076) - Clicked Build Lesson Collection Button
+[16:39:04] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[16:39:06] INFO  (MyLessons.java:546) - Clicked Create Collection Button
+[16:39:07] INFO  (MyLessons.java:551) - Enter Text In Collection Name Input: Just a test collection 14593
+[16:39:07] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[16:39:07] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[16:39:08] INFO  (MyLessons.java:558) - Enter Text In Description Input: Test description. Lorem ipsum blah-blah-blah
+[16:39:09] DEBUG (Page.java:235) - Try to FIND element  By.id: week_interval
+[16:39:09] INFO  (Page.java:180) - Wait For JS and JQuery load.
+[16:39:09] DEBUG (Page.java:235) - Try to FIND element  By.id: week_interval
+[16:39:09] DEBUG (MyLessons.java:619) - Entered 1 in 'Assign new lesson' field
+[16:39:09] DEBUG (Page.java:235) - Try to FIND element  By.id: lesson_duration
+[16:39:09] DEBUG (Page.java:235) - Try to FIND element  By.id: lesson_duration
+[16:39:09] DEBUG (MyLessons.java:629) - Entered 1 in 'Keep lessons live for' field
+[16:39:09] DEBUG (Page.java:235) - Try to FIND element   .//*[@id='ui-datepicker-div']//*[@href='#']
+[16:39:10] DEBUG (Page.java:235) - Try to FIND element   .//*[@id='ui-datepicker-div']//*[@href='#']
+[16:39:10] DEBUG (MyLessons.java:1276) - Opened start date calendar
+[16:39:11] DEBUG (MyLessons.java:1287) - Opened end date calendar
+[16:39:11] DEBUG (Page.java:235) - Try to FIND element  By.id: shareButton
+[16:39:12] INFO  (Page.java:297) - Click on element <input class="schedule" id="days_of_week_1" name="days_of_week[]" type="checkbox" value="1"></input>
+[16:39:12] DEBUG (Page.java:247) - Trying to click on locator via JS <input class="schedule" id="days_of_week_1" name="days_of_week[]" type="checkbox" value="1"></input>
+[16:39:13] DEBUG (Page.java:247) - Element was clicked via JS <input class="schedule" id="days_of_week_1" name="days_of_week[]" type="checkbox" value="1" selected:true></input>
+[16:39:13] INFO  (Page.java:297) - Click on element <input class="schedule" id="days_of_week_2" name="days_of_week[]" type="checkbox" value="2"></input>
+[16:39:14] DEBUG (Page.java:247) - Trying to click on locator via JS <input class="schedule" id="days_of_week_2" name="days_of_week[]" type="checkbox" value="2"></input>
+[16:39:14] DEBUG (Page.java:247) - Element was clicked via JS <input class="schedule" id="days_of_week_2" name="days_of_week[]" type="checkbox" value="2" selected:true></input>
+[16:39:14] INFO  (Page.java:297) - Click on element <input class="schedule" id="days_of_week_3" name="days_of_week[]" type="checkbox" value="3"></input>
+[16:39:15] DEBUG (Page.java:247) - Trying to click on locator via JS <input class="schedule" id="days_of_week_3" name="days_of_week[]" type="checkbox" value="3"></input>
+[16:39:15] DEBUG (Page.java:247) - Element was clicked via JS <input class="schedule" id="days_of_week_3" name="days_of_week[]" type="checkbox" value="3" selected:true></input>
+[16:39:16] INFO  (Page.java:297) - Click on element <input class="schedule" id="days_of_week_4" name="days_of_week[]" type="checkbox" value="4"></input>
+[16:39:16] DEBUG (Page.java:247) - Trying to click on locator via JS <input class="schedule" id="days_of_week_4" name="days_of_week[]" type="checkbox" value="4"></input>
+[16:39:16] DEBUG (Page.java:247) - Element was clicked via JS <input class="schedule" id="days_of_week_4" name="days_of_week[]" type="checkbox" value="4" selected:true></input>
+[16:39:17] INFO  (Page.java:297) - Click on element <input class="schedule" id="days_of_week_5" name="days_of_week[]" type="checkbox" value="5"></input>
+[16:39:17] DEBUG (Page.java:247) - Trying to click on locator via JS <input class="schedule" id="days_of_week_5" name="days_of_week[]" type="checkbox" value="5"></input>
+[16:39:18] DEBUG (Page.java:247) - Element was clicked via JS <input class="schedule" id="days_of_week_5" name="days_of_week[]" type="checkbox" value="5" selected:true></input>
+[16:39:18] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[16:39:18] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[16:39:18] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[16:39:18] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[16:39:18] DEBUG (MyLessons.java:1086) - Saving collection
+[16:39:18] INFO  (Page.java:962) - Wait For JQuery load.
+[16:39:18] INFO  (Page.java:968) - Wait For JS load.
+[16:39:18] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'Just a test collection 14593 ')]/../..//a[contains(@href, 'edit')]
+[16:39:18] INFO  (Page.java:83) - Try to execute Close Walkme
+[16:39:20] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'Just a test collection 14593 ')]/../..//a[contains(@href, 'edit')] clickable
+[16:39:20] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'Just a test collection 14593 ')]/../..//a[contains(@href, 'edit')]
+[16:39:23] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'Just a test collection 14593 ')]/../..//a[contains(@href, 'edit')]
+[16:39:23] INFO  (MyLessons.java:590) - Click On Add Lesson Button
+[16:39:23] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: addLessonButton
+[16:39:24] INFO  (Page.java:263) - Click on element By.id: addLessonButton
+[16:39:24] INFO  (Page.java:772) - Wait until element By.id: addLessonButton clickable
+[16:39:24] DEBUG (Page.java:235) - Trying to click on locator via JS By.id: addLessonButton
+[16:39:24] DEBUG (Page.java:235) - Element was clicked via JS By.id: addLessonButton
+[16:39:24] INFO  (Page.java:180) - Wait For JS and JQuery load.
+[16:39:25] INFO  (SearchWidgetPage.java:43) - Set course News
+[16:39:25] DEBUG (Page.java:235) - Try to FIND element   //*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']
+[16:39:25] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']
+[16:39:26] INFO  (Page.java:263) - Click on element By.xpath: .//*[@class = 'ui-dialog-buttonset']//button
+[16:39:26] INFO  (Page.java:83) - Try to execute Close Walkme
+[16:39:26] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@class = 'ui-dialog-buttonset']//button clickable
+[16:39:26] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@class = 'ui-dialog-buttonset']//button
+[16:39:32] DEBUG (BasicTestCase.java:233) - Finishing test
+[16:39:32] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[16:39:32] DEBUG (BasicTestCase.java:235) - Finished test
+[16:39:32] TRACE (BasicTestCase.java:45) - Starting test verifySharingNew_US14593
+[16:39:32] INFO  (BasicTestCase.java:117) - Setting the browser up
+[16:39:32] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[16:39:32] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[16:39:33] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[16:39:33] INFO  (LoginPage.java:259) - Login with credentials ussa14593.pooh\ussa14593.pooh
+[16:39:33] INFO  (LoginPage.java:98) - Type in username: ussa14593.pooh
+[16:39:33] INFO  (LoginPage.java:105) - Type in password: ussa14593.pooh
+[16:39:34] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[16:39:34] INFO  (Page.java:83) - Try to execute Close Walkme
+[16:39:35] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[16:39:38] INFO  (LoginPage.java:347) -  Stop login 
+[16:39:38] INFO  (Page.java:1296) - Opening My Lessons page
+[16:39:39] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[16:39:40] DEBUG (Page.java:1333) - Clicked hamburger menu
+[16:39:40] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable

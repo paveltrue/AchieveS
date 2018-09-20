@@ -1,0 +1,122 @@
+[17:27:29] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:27:29] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:27:29] INFO  (BasicTestCase.java:68) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:27:29] INFO  (BasicTestCase.java:71) - browser type set from properties file: chrome
+[17:27:29] INFO  (BasicTestCase.java:77) - grid mode set from properties file:false
+[17:27:29] INFO  (BasicTestCase.java:78) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:27:29] INFO  (BasicTestCase.java:81) - Headless Mode set to false
+[17:27:29] DEBUG (BasicTestCase.java:110) - Finished before suite
+[17:27:29] TRACE (BasicTestCase.java:46) - Starting test check_US13352_US13353_US13747
+[17:27:29] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:27:29] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:27:29] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:27:38] DEBUG (BasicTestCase.java:54) - Browser's set up. Starting test.
+[17:27:39] INFO  (LoginPage.java:410) - Login with credentials usteach13443.alexdemo\usteach13443.alexdemo
+[17:27:39] INFO  (LoginPage.java:104) - Type in username: usteach13443.alexdemo
+[17:27:44] INFO  (LoginPage.java:114) - Type in password: usteach13443.alexdemo
+[17:27:44] DEBUG (LoginPage.java:247) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:27:49] INFO  (Page.java:102) - Try to execute Close Walkme
+[17:27:49] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:27:50] INFO  (Page.java:934) - Refreshing page
+[17:27:52] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:27:52] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:27:53] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:27:53] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:27:53] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:28:00] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:01] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:01] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:28:04] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'report_text'  or @name='rep']
+[17:28:05] INFO  (Page.java:270) - Opening Home Page
+[17:28:05] INFO  (Page.java:282) - Click on element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:05] INFO  (Page.java:812) - Wait until element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/'] clickable
+[17:28:06] DEBUG (Page.java:254) - Trying to click on locator via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:06] DEBUG (Page.java:254) - Try to FIND element   //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:07] DEBUG (Page.java:254) - Element was clicked via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:11] TRACE (Page.java:371) - Alert not found
+[17:28:11] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:28:12] INFO  (Page.java:934) - Refreshing page
+[17:28:13] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:14] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:28:14] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:14] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:28:16] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:20] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:23] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:24] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'report_text'  or @name='rep']
+[17:28:25] INFO  (Page.java:270) - Opening Home Page
+[17:28:25] INFO  (Page.java:282) - Click on element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:26] INFO  (Page.java:812) - Wait until element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/'] clickable
+[17:28:26] DEBUG (Page.java:254) - Trying to click on locator via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:26] DEBUG (Page.java:254) - Try to FIND element   //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:28] DEBUG (Page.java:254) - Element was clicked via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:28:32] TRACE (Page.java:371) - Alert not found
+[17:28:32] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:28:32] INFO  (Page.java:934) - Refreshing page
+[17:28:34] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:34] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:28:34] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:36] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:36] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:37] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'report_text'  or @name='rep']
+[17:28:39] DEBUG (BasicTestCase.java:232) - Finishing test
+[17:28:39] TRACE (BasicTestCase.java:233) - Getting selenium logs
+[17:28:39] DEBUG (BasicTestCase.java:234) - Finished test
+[17:28:39] TRACE (BasicTestCase.java:46) - Starting test check_US13352_US13353_US13747
+[17:28:39] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:28:39] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:28:39] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:28:40] DEBUG (BasicTestCase.java:54) - Browser's set up. Starting test.
+[17:28:40] INFO  (LoginPage.java:410) - Login with credentials ukteach13352.alexdemo\ukteach13352.alexdemo
+[17:28:40] INFO  (LoginPage.java:104) - Type in username: ukteach13352.alexdemo
+[17:28:45] INFO  (LoginPage.java:114) - Type in password: ukteach13352.alexdemo
+[17:28:46] DEBUG (LoginPage.java:247) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:28:46] INFO  (Page.java:102) - Try to execute Close Walkme
+[17:28:47] DEBUG (Page.java:254) - Try to FIND element  By.id: active_pgm
+[17:28:48] DEBUG (Page.java:254) - Try to FIND element  By.id: active_class
+[17:28:52] INFO  (LoginPage.java:498) -  Stop login 
+[17:28:56] INFO  (Page.java:934) - Refreshing page
+[17:28:57] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:57] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:28:57] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:28:57] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:28:58] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:29:04] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:04] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:05] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:29:06] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'report_text'  or @name='rep']
+[17:29:08] INFO  (Page.java:270) - Opening Home Page
+[17:29:08] INFO  (Page.java:282) - Click on element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:08] INFO  (Page.java:812) - Wait until element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/'] clickable
+[17:29:08] DEBUG (Page.java:254) - Trying to click on locator via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:08] DEBUG (Page.java:254) - Try to FIND element   //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:10] DEBUG (Page.java:254) - Element was clicked via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:14] TRACE (Page.java:371) - Alert not found
+[17:29:14] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:29:14] INFO  (Page.java:934) - Refreshing page
+[17:29:16] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:16] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:29:17] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:17] INFO  (Page.java:1492) - Try to execute Close Walkme
+[17:29:18] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:23] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:25] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:26] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'report_text'  or @name='rep']
+[17:29:29] INFO  (Page.java:270) - Opening Home Page
+[17:29:29] INFO  (Page.java:282) - Click on element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:29] INFO  (Page.java:812) - Wait until element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/'] clickable
+[17:29:29] DEBUG (Page.java:254) - Trying to click on locator via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:29] DEBUG (Page.java:254) - Try to FIND element   //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:31] DEBUG (Page.java:254) - Element was clicked via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:29:35] TRACE (Page.java:371) - Alert not found
+[17:29:35] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:29:36] INFO  (Page.java:934) - Refreshing page
+[17:29:37] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:37] INFO  (Page.java:847) - Try to execute Close Walkme(NEW)
+[17:29:37] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:39] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:40] INFO  (Page.java:199) - Wait For JS and JQuery load.
+[17:29:41] DEBUG (Page.java:254) - Try to FIND element   .//*[@class = 'report_text'  or @name='rep']
+[17:29:42] DEBUG (BasicTestCase.java:232) - Finishing test
+[17:29:42] TRACE (BasicTestCase.java:233) - Getting selenium logs
+[17:29:42] DEBUG (BasicTestCase.java:234) - Finished test

@@ -1,0 +1,96 @@
+[17:32:05] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:32:05] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:32:05] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:32:05] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:32:05] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:32:05] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:32:05] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:32:05] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:32:06] TRACE (BasicTestCase.java:44) - Starting test studentMail
+[17:32:06] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:32:06] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:32:06] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:32:13] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:32:14] INFO  (LoginPage.java:248) - Login with credentials teenbizstud.one\teenbizstud.one
+[17:32:14] INFO  (LoginPage.java:94) - Type in username: teenbizstud.one
+[17:32:14] INFO  (LoginPage.java:101) - Type in password: teenbizstud.one
+[17:32:15] DEBUG (LoginPage.java:227) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:32:15] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:32:15] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:32:16] DEBUG (BasicTestCase.java:228) - Finishing test
+[17:32:16] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[17:32:16] DEBUG (BasicTestCase.java:230) - Finished test
+[17:32:16] TRACE (BasicTestCase.java:44) - Starting test studentMail
+[17:32:16] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:32:16] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:32:16] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:32:16] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:32:16] INFO  (LoginPage.java:248) - Login with credentials empowerstud.one\empowerstud.one
+[17:32:16] INFO  (LoginPage.java:94) - Type in username: empowerstud.one
+[17:32:17] INFO  (LoginPage.java:101) - Type in password: empowerstud.one
+[17:32:17] DEBUG (LoginPage.java:227) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:32:17] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:32:18] INFO  (LoginPage.java:94) - Type in username: empowerstud.one
+[17:32:19] INFO  (LoginPage.java:101) - Type in password: empowerstud.one
+[17:32:19] DEBUG (LoginPage.java:227) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:32:19] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:32:19] DEBUG (BasicTestCase.java:228) - Finishing test
+[17:32:19] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[17:32:19] DEBUG (BasicTestCase.java:230) - Finished test
+[17:32:19] TRACE (BasicTestCase.java:44) - Starting test studentMail
+[17:32:19] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:32:19] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:32:19] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:32:20] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:32:20] INFO  (LoginPage.java:248) - Login with credentials kidbizstud.one\kidbizstud.one
+[17:32:20] INFO  (LoginPage.java:94) - Type in username: kidbizstud.one
+[17:32:21] INFO  (LoginPage.java:101) - Type in password: kidbizstud.one
+[17:32:21] DEBUG (LoginPage.java:227) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:32:21] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:32:22] DEBUG (Page.java:164) - Try to FIND element  By.id: active_class
+[17:32:26] INFO  (LoginPage.java:313) -  Stop login 
+[17:32:26] INFO  (Page.java:654) - Opening Mailbox Page
+[17:32:26] INFO  (Page.java:267) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/mail
+[17:32:28] INFO  (MailboxPage.java:53) - Opening 'Write email' section
+[17:32:28] INFO  (Page.java:186) - Click on element By.xpath: //td[contains(@background,'write')]/a
+[17:32:28] INFO  (Page.java:629) - Wait until element By.xpath: //td[contains(@background,'write')]/a clickable
+[17:32:28] DEBUG (Page.java:164) - Trying to click on locator via JS  //td[contains(@background,'write')]/a
+[17:32:30] DEBUG (Page.java:164) - Element was clicked via JS  //td[contains(@background,'write')]/a
+[17:32:30] INFO  (MailboxPage.java:68) - Set recipient to one, kidbizstud
+[17:32:31] INFO  (MailboxPage.java:76) - Fill subject with value 'Test-1534433551173'
+[17:32:31] INFO  (MailboxPage.java:88) - Fill message text box
+[17:32:31] INFO  (MailboxPage.java:93) - Send email
+[17:32:33] INFO  (MailboxPage.java:107) - Open 'Sent' folder
+[17:32:34] INFO  (Page.java:203) - Click on element <a class="nav_text" href="/mail/?f=3">Sent Emails</a>
+[17:32:34] DEBUG (Page.java:170) - Trying to click on locator via JS <a class="nav_text" href="/mail/?f=3">Sent Emails</a>
+[17:32:35] DEBUG (Page.java:170) - Element was clicked via JS <a class="nav_text" href="/mail/?f=3">Sent Emails</a>
+[17:32:35] INFO  (MailboxPage.java:53) - Opening 'Write email' section
+[17:32:35] INFO  (Page.java:186) - Click on element By.xpath: //td[contains(@background,'write')]/a
+[17:32:35] INFO  (Page.java:629) - Wait until element By.xpath: //td[contains(@background,'write')]/a clickable
+[17:32:35] DEBUG (Page.java:164) - Trying to click on locator via JS  //td[contains(@background,'write')]/a
+[17:32:36] DEBUG (Page.java:164) - Element was clicked via JS  //td[contains(@background,'write')]/a
+[17:32:36] INFO  (MailboxPage.java:68) - Set recipient to one, kidbizstud
+[17:32:37] INFO  (MailboxPage.java:76) - Fill subject with value 'Test-1534433557173'
+[17:32:37] INFO  (MailboxPage.java:88) - Fill message text box
+[17:32:37] INFO  (MailboxPage.java:119) - Opening Email section
+[17:32:39] INFO  (Page.java:84) - Thread sleep for 1500 milliseconds.
+[17:32:40] INFO  (Page.java:606) - Switch to Next window
+[17:32:40] DEBUG (Page.java:607) - Switching from handle CDwindow-8ADA9EA3F9D516321D1BAC6D89BC1ED4
+[17:32:40] DEBUG (Page.java:608) - Handles before [CDwindow-8ADA9EA3F9D516321D1BAC6D89BC1ED4, CDwindow-BD493C61E291F90F160F325E69C0D63F]
+[17:32:40] DEBUG (Page.java:612) - Handles after[CDwindow-8ADA9EA3F9D516321D1BAC6D89BC1ED4, CDwindow-BD493C61E291F90F160F325E69C0D63F]
+[17:32:40] DEBUG (Page.java:613) - Switched to handle CDwindow-BD493C61E291F90F160F325E69C0D63F
+[17:32:41] DEBUG (Page.java:543) - Closing window handle CDwindow-BD493C61E291F90F160F325E69C0D63F
+[17:32:41] DEBUG (Page.java:547) - Currently on window handle CDwindow-8ADA9EA3F9D516321D1BAC6D89BC1ED4
+[17:32:41] INFO  (MailboxPage.java:140) - Open 'Drafts' folder
+[17:32:44] INFO  (MailboxPage.java:162) - Open 'Trash' folder
+[17:32:45] INFO  (MailboxPage.java:167) - Open Email group section
+[17:32:45] INFO  (Page.java:203) - Click on element <a class="nav_text" href="/mail/group/">Email Groups</a>
+[17:32:45] DEBUG (Page.java:170) - Trying to click on locator via JS <a class="nav_text" href="/mail/group/">Email Groups</a>
+[17:32:47] DEBUG (Page.java:170) - Element was clicked via JS <a class="nav_text" href="/mail/group/">Email Groups</a>
+[17:32:47] INFO  (MailboxPage.java:173) - Click on 'New Group' button
+[17:32:49] INFO  (MailboxPage.java:193) - Fill email group text with value: Test Email Group 1534433569646
+[17:32:50] INFO  (MailboxPage.java:202) - Fill description: Description Test Email Group 1534433569646
+[17:32:50] INFO  (MailboxPage.java:207) - Select first option in members list
+[17:32:50] INFO  (MailboxPage.java:212) - Open 'Create Group' wizard
+[17:33:46] ERROR (ExtendedSoftAssert.java:38) - The Email Group NOT appeared in the list of the Email Groups tab
+[17:33:46] INFO  (MailboxPage.java:229) - Open 'Manage Folders

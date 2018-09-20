@@ -1,0 +1,145 @@
+[17:37:30] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:37:30] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:37:30] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:37:30] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:37:30] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:37:30] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:37:30] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:37:30] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:37:30] TRACE (BasicTestCase.java:44) - Starting test verify5StepLessons
+[17:37:30] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:37:30] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:37:31] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:37:47] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:37:48] INFO  (FiveStep_teacher.java:100) - Language is set to English
+[17:37:48] INFO  (FiveStep_teacher.java:113) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:37:50] INFO  (LoginPage.java:257) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:37:50] INFO  (LoginPage.java:96) - Type in username: kidbizteach.one
+[17:37:51] INFO  (LoginPage.java:103) - Type in password: kidbizteach.one
+[17:37:51] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:37:52] INFO  (Page.java:59) - Try to execute Close Walkme
+[17:38:06] INFO  (Page.java:59) - Try to execute Close Walkme
+[17:38:06] INFO  (Page.java:366) - Opening My Lesson page
+[17:38:06] INFO  (Page.java:294) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
+[17:38:10] INFO  (Page.java:380) - Switch to Next window
+[17:38:10] DEBUG (Page.java:381) - Switching from window Achieve3000: My Lessons
+[17:38:11] DEBUG (Page.java:387) - Switched to window Achieve3000: Course Details
+[17:38:11] INFO  (Page.java:549) - Switch Back after close
+[17:38:20] INFO  (FiveStep_teacher.java:127) - Opening any not started lesson
+[17:38:21] INFO  (Page.java:294) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons?sort=step1&sort=focus&sort_dir=desc&page_index=1
+[17:38:29] INFO  (Page.java:230) - Click on element <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:38:29] DEBUG (Page.java:197) - Trying to click on locator via JS <a class="title" href="/kb/lesson/?lid=15235&c=62" onclick="a3k.change_class('3933249', '3933249');">Caught on Video</a>
+[17:38:38] DEBUG (Page.java:197) - Element was clicked via JS java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+[17:38:38] INFO  (MyLessons.java:120) - Open lesson with id = 15235
+[17:38:39] INFO  (FiveStep_teacher.java:140) - Complete 'Before Reading' form
+[17:38:39] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step10page1response1_ifr
+[17:38:39] DEBUG (Page.java:191) - Try to FIND element   .//*[(@name='response') or (@id='tinymce') or (@id='textarea-step10page1response1')]
+[17:38:40] DEBUG (Page.java:191) - Try to FIND element   //li[contains(@onclick,'a3k.poll.select_poll_choice')]
+[17:38:40] INFO  (Page.java:213) - Click on element By.id: pollSubmit-step10page1
+[17:38:40] INFO  (Page.java:675) - Wait until element By.id: pollSubmit-step10page1 clickable
+[17:38:40] DEBUG (Page.java:191) - Trying to click on locator via JS By.id: pollSubmit-step10page1
+[17:38:40] DEBUG (Page.java:191) - Element was clicked via JS By.id: pollSubmit-step10page1
+[17:38:40] INFO  (Page.java:213) - Click on element By.xpath: //div[contains(@class,'next_tab')]/a
+[17:38:41] INFO  (Page.java:59) - Try to execute Close Walkme
+[17:38:41] INFO  (Page.java:675) - Wait until element By.xpath: //div[contains(@class,'next_tab')]/a clickable
+[17:38:41] DEBUG (Page.java:191) - Trying to click on locator via JS  //div[contains(@class,'next_tab')]/a
+[17:38:45] DEBUG (Page.java:191) - Element was clicked via JS  //div[contains(@class,'next_tab')]/a
+[17:38:45] INFO  (FiveStep_teacher.java:149) - Before Reading form has been submitted
+[17:38:45] INFO  (FiveStep_teacher.java:154) - Verify vocabulary
+[17:38:47] INFO  (FiveStep_teacher.java:160) - Verify Reading Connections section
+[17:38:49] DEBUG (Lesson.java:866) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:38:49] DEBUG (Lesson.java:867) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child1-image">SUMMARIZE</div>
+[17:38:49] INFO  (Lesson.java:874) - Type text 'Test Reading Connections' to input
+[17:38:50] INFO  (Lesson.java:879) - Saving...
+[17:38:50] DEBUG (Lesson.java:866) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:38:51] DEBUG (Lesson.java:867) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child2-image">GENERATE QUESTIONS</div>
+[17:38:51] INFO  (Lesson.java:874) - Type text 'Test Reading Connections' to input
+[17:38:52] INFO  (Lesson.java:879) - Saving...
+[17:38:53] DEBUG (Lesson.java:866) - Trying to click on element <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:38:53] DEBUG (Lesson.java:867) - Opening section <div class="rcSubImage rcSubImage_off" id="rc0_child3-image">SETTING THE PURPOSE</div>
+[17:38:54] INFO  (Lesson.java:874) - Type text 'Test Reading Connections' to input
+[17:38:55] INFO  (Lesson.java:879) - Saving...
+[17:38:55] DEBUG (FiveStep_teacher.java:218) - Started verifying article tab
+[17:38:56] DEBUG (FiveStep_teacher.java:230) - Finished verifying article page
+[17:38:56] INFO  (Page.java:213) - Click on element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:38:56] INFO  (Page.java:675) - Wait until element By.xpath: //li[contains(@onclick,'view_page(14, 1)')]/div clickable
+[17:38:56] DEBUG (Page.java:191) - Trying to click on locator via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:39:01] DEBUG (Page.java:191) - Element was clicked via JS  //li[contains(@onclick,'view_page(14, 1)')]/div
+[17:39:01] INFO  (FiveStep_teacher.java:166) - Verifying Activity Page
+[17:39:01] DEBUG (Page.java:191) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:39:01] DEBUG (Page.java:191) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:39:06] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:39:14] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:16] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:18] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:20] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:22] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:23] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:25] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:26] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:28] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:29] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:31] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:32] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:34] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:35] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:38] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:39] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:39:46] INFO  (Lesson.java:558) - Click on answer 0
+[17:39:52] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:40:05] INFO  (Lesson.java:558) - Click on answer 0
+[17:40:11] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:40:17] INFO  (Lesson.java:558) - Click on answer 0
+[17:40:23] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:40:30] INFO  (Lesson.java:558) - Click on answer 0
+[17:40:32] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:40:34] INFO  (Lesson.java:558) - Click on answer 0
+[17:40:34] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:40:37] INFO  (Lesson.java:558) - Click on answer 0
+[17:40:37] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:40:39] INFO  (Page.java:213) - Click on element By.xpath: //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:40:39] INFO  (Page.java:675) - Wait until element By.xpath: //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')] clickable
+[17:40:40] DEBUG (Page.java:191) - Trying to click on locator via JS  //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:40:43] DEBUG (Page.java:191) - Element was clicked via JS  //button[contains(@class,'view-results')] | //input[contains(@id,'view_results-')]
+[17:40:43] INFO  (FiveStep_teacher.java:60) - Go to next tab
+[17:40:50] INFO  (FiveStep_teacher.java:235) - Verifying After Reading Poll tab
+[17:40:51] INFO  (FiveStep_teacher.java:63) - Submit After Reading poll
+[17:40:51] INFO  (Page.java:213) - Click on element By.id: pollSubmit-step15page1
+[17:40:51] INFO  (Page.java:675) - Wait until element By.id: pollSubmit-step15page1 clickable
+[17:40:51] DEBUG (Page.java:191) - Trying to click on locator via JS By.id: pollSubmit-step15page1
+[17:40:51] DEBUG (Page.java:191) - Element was clicked via JS By.id: pollSubmit-step15page1
+[17:40:53] INFO  (FiveStep_teacher.java:67) - Go to next tab
+[17:40:59] INFO  (FiveStep_teacher.java:252) - Verifying 'Finish later'
+[17:40:59] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:40:59] DEBUG (Page.java:191) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:41:06] INFO  (FiveStep_teacher.java:262) - Verifying 'Submit Button'
+[17:41:06] DEBUG (Page.java:191) - Try to FIND element   //div[@class='responseContainer' or @class='responseContainer ']//iframe
+[17:41:06] DEBUG (Page.java:191) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:41:13] INFO  (FiveStep_teacher.java:73) - Create new draft
+[17:41:13] INFO  (FiveStep_teacher.java:262) - Verifying 'Submit Button'
+[17:41:13] DEBUG (Page.java:191) - Try to FIND element   //div[@class='responseContainer' or @class='responseContainer ']//iframe
+[17:41:13] DEBUG (Page.java:191) - Try to FIND element   .//*[@class='tiny submission_textarea' or @id = 'tinymce']
+[17:41:22] INFO  (FiveStep_teacher.java:272) - Verifying Math Tab
+[17:41:25] INFO  (FiveStep_teacher.java:299) - Submit Math lesson
+[17:41:25] INFO  (FiveStep_teacher.java:325) - Finally answered correctly
+[17:41:25] INFO  (FiveStep_teacher.java:304) - Click on 'View Results' button on Math Page
+[17:41:28] INFO  (FiveStep_teacher.java:307) - Math lesson verified
+[17:41:37] INFO  (FiveStep_teacher.java:330) - Verify Stretch Tab
+[17:41:42] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:42:01] INFO  (FiveStep_teacher.java:166) - Verifying Activity Page
+[17:42:01] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:42:06] DEBUG (Page.java:191) - Wait visibility of element   //*[@ng-click='submitHandler()']
+[17:42:07] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:42:16] DEBUG (Page.java:191) - Try to FIND element  By.id: textarea-step16page1q1response1_ifr
+[17:42:39] DEBUG (Page.java:191) - Try to FIND element   //*[@class='footer progressBarFooter']/span
+[17:48:53] INFO  (Lesson.java:558) - Click on answer 0
+[17:48:55] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:48:58] INFO  (Lesson.java:558) - Click on answer 0
+[17:49:00] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:49:02] INFO  (Lesson.java:558) - Click on answer 0
+[17:49:05] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:49:07] INFO  (Lesson.java:558) - Click on answer 0
+[17:49:15] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:49:17] INFO  (Lesson.java:558) - Click on answer 0
+[17:49:19] INFO  (Page.java:156) - Wait For JS and JQuery load.
+[17:49:21] INFO  (Lesson.java:558) - Click on answer 0

@@ -1,0 +1,102 @@
+[17:38:21] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:38:21] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:38:21] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:38:21] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:38:21] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:38:21] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:38:21] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:38:21] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:38:21] TRACE (BasicTestCase.java:44) - Starting test testAdmin
+[17:38:22] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:38:22] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:38:22] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:38:30] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:38:30] INFO  (A3k_Admin.java:351) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:38:30] INFO  (LoginPage.java:248) - Login with credentials kidbizteach.one\kidbizteach.one
+[17:38:30] INFO  (LoginPage.java:94) - Type in username: kidbizteach.one
+[17:38:31] INFO  (LoginPage.java:101) - Type in password: kidbizteach.one
+[17:38:31] DEBUG (LoginPage.java:227) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:38:31] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:38:32] DEBUG (Page.java:164) - Try to FIND element  By.id: active_class
+[17:38:36] INFO  (LoginPage.java:313) -  Stop login 
+[17:38:36] INFO  (Page.java:619) - Opening Admin Page
+[17:38:36] INFO  (Page.java:186) - Click on element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:38:36] INFO  (Page.java:629) - Wait until element By.xpath: .//*[@data-dropdown='#teacher-settings-dropdown'] clickable
+[17:38:36] DEBUG (Page.java:164) - Trying to click on locator via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:38:37] DEBUG (Page.java:164) - Element was clicked via JS  .//*[@data-dropdown='#teacher-settings-dropdown']
+[17:38:37] INFO  (Page.java:186) - Click on element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:38:37] INFO  (Page.java:629) - Wait until element By.xpath: .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')] clickable
+[17:38:37] DEBUG (Page.java:164) - Trying to click on locator via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:38:38] DEBUG (Page.java:164) - Element was clicked via JS  .//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]
+[17:38:38] INFO  (A3k_Admin.java:338) - Open Create new class Wizard
+[17:38:38] INFO  (AdminPage.java:121) - Opening 'Create New Class' wizard
+[17:38:38] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:38:39] INFO  (Page.java:606) - Switch to Next window
+[17:38:39] DEBUG (Page.java:607) - Switching from handle CDwindow-0EAFFD0EF3A806877939719091B2BE42
+[17:38:39] DEBUG (Page.java:608) - Handles before [CDwindow-0EAFFD0EF3A806877939719091B2BE42, CDwindow-2BFEE492B414137A414B8A8FB726317D]
+[17:38:39] DEBUG (Page.java:612) - Handles after[CDwindow-0EAFFD0EF3A806877939719091B2BE42, CDwindow-2BFEE492B414137A414B8A8FB726317D]
+[17:38:39] DEBUG (Page.java:613) - Switched to handle CDwindow-2BFEE492B414137A414B8A8FB726317D
+[17:38:39] INFO  (A3k_Admin.java:342) - 'Create new class' wizard opened
+[17:38:39] INFO  (SetupWizardPage.java:17) - Wait until page is loaded
+[17:38:39] DEBUG (Page.java:543) - Closing window handle CDwindow-2BFEE492B414137A414B8A8FB726317D
+[17:38:39] DEBUG (Page.java:547) - Currently on window handle CDwindow-0EAFFD0EF3A806877939719091B2BE42
+[17:38:39] INFO  (A3k_Admin.java:147) - Verify Class editor
+[17:38:39] INFO  (A3k_Admin.java:149) - Open 'Class Information' editor
+[17:38:43] INFO  (A3k_Admin.java:153) - Verify district name is not empty
+[17:38:44] INFO  (A3k_Admin.java:157) - Verify school name is not empty
+[17:38:45] INFO  (A3k_Admin.java:162) - Verify amount of users in class is more than 1
+[17:38:55] INFO  (A3k_Admin.java:166) - Class Editor verified successfully
+[17:38:55] INFO  (A3k_Admin.java:117) - Return back to menu
+[17:38:55] INFO  (AdminPage.java:44) - Click 'Back to Menu'
+[17:38:56] INFO  (A3k_Admin.java:172) - Trying to edit student and teacher
+[17:38:56] INFO  (A3k_Admin.java:176) - Open Student and Teacher editor
+[17:38:56] INFO  (AdminPage.java:98) - Open 'Edit student and teacher' Editor
+[17:38:56] INFO  (Page.java:186) - Click on element By.xpath: (.//a[contains(@href,'user/edit_users.php')])[1]
+[17:38:57] INFO  (Page.java:629) - Wait until element By.xpath: (.//a[contains(@href,'user/edit_users.php')])[1] clickable
+[17:38:57] DEBUG (Page.java:164) - Trying to click on locator via JS  (.//a[contains(@href,'user/edit_users.php')])[1]
+[17:38:58] DEBUG (Page.java:164) - Element was clicked via JS  (.//a[contains(@href,'user/edit_users.php')])[1]
+[17:38:58] INFO  (A3k_Admin.java:179) - Change class to Boost Class 3g
+[17:38:58] DEBUG (Page.java:164) - Try to FIND element  By.id: class_id
+[17:38:58] INFO  (A3k_Admin.java:182) - Submit
+[17:39:00] INFO  (A3k_Admin.java:185) - Student's class changed successfully
+[17:39:10] INFO  (A3k_Admin.java:190) - Verify main user fields
+[17:39:10] INFO  (A3k_Admin.java:192) - Verify start time is present
+[17:39:10] INFO  (A3k_Admin.java:195) - Verify end time is present
+[17:39:10] INFO  (A3k_Admin.java:198) - Verify p2p email is present
+[17:39:21] INFO  (A3k_Admin.java:205) - Remove user <td align="right" class="row2" valign="top"></td> from class
+[17:39:21] INFO  (Page.java:203) - Click on element <td align="right" class="row2" valign="top"></td>
+[17:39:21] DEBUG (Page.java:170) - Trying to click on locator via JS <td align="right" class="row2" valign="top"></td>
+[17:39:22] DEBUG (Page.java:170) - Element was clicked via JS <td align="right" class="row2" valign="top"></td>
+[17:39:22] INFO  (Page.java:186) - Click on element By.xpath: .//*[@onclick='javascript:doSubmit(2);']
+[17:39:22] INFO  (Page.java:629) - Wait until element By.xpath: .//*[@onclick='javascript:doSubmit(2);'] clickable
+[17:39:22] DEBUG (Page.java:164) - Trying to click on locator via JS  .//*[@onclick='javascript:doSubmit(2);']
+[17:39:22] DEBUG (Page.java:164) - Element was clicked via JS  .//*[@onclick='javascript:doSubmit(2);']
+[17:39:26] TRACE (Page.java:584) - Expected condition failed: waiting for alert to be present (tried for 4 second(s) with 100 milliseconds interval)
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'AVK', ip: '169.254.195.205', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_162'
+Driver info: driver.version: unknown
+[17:39:26] INFO  (A3k_Admin.java:211) - User removed
+[17:39:26] INFO  (A3k_Admin.java:217) - Opening Edit page
+[17:39:38] INFO  (A3k_Admin.java:233) - Verify student info
+[17:39:38] INFO  (A3k_Admin.java:235) - Verify school name is present
+[17:39:38] INFO  (A3k_Admin.java:239) - Verify expected class (Boost Class 3g) is present
+[17:39:39] INFO  (A3k_Admin.java:243) - Verify login is present
+[17:39:39] INFO  (Page.java:174) - Opening Home Page
+[17:39:39] INFO  (Page.java:186) - Click on element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:39:39] INFO  (Page.java:629) - Wait until element By.xpath: //*[@href='/home' or contains(@class,'logo-') or @href='/n/'] clickable
+[17:39:39] DEBUG (Page.java:164) - Trying to click on locator via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:39:40] DEBUG (Page.java:164) - Element was clicked via JS  //*[@href='/home' or contains(@class,'logo-') or @href='/n/']
+[17:39:44] TRACE (Page.java:255) - Alert not found
+[17:39:44] INFO  (Page.java:47) - Try to execute Close Walkme
+[17:39:44] INFO  (Page.java:594) - Opening All Reports Page
+[17:39:44] INFO  (Page.java:267) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/options/teacher/
+[17:39:45] INFO  (A3k_Admin.java:307) - Verify student work
+[17:39:45] INFO  (AllReportsPage.java:74) - Open Student Work
+[17:39:47] INFO  (A3k_Admin.java:318) - Verify Titles
+[17:39:48] INFO  (AllReportsPage.java:56) - Opening Performance Reports
+[17:39:49] INFO  (A3k_Admin.java:257) - Verify assessment
+[17:39:49] INFO  (AllReportsPage.java:34) - Opening Assessment Tools
+[17:39:49] INFO  (AllReportsPage.java:39) - Opening Home Communication
+[17:39:50] DEBUG (BasicTestCase.java:228) - Finishing test
+[17:39:50] TRACE (BasicTestCase.java:229) - Getting selenium logs
+[17:39:50] DEBUG (BasicTestCase.java:230) - Finished test

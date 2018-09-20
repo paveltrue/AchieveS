@@ -1,0 +1,1040 @@
+[17:45:30] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:45:30] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:45:30] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:31] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:31] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:45:31] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:45:31] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:45:31] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
+[17:45:31] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
+[17:45:31] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:45:31] INFO  (BasicTestCase.java:80) - Headless Mode set to false
+[17:45:31] DEBUG (BasicTestCase.java:110) - Finished before suite
+[17:45:31] TRACE (BasicTestCase.java:45) - Starting test verifyClasses_US14585
+[17:45:31] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:45:31] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:45:31] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:31] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:45:32] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:32] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:33] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:33] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:33] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:35] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:35] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:35] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:36] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:36] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:37] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:37] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:39] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:39] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:39] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:40] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:40] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:40] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:41] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:41] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:45:41] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:42] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:42] INFO  (LoginPage.java:259) - Login with credentials ussa14585.pooh\ussa14585.pooh
+[17:45:42] INFO  (LoginPage.java:98) - Type in username: ussa14585.pooh
+[17:45:42] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:43] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:43] INFO  (LoginPage.java:105) - Type in password: ussa14585.pooh
+[17:45:43] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:43] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:44] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:45:44] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:44] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:45:44] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:44] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:45:44] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:45] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:45] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:45:45] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:45:46] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:45:46] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:45:46] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:45:46] INFO  (MyLessons.java:548) - Enter Text In Description Input: some description
+[17:45:46] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:45:46] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:45:46] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:45:47] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:45:47] DEBUG (MyLessons.java:1081) - Saving collection
+[17:45:47] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: 1234^@&%&*™
+[17:45:47] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:45:47] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:45:47] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:45:48] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:45:48] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:45:48] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:45:48] DEBUG (MyLessons.java:1081) - Saving collection
+[17:45:48] INFO  (Page.java:962) - Wait For JQuery load.
+[17:45:48] INFO  (Page.java:968) - Wait For JS load.
+[17:45:48] ERROR (ExtendedSoftAssert.java:38) - No collection with input name found
+[17:45:49] INFO  (LoginPage.java:333) -  Stop login 
+[17:45:49] INFO  (Page.java:1296) - Opening My Lessons page
+[17:45:49] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:45:51] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:45:51] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:45:51] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:45:51] DEBUG (BasicTestCase.java:235) - Finished test
+[17:45:51] TRACE (BasicTestCase.java:45) - Starting test verifyCollectionName_US14585
+[17:45:51] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:45:51] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:45:51] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:45:53] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:45:53] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:45:53] INFO  (LoginPage.java:259) - Login with credentials usda14585.pooh\usda14585.pooh
+[17:45:53] INFO  (LoginPage.java:98) - Type in username: usda14585.pooh
+[17:45:53] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:45:53] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:45:54] INFO  (LoginPage.java:105) - Type in password: usda14585.pooh
+[17:45:55] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:45:55] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:45:55] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:45:56] INFO  (Page.java:1296) - Opening My Lessons page
+[17:45:56] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:45:57] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:46:01] INFO  (MyLessons.java:476) - Try to delete all exist collections on My Lessons page
+[17:46:02] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:46:02] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:46:04] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:46:06] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: US14585
+[17:46:06] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:46:07] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:46:08] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:46:08] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:46:08] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:46:09] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:46:09] DEBUG (MyLessons.java:1081) - Saving collection
+[17:46:09] INFO  (Page.java:962) - Wait For JQuery load.
+[17:46:09] INFO  (Page.java:968) - Wait For JS load.
+[17:46:09] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:46:11] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')] clickable
+[17:46:12] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:46:16] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:46:16] INFO  (MyLessons.java:1146) - Collapse  sections headers
+[17:46:18] INFO  (Page.java:1366) - Navigate back
+[17:46:20] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:46:20] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:46:24] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:46:26] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:46:27] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:46:27] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:46:27] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:46:27] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:46:27] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:46:28] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:46:28] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[contains(@class, 'cancelLink')]
+[17:46:29] DEBUG (MyLessons.java:1183) - Clicked All Classes checkbox in Show Classes popup
+[17:46:29] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:46:30] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:46:30] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:46:30] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:46:30] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:46:30] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:46:30] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:46:30] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:46:30] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:46:31] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:46:31] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:46:31] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:46:31] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:46:31] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:46:31] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:46:32] DEBUG (Page.java:836) - Trying to scroll to element and click on element By.id: continueBtn
+[17:46:32] DEBUG (Page.java:235) - Try to FIND element  By.id: continueBtn
+[17:46:32] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: testus_auto
+[17:46:32] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:46:32] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:46:33] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:46:33] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:46:33] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:46:33] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:46:33] DEBUG (MyLessons.java:1081) - Saving collection
+[17:46:33] INFO  (Page.java:962) - Wait For JQuery load.
+[17:46:33] INFO  (Page.java:968) - Wait For JS load.
+[17:46:34] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:46:34] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:46:34] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')] clickable
+[17:46:34] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:46:38] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:46:38] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:46:40] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:46:40] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:46:40] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:46:40] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:46:40] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:46:40] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:46:40] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:46:41] INFO  (Page.java:1296) - Opening My Lessons page
+[17:46:41] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:46:41] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:46:42] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:46:42] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:46:42] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:46:42] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:46:43] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:46:45] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:46:49] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:46:49] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:46:49] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:46:49] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:46:50] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:46:50] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:46:50] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:46:50] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:46:51] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:46:51] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:46:51] DEBUG (BasicTestCase.java:235) - Finished test
+[17:46:51] TRACE (BasicTestCase.java:45) - Starting test verifyClasses_US14585
+[17:46:51] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:46:51] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:46:51] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:46:52] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:46:52] INFO  (LoginPage.java:259) - Login with credentials uksa14585.pooh\uksa14585.pooh
+[17:46:52] INFO  (LoginPage.java:98) - Type in username: uksa14585.pooh
+[17:46:53] INFO  (LoginPage.java:105) - Type in password: uksa14585.pooh
+[17:46:53] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:46:53] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:46:54] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:46:57] INFO  (LoginPage.java:333) -  Stop login 
+[17:46:57] INFO  (Page.java:1296) - Opening My Lessons page
+[17:46:58] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:46:59] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:46:59] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:46:59] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:47:00] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:47:00] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:47:00] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:47:02] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:47:06] INFO  (MyLessons.java:476) - Try to delete all exist collections on My Lessons page
+[17:47:06] DEBUG (Page.java:235) - Wait until element will be clickable.  .//a[contains(@class, 'deleteCollection')]
+[17:47:07] INFO  (Page.java:962) - Wait For JQuery load.
+[17:47:07] INFO  (Page.java:968) - Wait For JS load.
+[17:47:07] DEBUG (Page.java:235) - Wait until element will be clickable.  .//a[contains(@class, 'deleteCollection')]
+[17:47:08] INFO  (Page.java:962) - Wait For JQuery load.
+[17:47:08] INFO  (Page.java:968) - Wait For JS load.
+[17:47:08] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:47:08] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:47:10] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:47:11] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: US14585
+[17:47:11] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:47:12] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:47:12] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:47:12] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:47:12] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:47:13] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:47:13] DEBUG (MyLessons.java:1081) - Saving collection
+[17:47:13] INFO  (Page.java:962) - Wait For JQuery load.
+[17:47:13] INFO  (Page.java:968) - Wait For JS load.
+[17:47:13] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:47:13] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:47:13] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')] clickable
+[17:47:13] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:47:17] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:47:18] INFO  (MyLessons.java:1146) - Collapse  sections headers
+[17:47:20] INFO  (Page.java:1366) - Navigate back
+[17:47:22] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:47:22] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:47:25] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:47:26] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:47:27] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:47:27] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:47:27] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:47:27] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:47:28] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:47:28] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:47:28] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[contains(@class, 'cancelLink')]
+[17:47:29] DEBUG (MyLessons.java:1183) - Clicked All Classes checkbox in Show Classes popup
+[17:47:29] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:47:29] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:47:30] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:47:30] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:47:30] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:47:30] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:47:30] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:47:30] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:47:30] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:47:31] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:47:31] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:47:31] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:47:31] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:47:31] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:47:31] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:47:32] DEBUG (Page.java:836) - Trying to scroll to element and click on element By.id: continueBtn
+[17:47:32] DEBUG (Page.java:235) - Try to FIND element  By.id: continueBtn
+[17:47:32] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: testus_auto
+[17:47:32] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:47:32] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:47:32] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:47:33] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:47:33] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:47:33] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:47:33] DEBUG (MyLessons.java:1081) - Saving collection
+[17:47:33] INFO  (Page.java:962) - Wait For JQuery load.
+[17:47:33] INFO  (Page.java:968) - Wait For JS load.
+[17:47:33] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:47:33] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:47:33] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')] clickable
+[17:47:33] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:47:38] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:47:38] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:47:39] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:47:39] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:47:39] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:47:39] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:47:39] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:47:40] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:47:40] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:47:40] INFO  (Page.java:1296) - Opening My Lessons page
+[17:47:40] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:47:41] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:47:41] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:47:41] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:47:41] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:47:41] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:47:41] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:47:44] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:47:48] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:47:48] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:47:48] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:47:48] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:47:49] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:47:49] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:47:49] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:47:49] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:47:49] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:47:49] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:47:49] DEBUG (BasicTestCase.java:235) - Finished test
+[17:47:49] TRACE (BasicTestCase.java:45) - Starting test verifyClasses_US14585
+[17:47:49] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:47:49] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:47:49] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:47:50] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:47:50] INFO  (LoginPage.java:259) - Login with credentials usda14585.pooh\usda14585.pooh
+[17:47:50] INFO  (LoginPage.java:98) - Type in username: usda14585.pooh
+[17:47:51] INFO  (LoginPage.java:105) - Type in password: usda14585.pooh
+[17:47:52] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:47:52] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:47:52] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:47:52] INFO  (Page.java:1296) - Opening My Lessons page
+[17:47:52] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:48:04] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:48:04] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:04] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:48:04] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:48:04] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:07] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:11] INFO  (MyLessons.java:476) - Try to delete all exist collections on My Lessons page
+[17:48:11] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:48:11] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:48:14] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:48:15] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: US14585
+[17:48:15] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:48:15] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:48:16] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:48:16] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:48:16] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:48:16] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:48:16] DEBUG (MyLessons.java:1081) - Saving collection
+[17:48:16] INFO  (Page.java:962) - Wait For JQuery load.
+[17:48:16] INFO  (Page.java:968) - Wait For JS load.
+[17:48:16] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:48:16] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:48:16] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')] clickable
+[17:48:16] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:48:21] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:48:22] INFO  (MyLessons.java:1146) - Collapse  sections headers
+[17:48:24] INFO  (Page.java:1366) - Navigate back
+[17:48:25] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:48:25] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:48:29] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:48:30] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:48:31] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:48:31] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:48:31] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:48:31] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:48:31] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:48:31] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:48:31] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[contains(@class, 'cancelLink')]
+[17:48:32] DEBUG (MyLessons.java:1183) - Clicked All Classes checkbox in Show Classes popup
+[17:48:32] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:48:33] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:48:33] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:48:33] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:48:33] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:48:33] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:48:33] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:48:33] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:48:34] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:48:34] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:48:34] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:48:34] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:48:34] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:48:34] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:48:34] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:48:35] DEBUG (Page.java:836) - Trying to scroll to element and click on element By.id: continueBtn
+[17:48:35] DEBUG (Page.java:235) - Try to FIND element  By.id: continueBtn
+[17:48:35] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: testus_auto
+[17:48:35] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:48:35] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:48:36] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:48:36] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:48:36] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:48:36] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:48:36] DEBUG (MyLessons.java:1081) - Saving collection
+[17:48:36] INFO  (Page.java:962) - Wait For JQuery load.
+[17:48:36] INFO  (Page.java:968) - Wait For JS load.
+[17:48:36] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:48:36] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:48:36] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')] clickable
+[17:48:36] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:48:41] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:48:41] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:48:42] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:48:42] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:48:42] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:48:42] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:48:42] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:48:43] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:48:43] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:48:43] INFO  (Page.java:1296) - Opening My Lessons page
+[17:48:43] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:48:44] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:48:44] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:48:44] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:48:44] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:44] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:48:44] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:47] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:48:51] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:48:51] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:48:51] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:48:51] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:48:52] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:48:52] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:48:52] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:48:52] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:48:52] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:48:52] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:48:52] DEBUG (BasicTestCase.java:235) - Finished test
+[17:48:53] TRACE (BasicTestCase.java:45) - Starting test verifyClasses_US14585
+[17:48:53] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:48:53] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:48:53] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:48:53] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:48:53] INFO  (LoginPage.java:259) - Login with credentials ukda14585.pooh\ukda14585.pooh
+[17:48:53] INFO  (LoginPage.java:98) - Type in username: ukda14585.pooh
+[17:48:54] INFO  (LoginPage.java:105) - Type in password: ukda14585.pooh
+[17:48:55] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:48:55] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:48:55] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:48:58] INFO  (LoginPage.java:333) -  Stop login 
+[17:48:58] INFO  (Page.java:1296) - Opening My Lessons page
+[17:48:59] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:48:59] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:49:00] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:49:00] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:49:00] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:00] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:49:00] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:03] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:07] INFO  (MyLessons.java:476) - Try to delete all exist collections on My Lessons page
+[17:49:07] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:49:07] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:49:09] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:49:10] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: US14585
+[17:49:10] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:49:11] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:49:11] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:49:11] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:49:11] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:49:12] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:49:12] DEBUG (MyLessons.java:1081) - Saving collection
+[17:49:12] INFO  (Page.java:962) - Wait For JQuery load.
+[17:49:12] INFO  (Page.java:968) - Wait For JS load.
+[17:49:12] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:49:12] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:49:12] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')] clickable
+[17:49:12] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:49:17] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585 ')]/../..//a[contains(@href, 'edit')]
+[17:49:17] INFO  (MyLessons.java:1146) - Collapse  sections headers
+[17:49:20] INFO  (Page.java:1366) - Navigate back
+[17:49:22] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:49:22] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:49:28] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:49:29] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:49:30] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:49:30] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:49:30] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:49:30] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:49:30] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:49:31] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:49:31] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[contains(@class, 'cancelLink')]
+[17:49:31] DEBUG (MyLessons.java:1183) - Clicked All Classes checkbox in Show Classes popup
+[17:49:32] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:49:32] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:49:32] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:49:32] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:49:32] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:49:32] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:49:33] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:49:33] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:49:33] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:49:33] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:49:33] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:49:33] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:49:33] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:49:33] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:49:34] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:49:34] DEBUG (Page.java:836) - Trying to scroll to element and click on element By.id: continueBtn
+[17:49:34] DEBUG (Page.java:235) - Try to FIND element  By.id: continueBtn
+[17:49:35] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: testus_auto
+[17:49:35] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:49:35] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:49:35] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:49:35] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:49:35] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:49:36] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:49:36] DEBUG (MyLessons.java:1081) - Saving collection
+[17:49:36] INFO  (Page.java:962) - Wait For JQuery load.
+[17:49:36] INFO  (Page.java:968) - Wait For JS load.
+[17:49:36] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:49:36] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:49:36] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')] clickable
+[17:49:36] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:49:41] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto ')]/../..//a[contains(@href, 'edit')]
+[17:49:41] INFO  (MyLessons.java:1111) - Expand  sections headers
+[17:49:43] DEBUG (Page.java:235) - Wait until element will be clickable.  .//*[@id='show_classes' and @type='button']
+[17:49:43] DEBUG (MyLessons.java:1099) - Clicked Show Classes button
+[17:49:43] INFO  (Page.java:263) - Click on element By.xpath: .//*[@id='show_classes' and @type='button']
+[17:49:43] INFO  (Page.java:772) - Wait until element By.xpath: .//*[@id='show_classes' and @type='button'] clickable
+[17:49:43] DEBUG (Page.java:235) - Trying to click on locator via JS  .//*[@id='show_classes' and @type='button']
+[17:49:43] DEBUG (Page.java:235) - Element was clicked via JS  .//*[@id='show_classes' and @type='button']
+[17:49:43] DEBUG (MyLessons.java:1168) - Closing show classes dialog
+[17:49:44] INFO  (Page.java:1296) - Opening My Lessons page
+[17:49:44] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:49:44] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:49:44] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:49:45] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:49:45] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:45] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:49:45] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:47] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:49:52] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:49:52] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:49:52] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:49:52] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'US14585')]/../..//a[contains(@class, 'deleteCollection')]
+[17:49:52] INFO  (Page.java:263) - Click on element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:49:52] INFO  (Page.java:772) - Wait until element By.xpath: //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')] clickable
+[17:49:52] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:49:53] DEBUG (Page.java:235) - Element was clicked via JS  //*[contains(@id, 'collectionRow')]//*[@class = 'courseName' and contains(text(), 'testus_auto')]/../..//a[contains(@class, 'deleteCollection')]
+[17:49:53] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:49:53] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:49:53] DEBUG (BasicTestCase.java:235) - Finished test
+[17:49:53] TRACE (BasicTestCase.java:45) - Starting test verifyCollectionName_US14585
+[17:49:53] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:49:53] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:49:53] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:49:54] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:49:54] INFO  (LoginPage.java:259) - Login with credentials ussa14585.pooh\ussa14585.pooh
+[17:49:54] INFO  (LoginPage.java:98) - Type in username: ussa14585.pooh
+[17:49:55] INFO  (LoginPage.java:105) - Type in password: ussa14585.pooh
+[17:49:55] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:49:55] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:49:56] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:49:58] INFO  (LoginPage.java:333) -  Stop login 
+[17:49:59] INFO  (Page.java:1296) - Opening My Lessons page
+[17:50:00] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:50:00] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:50:00] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:50:01] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:50:01] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:50:01] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:50:01] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:50:03] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:50:07] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:50:07] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:50:10] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:50:12] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:12] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:12] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:50:12] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:12] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:12] INFO  (Page.java:280) - Click on element <a data-arg="Grade 4" data-value="4" href="#">Grade 4</a>
+[17:50:12] INFO  (Page.java:786) - Wait until element <a data-arg="Grade 4" data-value="4" href="#">Grade 4</a> clickable
+[17:50:13] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Grade 4" data-value="4" href="#">Grade 4</a>
+[17:50:15] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:50:15] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:15] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:50:17] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:17] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:17] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:50:17] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:18] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:18] INFO  (Page.java:280) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[17:50:18] INFO  (Page.java:786) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[17:50:18] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[17:50:20] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:50:20] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:50:21] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:50:22] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:22] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:23] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:23] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:23] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:23] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:24] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:24] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:24] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:24] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:50:25] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:50:25] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:50:25] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:50:25] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:50:25] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:27] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:27] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:27] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:29] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:29] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:29] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:30] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:30] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:30] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:31] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:31] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:31] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:32] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:32] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:32] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:33] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:33] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:33] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:34] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:35] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:35] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:36] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:36] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:36] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:37] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:37] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:37] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:50:38] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:50:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:50:38] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:50:38] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:50:38] INFO  (MyLessons.java:548) - Enter Text In Description Input: some description
+[17:50:39] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:50:39] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:50:39] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:50:39] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:50:39] DEBUG (MyLessons.java:1081) - Saving collection
+[17:50:39] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: 1234^@&%&*™
+[17:50:39] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:50:40] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:50:40] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:50:40] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:50:40] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:50:40] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:50:40] DEBUG (MyLessons.java:1081) - Saving collection
+[17:50:40] INFO  (Page.java:962) - Wait For JQuery load.
+[17:50:40] INFO  (Page.java:968) - Wait For JS load.
+[17:50:41] ERROR (ExtendedSoftAssert.java:38) - No collection with input name found
+[17:50:44] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:50:44] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:50:44] DEBUG (BasicTestCase.java:235) - Finished test
+[17:50:44] TRACE (BasicTestCase.java:45) - Starting test verifyCollectionName_US14585
+[17:50:44] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:50:44] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:50:44] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:50:45] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:50:45] INFO  (LoginPage.java:259) - Login with credentials uksa14585.pooh\uksa14585.pooh
+[17:50:45] INFO  (LoginPage.java:98) - Type in username: uksa14585.pooh
+[17:50:46] INFO  (LoginPage.java:105) - Type in password: uksa14585.pooh
+[17:50:47] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:50:47] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:50:47] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:50:49] INFO  (LoginPage.java:333) -  Stop login 
+[17:50:50] INFO  (Page.java:1296) - Opening My Lessons page
+[17:50:51] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:50:52] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:50:52] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:50:52] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:50:52] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:50:52] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:50:52] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:50:55] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:50:59] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:50:59] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:51:01] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:51:03] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:03] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:03] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:51:03] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:04] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:04] INFO  (Page.java:280) - Click on element <a data-arg="Year 4" data-value="4" href="#">Year 4</a>
+[17:51:04] INFO  (Page.java:786) - Wait until element <a data-arg="Year 4" data-value="4" href="#">Year 4</a> clickable
+[17:51:04] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Year 4" data-value="4" href="#">Year 4</a>
+[17:51:06] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:51:06] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:07] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:51:08] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:08] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:08] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:51:09] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:09] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:09] INFO  (Page.java:280) - Click on element <a data-arg="Year 3" data-value="3" href="#">Year 3</a>
+[17:51:09] INFO  (Page.java:786) - Wait until element <a data-arg="Year 3" data-value="3" href="#">Year 3</a> clickable
+[17:51:09] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Year 3" data-value="3" href="#">Year 3</a>
+[17:51:11] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:51:11] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:12] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:51:13] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:14] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:14] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:14] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:14] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:15] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:15] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:15] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:15] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:16] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:51:16] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:51:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:51:16] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:51:16] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:51:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:19] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:19] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:19] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:20] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:20] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:20] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:22] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:22] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:22] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:23] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:23] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:23] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:24] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:24] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:24] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:25] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:25] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:25] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:26] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:27] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:27] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:27] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:28] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:29] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:51:29] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:51:29] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:51:29] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:51:30] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:51:30] INFO  (MyLessons.java:548) - Enter Text In Description Input: some description
+[17:51:30] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:51:30] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:51:30] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:51:30] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:51:30] DEBUG (MyLessons.java:1081) - Saving collection
+[17:51:30] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: 1234^@&%&*™
+[17:51:30] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:51:30] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:51:31] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:51:31] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:51:31] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:51:31] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:51:31] DEBUG (MyLessons.java:1081) - Saving collection
+[17:51:31] INFO  (Page.java:962) - Wait For JQuery load.
+[17:51:31] INFO  (Page.java:968) - Wait For JS load.
+[17:51:32] ERROR (ExtendedSoftAssert.java:38) - No collection with input name found
+[17:51:35] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:51:35] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:51:35] DEBUG (BasicTestCase.java:235) - Finished test
+[17:51:35] TRACE (BasicTestCase.java:45) - Starting test verifyCollectionName_US14585
+[17:51:35] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:51:35] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:51:35] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:51:36] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:51:36] INFO  (LoginPage.java:259) - Login with credentials usda14585.pooh\usda14585.pooh
+[17:51:36] INFO  (LoginPage.java:98) - Type in username: usda14585.pooh
+[17:51:37] INFO  (LoginPage.java:105) - Type in password: usda14585.pooh
+[17:51:37] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:51:37] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:51:38] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:51:40] INFO  (LoginPage.java:333) -  Stop login 
+[17:51:41] INFO  (Page.java:1296) - Opening My Lessons page
+[17:51:42] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:51:42] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:51:42] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:51:43] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:51:43] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:51:43] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:51:43] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:51:45] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:51:50] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:51:50] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:51:52] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:51:54] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:54] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:54] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:51:54] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:54] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:54] INFO  (Page.java:280) - Click on element <a data-arg="Grade 4" data-value="4" href="#">Grade 4</a>
+[17:51:55] INFO  (Page.java:786) - Wait until element <a data-arg="Grade 4" data-value="4" href="#">Grade 4</a> clickable
+[17:51:55] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Grade 4" data-value="4" href="#">Grade 4</a>
+[17:51:57] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:51:57] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:58] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:51:59] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:59] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:51:59] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:52:00] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:00] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:00] INFO  (Page.java:280) - Click on element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[17:52:00] INFO  (Page.java:786) - Wait until element <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a> clickable
+[17:52:00] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Grade 3" data-value="3" href="#">Grade 3</a>
+[17:52:03] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:52:03] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:03] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:52:04] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:05] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:05] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:05] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:06] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:06] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:06] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:06] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:07] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:07] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:07] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:52:08] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:52:08] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:52:08] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:52:08] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:08] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:09] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:09] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:09] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:10] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:10] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:10] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:10] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:11] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:11] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:11] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:12] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:12] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:12] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:13] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:13] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:13] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:14] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:14] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:14] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:15] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:15] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:15] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:18] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:19] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:19] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:19] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:20] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:20] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:20] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:52:21] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:52:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:52:21] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:52:21] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:52:21] INFO  (MyLessons.java:548) - Enter Text In Description Input: some description
+[17:52:22] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:52:22] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:52:22] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:52:22] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:52:22] DEBUG (MyLessons.java:1081) - Saving collection
+[17:52:22] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: 1234^@&%&*™
+[17:52:22] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:52:22] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:52:23] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:52:23] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:52:23] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:52:23] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:52:23] DEBUG (MyLessons.java:1081) - Saving collection
+[17:52:23] INFO  (Page.java:962) - Wait For JQuery load.
+[17:52:23] INFO  (Page.java:968) - Wait For JS load.
+[17:52:23] ERROR (ExtendedSoftAssert.java:38) - No collection with input name found
+[17:52:27] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:52:27] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:52:27] DEBUG (BasicTestCase.java:235) - Finished test
+[17:52:27] TRACE (BasicTestCase.java:45) - Starting test verifyCollectionName_US14585
+[17:52:27] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:52:27] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:52:27] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:52:29] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.
+[17:52:29] INFO  (LoginPage.java:259) - Login with credentials ukda14585.pooh\ukda14585.pooh
+[17:52:29] INFO  (LoginPage.java:98) - Type in username: ukda14585.pooh
+[17:52:29] INFO  (LoginPage.java:105) - Type in password: ukda14585.pooh
+[17:52:30] DEBUG (LoginPage.java:238) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:52:30] INFO  (Page.java:83) - Try to execute Close Walkme
+[17:52:31] DEBUG (Page.java:235) - Try to FIND element  By.id: active_pgm
+[17:52:34] INFO  (LoginPage.java:333) -  Stop login 
+[17:52:34] INFO  (Page.java:1296) - Opening My Lessons page
+[17:52:35] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:52:36] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:52:36] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='hamburger' or contains(@class,'hamburgerBun')] clickable
+[17:52:36] DEBUG (Page.java:1333) - Clicked hamburger menu
+[17:52:36] INFO  (Page.java:263) - Click on element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:52:36] INFO  (Page.java:772) - Wait until element By.xpath: //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1] clickable
+[17:52:37] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:52:39] DEBUG (Page.java:235) - Element was clicked via JS  //*[(@href='/my_lessons' or @href='/collections') and count(../a)=1]
+[17:52:43] INFO  (MyLessons.java:1072) - Clicked Build Lesson Collection Button
+[17:52:43] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: buildButton
+[17:52:46] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:52:48] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:48] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:48] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:52:48] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:48] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:49] INFO  (Page.java:280) - Click on element <a data-arg="Year 4" data-value="4" href="#">Year 4</a>
+[17:52:49] INFO  (Page.java:786) - Wait until element <a data-arg="Year 4" data-value="4" href="#">Year 4</a> clickable
+[17:52:49] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Year 4" data-value="4" href="#">Year 4</a>
+[17:52:52] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:52:52] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:52] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:52:54] DEBUG (Page.java:235) - Wait until element will be clickable.  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:54] INFO  (Page.java:263) - Click on element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:54] INFO  (Page.java:772) - Wait until element By.xpath: //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img clickable
+[17:52:54] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:54] DEBUG (Page.java:235) - Element was clicked via JS  //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:54] INFO  (Page.java:280) - Click on element <a data-arg="Year 3" data-value="3" href="#">Year 3</a>
+[17:52:54] INFO  (Page.java:786) - Wait until element <a data-arg="Year 3" data-value="3" href="#">Year 3</a> clickable
+[17:52:54] DEBUG (Page.java:247) - Trying to click on locator via JS <a data-arg="Year 3" data-value="3" href="#">Year 3</a>
+[17:52:57] DEBUG (Page.java:247) - Element was clicked via JS StaleElementReferenceException: stale element reference: element is not attached to the page document
+[17:52:57] DEBUG (Page.java:235) - Wait visibility of element   //*[@class='gradeContainer']/div[2] | //*[@class='gradeName']//img
+[17:52:57] INFO  (MyLessons.java:536) - Clicked Create Collection Button
+[17:52:59] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:59] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:52:59] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:00] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:00] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:00] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:01] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:01] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:01] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:01] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: 1234567890
+[17:53:02] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:53:02] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:53:02] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:53:02] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:53:02] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:03] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:03] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:03] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:03] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:04] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:04] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:04] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:05] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:05] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:05] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:05] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:06] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:06] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:06] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:07] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:07] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:07] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:08] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:08] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:08] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:09] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:09] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:09] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:10] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:10] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:11] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:11] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:11] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:12] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:12] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:12] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:13] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:13] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:14] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:14] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:14] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:15] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:15] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: 1234567890
+[17:53:16] INFO  (MyLessons.java:1225) - Enter Text In Collection Name Input: x
+[17:53:16] INFO  (MyLessons.java:548) - Enter Text In Description Input: x
+[17:53:17] TRACE (MyLessons.java:1239) - Cleared collection name input
+[17:53:17] TRACE (MyLessons.java:1241) - Cleared collection description input
+[17:53:17] INFO  (MyLessons.java:548) - Enter Text In Description Input: some description
+[17:53:17] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:53:17] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:53:17] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:53:18] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:53:18] DEBUG (MyLessons.java:1081) - Saving collection
+[17:53:18] INFO  (MyLessons.java:541) - Enter Text In Collection Name Input: 1234^@&%&*™
+[17:53:18] DEBUG (Page.java:235) - Wait until element will be clickable. By.id: collection_name
+[17:53:18] DEBUG (Page.java:235) - Try to FIND element  By.id: collection_name
+[17:53:18] INFO  (Page.java:263) - Click on element By.xpath: //*[@id='saveButton' and @type='submit']
+[17:53:18] INFO  (Page.java:772) - Wait until element By.xpath: //*[@id='saveButton' and @type='submit'] clickable
+[17:53:18] DEBUG (Page.java:235) - Trying to click on locator via JS  //*[@id='saveButton' and @type='submit']
+[17:53:19] DEBUG (Page.java:235) - Element was clicked via JS  //*[@id='saveButton' and @type='submit']
+[17:53:19] DEBUG (MyLessons.java:1081) - Saving collection
+[17:53:19] INFO  (Page.java:962) - Wait For JQuery load.
+[17:53:19] INFO  (Page.java:968) - Wait For JS load.
+[17:53:19] ERROR (ExtendedSoftAssert.java:38) - No collection with input name found
+[17:53:22] DEBUG (BasicTestCase.java:233) - Finishing test
+[17:53:22] TRACE (BasicTestCase.java:234) - Getting selenium logs
+[17:53:22] DEBUG (BasicTestCase.java:235) - Finished test

@@ -1,0 +1,13 @@
+[17:43:37] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=0, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:43:37] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:43:37] INFO  (BasicTestCase.java:67) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:43:37] INFO  (BasicTestCase.java:70) - browser type set from properties file: chrome
+[17:43:37] INFO  (BasicTestCase.java:76) - grid mode set from properties file:false
+[17:43:37] INFO  (BasicTestCase.java:77) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:43:37] INFO  (BasicTestCase.java:80) - Headless Mode set to false
+[17:43:37] DEBUG (BasicTestCase.java:110) - Finished before suite
+[17:43:37] TRACE (BasicTestCase.java:45) - Starting test verifyCollectionName_US14585
+[17:43:37] INFO  (BasicTestCase.java:117) - Setting the browser up
+[17:43:37] INFO  (BasicTestCase.java:132) -  Executing on CHROME
+[17:43:37] INFO  (BasicTestCase.java:127) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:43:50] DEBUG (BasicTestCase.java:53) - Browser's set up. Starting test.

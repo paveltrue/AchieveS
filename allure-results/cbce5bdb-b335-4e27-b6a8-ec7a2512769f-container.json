@@ -1,0 +1,1 @@
+{"uuid":"cbce5bdb-b335-4e27-b6a8-ec7a2512769f","name":"com.a3k.BasicTestCase.setup","description":"","start":1537280228385,"stop":1537280229850,"children":["92b1cebe-fd22-4878-8c55-b1461a826823"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","start":1537280228385,"stop":1537280229850}]}

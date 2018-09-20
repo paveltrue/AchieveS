@@ -1,0 +1,25 @@
+[17:58:51] INFO  (AchieveProperties.java:41) - {threadCount=3, retriesCount=1, shortWait=35, gridHost=http://169.254.232.220:4444/wd/hub, headlessMode=false, screenshotsDir=, browserType=chrome, longWait=35, envUrl=https://trunk.qa-esc.portal.achieve3000.com, gridMode=false}
+[17:58:51] INFO  (AchieveProperties.java:43) - https://trunk.qa-esc.portal.achieve3000.com
+[17:58:51] INFO  (BasicTestCase.java:66) - browser url set from properties file: https://trunk.qa-esc.portal.achieve3000.com
+[17:58:51] INFO  (BasicTestCase.java:69) - browser type set from properties file: chrome
+[17:58:51] INFO  (BasicTestCase.java:75) - grid mode set from properties file:false
+[17:58:51] INFO  (BasicTestCase.java:76) - grid host set from properties file:http://169.254.232.220:4444/wd/hub
+[17:58:51] INFO  (BasicTestCase.java:79) - Headless Mode set to false
+[17:58:51] DEBUG (BasicTestCase.java:109) - Finished before suite
+[17:58:51] TRACE (BasicTestCase.java:44) - Starting test testTeacherThumbnails
+[17:58:51] INFO  (BasicTestCase.java:116) - Setting the browser up
+[17:58:51] INFO  (BasicTestCase.java:131) -  Executing on CHROME
+[17:58:51] INFO  (BasicTestCase.java:126) - Opening https://trunk.qa-esc.portal.achieve3000.com
+[17:59:00] DEBUG (BasicTestCase.java:52) - Browser's set up. Starting test.
+[17:59:08] INFO  (LoginPage.java:257) - Login with credentials autospanish.teach\autospanish.teach
+[17:59:08] INFO  (LoginPage.java:96) - Type in username: autospanish.teach
+[17:59:10] INFO  (LoginPage.java:103) - Type in password: autospanish.teach
+[17:59:11] DEBUG (LoginPage.java:236) - falsehttps://trunk.qa-esc.portal.achieve3000.com/index
+[17:59:12] DEBUG (Page.java:175) - Try to FIND element  By.id: active_class
+[17:59:17] INFO  (LoginPage.java:322) -  Stop login 
+[17:59:39] INFO  (Page.java:337) - Opening My Lesson page
+[17:59:39] INFO  (Page.java:278) - Opening new page: https://trunk.qa-esc.portal.achieve3000.com/my_lessons
+[17:59:44] INFO  (Page.java:350) - Switch to Next window
+[17:59:44] DEBUG (Page.java:351) - Switching from window Achieve3000: Mis lecciones
+[17:59:45] DEBUG (Page.java:357) - Switched to window Achieve3000: Descripción del curso
+[17:59:46] INFO  (Page.java:519) - Switch Back after close
