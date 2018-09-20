@@ -40,12 +40,12 @@ public class LoginPage extends Page {
     private By nextButtonOfSurveyBy = By.xpath(".//button[contains(@class, 'begin-response-button') or contains(@class, 'next-page-button') or contains(@class, 'md-button')]");
     private By checkboxesOfSurveyBy = By.xpath(".//div[@class = 'md-icon' or @class = 'md-off']");
     private By continueButtonBy = By.xpath("//*[@class='md-button md-primary md-raised']");
+    private WebElement loginForm = $(By.id("login_form"));
 
 
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
-        //PageFactory.initElements(driver, this);
         }
 
     public void login(String login, String password, String... parametrs) {
@@ -563,6 +563,15 @@ public class LoginPage extends Page {
         }
     }
 
+    public void afterLoginCheckWithProgram(String programm){
+        if (isDisplayedBy(chooseClassComboXpath)) {
+            Select selectClass = new Select($(By.xpath("//*[@id=\"active_pgm\"]")));
+            selectClass.selectByVisibleText(programm);
+            sleep(500);
+            clickGoNext();
+        }
+    }
+
     public void afterLoginCheck(String classToSelect){
         if (isDisplayedBy(chooseClassComboBy)) {
             Select selectClass = new Select(findEl(chooseClassComboBy));
@@ -721,6 +730,10 @@ public class LoginPage extends Page {
             $(loginButtonBy).click();
         }
         Configuration.pageLoadStrategy = "eager";
+    }
+
+    public WebElement getLoginForm() {
+        return loginForm;
     }
 
 }

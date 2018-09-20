@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -45,13 +48,20 @@ public class HomePage extends Page {
     private WebElement languageToggleSP = $(By.xpath(".//div[@class = 'languageToggleContainer']/a[contains(@class, 'right')]"));
     private WebElement languageToggleENG = $(By.xpath(".//div[@class = 'languageToggleContainer']/a[contains(@class, 'left')]"));
     private By visitNowButtonBy = By.id("button");
-    By coursesButtonBy = By.id("view-courses-btn");
+    private By coursesButtonBy = By.id("view-courses-btn");
+    private WebElement logOutLink = $(By.xpath(".//a[contains(@href, 'logout.php')]"));
+    private WebElement dateRangeLabel = $(By.xpath("//div[@class = 'dateRange']"));
+    private ElementsCollection numbersAboveBars = $$(By.xpath(".//*[name() = 'svg']//*[@class = 'bars']//*[name() = 'tspan']"));
+    private ElementsCollection barsOnThirdMetric = $$(By.xpath(".//*[name() = 'svg']//*[@class = 'bars']//*[name() = 'rect']"));
+    private WebElement noDataMessageInKeyInsught = $(By.xpath(".//div[@class = 'data-message message-nodata']/p"));
+    protected By setOfLanguageTogglesBy = By.xpath(".//div[@class = 'languageToggleContainer']/div");
+
+
 
 
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        //PageFactory.initElements(driver, this);
     }
 
     public boolean isTeachermaterialsButtonsExist() {
@@ -372,6 +382,59 @@ public class HomePage extends Page {
         closeWalkmeNew();
         waitUntilElementClickableBy(coursesButtonBy);
         $(coursesButtonBy).click();
+    }
+
+    public WebElement getLogOutLink() {
+        return logOutLink;
+    }
+
+    public String getTextFromElement(WebElement element, int timeout) {
+        String result = "";
+        for (int i = 0; i < timeout; i++) {
+            if (!$(element).getText().isEmpty()) {
+                result = $(element).getText();
+                break;
+            }
+            sleep(100);
+        }
+        return result;
+    }
+
+    public WebElement getDateRangeLabel() {
+        return dateRangeLabel;
+    }
+
+    public List<String> getLexileValuesAboveBars() {
+        ArrayList<String> result = new ArrayList<String>();
+        for (WebElement el : numbersAboveBars) {
+            result.add($(el).getText());
+        }
+        return result;
+    }
+
+    public List<String> getHeightOfBars() {
+        ArrayList<String> result = new ArrayList<String>();
+        for (WebElement el : barsOnThirdMetric) {
+            result.add($(el).getAttribute("height"));
+        }
+        return result;
+    }
+
+    public WebElement getNoDataMessageInKeyInsught() {
+        return noDataMessageInKeyInsught;
+    }
+
+    public String getActiveClassName() {
+        return $(activeClass).getText();
+    }
+
+    public boolean isTogglesDisplayed() {
+        waitForJSandJQueryToLoad();
+        return isDisplayedBy(setOfLanguageTogglesBy);
+    }
+
+    public void clickOnSearchButton() {
+        $(searchButtonBy).click();
     }
 
 }

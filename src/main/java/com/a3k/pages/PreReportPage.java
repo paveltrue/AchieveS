@@ -146,7 +146,7 @@ public class PreReportPage extends Page {
 
     private boolean isOtherOptionsPresentInDDL(WebElement ddl) {
 
-        ElementsCollection options = getOptionsFromSelect(ddl);
+        List<WebElement> options = getOptionsFromSelect(ddl);
         boolean check = true;
 
         for (WebElement option : options) {

@@ -34,12 +34,15 @@ public class AdminPage extends Page {
     private By selectDistrictDDLBy = By.id("district");
     private WebElement selectDistrictDDL = $(By.id("district"));
     private By selectDistrictButtonBy = By.xpath("//input[@type='submit']");
+    private WebElement editStudentAndTeacherInformation = $(By.xpath("//*[@href='/options/teacher/user/edit_users.php']"));
+    private WebElement selectSchoolDDL = $(By.xpath("//select[@name='school_id']"));
+    private By viewRerpotButtonBy = By.xpath(".//*[@class = 'button']");
+    private WebElement classSelect = $(By.cssSelector("select#class_id"));
 
 
 
     public AdminPage(WebDriver driver) {
         this.driver = driver;
-        //PageFactory.initElements(driver, this);
     }
 
     public void clickBackToMenu() {
@@ -138,5 +141,27 @@ public class AdminPage extends Page {
         selectDistrict.selectByValue(value);
         $(selectDistrictButtonBy).click();
     }
+
+    public void clickOnEditStudentAndTeacherInformation() {
+        $(editStudentAndTeacherInformation).click();
+    }
+
+    public void selectSchoolByValue(String value) {
+        logger.info("Select school " + value);
+        //Select schools = new Select(selectSchoolDDL);
+        //schools.selectByValue(value);
+        $(selectSchoolDDL).selectOptionByValue(value);
+        waitElement(viewRerpotButtonBy);
+    }
+
+    public void selectClassByValue(String value) {
+        logger.info("Select class " + value);
+        //Select classes = new Select(classSelect);
+        //classes.selectByValue(value);
+        $(classSelect).selectOptionByValue(value);
+        waitElement(viewRerpotButtonBy);
+    }
+
+
 
 }

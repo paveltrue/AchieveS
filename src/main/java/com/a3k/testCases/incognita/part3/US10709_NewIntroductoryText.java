@@ -54,7 +54,7 @@ public class US10709_NewIntroductoryText extends BasicTestCase {
 
 
     @Parameters({"login", "password", "program", "language"})
-    @Test(groups = {"Home Page", "Courses Page", "Archived","Incognita", "All"}, invocationCount = 5)
+    @Test(groups = {"Home Page", "Courses Page", "Archived","Incognita", "All"}, invocationCount = 1)
     public void check_US10709(@Optional("kb.ref")String login,
                               @Optional("kb.ref")String password,
                               @Optional("KidBiz3000")String program,

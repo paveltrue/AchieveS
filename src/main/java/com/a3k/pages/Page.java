@@ -39,6 +39,7 @@ public abstract class Page {
     private By popupContentBy = By.xpath("//div[(@role='dialog') and (contains(@style,'display: block;'))]/div[contains(@class,'alert_dialog')]");
     protected By adminButtonBy = By.xpath(".//a[@href='/kb/loader_admin/' or @href='/admin/settings' or @id='adminMenuItem' or contains(@href,'admin_section=1')]");
     protected By searchButtonBy = By.xpath("//*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']");
+    protected By searchButtonXpath = By.xpath("//*[@id=\"searchBtn\"]");
     private By actualYearOnCalendarBy = By.xpath(".//*[@id='ui-datepicker-div']//span[contains(@class, 'year')]");
     private By actualMonthOnCalendarBy = By.xpath(".//*[@id='ui-datepicker-div']//span[contains(@class, 'month')] | .//*[@id ='startCal']//*[@class = 'ui-datepicker-month']");
     private By closeButtonOnPopupImportantInformationBy = By.xpath(".//a[@role='button']");
@@ -96,6 +97,19 @@ public abstract class Page {
     protected WebElement doneButton = $(By.xpath("//*[@id=\"walkme-balloon-3886155\"]/div/div[1]/div[4]/div[2]/div/button/span"));
     protected WebElement searchButton = $(By.xpath("//*[@href='/kb/search/' or @href='/n/search/' or @data-dropdown='#search-div' or @class='searchIcon']"));
     protected WebElement walkmePopupCivics = $(By.xpath("//*[@id=\"wm-shoutout-119519\"]/div[3]/div[2]/span"));
+    private ElementsCollection teacherSettingsDDL = $$(By.xpath(".//*[@id='teacher-settings-dropdown']//a"));
+    protected WebElement editTeacherProfileLink = $(By.xpath("//*[contains(@href,'user.php')]"));
+    protected WebElement helpLink = $(By.xpath("//*[contains(@href,'/help')]"));
+    protected WebElement performanceLinkInHumburgerMenu = $(By.xpath(".//a[@href = '/options/teacher/?admin_section=4']"));
+    protected WebElement studentWorkLinkInHumburgerMenu = $(By.xpath(".//a[@href = '/options/teacher/?admin_section=2']"));
+    protected WebElement usageLinkInHumburgerMenu = $(By.xpath(".//a[@href = '/options/teacher/?admin_section=3']"));
+    protected WebElement homeCommunicationsLinkInHumburgerMenu = $(By.xpath(".//a[@href = '/options/teacher/?admin_section=7']"));
+    protected By editTeacherProfileLinkBy = By.xpath("//*[contains(@href,'user.php')]");
+    private ElementsCollection classDropDownListSelectorNewUI = $$(By.xpath("//*[@class='classesMenu']/div"));
+    private WebElement confirmationButtonOfClassSelection = $(By.xpath("//div[@class='classSelectorDialog']//button[@value='label.yes']"));
+
+
+
     protected static Logger logger = BasicLogger.getInstance();
 
     protected By walkmePopupBy = By.xpath(".//*[contains(@class, 'wm-close-button')" +
@@ -685,7 +699,10 @@ public abstract class Page {
     }
 
     public void waitUntilAttributeToBeNotEmpty(WebElement element, String attribute) {
-        Wait().until(attributeToBeNotEmpty(element, attribute));
+        try {
+            Wait().until(attributeToBeNotEmpty(element, attribute));
+        } catch (Exception e){
+        }
 //        if ($(element).isDisplayed()) {
 //            $(element).shouldHave(attribute(attribute));
 //        }
@@ -1006,11 +1023,12 @@ public abstract class Page {
         return sel.getFirstSelectedOption();
     }
 
-    public ElementsCollection getOptionsFromSelect(WebElement select) {
+    public List<WebElement> getOptionsFromSelect(WebElement select) {
 
-        //Select sel = new Select(select);
-        //return sel.getOptions();
-        return $(select).getSelectedOptions();
+        Select sel = new Select(select);
+
+        return sel.getOptions();
+       // return $(select).getSelectedOptions();
     }
 
     public void selectFromDDLbyValue(WebElement selectDDL, String value) {
@@ -1763,6 +1781,14 @@ public abstract class Page {
         return result;
     }
 
+    public List<String> getTextFromWebElementsByList(List<WebElement> elements) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WebElement el : elements) {
+            result.add($(el).getText().trim());
+        }
+        return result;
+    }
+
     public boolean isLessonFavorite(By by) {
         waitUntilAttributeToBeNotEmpty(by, "class");
         String str = getAttributeBy(by, "class");
@@ -1875,6 +1901,7 @@ public abstract class Page {
 
     public void selectFromDDLBy(By by, String value) {
         Select select = new Select(refEl(by));
+        sleep(1000);
         select.selectByVisibleText(value);
     }
 
@@ -1933,6 +1960,157 @@ public abstract class Page {
             $(doneButton).click();
         }
     }
+
+    public void clickOnTeachersName() {
+        //waitUntilElementClickableBy(teachersNameBy);
+        closeWalkmeNew(3);
+        $(teachersNameBy).click();
+    }
+
+    public ElementsCollection getTeacherSettingsDDL() {
+        return teacherSettingsDDL;
+    }
+
+    public Set<String> getAttributesFromItemsOfListBySet(ElementsCollection list, String attribute) {
+        HashSet<String> result = new HashSet<>();
+        for (WebElement el : list) {
+            result.add($(el).getAttribute(attribute));
+        }
+        return result;
+    }
+
+    public List<String> getAttributesFromItemsOfList(ElementsCollection list, String attribute) {
+        ArrayList<String> result = new ArrayList<>();
+        for (WebElement el : list) {
+            result.add($(el).getAttribute(attribute));
+        }
+        return result;
+    }
+
+    public WebElement getEditTeacherProfileLink() {
+        return editTeacherProfileLink;
+    }
+
+    public WebElement getHelpLink() {
+        return helpLink;
+    }
+
+    public WebElement getPerformanceLinkInHumburgerMenu() {
+        return $(performanceLinkInHumburgerMenu);
+    }
+
+    public WebElement getStudentWorkLinkInHumburgerMenu() {
+        return $(studentWorkLinkInHumburgerMenu);
+    }
+
+    public WebElement getUsageLinkInHumburgerMenu() {
+        return usageLinkInHumburgerMenu;
+    }
+
+    public WebElement getHomeCommunicationsLinkInHumburgerMenu() {
+        return homeCommunicationsLinkInHumburgerMenu;
+    }
+
+    public void clickOnEditTeacherProfileLink() {
+        if (!isDisplayedBy(editTeacherProfileLinkBy)) {
+            $(teachersNameBy).click();
+        }
+        $(editTeacherProfileLinkBy).click();
+    }
+
+    public void clickAdminButton() {
+        $(adminButtonBy).click();
+    }
+
+    public List<Float> convertListsStringIntoFloat(List<String> value) {
+        List<Float> result = new ArrayList<>();
+        for (String str : value) {
+            result.add(Float.parseFloat(str));
+        }
+        return result;
+    }
+
+    public String getTeacherName() {
+        return getTextByWithWait(teachersNameBy).trim();
+    }
+
+    public String getTextByWithWait(By by) {
+        waitUntilAttributeToBeNotEmpty(by, "textContent");
+        return getTextBy(by);
+    }
+
+    public void clickOnWebElementInListBy(By elements, int numberOfelement) {
+        numberOfelement--;
+        ElementsCollection elementsList = findEls(elements);
+        clickJS(elementsList.get(numberOfelement));
+    }
+
+    public List<String> getTextOfAllOptionsFromSelect(By by) {
+        List<WebElement> webElements = getAllOptionsFromSelect(by);
+        return getTextFromWebElementsByList(webElements);
+    }
+
+    public void changeClassTo(String cl) {
+        if (findEls(By.xpath("//*[@class='classContainer']/div[2]")).size() > 0) {
+            changeClassToForOldUI(cl);
+        } else {
+            if (findEls(By.xpath("//span[contains(@class,'selectClass')]//*[contains(@class,'dropDown')]")).size() > 0) {
+                changeClassToForNewUI(cl);
+            }
+        }
+    }
+
+    public void changeClassToForOldUI(String cl) {
+        $(classArrowSelector).click();
+        for (WebElement clas : classDropDownListSelector) {
+            if ($(clas).getAttribute("data-arg").contains(cl) || $(clas).getAttribute("data-value").contains(cl)) {
+                $(clas).click();
+                break;
+            }
+        }
+        if (isDisplayedBy(walkmePopupBy)) {
+            closeWalkmePopup();
+        }
+        //waitUntilElementClickable(classArrowSelector, 5);
+        if (isDisplayedBy(walkmePopupBy)) {
+            closeWalkmePopup();
+        }
+    }
+
+    public void changeClassToForNewUI(String cl) {
+        $(activeClass).click();
+        for (WebElement clas : classDropDownListSelectorNewUI) {
+            if ($(clas).find(By.xpath(".//div[@class='nameOfClass']")).getText().equalsIgnoreCase(cl)) {
+                $(clas).click();
+                if (isElementExist(confirmationButtonOfClassSelection)) {
+                    $(confirmationButtonOfClassSelection).click();
+                }
+                break;
+            }
+        }
+        if (isDisplayedBy(walkmePopupBy)) {
+            closeWalkmePopup();
+        }
+        //waitUntilElementClickable(classArrowSelector, 5);
+        if (isDisplayedBy(walkmePopupBy)) {
+            closeWalkmePopup();
+        }
+    }
+
+    public List<String> getDefaultValuesFromDDLs(ElementsCollection els) {
+        ArrayList<String> list = new ArrayList<>();
+        for (WebElement el : els) {
+            list.add(getDefaultValueFromDDL(el));
+        }
+        return list;
+    }
+
+    public String getSelectedValueFromDDLBy(By by) {
+        waitUntilElementClickableBy(by);
+        return $(by).find(By.xpath(".//*[@selected='']")).getText();
+    }
+
+
 
 
 

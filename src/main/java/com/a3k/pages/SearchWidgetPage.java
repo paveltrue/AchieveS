@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -43,6 +45,7 @@ public class SearchWidgetPage extends Page {
     private WebElement lessonTypeDDL = $(By.id("lesson_type_id"));
     private By courseDDLBy = By.id("course_id");
     private By firstLessonFromResultOfActiveTab = By.xpath(".//*[contains(@class, 'ml_tab') and contains(@style, 'block') ]//*[@class = 'searchResults']//*[contains(@id, 'lessonSearch')][1]//*[@class = 'lessonTitle']");
+    private ElementsCollection advancedOptionsDDLs = $$(By.xpath(".//*[@class = 'advancedOptions']//select"));
 
 
 
@@ -396,6 +399,10 @@ public class SearchWidgetPage extends Page {
         actions().moveToElement(refEl(targetElement)).build().perform();
         myWait(longTime);
         actions().release().build().perform();
+    }
+
+    public List<String> getAdvancedOptionsDefaultValues() {
+        return getDefaultValuesFromDDLs(advancedOptionsDDLs);
     }
 
 }

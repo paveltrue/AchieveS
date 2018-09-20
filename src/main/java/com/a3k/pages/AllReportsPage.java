@@ -210,7 +210,7 @@ public class AllReportsPage extends Page {
 
         List<String> listOfReports = new ArrayList<String>();
 
-        ElementsCollection options = getOptionsFromSelect(reportDDL);
+        List<WebElement> options = getOptionsFromSelect(reportDDL);
 
         for (WebElement report : options) {
 
@@ -221,10 +221,10 @@ public class AllReportsPage extends Page {
         return listOfReports;
     }
 
-    public ElementsCollection getOptionsFromSelect(WebElement select) {
-        //Select sel = new Select(select);
-        //return sel.getOptions();
-        return $(select).getSelectedOptions();
+    public List<WebElement> getOptionsFromSelect(WebElement select) {
+        Select sel = new Select(select);
+        return sel.getOptions();
+//        return $(select).getSelectedOptions();
     }
 
     public void openUsageReports() {
